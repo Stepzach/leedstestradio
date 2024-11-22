@@ -8001,7 +8001,7 @@ article[data-v-614cb9bc] .pill {
     height: 340px;
     margin-top: 60px;
     margin-bottom: 40px;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     border-radius: 40px;
     font-family: Adieu, sans-serif;
     font-size: 36px;
@@ -8043,7 +8043,7 @@ article[data-v-614cb9bc] .pill {
 
 .directory-row[data-v-a5163848] {
     margin-bottom: 60px;
-    border-top: 1px solid #000;
+    border-top: 1px solid #fff;
     font-size:13px
 }
 
@@ -8140,7 +8140,7 @@ article[data-v-614cb9bc] .pill {
     margin-top: 60px;
     margin-bottom: 40px;
     padding: 30px;
-    border: 1px dashed #000;
+    border: 1px dashed #fff;
     border-radius: 30px;
     font-family: Adieu, sans-serif;
     font-size: 36px;
@@ -8169,12 +8169,12 @@ article[data-v-614cb9bc] .pill {
 
 .div-block-4[data-v-a5163848] {
     height: 180px;
-    border-top: 1px solid #000;
+    border-top: 1px solid #fff;
     border-radius:1px
 }
 
 .section-2[data-v-a5163848] {
-    border-top:1px none #000
+    border-top:1px none #fff
 }
 
 .text-block-5[data-v-a5163848] {
@@ -8314,7 +8314,7 @@ article[data-v-614cb9bc] .pill {
 
 .div-block-10[data-v-a5163848] {
     margin-bottom: 50px;
-    border-top:1px solid #000
+    border-top:1px solid #fff
 }
 
 .paragraph-7[data-v-a5163848] {
@@ -9485,7 +9485,7 @@ article[data-v-614cb9bc] .pill {
 
 .HomeModal .block[data-v-04032646]:not(:last-child) {
     padding-bottom: 2rem;
-    border-bottom:1px solid #000
+    border-bottom:1px solid #fff
 }
 
 .HomeModal[data-v-04032646] h2 {
