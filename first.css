@@ -348,6 +348,9 @@ a[data-v-569d7a55] {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     z-index:9
+     position: fixed;
+    top: 0;
+    background-color: #bb0c0c;
 }
 
 .header-holder[data-v-2a330032] {
