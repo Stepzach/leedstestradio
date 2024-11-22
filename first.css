@@ -353,6 +353,9 @@ a[data-v-569d7a55] {
 .header-holder[data-v-2a330032] {
     display: -webkit-box;
     display: -ms-flexbox;
+    position: fixed;
+    top: 0;
+    background-color: #bb0c0c;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
