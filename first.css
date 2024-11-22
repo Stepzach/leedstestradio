@@ -236,7 +236,7 @@ a[data-v-569d7a55] {
 
 .BarStream[data-v-2210cc27] {
     white-space: nowrap;
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 35px;
     -webkit-box-align: center;
