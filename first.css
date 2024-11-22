@@ -1409,7 +1409,7 @@ summary {
 }
 
 .icon-player-play {
-    background-image:url(../img/ui_player-play.08804fd0.svg)
+    background-image: url("media-player-ui-button-play.svg")
 }
 
 .icon-player-stop {
