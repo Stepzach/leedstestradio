@@ -992,45 +992,45 @@ summary {
 
 @font-face {
     font-family: AdieuLight;
-    src: url(../fonts/Adieu-Light.75979a4f.woff2) format("woff2"), url(../fonts/Adieu-Light.f2a18449.woff) format("woff")
+    src: url("Adieu-Light.75979a4f.woff2") format("woff2"), url("Adieu-Light.f2a18449.woff") format("woff")
 }
 
 @font-face {
     font-family: Adieu;
-    src: url(../fonts/Adieu-Regular.29dff3b6.woff2) format("woff2"), url(../fonts/Adieu-Regular.8032c8f7.woff) format("woff");
+    src: url("Adieu-Regular.29dff3b6.woff2") format("woff2"), url("Adieu-Regular.8032c8f7.woff") format("woff");
     font-weight:700
 }
 
 @font-face {
     font-family: Minion;
-    src: url(../fonts/MinionPro-Regular.96de641d.woff2) format("woff2"), url(../fonts/MinionPro-Regular.fd36de73.woff) format("woff")
+    src: url("MinionPro-Regular.96de641d.woff2") format("woff2"), url("MinionPro-Regular.fd36de73.woff") format("woff")
 }
 
 @font-face {
     font-family: SuisseIntl;
-    src: url(../fonts/SuisseIntl.bb0bbf3f.woff2) format("woff2"), url(../fonts/SuisseIntl.8aba7c18.woff) format("woff")
+    src: url("SuisseIntl.bb0bbf3f.woff2") format("woff2"), url("SuisseIntl.8aba7c18.woff") format("woff")
 }
 
 @font-face {
     font-family: SuisseIntl;
-    src: url(../fonts/SuisseIntl-Italic.29249365.woff2) format("woff2"), url(../fonts/SuisseIntl-Italic.0caba1fb.woff) format("woff");
+    src: url("SuisseIntl-Italic.29249365.woff2") format("woff2"), url("SuisseIntl-Italic.0caba1fb.woff") format("woff");
     font-style:italic
 }
 
 @font-face {
     font-family: SwissMono;
-    src: url(../fonts/SwissMono.8c81cf16.woff2) format("woff2"), url(../fonts/SwissMono.4ff583cd.woff) format("woff")
+    src: url("SwissMono.8c81cf16.woff2") format("woff2"), url("SwissMono.4ff583cd.woff") format("woff")
 }
 
 @font-face {
     font-family: SwissMono;
-    src: url(../fonts/SuisseIntlMono-Bold.95c0e8d7.woff2) format("woff2"), url(../fonts/SuisseIntlMono-Bold.fb5d16e8.woff) format("woff");
+    src: url("SuisseIntlMono-Bold.95c0e8d7.woff2") format("woff2"), url("SuisseIntlMono-Bold.fb5d16e8.woff") format("woff");
     font-weight:700
 }
 
 @font-face {
     font-family: SuisseNeue;
-    src: url(../fonts/SuisseNeue-Regular.0d224625.woff2) format("woff2"), url(../fonts/SuisseNeue-Regular.b3021666.woff) format("woff")
+    src: url("SuisseNeue-Regular.0d224625.woff2") format("woff2"), url("SuisseNeue-Regular.b3021666.woff") format("woff")
 }
 
 @font-face {
@@ -1040,17 +1040,17 @@ summary {
 
 @font-face {
     font-family: FormaDJR;
-    src: url(../fonts/FormaDJRText-Regular.c0956a27.woff) format("woff")
+    src: url("FormaDJRText-Regular.c0956a27.woff") format("woff")
 }
 
 @font-face {
     font-family: MicroGBE;
-    src: url(../fonts/MICROGBE.937772da.woff) format("woff")
+    src: url("MICROGBE.937772da.woff") format("woff")
 }
 
 @font-face {
     font-family: CCBiffBamBoom;
-    src: url(../fonts/CCBiffBamBoom.c8a28d6d.woff) format("woff");
+    src: url("CCBiffBamBoom.c8a28d6d.woff") format("woff");
     font-weight: 400;
     font-style:normal
 }
