@@ -366,6 +366,8 @@ a[data-v-569d7a55] {
     flex-direction: row;
     border-bottom: 1px solid #fff
     border-top: 1px solid #fff
+    border-right: 0px;
+    border-left: 0px;
 }
 
 .header-logo[data-v-2a330032] {
