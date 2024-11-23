@@ -30,8 +30,32 @@
            <div id="time-container"> <span id="time-text"></span> GMT </div>
           </div></div>
            
-           <div data-v-2210cc27="" data-v-2a330032="" class="BarStream"><div data-v-2210cc27="" class="status hover"><button data-v-2210cc27=""><span data-v-2210cc27="" class="icon-player-play"><img src="media-player-ui-button-play.svg" alt="play" position="fixed" style="width:auto !important; height:5px !important; -webkit-filter:invert(100%);
-     filter:progid:DXImageTransform.Microsoft.BasicImage(invert='1'); height:26px !important; padding-left: 15px; padding-right: 5px"></span><span data-v-2210cc27="" style="color: #fff; padding-left: 10px;  padding-top: -5px;" class="hover-effect">Tune In</span></button></div><div data-v-2210cc27="" class="title"><div data-v-d239eb30="" data-v-2210cc27="" class="MarqueeConditional"><div data-v-d239eb30="" class="inner" style="position: relative;"><div data-v-d239eb30="" style="color: #fff">LSR presents the Sounds of Leeds</div><div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div class="resize-sensor-expand" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 439px; height: 34px;"></div></div><div class="resize-sensor-shrink" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 200%; height: 200%;"></div></div></div></div><!----><div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div class="resize-sensor-expand" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 439px; height: 34px;"></div></div><div class="resize-sensor-shrink" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 200%; height: 200%;"></div></div></div></div></div><div data-v-2210cc27="" class="spacer"></div></div>
+           <div data-v-2210cc27="" data-v-2a330032="" class="BarStream"><div data-v-2210cc27="" class="status hover"><button data-v-2210cc27=""><span data-v-2210cc27="" class="icon-player-play">
+               
+                <div class="audio-container">
+        <!-- Audio Element -->
+        <audio id="livestream" preload="none">
+            <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <!-- Play/Pause Button -->
+        <button id="audio-button">
+            <!-- Default Play Icon -->
+            <svg id="play-icon" src="media-player-ui-button-play.svg"  position="fixed" style="width:auto !important; height:5px !important; -webkit-filter:invert(100%);
+     filter:progid:DXImageTransform.Microsoft.BasicImage(invert='1'); height:26px !important; padding-left: 15px; padding-right: 5px">
+                <path d="M8 5v14l11-7z"></path>
+            </svg>
+            <!-- Pause Icon (Hidden by default) -->
+            <svg id="pause-icon"  src="media-player-ui-button-play.svg"  position="fixed" style="width:auto !important; height:5px !important; -webkit-filter:invert(100%);
+     filter:progid:DXImageTransform.Microsoft.BasicImage(invert='1'); height:26px !important; padding-left: 15px; padding-right: 5px; display: none;">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+            </svg>
+        </button>
+    </div>
+               
+               
+             </span><span data-v-2210cc27="" style="color: #fff; padding-left: 10px;  padding-top: -5px;" class="hover-effect">Tune In</span></button></div><div data-v-2210cc27="" class="title"><div data-v-d239eb30="" data-v-2210cc27="" class="MarqueeConditional"><div data-v-d239eb30="" class="inner" style="position: relative;"><div data-v-d239eb30="" style="color: #fff">LSR presents the Sounds of Leeds</div><div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div class="resize-sensor-expand" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 439px; height: 34px;"></div></div><div class="resize-sensor-shrink" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 200%; height: 200%;"></div></div></div></div><!----><div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div class="resize-sensor-expand" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 439px; height: 34px;"></div></div><div class="resize-sensor-shrink" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 200%; height: 200%;"></div></div></div></div></div><div data-v-2210cc27="" class="spacer"></div></div>
 
        </div>
             </div>
@@ -40,7 +64,25 @@
         
 
 
+  <script>
+        // JavaScript to toggle play/pause
+        const audio = document.getElementById('livestream');
+        const button = document.getElementById('audio-button');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
 
+        button.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playIcon.style.display = 'none';  // Hide Play Icon
+                pauseIcon.style.display = 'block';  // Show Pause Icon
+            } else {
+                audio.pause();
+                playIcon.style.display = 'block';  // Show Play Icon
+                pauseIcon.style.display = 'none';  // Hide Pause Icon
+            }
+        });
+    </script>
 
 
            <body>
