@@ -341,7 +341,7 @@ a[data-v-569d7a55] {
 }
 
 .Header[data-v-2a330032] {
-    background: #d46a65;
+    background: #b80809;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -350,7 +350,7 @@ a[data-v-569d7a55] {
     z-index:9
      position: fixed;
     top: 0;
-    background-color: #d46a65;
+    background-color: #b80809;
 }
 
 .header-holder[data-v-2a330032] {
