@@ -364,7 +364,8 @@ a[data-v-569d7a55] {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    border:1px solid #fff
+    border-bottom: 1px solid #fff
+    border-top: 1px solid #fff
 }
 
 .header-logo[data-v-2a330032] {
