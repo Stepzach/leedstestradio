@@ -588,8 +588,8 @@ a.active span[data-v-2a330032], a.router-link-active[data-v-2a330032]:not([href=
 
 .footer-box-middle[data-v-41749928], .footer-box[data-v-41749928] {
     height: 200px;
-    border-top: 1px solid #000000;
-    border-right: 1px solid #000000;
+    border-top: 1px solid #f3d2d0;
+    border-right: 1px solid #f3d2d0;
     font:var(--small_mono)
 }
 
@@ -617,7 +617,7 @@ a.active span[data-v-2a330032], a.router-link-active[data-v-2a330032]:not([href=
     height: 200px;
     width: 43%;
     font: var(--small_mono);
-    border-top: 1px solid #000000;
+    border-top: 1px solid #f3d2d0;
     padding: 1%;
     line-height:1.7rem
 }
