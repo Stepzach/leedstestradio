@@ -148,7 +148,20 @@
     });
 </script>
 
-
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+  </style>
            <body>
                 <div id="welcome" class="welcome">
 <br><br><br>
@@ -166,7 +179,26 @@
 
 
 <div id="page1" class="content"> 
-<br><br><br> Welcome to Page 1!</div>
+<br><br><br> 
+    
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- JavaScript will fill the rows dynamically -->
+  </tbody>
+</table>
+</div>
 
 <div id="page2" class="content">
     <br><br><br> This is Page 2 content.</div>
@@ -186,6 +218,41 @@
 </body>
 
 
+<script>
+  // Generate time slots dynamically
+  const tableBody = document.querySelector("table tbody");
+  const startHour = 9;  // 9 AM
+  const endHour = 23;   // 11 PM
+
+  for (let hour = startHour; hour <= endHour; hour++) {
+    const startTime = new Date(0, 0, 0, hour, 0); // Hour: 0 minute
+    const endTime = new Date(0, 0, 0, hour + 1, 0); // Next hour
+    
+    const row = document.createElement("tr");
+    const timeCell = document.createElement("td");
+    
+    // Format times
+    timeCell.textContent = formatTime(startTime) + " - " + formatTime(endTime);
+    row.appendChild(timeCell);
+
+    // Add empty cells for each day of the week
+    for (let i = 0; i < 7; i++) {
+      const dayCell = document.createElement("td");
+      row.appendChild(dayCell);
+    }
+    
+    tableBody.appendChild(row);
+  }
+
+  // Helper function to format time as 9:00 AM - 10:00 PM
+  function formatTime(date) {
+    const hours = date.getHours();
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+    const suffix = hours >= 12 ? "PM" : "AM";
+    const hour12 = hours % 12 || 12;
+    return `${hour12}:${minutes} ${suffix}`;
+  }
+</script>
 
            
             <style>
