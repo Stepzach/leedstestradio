@@ -695,7 +695,7 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
       color: white;
     }
 
-  .su-grid-section {
+ .su-grid-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -705,23 +705,24 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center align items horizontally */
-  justify-content: center; /* Optional: Center content vertically if needed */
+  justify-content: flex-start; /* Align to top for consistent spacing */
  
   padding: 15px;
   text-align: center;
- 
+  
 }
 
 .su-grid-item h3 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-white 10px;
   color: white;
+  min-height: 50px; /* Add a consistent height for titles */
+  display: flex;
+  align-items: center; /* Center text vertically within the title area */
+  justify-content: center;
 }
 
 .su-grid-item img {
-flex-direction: column;
-  align-items: center; /* Center align items horizontally */
-  justify-content: center; 
   width: 100%;
   max-width: 300px;
   height: auto;
@@ -731,6 +732,11 @@ flex-direction: column;
 .su-grid-item p {
   font-size: 14px;
   color: white;
+  min-height: 60px; /* Add a consistent height for descriptions */
+  display: flex;
+  align-items: center; /* Center text vertically within the description area */
+  justify-content: center;
+  text-align: center; /* Ensure text wraps and aligns nicely */
 }
 
   </style>
