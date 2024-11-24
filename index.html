@@ -175,7 +175,23 @@
       width: 150px; /* Adjust as needed */
       white-space: nowrap; /* Prevent text from wrapping */
     }
-    
+      .on-air {
+      border: 4px solid darkgreen; /* Thicker green border */
+      background-color: #d4edda; /* Light green background for emphasis */
+      position: relative; /* To position the "on air" label */
+    }
+
+    .on-air::after {
+      content: "On Air";
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      background-color: darkgreen;
+      color: white;
+      font-size: 0.8em;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
  
   </style>
            <body>
@@ -414,6 +430,44 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
  
 
             </style>
+        <script>
+  // Get current time and day in GMT
+  const now = new Date();
+  const currentHour = now.getUTCHours(); // GMT hour
+  const currentDay = now.getUTCDay();   // GMT day (0 = Sunday, 1 = Monday, ...)
+
+  // Map days of the week to table columns (Monday = 1, ..., Sunday = 7)
+  const dayToColumnIndex = [8, 2, 3, 4, 5, 6, 7]; // Correctly maps Monday to 1, Sunday to 7
+
+  // Get all table rows
+  const rows = document.querySelectorAll("tbody tr");
+
+  // Loop through the rows to find the matching time slot
+  rows.forEach(row => {
+    const timeCell = row.querySelector("td:first-child"); // First column has the time
+    const timeRange = timeCell.textContent.split(" - ");
+    const startTime = parseTimeTo24Hour(timeRange[0]);
+    const endTime = parseTimeTo24Hour(timeRange[1]);
+
+    if (currentHour >= startTime && currentHour < endTime) {
+      const dayColumnIndex = dayToColumnIndex[currentDay];
+      const cell = row.querySelector(`td:nth-child(${dayColumnIndex})`);
+
+      if (cell) {
+        cell.classList.add("on-air"); // Add the 'on-air' styling
+      }
+    }
+  });
+
+  // Function to convert 12-hour time (e.g., "09:00 AM") to 24-hour time (e.g., 9)
+  function parseTimeTo24Hour(timeStr) {
+    const [time, modifier] = timeStr.split(" ");
+    let [hours, minutes] = time.split(":").map(Number);
+    if (modifier === "PM" && hours !== 12) hours += 12;
+    if (modifier === "AM" && hours === 12) hours = 0;
+    return hours;
+  }
+</script>
          <script>
         // Select all headers
         const headers = document.querySelectorAll('.header');
