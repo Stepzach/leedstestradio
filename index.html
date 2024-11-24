@@ -176,9 +176,7 @@
       white-space: nowrap; /* Prevent text from wrapping */
     }
     
-    th {
-      background-color: #d56859;
-    }
+ 
   </style>
            <body>
                 <div id="welcome" class="welcome">
@@ -202,19 +200,19 @@
 <table>
   <thead>
     <tr>
-      <th>Time</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-      <th>Saturday</th>
-      <th>Sunday</th>
+      <th style=" background-color: #d56859;  font:var(--small_mono);">Time</th>
+      <th style=" background-color: #d56859;">Monday</th>
+      <th style=" background-color: #d56859;">Tuesday</th>
+      <th style=" background-color: #d56859;">Wednesday</th>
+      <th style=" background-color: #d56859;">Thursday</th>
+      <th style=" background-color: #d56859;">Friday</th>
+      <th style=" background-color: #d56859;">Saturday</th>
+      <th style=" background-color: #d56859;">Sunday</th>
     </tr>
   </thead>
   <tbody>
    <tr>
-      <td>9:00 AM - 10:00 AM</td>
+      <td style=" background-color: #d56859; font-size:15px;">9:00 AM - 10:00 AM</td>
       <td style="background-color: orange">Breakfast</td>
       <td style="background-color: orange">Breakfast</td>
       <td style="background-color: orange">Breakfast</td>
@@ -395,41 +393,7 @@
 </body>
 
 
-<script>
-  // Generate time slots dynamically
-  const tableBody = document.querySelector("table tbody");
-  const startHour = 9;  // 9 AM
-  const endHour = 23;   // 11 PM
 
-  for (let hour = startHour; hour <= endHour; hour++) {
-    const startTime = new Date(0, 0, 0, hour, 0); // Hour: 0 minute
-    const endTime = new Date(0, 0, 0, hour + 1, 0); // Next hour
-    
-    const row = document.createElement("tr");
-    const timeCell = document.createElement("td");
-    
-    // Format times
-    timeCell.textContent = formatTime(startTime) + " - " + formatTime(endTime);
-    row.appendChild(timeCell);
-
-    // Add empty cells for each day of the week
-    for (let i = 0; i < 7; i++) {
-      const dayCell = document.createElement("td");
-      row.appendChild(dayCell);
-    }
-    
-    tableBody.appendChild(row);
-  }
-
-  // Helper function to format time as 9:00 AM - 10:00 PM
-  function formatTime(date) {
-    const hours = date.getHours();
-    const minutes = date.getMinutes().toString().padStart(2, "0");
-    const suffix = hours >= 12 ? "PM" : "AM";
-    const hour12 = hours % 12 || 12;
-    return `${hour12}:${minutes} ${suffix}`;
-  }
-</script>
 
            
             <style>
