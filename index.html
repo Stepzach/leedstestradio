@@ -956,7 +956,20 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
 
 .hover-effect:hover {
     color: black !important; /* Force text to turn black on hover */
+
+
+
+    
+    #app { 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; /* Ensure the container fills the viewport */
 }
+
+.main-content { 
+    flex: 1; /* Pushes the footer to the bottom if there's not enough content */
+}
+
  
 
             </style>
