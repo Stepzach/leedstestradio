@@ -513,8 +513,25 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
       cursor: pointer;
       transition: background-color 0.3s;
     }
+     .audio-player-container2 button {
+      position: ;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 24px; /* Icon size */
+    
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      border-radius: 35%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
 
     .audio-player-container1 button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+     .audio-player-container2 button:hover {
       background-color: rgba(0, 0, 0, 0.8);
     }
     
@@ -564,7 +581,7 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
         <div class="custom-subtitle">Alternate Stream</div>
             <div class="audio-player-container2">
     <!-- Play/Pause button -->
-    <button id="playPauseButton1">
+    <button id="playPauseButton2">
       <i class="fas fa-play"></i> <!-- Play icon initially -->
     </button>
     <!-- Audio element for the live stream -->
@@ -602,18 +619,18 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     });
 
 
-    const playPauseButton10 = document.getElementById('playPauseButton1');
-    const livestream10 = document.getElementById('livestream2');
-    const playIcon10 = '<i class="fas fa-play"></i>';
-    const pauseIcon10 = '<i class="fas fa-pause"></i>';
+    const playPauseButton20 = document.getElementById('playPauseButton2');
+    const livestream20 = document.getElementById('livestream2');
+    const playIcon20 = '<i class="fas fa-play"></i>';
+    const pauseIcon20 = '<i class="fas fa-pause"></i>';
 
-    playPauseButton10.addEventListener('click', function() {
-      if (livestream10.paused) {
-        livestream10.play();
-        playPauseButton10.innerHTML = pauseIcon10; // Change icon to pause
+    playPauseButton20.addEventListener('click', function() {
+      if (livestream20.paused) {
+        livestream20.play();
+        playPauseButton20.innerHTML = pauseIcon20; // Change icon to pause
       } else {
-        livestream10.pause();
-        playPauseButton10.innerHTML = playIcon10; // Change icon to play
+        livestream20.pause();
+        playPauseButton20.innerHTML = playIcon20; // Change icon to play
       }
     });
   </script>
