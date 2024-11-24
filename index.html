@@ -465,6 +465,45 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
       text-align: center;
         color: white;
     }
+
+
+
+      .audio-player-container {
+      position: relative;
+      width: 95%;
+      height: auto%;
+      background-image: url(/LSR Logo.png.webp); /* Replace with your background image URL */
+      background-size: cover;
+      background-position: center;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    .audio-player-container1 button {
+      position: absolute;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 24px; /* Icon size */
+      width: 60px;
+      height: 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      border-radius: 35%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .audio-player-container1 button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    audio1 {
+      display: none; /* Hide the audio element */
+    }
 </style>
 <div id="page2" class="content">
     <br><br><br> <br>
@@ -491,6 +530,17 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     <div class="custom-box-container">
       <div class="custom-box">
         <div class="custom-subtitle">LSR Stream</div>
+           <div class="audio-player-container1">
+    <!-- Play/Pause button -->
+    <button id="playPauseButton">
+      <i class="fas fa-play"></i> <!-- Play icon initially -->
+    </button>
+    <!-- Audio element for the live stream -->
+    <audio id="audioPlayer" preload="auto">
+      <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg"> <!-- Replace with actual live stream URL -->
+      Your browser does not support the audio element.
+    </audio>
+  </div>
         <!-- Add content here -->
       </div>
       <div class="custom-box">
@@ -507,7 +557,22 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
       </div>
     </div>
   </div> </lol></div>
-               
+                <script>
+    const playPauseButton = document.getElementById('playPauseButton');
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playIcon = '<i class="fas fa-play"></i>';
+    const pauseIcon = '<i class="fas fa-pause"></i>';
+
+    playPauseButton.addEventListener('click', function() {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseButton.innerHTML = pauseIcon; // Change icon to pause
+      } else {
+        audioPlayer.pause();
+        playPauseButton.innerHTML = playIcon; // Change icon to play
+      }
+    });
+  </script>
 <div id="page3" class="content">
     <br><br><br> Here's what Page 3 looks like.</div>
                
