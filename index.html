@@ -5,6 +5,16 @@
 <script type="text/javascript" src="bro.js"></script>
     <script src=/bruh.js></script>
     <script src=/bro.js></script>
+<script>
+  function toggleColor(element) {
+    // First, reset all text elements to white
+    const spans = document.querySelectorAll('span');
+    spans.forEach(span => span.style.color = 'white');
+
+    // Then, change the clicked element to black
+    element.style.color = 'black';
+  }
+</script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-itunes-app" content="app-id=1566708152, affiliate-data="><link rel="shortcut icon" href="/assets/icons/favicon.png"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-180x180.png"><title>Leeds Student Radio</title><script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/89dfc5b3/www-widgetapi.vflset/www-widgetapi.js" async=""></script><script async="" src="https://www.clarity.ms/s/0.7.56/clarity.js"></script><script src="https://www.youtube.com/player_api"></script><script async="" src="https://www.clarity.ms/tag/j1xid1iq0r"></script><script>(function (c, l, a, r, i, t, y) {
         c[a] =
@@ -29,12 +39,12 @@
         </span></a><a data-v-2a330032="" href="/djs" class="" to="/djs"><span data-v-2a330032="" style="color: #fff">DJs</span></a><a data-v-2a330032="" href="/events" class="" to="/events"><span data-v-2a330032="" style="color: #fff">Events</span></a><a data-v-2a330032="" href="/projects" class="" to="/projects"><span data-v-2a330032="" style="color: #fff">Projects</span></a><a data-v-2a330032="" href="/support" class="" to="/support"><span data-v-2a330032="" style="color: #fff">Support</span></a><a data-v-2a330032="" href="/about" class="" to="/about"><span data-v-2a330032="" style="color: #fff">About</span></a><div data-v-2a330032="" class="search-link"><a data-v-2a330032="" href="/search" class="icon-search-sprite"></a><a data-v-2a330032="" href="/search" class="" style="color: #fff">Search</a></div></div></div><div data-v-2a330032="" class="Header desktop a-hover" style=" position: fixed; top: 0;background-color: #bb0c0c;"><div data-v-2a330032="" class="header-holder" style=" position: fixed; top: 0;background-color: #bb0c0c;">
         
        <div class="header" data-page="welcome" style="cursor: pointer;"> <div data-v-2a330032="" class="header-logo"><img src="LSR Logo.png.webp" alt="LOGOO" position="fixed" style="width:auto !important; margin-top: -7px !important; height:60px !important; padding-left: 40px; padding-right: 30px;" ><a data-v-2a330032="" class="dublab-link active router-link-active" aria-current="page" style="width:auto !important; padding-left: 15px; padding-right: 40px; color: #fff !important">LSR</a></div></div><div data-v-2a330032="" class="header-stack"><div data-v-2a330032="" class="Navigation"><a data-v-2a330032="" href="/search" class="icon-search-sprite"><img src="Search_Icon.svg.png" alt="search" position="fixed" style="width:auto !important;-webkit-filter:invert(100%);
-     filter:progid:DXImageTransform.Microsoft.BasicImage(invert='1'); height:24px !important; padding-left: 15px; padding-top: 3px;"></a> <div class="header" data-page="page1" style="cursor: pointer;"><a data-v-2a330032="" class=""><span data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px" class="hover-effect">
+     filter:progid:DXImageTransform.Microsoft.BasicImage(invert='1'); height:24px !important; padding-left: 15px; padding-top: 3px;"></a> <div class="header" data-page="page1" style="cursor: pointer;"><a data-v-2a330032="" class=""><span onclick="toggleColor(this)"data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px" class="hover-effect">
          Schedule</span></a></div>
-            <div class="header" data-page="page2" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" style="color: #fff ; padding-right: 5px;" class="hover-effect">Listen</span></a></div> 
-           <div class="header" data-page="page3" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" style="color: #fff ; padding-right: 5px;" class="hover-effect">Get Involved</span></a></div>
-           <div class="header" data-page="page4" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" style="color: #fff ; padding-right: 5px;" class="hover-effect">About</span></a></div>
-           <div class="header" data-page="page5" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" style="color: #fff ; padding-right: 5px;" class="hover-effect">Contact</span></a></div>
+            <div class="header" data-page="page2" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)" style="color: #fff ; padding-right: 5px;" class="hover-effect">Listen</span></a></div> 
+           <div class="header" data-page="page3" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px;" class="hover-effect">Get Involved</span></a></div>
+           <div class="header" data-page="page4" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px;" class="hover-effect">About</span></a></div>
+           <div class="header" data-page="page5" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px;" class="hover-effect">Contact</span></a></div>
            <h1 data-v-2a330032=""></h1><div data-v-2a330032="" class="time" style="color: #fff">
            <div id="time-container"> <span id="time-text"></span> GMT </div>
           </div></div>
