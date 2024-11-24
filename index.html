@@ -503,7 +503,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
       background-color: rgba(0, 0, 0, 0.8);
     }
     
-    audio1 {
+    audio {
       display: none; /* Hide the audio element */
     }
 </style>
@@ -568,10 +568,10 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     playPauseButton.addEventListener('click', function() {
       if (livestream1.paused) {
         livestream1.play();
-        playPauseButton.innerHTML = pauseIcon; // Change icon to pause
+        playPauseButton1.innerHTML = pauseIcon; // Change icon to pause
       } else {
         livestream1.pause();
-        playPauseButton.innerHTML = playIcon; // Change icon to play
+        playPauseButton1.innerHTML = playIcon; // Change icon to play
       }
     });
   </script>
