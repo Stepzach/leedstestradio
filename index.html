@@ -534,11 +534,11 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
         <div class="custom-subtitle">LSR Stream</div>
            <div class="audio-player-container1">
     <!-- Play/Pause button -->
-    <button id="playPauseButton">
+    <button id="playPauseButton1">
       <i class="fas fa-play"></i> <!-- Play icon initially -->
     </button>
     <!-- Audio element for the live stream -->
-    <audio id="livestream1" preload="auto">
+    <audio id="livestream1" preload="none">
       <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg"> <!-- Replace with actual live stream URL -->
       Your browser does not support the audio element.
     </audio>
@@ -560,7 +560,7 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     </div>
   </div> </lol></div>
                 <script>
-    const playPauseButton = document.getElementById('playPauseButton');
+    const playPauseButton = document.getElementById('playPauseButton1');
     const livestream1 = document.getElementById('livestream1');
     const playIcon = '<i class="fas fa-play"></i>';
     const pauseIcon = '<i class="fas fa-pause"></i>';
