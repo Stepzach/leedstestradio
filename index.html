@@ -679,6 +679,7 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
             </style>
         <script>
   // Get current time and day in GMT
+ function updateOnAirStatus() {
   const now = new Date();
   const currentHour = now.getUTCHours(); // GMT hour
   const currentDay = now.getUTCDay();   // GMT day (0 = Sunday, 1 = Monday, ...)
@@ -688,6 +689,9 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
 
   // Get all table rows
   const rows = document.querySelectorAll("tbody tr");
+
+  // Remove existing 'on-air' class from all cells
+  document.querySelectorAll(".on-air").forEach(cell => cell.classList.remove("on-air"));
 
   // Loop through the rows to find the matching time slot
   rows.forEach(row => {
@@ -705,6 +709,24 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
       }
     }
   });
+}
+
+// Call the function immediately to update on page load
+updateOnAirStatus();
+
+// Set up an interval to refresh the logic every 2 minutes (120000ms)
+setInterval(updateOnAirStatus, 120000);
+
+// Utility function: Parse time in "hh:mm AM/PM" format to 24-hour format
+function parseTimeTo24Hour(time) {
+  const [timePart, meridiem] = time.split(" ");
+  let [hours, minutes] = timePart.split(":").map(Number);
+  
+  if (meridiem === "PM" && hours !== 12) hours += 12;
+  if (meridiem === "AM" && hours === 12) hours = 0;
+
+  return hours; // Only hours are used for comparison
+}
 
   // Function to convert 12-hour time (e.g., "09:00 AM") to 24-hour time (e.g., 9)
   function parseTimeTo24Hour(timeStr) {
