@@ -485,6 +485,21 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
       
     }
 
+       .audio-player-container2 {
+      position: ;
+      width: 95%;
+      height: 95%;
+      background-image: url(ddd); /* Replace with your background image URL */
+          background-size: cover; /* Ensure the image covers the box proportionally */
+  background-position: center; /* Center the image inside the box */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+      background-position: center;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
     .audio-player-container1 button {
       position: ;
       bottom: 20px;
@@ -547,6 +562,17 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
       </div>
       <div class="custom-box">
         <div class="custom-subtitle">Alternate Stream</div>
+            <div class="audio-player-container2">
+    <!-- Play/Pause button -->
+    <button id="playPauseButton1">
+      <i class="fas fa-play"></i> <!-- Play icon initially -->
+    </button>
+    <!-- Audio element for the live stream -->
+    <audio id="livestream2" preload="none">
+      <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg"> <!-- Replace with actual live stream URL -->
+      Your browser does not support the audio element.
+    </audio>
+  </div>
         <!-- Add content here -->
       </div>
       <div class="custom-box">
@@ -562,6 +588,22 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
                 <script>
     const playPauseButton10 = document.getElementById('playPauseButton1');
     const livestream10 = document.getElementById('livestream1');
+    const playIcon10 = '<i class="fas fa-play"></i>';
+    const pauseIcon10 = '<i class="fas fa-pause"></i>';
+
+    playPauseButton10.addEventListener('click', function() {
+      if (livestream10.paused) {
+        livestream10.play();
+        playPauseButton10.innerHTML = pauseIcon10; // Change icon to pause
+      } else {
+        livestream10.pause();
+        playPauseButton10.innerHTML = playIcon10; // Change icon to play
+      }
+    });
+
+
+    const playPauseButton10 = document.getElementById('playPauseButton1');
+    const livestream10 = document.getElementById('livestream2');
     const playIcon10 = '<i class="fas fa-play"></i>';
     const pauseIcon10 = '<i class="fas fa-pause"></i>';
 
