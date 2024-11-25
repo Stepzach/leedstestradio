@@ -203,7 +203,27 @@
       padding: 2px 5px;
       border-radius: 3px;
     }
- 
+  .day {
+    position: relative;
+  }
+
+  /* Media Query for Small Screens (Tablet and Below) */
+  @media (max-width: 1200px) {
+    .day::after {
+      content: attr(data-short); /* Show abbreviated day names */
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the abbreviated text */
+      color: #fff; /* Ensure text is visible */
+      font-size: inherit; /* Matches the table font size */
+    }
+
+    .day {
+      color: transparent; /* Hides the original text */
+    }
+  }
   </style>
            <body>
                 <div id="welcome" class="welcome">
@@ -231,13 +251,13 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
   <thead>
     <tr>
       <th style=" background-color: #a00000;  font:var(--small_mono); font-size:14px;">Time</th>
-      <th style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Monday</th>
-      <th style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Tuesday</th>
-      <th style=" background-color: #a00000;font-size: clamp(10px, 2vw, 19px)">Wednesday</th>
-      <th style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Thursday</th>
-      <th style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Friday</th>
-      <th style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Saturday</th>
-      <th style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Sunday</th>
+      <th class="day" data-short="Mon" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Monday</th>
+      <th class="day" data-short="Tue" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Tuesday</th>
+      <th class="day" data-short="Wed" style=" background-color: #a00000;font-size: clamp(10px, 2vw, 19px)">Wednesday</th>
+      <th class="day" data-short="Thu" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Thursday</th>
+      <th class="day" data-short="Fri" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Friday</th>
+      <th class="day" data-short="Sat" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Saturday</th>
+      <th class="day" data-short="Sun" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Sunday</th>
     </tr>
   </thead>
   <tbody>
@@ -252,7 +272,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
       <td></td>
     </tr>
     <tr>
-      <td style=" background-color: #a00000;">10:00 AM - 11:00 AM</td>
+      <td style=" background-color: #a00000;">10:00AM - 11:00AM</td>
       <td style="background-color: #df3b00">Breakfast</td>
       <td style="background-color: #df3b00">Breakfast</td>
       <td style="background-color: #df3b00">Breakfast</td>
