@@ -39,7 +39,7 @@
         
 
 <div class="header-mobile">
-   <div class="audio-container">
+  <div class="audio-container">
     <audio class="livestream" preload="none">
         <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -54,11 +54,11 @@
         </svg>
         <span class="hover-effect" style="color: #fff;">Tune In</span>
     </button>
-</div>
+  </div>
+
   <!-- Logo in the Center -->
   <div class="header-logo">
     <img src="LSR Logo.png.webp" alt="Logo" class="logo-img">
-   
   </div>
 
   <!-- Right-side Menu Button (only visible on smaller screens) -->
@@ -141,132 +141,110 @@
 
         <style>
 /* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-/* Hide the mobile header by default (above 1000px) */
-.header-mobile {
-  display: none;
-}
-
-/* Mobile Header Styles (only visible on smaller screens) */
-@media (max-width: 930px) {
+  /* Hide the mobile header by default (above 1000px) */
   .header-mobile {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #bb0c0c;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 1000;
-    border-bottom: solid 1px #fff;
-  }
-
-  /* Left Play Button */
-  .play-buttonsos {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the button and text */
-  }
-
-  .audio-buttonsos {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-  }
-
-  .iconsos {
-    width: 24px;
-    height: 24px;
-    fill: #fff;
-    margin-right: 10px;
-  }
-
-  .audio-buttonsos span {
-    font-size: 14px;
-  }
-
-  /* Tune In Text Below the Button */
-  .tune-in-text {
-    color: #fff;
-    font-size: 14px;
-    margin-top: 5px; /* Space between button and text */
-  }
-
-  /* Center Logo */
-  .header-logo {
-    text-align: center;
-    flex-grow: 1;
-    margin-left: 10px;/* To provide space for the play button */
-  }
-
-  .logo-img {
-    height: 60px;
-    width: auto;
-    margin-top: -5px;
-  }
-
-  .logo-text {
-    font-size: 24px;
-    color: #fff;
-    font-weight: bold;
-  }
-
-  /* Right Menu Button */
-  .menu-button {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .menu-toggle-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    font-size: 24px;
-  }
-
-  /* Dropdown Menu (Hidden by default) */
-  #dropdown-menu {
     display: none;
-    background-color: #bb0c0c;
-    position: fixed;
-    top: 60px; /* Position below the header */
-    left: 0;
-    right: 0;
-    padding: 20px;
-    z-index: 999;
   }
 
-  #dropdown-menu a {
-    display: block;
-    color: white;
-    padding: 10px 0;
-    text-decoration: none;
-    font-size: 18px;
-  }
+  /* Mobile Header Styles (only visible on smaller screens) */
+  @media (max-width: 930px) {
+    .header-mobile {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #bb0c0c;
+      justify-content: space-between; /* Ensure elements are spaced out */
+      align-items: center;
+      padding: 10px 20px;
+      z-index: 1000;
+      border-bottom: solid 1px #fff;
+    }
 
-  #dropdown-menu a:hover {
-    background-color: #9b0a0a;
-  }
-}
+    /* Center Logo */
+    .header-logo {
+      display: flex;
+      justify-content: center;
+      flex: 1;  /* Ensure the logo stays centered */
+      margin-left: 10px;
+    }
 
+    .logo-img {
+      height: 60px;
+      width: auto;
+      margin-top: -5px;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* Left Play Button */
+    .audio-container {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .audio-button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Right Menu Button */
+    .menu-button {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .menu-toggle-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 24px;
+    }
+
+    /* Dropdown Menu (Hidden by default) */
+    #dropdown-menu {
+      display: none;
+      background-color: #bb0c0c;
+      position: fixed;
+      top: 60px; /* Position below the header */
+      left: 0;
+      right: 0;
+      padding: 20px;
+      z-index: 999;
+    }
+
+    #dropdown-menu a {
+      display: block;
+      color: white;
+      padding: 10px 0;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    #dropdown-menu a:hover {
+      background-color: #9b0a0a;
+    }
+  }
 </style>
         <script>
 // Ensure the dropdown menu is hidden initially
