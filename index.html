@@ -39,27 +39,25 @@
         
 
 <div class="header-mobile">
-     <div class="audio-container">
-    <audiosos id="livestreamsos" preload="none">
+    <div class="audio-container">
+    <audio class="livestream" preload="none">
         <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
         Your browser does not support the audio element.
-    </audiosos>
-  <!-- Left-side Play/Tune In Button -->
-  <div class="play-buttonsos">
-    <button id="audio-buttonsos" class="audio-buttonsos">
-      <!-- Play Icon -->
-      <svg id="play-iconsos" class="iconsos" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 5v14l11-7z"></path>
-      </svg>
-      <!-- Pause Icon (Hidden by default) -->
-      <svg id="pause-iconsos" class="iconsos" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
-      </svg>
+    </audio>
+
+    <!-- Play/Pause Button -->
+    <button class="audio-button" style="margin-left: 20px;">
+        <!-- Play Icon -->
+        <svg class="play-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 5v14l11-7z"></path>
+        </svg>
+        <!-- Pause Icon (Hidden by default) -->
+        <svg class="pause-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+        </svg>
+        <span class="hover-effect" style="color: #fff;">Tune In</span>
     </button>
-    <!-- Tune In Text (below the button) -->
-    <span class="tune-in-text">Tune In</span>
-  </div>
-     </div>
+</div>
   <!-- Logo in the Center -->
   <div class="header-logo">
     <img src="LSR Logo.png.webp" alt="Logo" class="logo-img">
@@ -354,11 +352,10 @@ menuLinks.forEach(function(link) {
 
 <!-- JavaScript -->
 <script>
-    // JavaScript to toggle play/pause
-    const audio = document.getElementById('livestream');
-    const button = document.getElementById('audio-button');
-    const playIcon = document.getElementById('play-icon');
-    const pauseIcon = document.getElementById('pause-icon');
+   document.querySelectorAll('.audio-button').forEach(button => {
+    const audio = button.previousElementSibling;
+    const playIcon = button.querySelector('.play-icon');
+    const pauseIcon = button.querySelector('.pause-icon');
 
     button.addEventListener('click', () => {
         if (audio.paused) {
@@ -371,23 +368,8 @@ menuLinks.forEach(function(link) {
             pauseIcon.style.display = 'none';  // Hide Pause Icon
         }
     });
-     // JavaScript to toggle play/pause
-    const audiosos = document.getElementById('livestreamsos');
-    const buttonsos = document.getElementById('audio-buttonsos');
-    const playIconsos = document.getElementById('play-iconsos');
-    const pauseIconsos = document.getElementById('pause-iconsos');
+});
 
-    buttonsos.addEventListener('click', () => {
-        if (audiosos.paused) {
-            audiosos.play();
-            playIconsos.style.display = 'none';  // Hide Play Icon
-            pauseIconsos.style.display = 'block';  // Show Pause Icon
-        } else {
-            audiosos.pause();
-            playIconsos.style.display = 'block';  // Show Play Icon
-            pauseIconsos.style.display = 'none';  // Hide Pause Icon
-        }
-    });
 </script>
 
 <style>
