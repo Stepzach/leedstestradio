@@ -39,19 +39,16 @@
         
 
 <div class="header-mobile">
-    <div class="audio-container">
+   <div class="audio-container">
     <audio class="livestream" preload="none">
         <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Play/Pause Button -->
     <button class="audio-button" style="margin-left: 20px;">
-        <!-- Play Icon -->
         <svg class="play-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 5v14l11-7z"></path>
         </svg>
-        <!-- Pause Icon (Hidden by default) -->
         <svg class="pause-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
         </svg>
@@ -109,24 +106,24 @@
            <div data-v-2210cc27="" data-v-2a330032="" class="BarStream"><div data-v-2210cc27="" class="status hover"> 
              <div class="audio-container"><button data-v-2210cc27=""><span data-v-2210cc27="" class="icon-player-play">
     <!-- Audio Element -->
-    <audio id="livestream" preload="none">
+   
+    <audio class="livestream" preload="none">
         <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <!-- Play/Pause Button -->
-    <button id="audio-button" class="audio-button" style="margin-left: 20px;">
+    <button class="audio-button" style="margin-left: 20px;">
         <!-- Play Icon -->
-        <svg id="play-icon" class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg class="play-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 5v14l11-7z"></path>
         </svg>
         <!-- Pause Icon (Hidden by default) -->
-        <svg id="pause-icon" class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <svg class="pause-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
         </svg>
         <span class="hover-effect" style="color: #fff;">Tune In</span>
-  
-  </button>
+    </button>
 
 <div class="title">
    <div data-v-d239eb30="" data-v-2210cc27="" class="MarqueeConditional">
@@ -352,8 +349,9 @@ menuLinks.forEach(function(link) {
 
 <!-- JavaScript -->
 <script>
-   document.querySelectorAll('.audio-button').forEach(button => {
-    const audio = button.previousElementSibling;
+  document.querySelectorAll('.audio-button').forEach(button => {
+    // Get the audio and icon elements for this specific button
+    const audio = button.closest('.audio-container').querySelector('.livestream');
     const playIcon = button.querySelector('.play-icon');
     const pauseIcon = button.querySelector('.pause-icon');
 
