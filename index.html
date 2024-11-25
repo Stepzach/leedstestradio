@@ -31,6 +31,64 @@
       })(window, document, "clarity", "script", "j1xid1iq0r");</script>
     
     <meta charset="utf-8" data-vue-meta="true"><meta name="viewport" content="width=device-width, initial-scale=1" data-vue-meta="true"></head><body><noscript>&lt;strong&gt;We're sorry but lsr doesn't work properly without JavaScript enabled. Please enable it to continue.&lt;/strong&gt;</noscript>
+
+
+
+
+
+        
+
+<div class="header-mobile">
+  <!-- Left-side Play/Tune In Button -->
+  <div class="play-button">
+    <button id="audio-button" class="audio-button">
+      <!-- Play Icon -->
+      <svg id="play-icon" class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5v14l11-7z"></path>
+      </svg>
+      <!-- Pause Icon (Hidden by default) -->
+      <svg id="pause-icon" class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+      </svg>
+    </button>
+    <!-- Tune In Text (below the button) -->
+    <span class="tune-in-text">Tune In</span>
+  </div>
+
+  <!-- Logo in the Center -->
+  <div class="header-logo">
+    <img src="LSR Logo.png.webp" alt="Logo" class="logo-img">
+   
+  </div>
+
+  <!-- Right-side Menu Button (only visible on smaller screens) -->
+  <div class="menu-button">
+    <button id="menu-toggle" class="menu-toggle-btn">
+      <span class="menu-icon">☰</span> <!-- Hamburger icon -->
+    </button>
+  </div>
+</div>
+
+<!-- Dropdown Menu (Initially hidden) -->
+<div id="dropdown-menu" class="dropdown-menu">
+  <a href="#schedule">Schedule</a>
+  <a href="#listen">Listen</a>
+  <a href="#get-involved">Get Involved</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
        <div data-v-2a330032="" class="Header desktop a-hover" style=" position: fixed; top: 0;background-color: #bb0c0c;"><div data-v-2a330032="" class="header-holder" style=" position: fixed; top: 0;background-color: #bb0c0c;">
         
        <div class="header" data-page="welcome" style="cursor: pointer;"> <div data-v-2a330032="" class="header-logo"><img src="LSR Logo.png.webp" alt="LOGOO" position="fixed" style="width:auto !important; margin-top: -7px !important; height:60px !important; padding-left: 40px; padding-right: 30px;" ><a data-v-2a330032="" class="dublab-link active router-link-active" aria-current="page" style="width:auto !important; padding-left: 15px; padding-right: 40px; color: #fff !important">LSR</a></div></div><div data-v-2a330032="" class="header-stack"><div data-v-2a330032="" class="Navigation"><a data-v-2a330032="" href="/search" class="icon-search-sprite"><i class="fa fa-search" style="font-size:16px; color: white; margin-left: 25px"></i></a> <div class="header" data-page="page1" style="cursor: pointer;"><a data-v-2a330032="" class=""><span onclick="toggleColor(this)"data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px" class="hover-effect">
@@ -80,6 +138,149 @@
 <div class="spacer"></div></div></div></div></div> </span></span></span></button></button></button></div></div></div>
 
 <!-- CSS -->
+
+        <style>
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hide the mobile header by default (above 1000px) */
+.header-mobile {
+  display: none;
+}
+
+/* Mobile Header Styles (only visible on smaller screens) */
+@media (max-width: 1000px) {
+  .header-mobile {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #bb0c0c;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+
+  /* Left Play Button */
+  .play-button {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the button and text */
+  }
+
+  .audio-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    margin-right: 10px;
+  }
+
+  .audio-button span {
+    font-size: 14px;
+  }
+
+  /* Tune In Text Below the Button */
+  .tune-in-text {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 5px; /* Space between button and text */
+  }
+
+  /* Center Logo */
+  .header-logo {
+    text-align: center;
+    flex-grow: 1;
+    margin-left: 10px;/* To provide space for the play button */
+  }
+
+  .logo-img {
+    height: 60px;
+    width: auto;
+    margin-top: -5px;
+  }
+
+  .logo-text {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  /* Right Menu Button */
+  .menu-button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .menu-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+  }
+
+  /* Dropdown Menu (Hidden by default) */
+  #dropdown-menu {
+    display: none;
+    background-color: #bb0c0c;
+    position: fixed;
+    top: 60px; /* Position below the header */
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 999;
+  }
+
+  #dropdown-menu a {
+    display: block;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  #dropdown-menu a:hover {
+    background-color: #9b0a0a;
+  }
+}
+
+</style>
+        <script>
+// JavaScript to toggle the dropdown menu when the menu button is clicked
+document.getElementById('menu-toggle').addEventListener('click', function() {
+  var dropdownMenu = document.getElementById('dropdown-menu');
+  
+  // Toggle the visibility of the dropdown menu
+  if (dropdownMenu.style.display === 'block') {
+    dropdownMenu.style.display = 'none';
+  } else {
+    dropdownMenu.style.display = 'block';
+  }
+});
+
+</script>
 <style>
 /* General Reset */
 .audio-container {
