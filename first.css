@@ -590,7 +590,7 @@ a.active span[data-v-2a330032], a.router-link-active[data-v-2a330032]:not([href=
 }
 
 .footer-box-middle[data-v-41749928], .footer-box[data-v-41749928] {
-    height: 200px;
+    height: 150px;
     border-top: 1px solid #f3d2d0;
     border-right: 1px solid #f3d2d0;
     font:var(--small_mono)
@@ -617,7 +617,7 @@ a.active span[data-v-2a330032], a.router-link-active[data-v-2a330032]:not([href=
 }
 
 .footer-box[data-v-41749928]:last-child {
-    height: 200px;
+    height: 150px;
     width: 43%;
     font: var(--small_mono);
     border-top: 1px solid #f3d2d0;
