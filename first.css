@@ -638,7 +638,7 @@ a.active span[data-v-2a330032], a.router-link-active[data-v-2a330032]:not([href=
     margin-top:.4rem
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
     .footer-box-middle[data-v-41749928], .footer-box[data-v-41749928]:last-child {
         display:none
     }
