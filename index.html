@@ -460,30 +460,35 @@ menuLinks.forEach(function(link) {
                 display: block;
             }
         }
-.live-circle {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: green;
-    animation: pulse 1.5s infinite;
-    margin-left: 10px; /* Space between the show name and the circle */
+.live-now-circle {
+    width: 12px;  /* Circle size */
+    height: 12px;  /* Circle size */
+    background-color: green;  /* Green color */
+    border-radius: 50%;  /* Makes the circle shape */
+    display: inline-block;  /* Keeps it inline with the text */
+    margin-right: 10px;  /* Adds space between the circle and text */
+    vertical-align: middle;  /* Ensures vertical alignment with the text */
+    
+    /* Pulsing animation */
+    animation: pulse 1.5s infinite ease-in-out;
 }
 
-/* Pulse animation for the green circle */
+/* Animation for the pulsing effect */
 @keyframes pulse {
     0% {
-        transform: scale(1);
-        opacity: 1;
+        transform: scale(1);   /* Starting size */
+        opacity: 1;  /* Full opacity */
     }
     50% {
-        transform: scale(1.5);
-        opacity: 0.7;
+        transform: scale(1.2);  /* Grow to 120% of its size */
+        opacity: 0.6;  /* Fade to 60% opacity */
     }
     100% {
-        transform: scale(1);
-        opacity: 1;
+        transform: scale(1);   /* Return to original size */
+        opacity: 1;  /* Full opacity again */
     }
 }
+
   </style>
            <body>
                 <div id="welcome" class="welcome">
@@ -541,125 +546,125 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
         <div class="mobile-schedule-grid">
             <!-- Monday -->
             <div class="mobile-day-header">Monday</div>
-            <div class="mobile-time-slot" data-day="Monday" data-time="9:00am" style=" background-color: #df3b00;">9-10am: Breakfast</div>
-            <div class="mobile-time-slot" data-day="Monday" data-time="10:00am" style=" background-color: #df3b00;">10-11am: Breakfast</div>
-            <div class="mobile-time-slot" data-day="Monday" data-time="11:00am" style=" background-color: #">11-12pm: Big Names on Campus / Chattergories</div>
-             <div class="mobile-time-slot" data-day="Monday" data-time="12:00pm" style=" background-color: #">12-1pm: The Birth of the Beat</div>
-            <div class="mobile-time-slot" data-day="Monday" data-time="1:00pm" style=" background-color: #">1-2pm: Sidilicious Selects</div>
-            <div class="mobile-time-slot" data-day="Monday" data-time="2:00pm" style="background-color: #4a786e">2-3pm: SPORT</div>
-              <div class="mobile-time-slot" data-day="Monday" data-time="3:00pm" style="background-color: #ce3c85">3-4pm: LGBTQ+ Show</div>
-            <div class="mobile-time-slot" data-day="Monday" data-time="4:00pm" style=" background-color: #">4-5pm: The More You Know (Show)</div>
-            <div class="mobile-time-slot"  data-day="Monday" data-time="5:00pm" style="background-color: #2e446d">5-6pm: HOMETIME</div>
-              <div class="mobile-time-slot" data-day="Monday"  data-time="6:00pm" style="background-color: #2e446d">6-7pm: HOMETME</div>
-            <div class="mobile-time-slot"  data-day="Monday" data-time="7:00pm" style="background-color: #4b4a2e">7-8pm: Live and Local</div>
-            <div class="mobile-time-slot" data-day="Monday" data-time="8:00pm" style="background-color: #4b4a2e">6-9pm: Rock and Punk</div>
-              <div class="mobile-time-slot" data-day="Monday" data-time="9:00pm" style=" background-color: #">9-10pm: Dad Music for Girls</div>
-            <div class="mobile-time-slot"  data-day="Monday" data-time="10:00pm" style=" background-color: #">10-11pm: Uni Music Library Finds</div>
-            <div class="mobile-time-slot" data-day="Monday" data-time="11:00pm" style=" background-color: #">11-12am: Spiritual Guide</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="9:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>9-10am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="10:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>10-11am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="11:00am" style=" background-color: #"><div class="live-now-circle"></div>11-12pm: Big Names on Campus / Chattergories</div>
+             <div class="mobile-time-slot" data-day="Monday" data-time="12:00pm" style=" background-color: #"><div class="live-now-circle"></div>12-1pm: The Birth of the Beat</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="1:00pm" style=" background-color: #"><div class="live-now-circle"></div>1-2pm: Sidilicious Selects</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="2:00pm" style="background-color: #4a786e"><div class="live-now-circle"></div>2-3pm: SPORT</div>
+              <div class="mobile-time-slot" data-day="Monday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: LGBTQ+ Show</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="4:00pm" style=" background-color: #"><div class="live-now-circle"></div>4-5pm: The More You Know (Show)</div>
+            <div class="mobile-time-slot"  data-day="Monday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
+              <div class="mobile-time-slot" data-day="Monday"  data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETME</div>
+            <div class="mobile-time-slot"  data-day="Monday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Live and Local</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>6-9pm: Rock and Punk</div>
+              <div class="mobile-time-slot" data-day="Monday" data-time="9:00pm" style=" background-color: #"><div class="live-now-circle"></div>9-10pm: Dad Music for Girls</div>
+            <div class="mobile-time-slot"  data-day="Monday" data-time="10:00pm" style=" background-color: #"><div class="live-now-circle"></div>10-11pm: Uni Music Library Finds</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="11:00pm" style=" background-color: #"><div class="live-now-circle"></div>11-12am: Spiritual Guide</div>
             <!-- More time slots for Monday -->
             
             <!-- Tuesday -->
             <div class="mobile-day-header">Tuesday</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="9:00am" style=" background-color: #df3b00;">9-10am: Breakfast</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="10:00am" style=" background-color: #df3b00;">10-11am: Breakfast</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="11:00am" >11-12pm: What's Poppin!?</div>
-             <div class="mobile-time-slot" data-day="Tuesday"  data-time="12:00pm">12-1pm: The Girls got Guts</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="1:00pm">1-2pm: Taylor's Version / The Lame Show</div>
-            <div class="mobile-time-slot" data-day="Tuesday"  data-time="2:00pm">2-3pm: Your LeedsList / And That's What You Missed On Glee</div>
-              <div class="mobile-time-slot" data-day="Tuesday" data-time="3:00pm" style="background-color: #ce3c85">3-4pm: Women's Hour</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="4:00pm">4-5pm: Golden Hour / I'm Just a Girl</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="5:00pm" style="background-color: #2e446d">5-6pm: HOMETIME</div>
-              <div class="mobile-time-slot" data-day="Tuesday" data-time="6:00pm" style="background-color: #2e446d">6-7pm: HOMETIME</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="7:00pm" style="background-color: #4b4a2e">7-8pm: Jazz, Funk and Soul</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="8:00pm" style="background-color: #4b4a2e">6-9pm: Two Cents and Nonsense</div>
-              <div class="mobile-time-slot" data-day="Tuesday" data-time="9:00pm" >9-10pm: Politics of Punk / Time Machine</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="10:00pm">10-11pm: Thank you for the Music</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="11:00pm">11-12am: Jungle Gems with Mylania</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="9:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>9-10am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="10:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>10-11am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="11:00am" ><div class="live-now-circle"></div>11-12pm: What's Poppin!?</div>
+             <div class="mobile-time-slot" data-day="Tuesday"  data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: The Girls got Guts</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="1:00pm"><div class="live-now-circle"></div>1-2pm: Taylor's Version / The Lame Show</div>
+            <div class="mobile-time-slot" data-day="Tuesday"  data-time="2:00pm"><div class="live-now-circle"></div>2-3pm: Your LeedsList / And That's What You Missed On Glee</div>
+              <div class="mobile-time-slot" data-day="Tuesday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: Women's Hour</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="4:00pm"><div class="live-now-circle"></div>4-5pm: Golden Hour / I'm Just a Girl</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
+              <div class="mobile-time-slot" data-day="Tuesday" data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Jazz, Funk and Soul</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>6-9pm: Two Cents and Nonsense</div>
+              <div class="mobile-time-slot" data-day="Tuesday" data-time="9:00pm" ><div class="live-now-circle"></div>9-10pm: Politics of Punk / Time Machine</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="10:00pm"><div class="live-now-circle"></div>10-11pm: Thank you for the Music</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="11:00pm"><div class="live-now-circle"></div>11-12am: Jungle Gems with Mylania</div>
             
              <div class="mobile-day-header">Wednesday</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="9:00am" style=" background-color: #df3b00;">9-10am: Breakfast</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="10:00am" style=" background-color: #df3b00;">10-11am: Breakfast</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="11:00am">11-12pm: Sounds of the Sahara</div>
-             <div class="mobile-time-slot" data-day="Wednesday" data-time="12:00pm" style="background-color: #668120">12-1pm: SOCIETY SPOTLIGHT</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="1:00pm">1-2pm: LSTV.MP3 / GRYPH-ON-AIR</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="2:00pm">2-3pm: Life Lessons with Liv and Laura</div>
-              <div class="mobile-time-slot" data-day="Wednesday" data-time="3:00pm" style="background-color: #ce3c85">3-4pm: Politics Hour</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="4:00pm">4-5pm: Happy Hour</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="5:00pm" style="background-color: #2e446d">5-6pm: HOMETIME</div>
-              <div class="mobile-time-slot" data-day="Wednesday" data-time="6:00pm" style="background-color: #2e446d">6-7pm: HOMETIME</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="7:00pm" style="background-color: #4b4a2e">7-8pm: Afrobeats</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="8:00pm" style="background-color: #4b4a2e">8-9pm: International</div>
-              <div class="mobile-time-slot" data-day="Wednesday" data-time="9:00pm">9-10pm: Antagonising Aunts</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="10:00pm">10-11pm: Low-Key with Rivah</div>
-            <div class="mobile-time-slot" data-day="Wednesday" data-time="11:00pm">11-12am: Disco Hour</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="9:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>9-10am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="10:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>10-11am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="11:00am"><div class="live-now-circle"></div>11-12pm: Sounds of the Sahara</div>
+             <div class="mobile-time-slot" data-day="Wednesday" data-time="12:00pm" style="background-color: #668120"><div class="live-now-circle"></div>12-1pm: SOCIETY SPOTLIGHT</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="1:00pm"><div class="live-now-circle"></div>1-2pm: LSTV.MP3 / GRYPH-ON-AIR</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="2:00pm"><div class="live-now-circle"></div>2-3pm: Life Lessons with Liv and Laura</div>
+              <div class="mobile-time-slot" data-day="Wednesday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: Politics Hour</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="4:00pm"><div class="live-now-circle"></div>4-5pm: Happy Hour</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
+              <div class="mobile-time-slot" data-day="Wednesday" data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Afrobeats</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>8-9pm: International</div>
+              <div class="mobile-time-slot" data-day="Wednesday" data-time="9:00pm"><div class="live-now-circle"></div>9-10pm: Antagonising Aunts</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="10:00pm"><div class="live-now-circle"></div>10-11pm: Low-Key with Rivah</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="11:00pm"><div class="live-now-circle"></div>11-12am: Disco Hour</div>
             
              <div class="mobile-day-header">Thursday</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="9:00am" style=" background-color: #df3b00;">9-10am: Breakfast</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="10:00am" style=" background-color: #df3b00;">10-11am: Breakfast</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="11:00am">11-12pm: Vanity Unfair's Oscar Party / Last Days of Disco</div>
-             <div class="mobile-time-slot" data-day="Thursday" data-time="12:00pm">12-1pm: Barricade</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="1:00pm">1-2pm: Never been a BNOC</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="2:00pm">2-3pm: The Longest Leg / Continental Buffet</div>
-              <div class="mobile-time-slot" data-day="Thursday" data-time="3:00pm" style="background-color: #ce3c85">3-4pm: Safe Space</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="4:00pm">4-5pm: Waffle House / The Tea Party</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="5:00pm" style="background-color: #2e446d">5-6pm: HOMETIME</div>
-              <div class="mobile-time-slot" data-day="Thursday" data-time="6:00pm" style="background-color: #2e446d">6-7pm: HOMETIME</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="7:00pm" style="background-color: #4b4a2e">7-8pm: Folk and Country</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="8:00pm" style="background-color: #4b4a2e">8-9pm: Indie and Alt</div>
-              <div class="mobile-time-slot" data-day="Thursday" data-time="9:00pm">9-10pm: Wisecrack</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="10:00pm">10-11pm: Garcia's Weekly Round Up</div>
-            <div class="mobile-time-slot" data-day="Thursday" data-time="11:00pm">11-12am: Beatscape</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="9:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>9-10am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="10:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>10-11am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="11:00am"><div class="live-now-circle"></div>11-12pm: Vanity Unfair's Oscar Party / Last Days of Disco</div>
+             <div class="mobile-time-slot" data-day="Thursday" data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: Barricade</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="1:00pm"><div class="live-now-circle"></div>1-2pm: Never been a BNOC</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="2:00pm"><div class="live-now-circle"></div>2-3pm: The Longest Leg / Continental Buffet</div>
+              <div class="mobile-time-slot" data-day="Thursday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: Safe Space</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="4:00pm"><div class="live-now-circle"></div>4-5pm: Waffle House / The Tea Party</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
+              <div class="mobile-time-slot" data-day="Thursday" data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Folk and Country</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>8-9pm: Indie and Alt</div>
+              <div class="mobile-time-slot" data-day="Thursday" data-time="9:00pm"><div class="live-now-circle"></div>9-10pm: Wisecrack</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="10:00pm"><div class="live-now-circle"></div>10-11pm: Garcia's Weekly Round Up</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="11:00pm"><div class="live-now-circle"></div>11-12am: Beatscape</div>
             
              <div class="mobile-day-header">Friday</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="9:00am" style=" background-color: #df3b00;">9-10am: Breakfast</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="10:00am" style=" background-color: #df3b00;">10-11am: Breakfast</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="11:00am" >11-12pm: M&P Megamix</div>
-             <div class="mobile-time-slot" data-day="Friday" data-time="12:00pm" >12-1pm: Babe</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="1:00pm" style="background-color: #668120">1-2pm: News of the Week</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="2:00pm" style="background-color: #4a786e">2-3pm: SPORT</div>
-              <div class="mobile-time-slot" data-day="Friday" data-time="3:00pm" style="background-color: #ce3c85">3-4pm: 'But where are you really from?'</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="4:00pm" >4-5pm: Girlhood</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="5:00pm" style="background-color: #2e446d">5-6pm: HOMETIME</div>
-              <div class="mobile-time-slot" data-day="Friday" data-time="6:00pm" style="background-color: #2e446d">6-7pm: HOMETIME</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="7:00pm" style="background-color: #4b4a2e">7-8pm: Hip-Hop, Rap & RnB</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="8:00pm" style="background-color: #4b4a2e">8-9pm: Electronic</div>
-              <div class="mobile-time-slot" data-day="Friday" data-time="9:00pm" >9-10pm: The Midwest Emo Hour</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="10:00pm" >10-11pm: Behind the Beat (biweekly)</div>
-            <div class="mobile-time-slot" data-day="Friday" data-time="11:00pm" >11-12am: Crank Wave</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="9:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>9-10am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="10:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>10-11am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="11:00am" ><div class="live-now-circle"></div>11-12pm: M&P Megamix</div>
+             <div class="mobile-time-slot" data-day="Friday" data-time="12:00pm" ><div class="live-now-circle"></div>12-1pm: Babe</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="1:00pm" style="background-color: #668120"><div class="live-now-circle"></div>1-2pm: News of the Week</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="2:00pm" style="background-color: #4a786e"><div class="live-now-circle"></div>2-3pm: SPORT</div>
+              <div class="mobile-time-slot" data-day="Friday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: 'But where are you really from?'</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="4:00pm" ><div class="live-now-circle"></div>4-5pm: Girlhood</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
+              <div class="mobile-time-slot" data-day="Friday" data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Hip-Hop, Rap & RnB</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>8-9pm: Electronic</div>
+              <div class="mobile-time-slot" data-day="Friday" data-time="9:00pm" ><div class="live-now-circle"></div>9-10pm: The Midwest Emo Hour</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="10:00pm" ><div class="live-now-circle"></div>10-11pm: Behind the Beat (biweekly)</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="11:00pm" ><div class="live-now-circle"></div>11-12am: Crank Wave</div>
             
              <div class="mobile-day-header">Saturday</div>
-            <div class="mobile-time-slot" data-day="Saturday" data-time="9:00am">9-10am: </div>
-            <div class="mobile-time-slot" data-day="Saturday" data-time="10:00am" style="background-color: #870665">10-11am: Leeds, Whats Happening?</div>
-            <div class="mobile-time-slot" data-day="Saturday" data-time="11:00am">11-12pm: LSR Out N About</div>
-             <div class="mobile-time-slot" data-day="Saturday" data-time="12:00pm">12-1pm: Box! Box! Box!</div>
-            <div class="mobile-time-slot"  data-day="Saturday" data-time="1:00pm" >1-2pm: </div>
-            <div class="mobile-time-slot" data-day="Saturday" data-time="2:00pm" >2-3pm: (Not So) Dumb Blondes</div>
-              <div class="mobile-time-slot" data-day="Saturday" data-time="3:00pm"  style="background-color: #4a786e">3-4pm: Soccer Punch</div>
-            <div class="mobile-time-slot"  data-day="Saturday" data-time="4:00pm" style="background-color: #4a786e">4-5pm: Soccer Punch</div>
-            <div class="mobile-time-slot" data-day="Saturday" data-time="5:00pm" >5-6pm: BA Honoured To Be Music</div>
-              <div class="mobile-time-slot" data-day="Saturday" data-time="6:00pm" >6-7pm: It Takes a Village</div>
-            <div class="mobile-time-slot"  data-day="Saturday" data-time="7:00pm" style="background-color: #870665">7-8pm: Saturday Night Fever</div>
-              <div class="mobile-time-slot"  data-day="Saturday" data-time="8:00pm" style="background-color: #870665">8-9pm: Saturday Night Fever</div>
-            <div class="mobile-time-slot"  data-day="Saturday" data-time="9:00pm" >9-10pm: After Hours</div>
-            <div class="mobile-time-slot" data-day="Saturday" data-time="10:00pm" >10-11pm: Tjaro x LSR</div>
-               <div class="mobile-time-slot"  data-day="Saturday" data-time="11:00pm" >11-12am: Prog Ho!</div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="9:00am"><div class="live-now-circle"></div>9-10am: </div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="10:00am" style="background-color: #870665"><div class="live-now-circle"></div>10-11am: Leeds, Whats Happening?</div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="11:00am"><div class="live-now-circle"></div>11-12pm: LSR Out N About</div>
+             <div class="mobile-time-slot" data-day="Saturday" data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: Box! Box! Box!</div>
+            <div class="mobile-time-slot"  data-day="Saturday" data-time="1:00pm" ><div class="live-now-circle"></div>1-2pm: </div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="2:00pm" ><div class="live-now-circle"></div>2-3pm: (Not So) Dumb Blondes</div>
+              <div class="mobile-time-slot" data-day="Saturday" data-time="3:00pm"  style="background-color: #4a786e"><div class="live-now-circle"></div>3-4pm: Soccer Punch</div>
+            <div class="mobile-time-slot"  data-day="Saturday" data-time="4:00pm" style="background-color: #4a786e"><div class="live-now-circle"></div>4-5pm: Soccer Punch</div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="5:00pm" ><div class="live-now-circle"></div>5-6pm: BA Honoured To Be Music</div>
+              <div class="mobile-time-slot" data-day="Saturday" data-time="6:00pm" ><div class="live-now-circle"></div>6-7pm: It Takes a Village</div>
+            <div class="mobile-time-slot"  data-day="Saturday" data-time="7:00pm" style="background-color: #870665"><div class="live-now-circle"></div>7-8pm: Saturday Night Fever</div>
+              <div class="mobile-time-slot"  data-day="Saturday" data-time="8:00pm" style="background-color: #870665"><div class="live-now-circle"></div>8-9pm: Saturday Night Fever</div>
+            <div class="mobile-time-slot"  data-day="Saturday" data-time="9:00pm" ><div class="live-now-circle"></div>9-10pm: After Hours</div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="10:00pm" ><div class="live-now-circle"></div>10-11pm: Tjaro x LSR</div>
+               <div class="mobile-time-slot"  data-day="Saturday" data-time="11:00pm" ><div class="live-now-circle"></div>11-12am: Prog Ho!</div>
             
              <div class="mobile-day-header">Sunday</div>
-            <div class="mobile-time-slot" data-day="Sunday" data-time="9:00am" >9-10am: </div>
-            <div class="mobile-time-slot" data-day="Sunday" data-time="10:00am">10-11am: Old, New, Borrowed, Blue</div>
-            <div class="mobile-time-slot" data-day="Sunday" data-time="11:00am">11-12pm: Jamie Goes to Mollywood</div>
-             <div class="mobile-time-slot" data-day="Sunday" data-time="12:00pm">12-1pm: My Records / Creme de la Creme</div>
-            <div class="mobile-time-slot"  data-day="Sunday" data-time="1:00pm" style="background-color: #870665">1-2pm: Box Office</div>
-            <div class="mobile-time-slot"  data-day="Sunday" data-time="2:00pm" style="background-color: #ce3c85">2-3pm: SRA Chart Show</div>
-              <div class="mobile-time-slot"  data-day="Sunday" data-time="3:00pm" style="background-color: #ce3c85">3-4pm: SRA Chart Show</div>
-            <div class="mobile-time-slot"  data-day="Sunday" data-time="4:00pm" style="background-color: #870665">4-5pm: SUNDAY ROAST</div>
-            <div class="mobile-time-slot"   data-day="Sunday" data-time="5:00pm" style="background-color: #870665">5-6pm: SUNDAY ROAST</div>
-              <div class="mobile-time-slot"  data-day="Sunday" data-time="6:00pm" >6-7pm: Syke Up your Life / The Vinyl Frontier</div>
-            <div class="mobile-time-slot"  data-day="Sunday" data-time="7:00pm" style="background-color: #4b4a2e">7-8pm: Album Review</div>
-            <div class="mobile-time-slot"  data-day="Sunday" data-time="8:00pm" >8-9pm: Space Age Love Songs</div>
-              <div class="mobile-time-slot" data-day="Sunday" data-time="9:00pm" >9-10pm: Sleepytime Songs</div>
-            <div class="mobile-time-slot"  data-day="Sunday" data-time="10:00pm">10-11pm: The Label Show</div>
-            <div class="mobile-time-slot" data-day="Sunday" data-time="11:00pm">11-12am: EKBeats</div>
+            <div class="mobile-time-slot" data-day="Sunday" data-time="9:00am" ><div class="live-now-circle"></div>9-10am: </div>
+            <div class="mobile-time-slot" data-day="Sunday" data-time="10:00am"><div class="live-now-circle"></div>10-11am: Old, New, Borrowed, Blue</div>
+            <div class="mobile-time-slot" data-day="Sunday" data-time="11:00am"><div class="live-now-circle"></div>11-12pm: Jamie Goes to Mollywood</div>
+             <div class="mobile-time-slot" data-day="Sunday" data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: My Records / Creme de la Creme</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="1:00pm" style="background-color: #870665"><div class="live-now-circle"></div>1-2pm: Box Office</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="2:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>2-3pm: SRA Chart Show</div>
+              <div class="mobile-time-slot"  data-day="Sunday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: SRA Chart Show</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="4:00pm" style="background-color: #870665"><div class="live-now-circle"></div>4-5pm: SUNDAY ROAST</div>
+            <div class="mobile-time-slot"   data-day="Sunday" data-time="5:00pm" style="background-color: #870665"><div class="live-now-circle"></div>5-6pm: SUNDAY ROAST</div>
+              <div class="mobile-time-slot"  data-day="Sunday" data-time="6:00pm" ><div class="live-now-circle"></div>6-7pm: Syke Up your Life / The Vinyl Frontier</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Album Review</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="8:00pm" ><div class="live-now-circle"></div>8-9pm: Space Age Love Songs</div>
+              <div class="mobile-time-slot" data-day="Sunday" data-time="9:00pm" ><div class="live-now-circle"></div>9-10pm: Sleepytime Songs</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="10:00pm"><div class="live-now-circle"></div>10-11pm: The Label Show</div>
+            <div class="mobile-time-slot" data-day="Sunday" data-time="11:00pm"><div class="live-now-circle"></div>11-12am: EKBeats</div>
            
             <!-- More time slots for Tuesday -->
 
@@ -667,7 +672,45 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             <!-- ... -->
         </div>
     </div>
-   
+    <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    // Get the current date and time
+    const now = new Date();
+    
+    // Day names array to convert date object to day name
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+    // Get the current day and time
+    const currentDay = daysOfWeek[now.getDay()]; // Get current day of the week (e.g., "Monday")
+    
+    let currentHour = now.getHours();
+    let currentMinute = now.getMinutes();
+    
+    // Adjust for the 12-hour time format (AM/PM)
+    let timeString = currentHour % 12 === 0 ? "12:00" : currentHour % 12 + ":" + (currentMinute < 10 ? "0" : "") + currentMinute;
+    
+    // For 12-hour clock with AM/PM
+    let amPm = currentHour >= 12 ? "pm" : "am";
+    let formattedTime = timeString + amPm;  // Example: "9:00am", "2:00pm"
+    
+    // Loop through all time slots and hide/show circles
+    const timeSlots = document.querySelectorAll(".mobile-time-slot");
+    
+    timeSlots.forEach(function (slot) {
+        const slotDay = slot.getAttribute("data-day");  // Get the day from the slot
+        const slotTime = slot.getAttribute("data-time");  // Get the time from the slot
+        
+        // If the current day and time match the data attributes, show the circle
+        const circle = slot.querySelector(".live-now-circle");
+        
+        if (slotDay === currentDay && slotTime === formattedTime) {
+            circle.style.display = "inline-block";  // Show the circle
+        } else {
+            circle.style.display = "none";  // Hide the circle
+        }
+    });
+});
+    </script>
 <table>
   <thead>
     <tr>
