@@ -645,42 +645,46 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
     </div>
     <script>
 document.addEventListener("DOMContentLoaded", function () {
-    // Get the current date and time
     const now = new Date();
-    
-    // Day names array to convert date object to day name
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    
-    // Get the current day and time
-    const currentDay = daysOfWeek[now.getDay()]; // Get current day of the week (e.g., "Monday")
+
+    const currentDay = daysOfWeek[now.getDay()];  // Get current day of the week (e.g., "Monday")
     const currentHour = now.getHours();  // Get the current hour (0-23)
     const currentMinute = now.getMinutes(); // Get the current minute (0-59)
-    
-    // Loop through all time slots and hide/show circles
+
+    // Loop through each time slot to hide or show the live now circle
     const timeSlots = document.querySelectorAll(".mobile-time-slot");
-    
+
     timeSlots.forEach(function (slot) {
-        const slotDay = slot.getAttribute("data-day");  // Get the day from the slot
-        const slotTime = slot.getAttribute("data-time");  // Get the time from the slot (e.g., "9:00am")
-        
-        // Convert slotTime (e.g., "2:00pm") into 24-hour format and hour value for comparison
-        const slotTimeParts = slotTime.split(/(:|\s)/); // ["2", ":", "00", "pm"]
-        let slotHour = parseInt(slotTimeParts[0]); // Get the hour (e.g., 2 for "2:00pm")
-        const slotAmPm = slotTimeParts[3];  // Get am/pm
-        
-        // Adjust slotHour based on AM/PM format
+        const slotDay = slot.getAttribute("data-day");  // Day of the slot (e.g., "Sunday")
+        const slotTime = slot.getAttribute("data-time");  // Time of the slot (e.g., "9:00am")
+
+        // Convert slotTime (e.g., "2:00pm") into 24-hour format
+        const slotTimeParts = slotTime.split(/[:\s]/);  // ["2", "00", "pm"]
+        let slotHour = parseInt(slotTimeParts[0]);  // Get the hour (e.g., 2 from "2:00pm")
+        const slotAmPm = slotTimeParts[2];  // Get am/pm part
+
+        // Convert AM/PM to 24-hour format
         if (slotAmPm === "pm" && slotHour !== 12) {
             slotHour += 12;  // Convert to 24-hour format for PM (e.g., 2pm -> 14)
         } else if (slotAmPm === "am" && slotHour === 12) {
-            slotHour = 0;  // Midnight case (12am -> 0)
+            slotHour = 0;  // Convert 12am to 0 hours
         }
 
-        // Check if the current time matches the slot's day and hour
-        const isLiveNow = currentDay === slotDay && currentHour === slotHour && currentMinute >= 0 && currentMinute < 60;
+        // Check if the current time matches the slot's time range
+        const slotEndTime = slotHour + 1;  // The show lasts 1 hour, so we consider the next hour
         
+        let isLiveNow = false;
+
+        // If the current time falls within the time slot
+        if (currentDay === slotDay && currentHour === slotHour) {
+            // For the current hour, display the circle
+            isLiveNow = true;
+        }
+
+        // Get the live-now circle and hide or show based on the comparison
         const circle = slot.querySelector(".live-now-circle");
 
-        // Show the circle if the time slot matches the current hour and day
         if (isLiveNow) {
             circle.style.display = "inline-block";  // Show the live-now-circle
         } else {
