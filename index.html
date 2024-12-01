@@ -644,7 +644,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
         </div>
     </div>
     <script>
-   document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     // Get the current date and time
     const now = new Date();
     
@@ -654,13 +654,11 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
     // Get the current day and time
     const currentDay = daysOfWeek[now.getDay()]; // Get current day of the week (e.g., "Monday")
     
-    let currentHour = now.getHours();
-    let currentMinute = now.getMinutes();
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
     
-    // Adjust for the 12-hour time format (AM/PM)
+    // Get the current time string in 12-hour format with AM/PM (e.g., "9:00am", "2:00pm")
     let timeString = currentHour % 12 === 0 ? "12:00" : currentHour % 12 + ":" + (currentMinute < 10 ? "0" : "") + currentMinute;
-    
-    // For 12-hour clock with AM/PM
     let amPm = currentHour >= 12 ? "pm" : "am";
     let formattedTime = timeString + amPm;  // Example: "9:00am", "2:00pm"
     
@@ -671,16 +669,33 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
         const slotDay = slot.getAttribute("data-day");  // Get the day from the slot
         const slotTime = slot.getAttribute("data-time");  // Get the time from the slot
         
-        // If the current day and time match the data attributes, show the circle
-        const circle = slot.querySelector(".live-now-circle");
+        // Convert slotTime into hour and am/pm to compare with the current time
+        const slotHour = parseInt(slotTime.split(":")[0]);
+        const slotAmPm = slotTime.split(" ")[1]; // "am" or "pm"
         
-        if (slotDay === currentDay && slotTime === formattedTime) {
-            circle.style.display = "inline-block";  // Show the circle
+        // Adjust the hour value based on am/pm
+        let slotTimeAdjusted = slotHour;
+        if (slotAmPm === "pm" && slotHour !== 12) {
+            slotTimeAdjusted += 12;
+        } else if (slotAmPm === "am" && slotHour === 12) {
+            slotTimeAdjusted = 0; // midnight case
+        }
+
+        // If the current time is between the slot time and the next hour, show the circle
+        const nextHour = slotTimeAdjusted + 1;
+        
+        const isLiveNow = (currentDay === slotDay) && (currentHour === slotTimeAdjusted) && (currentMinute < 60); // If it's within the time range
+        
+        const circle = slot.querySelector(".live-now-circle");
+
+        if (isLiveNow) {
+            circle.style.display = "inline-block";  // Show the circle if within the current time
         } else {
-            circle.style.display = "none";  // Hide the circle
+            circle.style.display = "none";  // Hide the circle otherwise
         }
     });
 });
+
     </script>
 <table>
   <thead>
