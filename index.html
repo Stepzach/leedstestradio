@@ -1013,6 +1013,142 @@ setInterval(function () {
 
   <h1 style="text-align: center; color: #fff; font-size:25px;">Listen!<br></h1><br>
    <br>
+
+    <div class="mobile-container">
+  <!-- Header -->
+  
+
+  <!-- Content Section -->
+  <section class="mobile-content">
+    <!-- Live Stream Section -->
+    <div class="stream-section">
+      <h2>Live Streams</h2>
+      <div class="stream-box">
+        <h3>LSR Stream</h3>
+        <div class="audio-container" style="background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg');">
+          <button id="playPause1">
+            <i class="fas fa-play"></i>
+          </button>
+          <audio id="audio1" preload="none">
+            <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+      <div class="stream-box">
+        <h3>Alternate Stream</h3>
+        <div class="audio-container" style="background-image: url('IMG_4447.jpeg');">
+          <button id="playPause2">
+            <i class="fas fa-play"></i>
+          </button>
+          <audio id="audio2" preload="none">
+            <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </div>
+
+    <!-- Listen Back Section -->
+    <div class="listen-back-section">
+      <h2>Listen Back</h2>
+      <div class="platform-box">
+        <h3>SoundCloud</h3>
+        <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1926355118&color=%23e60e0e&auto_play=false"></iframe>
+        <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1443122512&color=%23e60e0e&auto_play=false"></iframe>
+      </div>
+      <div class="platform-box">
+        <h3>Spotify</h3>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6VfNkgblj7jN1umfJZE8t8?utm_source=generator&theme=0" width="100%" height="130" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen;"></iframe>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/5hz6Ae0W4twYoblsAtxEcF?utm_source=generator&theme=0" width="100%" height="130" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <footer class="disclaimer">
+    <p>
+      DISCLAIMER: Leeds Student Radio (LSR) provides students with the tools to learn journalistic practices as they go. Leeds University Union (LUU) is not liable for opinions or views expressed in this broadcast. Always use external, reputable sources for current affairs. Enjoy the show.
+    </p>
+  </footer>
+</div>
+
+<style>
+ 
+
+  .mobile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .mobile-header h1 {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .mobile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stream-section, .listen-back-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stream-box, .platform-box {
+    background-color: #a00000;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+  }
+
+  .audio-container button {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  
+
+  iframe {
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+  }
+
+  /* Hide content on larger screens */
+  @media screen and (min-width: 600px) {
+    .mobile-container {
+      display: none;
+    }
+  }
+      @media screen and (max-width: 600px) {
+    .desk-container {
+      display: none;
+    }
+  }
+</style>
+<div class="desk-container">
     <lol>
  <div class="custom-container">
     <!-- Titles Section -->
@@ -1075,7 +1211,7 @@ setInterval(function () {
  <div class="bruhbruh" style=" width: 80%;  justify-content: center; align-items: center;  display: flex; ">   
 <h2 style="text-align: center; color: #fff;   font-size: var(--small_mono); font:    var(--small_mono);">
 DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides students with the tools to learn journalistic practices as they go. Leeds University Union (LUU) is not liable for opinions or views expressed in this broadcast, which are also not necessarily reflective of LSR or LUU as whole organisations. Please do not take opinions expressed in the following broadcasts as fact, and always use external, reputable media sources to supplement discussions of current affairs on LSR. Enjoy the show. </h2>
- </div> </broski></div><br>
+ </div> </broski></div><br></div>
                 <script>
     const playPauseButton10 = document.getElementById('playPauseButton1');
     const livestream10 = document.getElementById('livestream1');
