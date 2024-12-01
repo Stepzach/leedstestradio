@@ -458,7 +458,20 @@ menuLinks.forEach(function(link) {
                 display: block;
             }
         }
-  
+
+    .unique-on-air {
+            position: relative;
+            border: 3px solid green;
+        }
+        .unique-on-air::before {
+            content: 'On Air';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            background-color: green;
+            color: white;
+            padding: 2px 5px;
+            font-weight: bold;
 
   </style>
            <body>
@@ -476,7 +489,56 @@ menuLinks.forEach(function(link) {
 </div></div>
                      </div>
 
+<script>
+        function getCurrentTimeInGMT() {
+            // Get the current time in GMT
+            const now = new Date();
+            const gmtHours = now.getUTCHours();
+            const gmtMinutes = now.getUTCMinutes();
+            return { hours: gmtHours, minutes: gmtMinutes };
+        }
 
+        function updateSchedule() {
+            const currentTime = getCurrentTimeInGMT();
+            const slots = document.querySelectorAll('.mobile-time-slot');
+            
+            slots.forEach(slot => {
+                const timeRangeText = slot.textContent.split(':')[0].trim();
+                const timeRange = timeRangeText.split('-');
+                const startTime = parseTime(timeRange[0]);
+                const endTime = parseTime(timeRange[1]);
+                
+                // Check if the current time is within this slot's time range
+                if (isTimeInRange(currentTime, startTime, endTime)) {
+                    slot.classList.add('unique-on-air');
+                } else {
+                    slot.classList.remove('unique-on-air');
+                }
+            });
+        }
+
+        function parseTime(timeString) {
+            const [hours, minutes] = timeString.split(':').map(Number);
+            return { hours, minutes };
+        }
+
+        function isTimeInRange(currentTime, startTime, endTime) {
+            // Check if the current time is within the start and end time
+            const currentMinutes = currentTime.hours * 60 + currentTime.minutes;
+            const startMinutes = startTime.hours * 60 + startTime.minutes;
+            const endMinutes = endTime.hours * 60 + endTime.minutes;
+            
+            // Adjust for crossing midnight (if the end time is earlier in the day)
+            return (currentMinutes >= startMinutes && currentMinutes < endMinutes) ||
+                   (startMinutes > endMinutes && (currentMinutes >= startMinutes || currentMinutes < endMinutes));
+        }
+
+        // Update the schedule every minute
+        setInterval(updateSchedule, 60000); // 60000ms = 1 minute
+
+        // Initial check when the page loads
+        updateSchedule();
+    </script>
 <div id="page1" class="content"> 
 <br><br><br> <br>
     <h1 style="text-align: center; color: #fff; font-size:25px;">Weekly Schedule: Semester 1 2024<br></h1>
