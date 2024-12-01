@@ -460,21 +460,30 @@ menuLinks.forEach(function(link) {
                 display: block;
             }
         }
- .on-air1 {
-            border: 3px solid green;
-            position: relative;
-        }
-        .on-air1::after {
-            content: "ON AIR";
-            position: absolute;
-            top: -20px;
-            right: 0;
-            background-color: green;
-            color: white;
-            padding: 5px;
-            font-weight: bold;
-        }
+.live-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+    animation: pulse 1.5s infinite;
+    margin-left: 10px; /* Space between the show name and the circle */
+}
 
+/* Pulse animation for the green circle */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
   </style>
            <body>
                 <div id="welcome" class="welcome">
@@ -490,6 +499,35 @@ menuLinks.forEach(function(link) {
 
 </div></div>
                      </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const now = new Date();
+    const currentDay = now.toLocaleString('en-us', { weekday: 'long' });  // e.g., "Monday"
+    const currentTime = now.getHours() * 100 + now.getMinutes();  // Time in "hhmm" format (24-hour)
+    
+    // Select all time slots
+    const timeSlots = document.querySelectorAll('.mobile-time-slot');
+
+    timeSlots.forEach(slot => {
+        const slotDay = slot.getAttribute('data-day');
+        const slotTime = slot.getAttribute('data-time');
+        
+        // Convert the slot time to "hhmm" format
+        const [hour, minute] = slotTime.split(':')[0].split('-')[0].split(/[apm]/)[0].split(' ').map(str => parseInt(str));
+        const slotTimeInMinutes = hour * 100 + minute;
+        
+        // Check if the current time is within the time slot's time range
+        if (currentDay === slotDay && currentTime >= slotTimeInMinutes && currentTime < slotTimeInMinutes + 100) {
+            // Create the live circle
+            const liveCircle = document.createElement('div');
+            liveCircle.classList.add('live-circle');
+            
+            // Append it to the time slot
+            slot.appendChild(liveCircle);
+        }
+    });
+});
+</script>
 
 
 <div id="page1" class="content"> 
@@ -629,57 +667,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             <!-- ... -->
         </div>
     </div>
-    <script>
-       // Convert 12-hour time (e.g., 9:00am) to 24-hour format (e.g., 9:00)
-        function convertTo24Hour(timeStr) {
-            const [time, period] = timeStr.split(' ');
-            let [hours, minutes] = time.split(':').map(Number);
-
-            // Convert to 24-hour format
-            if (period === 'pm' && hours !== 12) {
-                hours += 12;
-            } else if (period === 'am' && hours === 12) {
-                hours = 0;
-            }
-
-            return { hours, minutes };
-        }
-
-        // Get the current time and day in GMT
-        function getCurrentTimeGMT() {
-            const now = new Date();
-            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            const day = daysOfWeek[now.getUTCDay()]; // Get current day (Sunday = 0, Monday = 1, etc.)
-            const hours = now.getUTCHours();
-            const minutes = now.getUTCMinutes();
-            return { day, hours, minutes };
-        }
-
-        // Highlight the current time slot based on the day and time
-        function highlightCurrentSlot() {
-            const currentTime = getCurrentTimeGMT();
-            const timeSlots = document.querySelectorAll('.mobile-time-slot');
-            
-            timeSlots.forEach(slot => {
-                const slotDay = slot.getAttribute('data-day');
-                const timeStr = slot.getAttribute('data-time');
-                const slotTime = convertTo24Hour(timeStr);
-
-                // Compare day and time
-                if (slotDay === currentTime.day && slotTime.hours === currentTime.hours && slotTime.minutes === currentTime.minutes) {
-                    slot.classList.add('on-air1');
-                } else {
-                    slot.classList.remove('on-air1');
-                }
-            });
-        }
-
-        // Run the highlighting function when the page loads
-        window.onload = highlightCurrentSlot;
-
-        // Update every minute to check if the time slot needs to be updated
-        setInterval(highlightCurrentSlot, 60000);
-    </script>
+   
 <table>
   <thead>
     <tr>
