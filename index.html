@@ -672,11 +672,16 @@ document.addEventListener("DOMContentLoaded", function () {
             slotHour = 0;  // Convert 12am to 0 hours (midnight)
         }
 
-        // Check if the current time falls within this time slot
+        // Check if the current time matches the slot's time range
         let isLiveNow = false;
+        const slotStartTime = new Date(now);
+        slotStartTime.setHours(slotHour, 0, 0);  // Set the slot start time
 
-        // If the current time matches the slot's time (same hour)
-        if (currentDay === slotDay && currentHour === slotHour) {
+        const slotEndTime = new Date(now);
+        slotEndTime.setHours(slotHour + 1, 0, 0);  // Set the slot end time (1 hour later)
+
+        // Check if the current time is within the time range of this slot
+        if (currentDay === slotDay && now >= slotStartTime && now < slotEndTime) {
             isLiveNow = true;
         }
 
