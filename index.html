@@ -648,40 +648,43 @@ document.addEventListener("DOMContentLoaded", function () {
     const now = new Date();
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    // Get current day and time
+    // Get the current day and hour
     const currentDay = daysOfWeek[now.getDay()];
     const currentHour = now.getHours();
 
-    // Get all time slots
+    // Target only the elements with .mobile-time-slot
     const timeSlots = document.querySelectorAll(".mobile-time-slot");
 
-    timeSlots.forEach(function (slot) {
+    timeSlots.forEach(slot => {
         const slotDay = slot.getAttribute("data-day");
         const slotTime = slot.getAttribute("data-time");
 
-        // Parse the time and convert it into 24-hour number
+        // Parse the time to 24-hour format
         const timeParts = slotTime.split(/[:\s]/); // e.g., ["9", "00", "am"]
-        let slotHour = parseInt(timeParts[0]); // Hour in 12-hour format
-        const period = timeParts[2]; // AM or PM
+        let slotHour = parseInt(timeParts[0]);
+        const period = timeParts[2];
 
-        // Convert to 24-hour format
         if (period === "pm" && slotHour !== 12) {
             slotHour += 12;
         } else if (period === "am" && slotHour === 12) {
-            slotHour = 0; // Midnight is 0 in 24-hour format
+            slotHour = 0;
         }
 
-        // Get the live-now-circle div inside the slot
+        // Check if the slot matches the current day and hour
         const liveCircle = slot.querySelector(".live-now-circle");
-
-        // Check if this slot matches the current time and day
-        if (currentDay === slotDay && currentHour === slotHour) {
-            liveCircle.style.display = "inline-block"; // Show the circle
+        if (slotDay === currentDay && currentHour === slotHour) {
+            liveCircle.style.display = "inline-block";
         } else {
-            liveCircle.style.display = "none"; // Hide the circle
+            liveCircle.style.display = "none";
         }
     });
 });
+
+// Refresh the live-now-circle logic every minute
+setInterval(function () {
+    const event = new Event("DOMContentLoaded");
+    document.dispatchEvent(event);
+}, 60000);
 
     </script>
 <table>
