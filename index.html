@@ -648,10 +648,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const now = new Date();
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    // Get current day and time in 24-hour format
+    // Get current day and time
     const currentDay = daysOfWeek[now.getDay()];
     const currentHour = now.getHours();
-    const currentMinute = now.getMinutes();
 
     // Get all time slots
     const timeSlots = document.querySelectorAll(".mobile-time-slot");
@@ -660,10 +659,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const slotDay = slot.getAttribute("data-day");
         const slotTime = slot.getAttribute("data-time");
 
-        // Parse the time and convert it into a 24-hour number
+        // Parse the time and convert it into 24-hour number
         const timeParts = slotTime.split(/[:\s]/); // e.g., ["9", "00", "am"]
         let slotHour = parseInt(timeParts[0]); // Hour in 12-hour format
-        const slotMinutes = parseInt(timeParts[1]); // Minutes
         const period = timeParts[2]; // AM or PM
 
         // Convert to 24-hour format
@@ -673,15 +671,11 @@ document.addEventListener("DOMContentLoaded", function () {
             slotHour = 0; // Midnight is 0 in 24-hour format
         }
 
-        // Determine if this is the current live hour
-        const isSameDay = currentDay === slotDay;
-        const isCurrentHour = slotHour === currentHour;
-        const isCurrentMinute = currentMinute < 60; // Minute doesn't exceed 59
-
         // Get the live-now-circle div inside the slot
         const liveCircle = slot.querySelector(".live-now-circle");
 
-        if (isSameDay && isCurrentHour && isCurrentMinute) {
+        // Check if this slot matches the current time and day
+        if (currentDay === slotDay && currentHour === slotHour) {
             liveCircle.style.display = "inline-block"; // Show the circle
         } else {
             liveCircle.style.display = "none"; // Hide the circle
