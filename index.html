@@ -492,53 +492,53 @@ menuLinks.forEach(function(link) {
                      </div>
 
 <script>
+          // Function to convert a 12-hour time format into a 24-hour time format in minutes
+        function parseTime(timeString) {
+            const timeParts = timeString.trim().split(/[:\s]/);
+            let hour = parseInt(timeParts[0]);
+            const minute = parseInt(timeParts[1]);
+            const ampm = timeParts[2];
+
+            if (ampm === "pm" && hour < 12) hour += 12;
+            if (ampm === "am" && hour === 12) hour = 0;
+
+            return hour * 60 + minute; // Return total minutes
+        }
+
+        // Get current time in GMT and return as minutes from midnight
         function getCurrentTimeInGMT() {
-            // Get the current time in GMT
             const now = new Date();
             const gmtHours = now.getUTCHours();
             const gmtMinutes = now.getUTCMinutes();
-            return { hours: gmtHours, minutes: gmtMinutes };
+            return gmtHours * 60 + gmtMinutes;
         }
 
+        // Update the schedule to highlight the current time slot
         function updateSchedule() {
             const currentTime = getCurrentTimeInGMT();
             const slots = document.querySelectorAll('.mobile-time-slot');
-            
+
+            // Loop through each time slot and check if it is the current time slot
             slots.forEach(slot => {
-                const timeRangeText = slot.textContent.split(':')[0].trim();
-                const timeRange = timeRangeText.split('-');
+                const text = slot.textContent.trim();
+                const timeRange = text.split(':')[0].trim().split('-');
+
                 const startTime = parseTime(timeRange[0]);
                 const endTime = parseTime(timeRange[1]);
-                
-                // Check if the current time is within this slot's time range
-                if (isTimeInRange(currentTime, startTime, endTime)) {
-                    slot.classList.add('unique-on-air');
+
+                // Check if the current time is in this slot range
+                if (currentTime >= startTime && currentTime < endTime) {
+                    slot.classList.add('unique-on-air');  // Add green border and "On Air"
                 } else {
-                    slot.classList.remove('unique-on-air');
+                    slot.classList.remove('unique-on-air');  // Remove the green border if it's not the current slot
                 }
             });
         }
 
-        function parseTime(timeString) {
-            const [hours, minutes] = timeString.split(':').map(Number);
-            return { hours, minutes };
-        }
-
-        function isTimeInRange(currentTime, startTime, endTime) {
-            // Check if the current time is within the start and end time
-            const currentMinutes = currentTime.hours * 60 + currentTime.minutes;
-            const startMinutes = startTime.hours * 60 + startTime.minutes;
-            const endMinutes = endTime.hours * 60 + endTime.minutes;
-            
-            // Adjust for crossing midnight (if the end time is earlier in the day)
-            return (currentMinutes >= startMinutes && currentMinutes < endMinutes) ||
-                   (startMinutes > endMinutes && (currentMinutes >= startMinutes || currentMinutes < endMinutes));
-        }
-
-        // Update the schedule every minute
+        // Update the schedule every minute to check for the new "current time"
         setInterval(updateSchedule, 60000); // 60000ms = 1 minute
 
-        // Initial check when the page loads
+        // Initial call to update the schedule on page load
         updateSchedule();
     </script>
 <div id="page1" class="content"> 
