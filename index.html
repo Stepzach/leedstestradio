@@ -504,35 +504,6 @@ menuLinks.forEach(function(link) {
 
 </div></div>
                      </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const now = new Date();
-    const currentDay = now.toLocaleString('en-us', { weekday: 'long' });  // e.g., "Monday"
-    const currentTime = now.getHours() * 100 + now.getMinutes();  // Time in "hhmm" format (24-hour)
-    
-    // Select all time slots
-    const timeSlots = document.querySelectorAll('.mobile-time-slot');
-
-    timeSlots.forEach(slot => {
-        const slotDay = slot.getAttribute('data-day');
-        const slotTime = slot.getAttribute('data-time');
-        
-        // Convert the slot time to "hhmm" format
-        const [hour, minute] = slotTime.split(':')[0].split('-')[0].split(/[apm]/)[0].split(' ').map(str => parseInt(str));
-        const slotTimeInMinutes = hour * 100 + minute;
-        
-        // Check if the current time is within the time slot's time range
-        if (currentDay === slotDay && currentTime >= slotTimeInMinutes && currentTime < slotTimeInMinutes + 100) {
-            // Create the live circle
-            const liveCircle = document.createElement('div');
-            liveCircle.classList.add('live-circle');
-            
-            // Append it to the time slot
-            slot.appendChild(liveCircle);
-        }
-    });
-});
-</script>
 
 
 <div id="page1" class="content"> 
