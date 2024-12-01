@@ -460,7 +460,20 @@ menuLinks.forEach(function(link) {
                 display: block;
             }
         }
-
+ .on-air1 {
+            border: 3px solid green;
+            position: relative;
+        }
+        .on-air1::after {
+            content: "ON AIR";
+            position: absolute;
+            top: -20px;
+            right: 0;
+            background-color: green;
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+        }
 
   </style>
            <body>
@@ -617,11 +630,12 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
         </div>
     </div>
     <script>
-       // Convert 12-hour time to 24-hour time
+       // Convert 12-hour time (e.g., 9:00am) to 24-hour format (e.g., 9:00)
         function convertTo24Hour(timeStr) {
             const [time, period] = timeStr.split(' ');
             let [hours, minutes] = time.split(':').map(Number);
 
+            // Convert to 24-hour format
             if (period === 'pm' && hours !== 12) {
                 hours += 12;
             } else if (period === 'am' && hours === 12) {
@@ -631,17 +645,17 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             return { hours, minutes };
         }
 
-        // Get the current day and time in GMT
+        // Get the current time and day in GMT
         function getCurrentTimeGMT() {
             const now = new Date();
             const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            const day = daysOfWeek[now.getUTCDay()]; // Get the current day (Sunday = 0, Monday = 1, etc.)
+            const day = daysOfWeek[now.getUTCDay()]; // Get current day (Sunday = 0, Monday = 1, etc.)
             const hours = now.getUTCHours();
             const minutes = now.getUTCMinutes();
             return { day, hours, minutes };
         }
 
-        // Highlight the current slot based on both day and time
+        // Highlight the current time slot based on the day and time
         function highlightCurrentSlot() {
             const currentTime = getCurrentTimeGMT();
             const timeSlots = document.querySelectorAll('.mobile-time-slot');
@@ -651,18 +665,20 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
                 const timeStr = slot.getAttribute('data-time');
                 const slotTime = convertTo24Hour(timeStr);
 
-                // Compare both the day and time
+                // Compare day and time
                 if (slotDay === currentTime.day && slotTime.hours === currentTime.hours && slotTime.minutes === currentTime.minutes) {
-                    slot.classList.add('on-air');
+                    slot.classList.add('on-air1');
                 } else {
-                    slot.classList.remove('on-air');
+                    slot.classList.remove('on-air1');
                 }
             });
         }
 
-        // Highlight the current slot when the page loads and every minute after that
+        // Run the highlighting function when the page loads
         window.onload = highlightCurrentSlot;
-        setInterval(highlightCurrentSlot, 60000);  // Update every minute
+
+        // Update every minute to check if the time slot needs to be updated
+        setInterval(highlightCurrentSlot, 60000);
     </script>
 <table>
   <thead>
