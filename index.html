@@ -62,11 +62,13 @@
   </div>
 
   <!-- Right-side Menu Button (only visible on smaller screens) -->
-  <div class="menu-button">
-    <button id="menu-toggle" class="menu-toggle-btn">
-      <span class="menu-icon">☰</span> <!-- Hamburger icon -->
+ <div class="menu-button">
+    <button 
+        id="menu-toggle" 
+        class="menu-toggle-btn" 
+        onclick="toggleRotate(this)">
+        <span class="menu-icon">☰</span> <!-- Hamburger icon -->
     </button>
-  </div>
 </div>
 
 <!-- Dropdown Menu (Initially hidden) -->
@@ -220,7 +222,12 @@
       color: #fff;
       font-size: 24px;
     }
-   .menu-toggle-btn.active .menu-icon {
+  .menu-icon {
+    transition: transform 0.3s ease; /* Smooth rotation animation */
+}
+
+/* Rotated state */
+.menu-icon.rotated {
     transform: rotate(90deg);
 }
     /* Dropdown Menu (Hidden by default) */
@@ -250,13 +257,18 @@
 </style>
        
         <script>
-          
+          function toggleRotate(button) {
+    // Find the icon inside the button
+    const icon = button.querySelector('.menu-icon');
+    // Toggle the 'rotated' class
+    icon.classList.toggle('rotated');
+}
 // Ensure the dropdown menu is hidden initially
 document.getElementById('dropdown-menu').style.display = 'none';
 
 // Toggle the dropdown menu when the menu button is clicked
 document.getElementById('menu-toggle').addEventListener('click', function() {
-     this.classList.toggle('active');
+   
   var dropdownMenu = document.getElementById('dropdown-menu');
   
   // Toggle the visibility of the dropdown menu
