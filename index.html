@@ -1022,8 +1022,8 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
       <h2 style="font-size:25px !important; text-align: center;">Live Streams</h2>
       <div class="stream-box">
         <h3 style="margin-bottom: 10px !important;">LSR Stream</h3>
-        <!-- <div class="audio-container1" style="background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg');"> -->
-        <div class="audio-container1" style="background-image: url('https://play-lh.googleusercontent.com/-3uzJfMHFGxCWadouisf0bl7hReUj-JC04FOHiE5o7biQMu5Lk52tmeBoukK8KY6XSZw=w240-h480-rw');">
+       <div class="audio-container1" style="background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg');">
+     
           <button id="playPause1">
             <i class="fas fa-play"></i>
           </button>
@@ -1217,6 +1217,11 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
   /* Hide content on larger screens */
   @media screen and (min-width: 600px) {
     .mobile-container {
+      display: none;
+    }
+  }
+                     @media screen and (max-width: 600px) {
+    .desktop-contain {
       display: none;
     }
   }
