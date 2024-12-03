@@ -265,14 +265,14 @@
 </style>
        
         <script>
-        document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('menu-toggle').addEventListener('click', function (e) {
     var dropdownMenu = document.getElementById('dropdown-menu');
     var normalIcon = this.querySelector('.menu-icon.normal');  // Normal icon (☰)
     var rotatedIcon = this.querySelector('.menu-icon.rotated'); // Rotated icon (✖)
 
-    // Swap visibility of the icons
-    normalIcon.style.display = (normalIcon.style.display === 'none' || normalIcon.style.display === '') ? 'none' : 'inline';
-    rotatedIcon.style.display = (rotatedIcon.style.display === 'none' || rotatedIcon.style.display === '') ? 'inline' : 'none';
+    // Toggle visibility of the menu icons
+    normalIcon.classList.toggle('hidden');
+    rotatedIcon.classList.toggle('hidden');
     
     // Toggle the visibility of the dropdown menu
     if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
@@ -280,16 +280,47 @@
     } else {
         dropdownMenu.style.display = 'none'; // Hide the menu
     }
+
+    // Prevent the click event from propagating to avoid immediate closure of the menu
+    e.stopPropagation();
 });
 
-// Close the dropdown menu when a menu option is clicked
+// Close the dropdown menu and reset icons when clicking outside the menu
+document.addEventListener('click', function (e) {
+    var dropdownMenu = document.getElementById('dropdown-menu');
+    var menuToggleBtn = document.getElementById('menu-toggle');
+
+    if (!menuToggleBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        // Close the menu
+        dropdownMenu.style.display = 'none';
+        
+        // Reset the icons
+        var normalIcon = menuToggleBtn.querySelector('.menu-icon.normal');
+        var rotatedIcon = menuToggleBtn.querySelector('.menu-icon.rotated');
+        
+        // Ensure the normal icon is visible and rotated icon is hidden
+        normalIcon.classList.remove('hidden');
+        rotatedIcon.classList.add('hidden');
+    }
+});
+
+// Close the dropdown menu when a menu option is clicked (optional, if you have menu items inside)
 var menuLinks = document.querySelectorAll('#dropdown-menu a');
 menuLinks.forEach(function(link) {
-  link.addEventListener('click', function() {
-    // Hide the dropdown menu when a link is clicked
-    document.getElementById('dropdown-menu').style.display = 'none';
-  });
+    link.addEventListener('click', function() {
+        var dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.style.display = 'none';
+        
+        // Reset the icons
+        var menuToggleBtn = document.getElementById('menu-toggle');
+        var normalIcon = menuToggleBtn.querySelector('.menu-icon.normal');
+        var rotatedIcon = menuToggleBtn.querySelector('.menu-icon.rotated');
+        
+        normalIcon.classList.remove('hidden');
+        rotatedIcon.classList.add('hidden');
+    });
 });
+
 
 
 </script>
