@@ -643,49 +643,42 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             <!-- ... -->
         </div>
     </div>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const now = new Date();
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  <script>
+        // Define the total schedule duration in minutes
+        const WEEK_SCHEDULE_MINUTES = 7 * 15 * 60; // 7 days * 15 hours per day * 60 minutes
 
-    // Get the current day and hour
-    const currentDay = daysOfWeek[now.getDay()];
-    const currentHour = now.getHours();
+        function highlightCurrentSlot() {
+            const slots = document.querySelectorAll('.mobile-time-slot');
+            const now = new Date();
 
-    // Target only the elements with .mobile-time-slot
-    const timeSlots = document.querySelectorAll(".mobile-time-slot");
+            // Calculate the current time in minutes from the start of the week (Monday at 9:00 AM)
+            const startOfWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            startOfWeek.setHours(9, 0, 0); // Set to 9:00 AM on the same day as 'now'
+            while (startOfWeek.getDay() !== 1) {
+                startOfWeek.setDate(startOfWeek.getDate() - 1); // Move to the previous day until it's Monday
+            }
+            const minutesFromStart = Math.floor((now - startOfWeek) / 60000);
 
-    timeSlots.forEach(slot => {
-        const slotDay = slot.getAttribute("data-day");
-        const slotTime = slot.getAttribute("data-time");
+            // If past midnight on Sunday, do nothing
+            if (minutesFromStart < 0 || minutesFromStart >= WEEK_SCHEDULE_MINUTES) return;
 
-        // Parse the time to 24-hour format
-        const timeParts = slotTime.split(/[:\s]/); // e.g., ["9", "00", "am"]
-        let slotHour = parseInt(timeParts[0]);
-        const period = timeParts[2];
+            // Determine the index of the current slot
+            const currentSlotIndex = Math.floor(minutesFromStart / 60); // Each slot is 1 hour
 
-        if (period === "pm" && slotHour !== 12) {
-            slotHour += 12;
-        } else if (period === "am" && slotHour === 12) {
-            slotHour = 0;
+            // Clear any previous highlights
+            slots.forEach(slot => slot.classList.remove('on-air'));
+
+            // Highlight the current slot if it exists
+            if (slots[currentSlotIndex]) {
+                slots[currentSlotIndex].classList.add('on-air');
+            }
         }
 
-        // Check if the slot matches the current day and hour
-        const liveCircle = slot.querySelector(".live-now-circle");
-        if (slotDay === currentDay && currentHour === slotHour) {
-            liveCircle.style.display = "inline-block";
-        } else {
-            liveCircle.style.display = "none";
-        }
-    });
-});
+        // Run the highlight logic every minute to keep it updated
+        setInterval(highlightCurrentSlot, 60000);
 
-// Refresh the live-now-circle logic every minute
-setInterval(function () {
-    const event = new Event("DOMContentLoaded");
-    document.dispatchEvent(event);
-}, 60000);
-
+        // Initial call to highlight the current slot on page load
+        highlightCurrentSlot();
     </script>
 <table>
   <thead>
