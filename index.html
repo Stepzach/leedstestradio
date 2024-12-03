@@ -1531,15 +1531,39 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     <br><br><br> 
      <title>About us</title>
   <style>
-    bodylol {
+    .bodylol {
       width: 80%;
-      
+
+        
      
       margin: 0;
       padding: 0;
       background-color: red;
       color: white;
     }
+       /* Hide content on larger screens */
+  @media screen and (max-width: 600px) {
+    .bodylol {
+      display: none;
+    }
+      }
+
+       .bodylol2 {
+      width: 80%;
+
+        
+     
+      margin: 0;
+      padding: 0;
+      background-color: red;
+      color: white;
+    }
+       /* Hide content on larger screens */
+  @media screen and (min-width: 600px) {
+    .bodylol2 {
+      display: none;
+    }
+      }
 
     .su-container {
       width: 80%;
@@ -1620,10 +1644,131 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
   justify-content: center;
   text-align: center; /* Ensure text wraps and aligns nicely */
 }
+ .mobile1-container {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+      background-color: red;
+  }
 
+  .mobile1-about-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .mobile1-about-left img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .mobile1-about-left h1 {
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .mobile1-about-right p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    color: white;
+    width: 100%;
+  }
+
+  .mobile1-grid-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mobile1-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+
+  .mobile1-grid-item img {
+    width: 90%; /* Make image responsive */
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: contain;
+  }
+
+  .mobile1-grid-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+  }
+
+  .mobile1-grid-item p {
+    font-size: 12px;
+    color: white;
+    margin: 0;
+  }
   </style>
 </head>
-<bodylol>
+    <div class="bodylol2">
+  <div class="mobile1-container">
+    <!-- About Section -->
+    <div class="mobile1-about-section">
+      <div class="mobile1-about-left">
+        <h1>About Us</h1>
+        <img src="LSR Logo.png.webp" alt="LOGO">
+      </div>
+      <div class="mobile1-about-right">
+        <p>
+          Leeds Student Radio is the only radio station in Leeds run by students, for students. We broadcast live from Leeds University Union every day during term time from 9am 'til late, and students from ANY Leeds University are welcome to be on a show! 
+          <br><br>
+          Whatever you’re interested in, there’s a space here for you: presenting, producing, DJing, design, tech, event management, marketing. The list goes on. And the best part is, no previous experience is required! We’ll help you find your place and provide you with the help and resources you need to kickstart your career or just have some fun. Our schedule ranges from arts, comedy, and music to sport, film, and politics. So no matter what you’re interested in, we’ll help you get it on-air (we even have shows about Taylor Swift and Eurovision... so anything goes!)
+        </p>
+      </div>
+    </div>
+
+    <!-- Grid Section -->
+    <div class="mobile1-grid-section">
+      <!-- Grid Item 1 -->
+      <div class="mobile1-grid-item">
+        <img src="316c00_f94fec6fbefb4d47aef6441c3d43af74~mv2.png.webp" alt="Event Management">
+        <h3>Head of Marketing</h3>
+        <p>Alex acts as LSR's treasurer, contact her regarding sponsorships and fundraising.</p>
+      </div>
+
+      <!-- Grid Item 2 -->
+      <div class="mobile1-grid-item">
+        <img src="316c00_641091c525ec48a9b3547eeff3174a2f~mv2.png.webp" alt="Sports Club">
+        <h3>Deputy Station Manager</h3>
+        <p>Millie organises our socials and hosts 'Wellbeing Wednesday' in the LSR studios every week.</p>
+      </div>
+
+      <!-- Grid Item 3 -->
+      <div class="mobile1-grid-item">
+        <img src="316c00_0b1678ae9f7441c58bf08b07aee38475~mv2.png.webp">
+        <h3>Programme Controller</h3>
+        <p>Sophie is in charge of our schedule and coming up with unique ideas for outside broadcasting.</p>
+      </div>
+
+      <!-- Repeat other grid items -->
+      <!-- Example for additional items -->
+      <div class="mobile1-grid-item">
+        <img src="316c00_fbf02c80f8d84513aa7bfdb2195625fe~mv2.png.webp" alt="Academic Support">
+        <h3>Head of News</h3>
+        <p>Contact Jenna or Ria regarding news-based content or programming at news@thisislsr.com.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bodylol">
   <div class="su-container">
     <!-- About Section -->
     <div class="su-about-section">
@@ -1719,7 +1864,7 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
 </div>
     </div>
   </div>
-</bodylol>
+</div>
 </div>
                
 <div id="page5" class="content">
