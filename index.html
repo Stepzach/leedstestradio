@@ -257,27 +257,21 @@
 </style>
        
         <script>
-          function toggleRotate(button) {
-    // Find the icon inside the button
-    const icon = button.querySelector('.menu-icon');
-    // Toggle the 'rotated' class
+         document.getElementById('menu-toggle').addEventListener('click', function () {
+    var dropdownMenu = document.getElementById('dropdown-menu');
+    var icon = this.querySelector('.menu-icon'); // Find the menu icon
+    
+    // Rotate the icon
     icon.classList.toggle('rotated');
-}
-// Ensure the dropdown menu is hidden initially
-document.getElementById('dropdown-menu').style.display = 'none';
-
-// Toggle the dropdown menu when the menu button is clicked
-document.getElementById('menu-toggle').addEventListener('click', function() {
-   
-  var dropdownMenu = document.getElementById('dropdown-menu');
-  
-  // Toggle the visibility of the dropdown menu
-  if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
-    dropdownMenu.style.display = 'block'; // Show the menu
-  } else {
-    dropdownMenu.style.display = 'none'; // Hide the menu
-  }
+    
+    // Toggle the dropdown menu visibility
+    if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+        dropdownMenu.style.display = 'block'; // Show the menu
+    } else {
+        dropdownMenu.style.display = 'none'; // Hide the menu
+    }
 });
+
 
 // Close the dropdown menu when a menu option is clicked
 var menuLinks = document.querySelectorAll('#dropdown-menu a');
