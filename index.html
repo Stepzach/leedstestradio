@@ -220,7 +220,9 @@
       color: #fff;
       font-size: 24px;
     }
-
+   .menu-toggle-btn.active .menu-icon {
+    transform: rotate(90deg);
+}
     /* Dropdown Menu (Hidden by default) */
     #dropdown-menu {
       display: none;
@@ -246,6 +248,15 @@
     }
   }
 </style>
+        <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+    // Toggle the 'active' class on the button
+    this.classList.toggle('active');
+
+    // Menu opening logic remains unaffected
+    // Example: document.querySelector('.menu').classList.toggle('open');
+});
+        </script>
         <script>
 // Ensure the dropdown menu is hidden initially
 document.getElementById('dropdown-menu').style.display = 'none';
