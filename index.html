@@ -1019,10 +1019,11 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
   <section class="mobile-content">
     <!-- Live Stream Section -->
     <div class="stream-section">
-      <h2>Live Streams</h2>
+      <h2 style="font-size:25px !important; text-align: center;">Live Streams</h2>
       <div class="stream-box">
-        <h3>LSR Stream</h3>
-        <div class="audio-container1" style="background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg');">
+        <h3 style="margin-bottom: 10px !important;">LSR Stream</h3>
+        <!-- <div class="audio-container1" style="background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg');"> -->
+        <div class="audio-container1" style="background-image: url('https://play-lh.googleusercontent.com/-3uzJfMHFGxCWadouisf0bl7hReUj-JC04FOHiE5o7biQMu5Lk52tmeBoukK8KY6XSZw=w240-h480-rw');">
           <button id="playPause1">
             <i class="fas fa-play"></i>
           </button>
@@ -1033,7 +1034,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
         </div>
       </div>
       <div class="stream-box">
-        <h3>Alternate Stream</h3>
+        <h3 style="margin-bottom: 10px !important;">Alternate Stream</h3>
         <div class="audio-container1" style="background-image: url('IMG_4447.jpeg');">
           <button id="playPause2">
             <i class="fas fa-play"></i>
@@ -1048,16 +1049,16 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
 
     <!-- Listen Back Section -->
     <div class="listen-back-section">
-      <h2>Listen Back</h2>
+      <h2 style="font-size:25px !important; text-align: center;">Listen Back</h2>
       <div class="platform-box">
-        <h3>SoundCloud</h3>
-        <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1926355118&amp;color=%23e60e0e&amp;auto_play=false"></iframe>
-        <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1443122512&amp;color=%23e60e0e&amp;auto_play=false"></iframe>
+        <h3 style="margin-bottom: 10px !important;">SoundCloud</h3>
+        <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1926355118&color=%23e60e0e&auto_play=false"></iframe>
+        <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1443122512&color=%23e60e0e&auto_play=false"></iframe>
       </div>
-      <div class="platform-box">
-        <h3>Spotify</h3>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6VfNkgblj7jN1umfJZE8t8?utm_source=generator&amp;theme=0" width="100%" height="130" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen;"></iframe>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/5hz6Ae0W4twYoblsAtxEcF?utm_source=generator&amp;theme=0" width="100%" height="130" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen;"></iframe>
+      <div class="platform-box2">
+        <h3 style="margin-bottom: 10px !important;">Spotify</h3>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6VfNkgblj7jN1umfJZE8t8?utm_source=generator&theme=0" width="100%" height="130" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen;"></iframe>
+        <iframe style="border-radius:12px; margin-top: -42px !important;" src="https://open.spotify.com/embed/episode/5hz6Ae0W4twYoblsAtxEcF?utm_source=generator&theme=0" width="100%" height="130" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen;"></iframe>
       </div>
     </div>
   </section>
@@ -1137,7 +1138,7 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
                <style>
  
 
-  .mobile-container {
+ .mobile-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1162,12 +1163,31 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     gap: 10px;
   }
 
-  .stream-box, .platform-box {
+  .platform-box {
     background-color: #a00000;
     border-radius: 8px;
     padding: 10px;
     text-align: center;
+     }
+    
+  .platform-box2 {
+    background-color: #a00000;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    height: 230px;
   }
+  
+  .stream-box {
+    background-color: #a00000;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+   
 
   .audio-container1 {
     display: flex;
@@ -1197,13 +1217,6 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
   /* Hide content on larger screens */
   @media screen and (min-width: 600px) {
     .mobile-container {
-      display: none;
-    }
-  }
-
-  /* Hide content on small screens */
-  @media screen and (max-width: 600px) {
-    .desktop-contain {
       display: none;
     }
   }
