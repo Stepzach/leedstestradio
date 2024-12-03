@@ -62,12 +62,12 @@
   </div>
 
   <!-- Right-side Menu Button (only visible on smaller screens) -->
- <div class="menu-button">
-    <button 
-        id="menu-toggle" 
-        class="menu-toggle-btn" 
-        onclick="toggleRotate(this)">
-        <span class="menu-icon">☰</span> <!-- Hamburger icon -->
+<div class="menu-button">
+    <button id="menu-toggle" class="menu-toggle-btn">
+        <!-- Normal menu icon (☰) -->
+        <span class="menu-icon normal">☰</span>
+        <!-- Rotated menu icon (X or similar) -->
+        <span class="menu-icon rotated">✖</span> 
     </button>
 </div>
 
@@ -222,14 +222,15 @@
       color: #fff;
       font-size: 24px;
     }
-  .menu-icon {
-    transition: transform 0.3s ease; /* Smooth rotation animation */
+.menu-icon.rotated {
+    display: none;
 }
 
-/* Rotated state */
-.menu-icon.rotated {
-    transform: rotate(90deg);
+/* Menu icon transition (optional) */
+.menu-icon {
+    transition: opacity 0.3s ease; 
 }
+
     /* Dropdown Menu (Hidden by default) */
     #dropdown-menu {
       display: none;
@@ -257,21 +258,22 @@
 </style>
        
         <script>
-         document.getElementById('menu-toggle').addEventListener('click', function () {
+        document.getElementById('menu-toggle').addEventListener('click', function () {
     var dropdownMenu = document.getElementById('dropdown-menu');
-    var icon = this.querySelector('.menu-icon'); // Find the menu icon
+    var normalIcon = this.querySelector('.menu-icon.normal');  // Normal icon (☰)
+    var rotatedIcon = this.querySelector('.menu-icon.rotated'); // Rotated icon (✖)
+
+    // Swap visibility of the icons
+    normalIcon.style.display = (normalIcon.style.display === 'none' || normalIcon.style.display === '') ? 'none' : 'inline';
+    rotatedIcon.style.display = (rotatedIcon.style.display === 'none' || rotatedIcon.style.display === '') ? 'inline' : 'none';
     
-    // Rotate the icon
-    icon.classList.toggle('rotated');
-    
-    // Toggle the dropdown menu visibility
+    // Toggle the visibility of the dropdown menu
     if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
         dropdownMenu.style.display = 'block'; // Show the menu
     } else {
         dropdownMenu.style.display = 'none'; // Hide the menu
     }
 });
-
 
 // Close the dropdown menu when a menu option is clicked
 var menuLinks = document.querySelectorAll('#dropdown-menu a');
