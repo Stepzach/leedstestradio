@@ -644,34 +644,40 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
         </div>
     </div>
   <script>
-        // Define the total schedule duration in minutes
-        const WEEK_SCHEDULE_MINUTES = 7 * 15 * 60; // 7 days * 15 hours per day * 60 minutes
-
+      
         function highlightCurrentSlot() {
             const slots = document.querySelectorAll('.mobile-time-slot');
             const now = new Date();
 
-            // Calculate the current time in minutes from the start of the week (Monday at 9:00 AM)
-            const startOfWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-            startOfWeek.setHours(9, 0, 0); // Set to 9:00 AM on the same day as 'now'
-            while (startOfWeek.getDay() !== 1) {
-                startOfWeek.setDate(startOfWeek.getDate() - 1); // Move to the previous day until it's Monday
-            }
-            const minutesFromStart = Math.floor((now - startOfWeek) / 60000);
+            // Calculate the minutes elapsed since Monday at 9 AM
+            const startOfWeek = new Date(now);
+            startOfWeek.setDate(now.getDate() - (now.getDay() === 0 ? 6 : now.getDay() - 1)); // Move to the most recent Monday
+            startOfWeek.setHours(9, 0, 0, 0); // Set to 9 AM
+            
+            const minutesSinceStart = Math.floor((now - startOfWeek) / 60000);
 
-            // If past midnight on Sunday, do nothing
-            if (minutesFromStart < 0 || minutesFromStart >= WEEK_SCHEDULE_MINUTES) return;
+            // Determine the schedule duration in minutes (7 days * 15 hours/day * 60 minutes/hour)
+            const scheduleDuration = 7 * 15 * 60;
+
+            // If the time is outside the schedule (e.g., after midnight), do nothing
+            if (minutesSinceStart < 0 || minutesSinceStart >= scheduleDuration) {
+                slots.forEach(slot => {
+                    const circle = slot.querySelector('.live-now-circle');
+                    if (circle) circle.remove();
+                });
+                return;
+            }
 
             // Determine the index of the current slot
-            const currentSlotIndex = Math.floor(minutesFromStart / 60); // Each slot is 1 hour
+            const currentSlotIndex = Math.floor(minutesSinceStart / 60); // Each slot is 1 hour
 
-            // Clear any previous live-now indicators
+            // Clear existing indicators
             slots.forEach(slot => {
                 const circle = slot.querySelector('.live-now-circle');
                 if (circle) circle.remove();
             });
 
-            // Add a live-now indicator to the current slot if it exists
+            // Add the live-now indicator to the current slot
             if (slots[currentSlotIndex]) {
                 const circle = document.createElement('span');
                 circle.className = 'live-now-circle';
@@ -679,11 +685,12 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             }
         }
 
-        // Run the highlight logic every minute to keep it updated
+        // Run the highlight logic every minute
         setInterval(highlightCurrentSlot, 60000);
 
-        // Initial call to highlight the current slot on page load
+        // Initial call on page load
         highlightCurrentSlot();
+    
     </script>
 <table>
   <thead>
