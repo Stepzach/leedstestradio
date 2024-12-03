@@ -71,6 +71,7 @@
     </button>
 </div>
 
+
 <!-- Dropdown Menu (Initially hidden) -->
 <div id="dropdown-menu" class="dropdown-menu">
   <div class="header" data-page="page1"><a href="#schedule">Schedule</a></div>
@@ -273,7 +274,7 @@
 </style>
        
         <script>
-    document.getElementById('menu-toggle').addEventListener('click', function (e) {
+   document.getElementById('menu-toggle').addEventListener('click', function (e) {
     var dropdownMenu = document.getElementById('dropdown-menu');
     var normalIcon = this.querySelector('.menu-icon.normal');  // Normal icon (☰)
     var rotatedIcon = this.querySelector('.menu-icon.rotated'); // Rotated icon (✖)
@@ -328,7 +329,6 @@ menuLinks.forEach(function(link) {
         rotatedIcon.classList.add('hidden');
     });
 });
-
 
 
 
