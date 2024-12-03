@@ -248,21 +248,15 @@
     }
   }
 </style>
+       
         <script>
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-    // Toggle the 'active' class on the button
-    this.classList.toggle('active');
-
-    // Menu opening logic remains unaffected
-    // Example: document.querySelector('.menu').classList.toggle('open');
-});
-        </script>
-        <script>
+          
 // Ensure the dropdown menu is hidden initially
 document.getElementById('dropdown-menu').style.display = 'none';
 
 // Toggle the dropdown menu when the menu button is clicked
 document.getElementById('menu-toggle').addEventListener('click', function() {
+     this.classList.toggle('active');
   var dropdownMenu = document.getElementById('dropdown-menu');
   
   // Toggle the visibility of the dropdown menu
