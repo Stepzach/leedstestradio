@@ -528,7 +528,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             <div class="mobile-time-slot"  data-day="Monday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
               <div class="mobile-time-slot" data-day="Monday"  data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETME</div>
             <div class="mobile-time-slot"  data-day="Monday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Live and Local</div>
-            <div class="mobile-time-slot" data-day="Monday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>6-9pm: Rock and Punk</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>8-9pm: Rock and Punk</div>
               <div class="mobile-time-slot" data-day="Monday" data-time="9:00pm" style=" background-color: #"><div class="live-now-circle"></div>9-10pm: Dad Music for Girls</div>
             <div class="mobile-time-slot"  data-day="Monday" data-time="10:00pm" style=" background-color: #"><div class="live-now-circle"></div>10-11pm: Uni Music Library Finds</div>
             <div class="mobile-time-slot" data-day="Monday" data-time="11:00pm" style=" background-color: #"><div class="live-now-circle"></div>11-12am: Spiritual Guide</div>
@@ -547,7 +547,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             <div class="mobile-time-slot" data-day="Tuesday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
               <div class="mobile-time-slot" data-day="Tuesday" data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
             <div class="mobile-time-slot" data-day="Tuesday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Jazz, Funk and Soul</div>
-            <div class="mobile-time-slot" data-day="Tuesday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>6-9pm: Two Cents and Nonsense</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>8-9pm: Two Cents and Nonsense</div>
               <div class="mobile-time-slot" data-day="Tuesday" data-time="9:00pm" ><div class="live-now-circle"></div>9-10pm: Politics of Punk / Time Machine</div>
             <div class="mobile-time-slot" data-day="Tuesday" data-time="10:00pm"><div class="live-now-circle"></div>10-11pm: Thank you for the Music</div>
             <div class="mobile-time-slot" data-day="Tuesday" data-time="11:00pm"><div class="live-now-circle"></div>11-12am: Jungle Gems with Mylania</div>
@@ -665,12 +665,17 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             // Determine the index of the current slot
             const currentSlotIndex = Math.floor(minutesFromStart / 60); // Each slot is 1 hour
 
-            // Clear any previous highlights
-            slots.forEach(slot => slot.classList.remove('live-now-circle'));
+            // Clear any previous live-now indicators
+            slots.forEach(slot => {
+                const circle = slot.querySelector('.live-now-circle');
+                if (circle) circle.remove();
+            });
 
-            // Highlight the current slot if it exists
+            // Add a live-now indicator to the current slot if it exists
             if (slots[currentSlotIndex]) {
-                slots[currentSlotIndex].classList.add('live-now-circle');
+                const circle = document.createElement('span');
+                circle.className = 'live-now-circle';
+                slots[currentSlotIndex].prepend(circle);
             }
         }
 
