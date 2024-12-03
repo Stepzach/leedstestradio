@@ -1750,6 +1750,23 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
       overflow: hidden;
      
     }
+      /* Hide content on larger screens */
+  @media screen and (max-width: 600px) {
+    .lsr-map-container {
+      display: none;
+    }
+
+     .lsr-map-container2 {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+     
+    }
+     /* Hide content on larger screens */
+  @media screen and (min-width: 600px) {
+    .lsr-map-container2 {
+      display: none;
+    }
 
     .lsr-map-container iframe {
       width: 100%;
@@ -1812,7 +1829,21 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
       <p>DM us on Instagram: <a href="https://instagram.com/thisislsr" target="_blank">@thisislsr</a></p>
       <p>Phone: 0113 380 1278 <br><span style=" font-size: var(--small_mono); color: white;">(Office hours Mon-Fri 9-5)</span></p>
     </div>
-      <br> <br> <br> <br>
+      <br> <br> 
+      <div class="lsr-map-container2">
+   <iframe 
+  src="https://www.google.com/maps?q=Leeds+University+Union,+Lifton+Place,+LS2+9JZ&hl=en&z=17&output=embed" 
+  width="600" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy">
+</iframe>
+
+
+
+    </div>
+      <br> <br>
   </div>
 </bodaa>
      <br> <br> <br> <br>
