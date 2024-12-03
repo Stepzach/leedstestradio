@@ -666,11 +666,11 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             const currentSlotIndex = Math.floor(minutesFromStart / 60); // Each slot is 1 hour
 
             // Clear any previous highlights
-            slots.forEach(slot => slot.classList.remove('on-air'));
+            slots.forEach(slot => slot.classList.remove('live-now-circle'));
 
             // Highlight the current slot if it exists
             if (slots[currentSlotIndex]) {
-                slots[currentSlotIndex].classList.add('on-air');
+                slots[currentSlotIndex].classList.add('live-now-circle');
             }
         }
 
