@@ -47,7 +47,7 @@
 .large-play-button .spinner-icon {
     width: 30px !important; /* Smaller size for the large button */
     height: 30px !important;
-    margin-left: 4px !important;
+    margin-left: 5px !important;
 }
 
 .spinner-icon.loading path {
@@ -522,22 +522,24 @@ document.querySelectorAll('.audio-button').forEach(button => {
                 audio.play();
                 playIcon.style.display = 'none';  // Hide Play Icon
                 pauseIcon.style.display = 'none';  // Hide Pause Icon initially
-                spinnerIcon.style.display = 'block';  // Show Spinner
 
-                // Disable the button while the spinner is visible (only on the first click)
+                // Only show the spinner and disable the button on the first click
                 if (isFirstClick) {
-                    button.disabled = true;  // Disable the button during loading
+                    spinnerIcon.style.display = 'block';  // Show Spinner
                     spinnerIcon.classList.add('loading'); // Start the spinner animation
+                    button.disabled = true;  // Disable the button during loading
                     isFirstClick = false; // Set flag to false after the first click
+                } else {
+                    // No spinner animation, just show the pause icon
+                    spinnerIcon.style.display = 'none';  // Hide the spinner immediately
+                    pauseIcon.style.display = 'block';  // Show Pause Icon
                 }
 
                 // After 4 seconds, hide the spinner and show the pause icon
                 setTimeout(() => {
                     spinnerIcon.classList.remove('loading'); // Remove loading class
                     spinnerIcon.style.display = 'none';  // Hide the spinner
-                    if (!audio.paused) { // If the audio is still playing, show the pause icon
-                        pauseIcon.style.display = 'block';  // Show Pause Icon
-                    }
+                    pauseIcon.style.display = 'block';  // Show Pause Icon
                     button.disabled = false;  // Re-enable the button after the loading animation
                 }, 4000); // 4 seconds delay for the spinner
             } else {
@@ -560,8 +562,6 @@ document.querySelectorAll('.audio-button').forEach(button => {
         button.disabled = false; // Re-enable the button immediately when the spinner is clicked
     });
 });
-
-
 
 </script>
 
