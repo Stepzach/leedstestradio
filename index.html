@@ -283,7 +283,8 @@
 </style>
        
         <script>
-  document.getElementById('menu-toggle').addEventListener('click', function (e) {
+ 
+document.getElementById('menu-toggle').addEventListener('click', function (e) {
     const dropdownMenu = document.getElementById('dropdown-menu');
     const normalIcon = this.querySelector('.menu-icon.normal');  // Normal icon (☰)
     const rotatedIcon = this.querySelector('.menu-icon.rotated'); // Rotated icon (x)
@@ -320,22 +321,20 @@ document.addEventListener('click', function (e) {
     }
 });
 
+// Close the menu and reset icons when clicking inside the dropdown menu
+document.getElementById('dropdown-menu').addEventListener('click', function () {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const menuToggleBtn = document.getElementById('menu-toggle');
 
-// Close the dropdown menu when a menu option is clicked (optional, if you have menu items inside)
-var menuLinks = document.querySelectorAll('#dropdown-menu a');
-menuLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-        var dropdownMenu = document.getElementById('dropdown-menu');
-        dropdownMenu.style.display = 'none';
-        
-        // Reset the icons
-        var menuToggleBtn = document.getElementById('menu-toggle');
-        var normalIcon = menuToggleBtn.querySelector('.menu-icon.normal');
-        var rotatedIcon = menuToggleBtn.querySelector('.menu-icon.rotated');
-        
-        normalIcon.classList.remove('hidden');
-        rotatedIcon.classList.add('hidden');
-    });
+    // Close the dropdown menu
+    dropdownMenu.style.display = 'none';
+
+    // Reset the icons
+    const normalIcon = menuToggleBtn.querySelector('.menu-icon.normal');
+    const rotatedIcon = menuToggleBtn.querySelector('.menu-icon.rotated');
+
+    normalIcon.classList.remove('hidden');
+    rotatedIcon.classList.remove('show');
 });
 
 
