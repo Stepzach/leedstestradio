@@ -553,6 +553,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
 
     // Add an event listener to reset the spinner and show play icon if spinner is clicked
     spinnerIcon.addEventListener('click', () => {
+        // This prevents the spinner from being shown on subsequent clicks
         spinnerIcon.classList.remove('loading'); // Stop animation if clicked
         spinnerIcon.style.display = 'none';  // Hide the spinner
         playIcon.style.display = 'block';  // Show the play icon again
@@ -562,6 +563,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
         button.disabled = false; // Re-enable the button immediately when the spinner is clicked
     });
 });
+
 
 </script>
 
