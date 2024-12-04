@@ -51,7 +51,7 @@
 }
 
 .spinner-icon.loading path {
-    animation: spin 4s linear infinite;  /* Rotate the spinner over 4 seconds */
+    animation: spin 4s linear forwards;  /* Rotate the spinner over 4 seconds once */
 }
 
 @keyframes spin {
@@ -62,6 +62,7 @@
         transform: rotate(360deg);
     }
 }
+
  </style>       
 
 <div class="header-mobile">
