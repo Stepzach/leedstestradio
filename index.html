@@ -52,11 +52,10 @@
         <svg class="pause-icon icon large-icon large-play-button" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
         </svg>
-      <svg class="spinner-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"></circle>
-        <path d="M12 2 A10 10 0 1 1 2 12" stroke="white" stroke-width="2" fill="none" stroke-dasharray="63.66" stroke-dashoffset="63.66">
-            <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"></animateTransform>
-        </path>
+     <svg class="spinner-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="31.4">
+            <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="1s" repeatCount="indefinite"></animate>
+        </circle>
     </svg>
         <span style="color: #fff;"></span>
     </button>
@@ -500,6 +499,13 @@ document.querySelectorAll('.audio-button').forEach(button => {
             playIcon.style.display = 'block';  // Show Play Icon
             pauseIcon.style.display = 'none';  // Hide Pause Icon
         }
+    });
+
+    // Add an event listener to reset the spinner and show play icon if spinner is clicked
+    spinnerIcon.addEventListener('click', () => {
+        spinnerIcon.style.display = 'none';  // Hide the spinner
+        playIcon.style.display = 'block';  // Show the play icon again
+        audio.pause();  // Pause the audio
     });
 });
 
