@@ -216,27 +216,35 @@
       transform: translateY(-50%);
     }
 
-    .menu-toggle-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #fff;
-      font-size: 24px;
-    }
-/* Hide the rotated icon by default */
-.menu-icon.rotated {
-    display: none;
+  .menu-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
     color: #fff;
+    font-size: 24px;
 }
 
-/* Hidden class to hide icons */
+/* Default state: Hide the rotated icon */
+.menu-icon.rotated {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Show the icon when toggled */
 .menu-icon.hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
-/* Menu icon transition (optional) */
+/* Show rotated icon explicitly */
+.menu-icon.rotated.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Transition effect (optional) */
 .menu-icon {
-    transition: opacity 0.3s ease; 
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
     /* Dropdown Menu (Hidden by default) */
@@ -275,21 +283,20 @@
 </style>
        
         <script>
-   document.getElementById('menu-toggle').addEventListener('click', function (e) {
-    var dropdownMenu = document.getElementById('dropdown-menu');
-    var normalIcon = this.querySelector('.menu-icon.normal');  // Normal icon (☰)
-    var rotatedIcon = this.querySelector('.menu-icon.rotated'); // Rotated icon (✖)
+  document.getElementById('menu-toggle').addEventListener('click', function (e) {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const normalIcon = this.querySelector('.menu-icon.normal');  // Normal icon (☰)
+    const rotatedIcon = this.querySelector('.menu-icon.rotated'); // Rotated icon (x)
 
     // Toggle visibility of the menu icons
     normalIcon.classList.toggle('hidden');
-    rotatedIcon.classList.toggle('hidden');
-    
+    rotatedIcon.classList.toggle('show');
+
     // Toggle the visibility of the dropdown menu
-    if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
-        dropdownMenu.style.display = 'block'; // Show the menu
-    } else {
-        dropdownMenu.style.display = 'none'; // Hide the menu
-    }
+    dropdownMenu.style.display =
+        dropdownMenu.style.display === 'none' || dropdownMenu.style.display === ''
+            ? 'block'
+            : 'none';
 
     // Prevent the click event from propagating to avoid immediate closure of the menu
     e.stopPropagation();
@@ -297,22 +304,22 @@
 
 // Close the dropdown menu and reset icons when clicking outside the menu
 document.addEventListener('click', function (e) {
-    var dropdownMenu = document.getElementById('dropdown-menu');
-    var menuToggleBtn = document.getElementById('menu-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const menuToggleBtn = document.getElementById('menu-toggle');
 
     if (!menuToggleBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
         // Close the menu
         dropdownMenu.style.display = 'none';
-        
+
         // Reset the icons
-        var normalIcon = menuToggleBtn.querySelector('.menu-icon.normal');
-        var rotatedIcon = menuToggleBtn.querySelector('.menu-icon.rotated');
-        
-        // Ensure the normal icon is visible and rotated icon is hidden
+        const normalIcon = menuToggleBtn.querySelector('.menu-icon.normal');
+        const rotatedIcon = menuToggleBtn.querySelector('.menu-icon.rotated');
+
         normalIcon.classList.remove('hidden');
-        rotatedIcon.classList.add('hidden');
+        rotatedIcon.classList.remove('show');
     }
 });
+
 
 // Close the dropdown menu when a menu option is clicked (optional, if you have menu items inside)
 var menuLinks = document.querySelectorAll('#dropdown-menu a');
