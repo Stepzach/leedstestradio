@@ -1546,9 +1546,18 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     }
   }
 
-
+  .background-box {
+    position: fixed; /* Fixed position stays in place even when scrolling */
+    top: -50px;
+    left: 0;
+    width: 100%; /* Full width of the viewport */
+    height: 70px; /* Full height of the viewport */
+    background-color: #bb0c0c; /* Solid blue color */
+    z-index: -1; /* Places the box behind all other elements */
+}
                    
 </style>
+                 <div class="brformobile"> <div class="background-box"></div> </div>
                 <script>
     const playPauseButton10 = document.getElementById('playPauseButton1');
     const livestream10 = document.getElementById('livestream1');
