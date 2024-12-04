@@ -497,18 +497,36 @@ document.querySelectorAll('.audio-button').forEach(button => {
     const pauseIcon = button.querySelector('.pause-icon');
     const spinnerIcon = button.querySelector('.spinner-icon');  // Get the spinner icon
 
+    // Track if the spinner animation has already been shown
+    let isFirstClick = true;
+
     button.addEventListener('click', () => {
         if (audio && audio.paused) {
             // When clicked, start playing the audio
             audio.play();
             playIcon.style.display = 'none';  // Hide Play Icon
+            pauseIcon.style.display = 'none';  // Hide Pause Icon initially
             spinnerIcon.style.display = 'block';  // Show Spinner
-            pauseIcon.style.display = 'none';  // Ensure Pause Icon is hidden initially
+
+            // Disable the button while the spinner is visible
+            button.disabled = true;  // Disable the button during loading
+
+            if (isFirstClick) {
+                // Show the loading animation only on the first click
+                spinnerIcon.classList.add('loading'); // Add loading class to start animation
+                isFirstClick = false; // Set flag to false after the first click
+            } else {
+                // No animation on subsequent play clicks
+                spinnerIcon.style.display = 'none'; // Hide spinner immediately
+                pauseIcon.style.display = 'block';  // Show Pause Icon
+            }
 
             // After 4 seconds, hide the spinner and show the pause icon
             setTimeout(() => {
-                spinnerIcon.style.display = 'none';  // Hide Spinner
+                spinnerIcon.classList.remove('loading'); // Remove loading class
+                spinnerIcon.style.display = 'none';  // Hide the spinner
                 pauseIcon.style.display = 'block';  // Show Pause Icon
+                button.disabled = false;  // Re-enable the button after the loading animation
             }, 4000); // 4 seconds delay for the spinner
         } else if (audio) {
             // If the audio is already playing, pause the audio
@@ -520,14 +538,15 @@ document.querySelectorAll('.audio-button').forEach(button => {
 
     // Add an event listener to reset the spinner and show play icon if spinner is clicked
     spinnerIcon.addEventListener('click', () => {
+        spinnerIcon.classList.remove('loading'); // Stop animation if clicked
         spinnerIcon.style.display = 'none';  // Hide the spinner
         playIcon.style.display = 'block';  // Show the play icon again
         if (audio) {
             audio.pause();  // Pause the audio if spinner is clicked
         }
+        button.disabled = false; // Re-enable the button immediately when the spinner is clicked
     });
 });
-
 
 
 </script>
