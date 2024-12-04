@@ -50,18 +50,18 @@
     margin-left: 5px !important;
 }
 
-.spinner-icon.loading path {
-    animation: spin 4s linear forwards;  /* Rotate the spinner over 4 seconds once */
-}
+ .spinner-icon.loading {
+        animation: spin 4s linear forwards;  /* Rotate the spinner over 4 seconds once */
+    }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
     }
-    to {
-        transform: rotate(360deg);
-    }
-}
 
  </style>       
 
@@ -81,7 +81,7 @@
     </svg>
     <svg class="spinner-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="31.4">
-            <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="1s" repeatCount="indefinite"></animate>
+         <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="4s" fill="freeze"></animate>
         </circle>
     </svg>
         <span style="color: #fff;"></span>
@@ -167,7 +167,7 @@
     </svg>
     <svg class="spinner-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="31.4">
-            <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="1s" repeatCount="indefinite"></animate>
+          <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="4s" fill="freeze"></animate>
         </circle>
     </svg>
     <span class="hover-effect" style="color: #fff;">Tune In</span>
