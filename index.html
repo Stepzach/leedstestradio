@@ -45,8 +45,8 @@
 
 /* Spinner icon size for the "large icon" (large-play-button) */
 .large-play-button .spinner-icon {
-    width: 18px !important; /* Smaller size for the large button */
-    height: 18px !important;
+    width: 20px !important; /* Smaller size for the large button */
+    height: 20px !important;
 }
 
 .spinner-icon.loading path {
@@ -523,12 +523,10 @@ document.querySelectorAll('.audio-button').forEach(button => {
                 pauseIcon.style.display = 'none';  // Hide Pause Icon initially
                 spinnerIcon.style.display = 'block';  // Show Spinner
 
-                // Disable the button while the spinner is visible
-                button.disabled = true;  // Disable the button during loading
-
+                // Disable the button while the spinner is visible (only on the first click)
                 if (isFirstClick) {
-                    // Show the loading animation only on the first click
-                    spinnerIcon.classList.add('loading'); // Add loading class to start animation
+                    button.disabled = true;  // Disable the button during loading
+                    spinnerIcon.classList.add('loading'); // Start the spinner animation
                     isFirstClick = false; // Set flag to false after the first click
                 } else {
                     // No animation on subsequent play clicks
@@ -563,7 +561,6 @@ document.querySelectorAll('.audio-button').forEach(button => {
         button.disabled = false; // Re-enable the button immediately when the spinner is clicked
     });
 });
-
 
 
 </script>
