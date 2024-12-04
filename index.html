@@ -52,9 +52,9 @@
         <svg class="pause-icon icon large-icon large-play-button" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
         </svg>
-        <svg class="spinner-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <svg class="spinner-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"></circle>
-        <path d="M12 2 A10 10 0 1 1 2 12" stroke="white" stroke-width="2" fill="none" stroke-dasharray="63" stroke-dashoffset="63">
+        <path d="M12 2 A10 10 0 1 1 2 12" stroke="white" stroke-width="2" fill="none" stroke-dasharray="63.66" stroke-dashoffset="63.66">
             <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"></animateTransform>
         </path>
     </svg>
@@ -451,12 +451,14 @@ document.getElementById('dropdown-menufull').addEventListener('click', function 
     padding-left: 10px;
 }
 
-.audio-button:hover .icon {
-    fill: #000; /* Change icon color on hover */
-}
+@media (pointer: fine) {
+    .audio-button:hover .icon {
+        fill: #000; /* Change icon color on hover */
+    }
 
-.audio-button:hover .hover-effect {
-    color: #000; /* Change text color on hover */
+    .audio-button:hover .hover-effect {
+        color: #000; /* Change text color on hover */
+    }
 }
 .content, .welcome {
             display: none; /* Initially hidden */
@@ -474,7 +476,7 @@ document.getElementById('dropdown-menufull').addEventListener('click', function 
 
 <!-- JavaScript -->
 <script>
- document.querySelectorAll('.audio-button').forEach(button => {
+document.querySelectorAll('.audio-button').forEach(button => {
     // Get the audio and icon elements for this specific button
     const audio = button.closest('.audio-container').querySelector('.livestream');
     const playIcon = button.querySelector('.play-icon');
