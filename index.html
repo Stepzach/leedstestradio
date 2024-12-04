@@ -45,11 +45,11 @@
         Your browser does not support the audio element.
     </audio>
 
-    <button class="audio-button" style="margin-left: 20px;">
-        <svg class="play-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <button class="audio-button" style="margin-left: 15px;">
+        <svg class="play-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 5v14l11-7z"></path>
         </svg>
-        <svg class="pause-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <svg class="pause-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
         </svg>
         <span class="hover-effect" style="color: #fff;"></span>
@@ -143,6 +143,11 @@
 <!-- CSS -->
 
         <style>
+
+         .large-icon {
+    width: 46px; /* Double the size */
+    height: 46px;
+}
 /* Basic Reset */
  * {
     margin: 0;
