@@ -814,6 +814,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
 
 <div id="page1" class="content"> 
 <br><br><br> <br>
+    <div class="brformobile"> <br> <br> </div>
     <h1 style="text-align: center; color: #fff; font-size:25px; width:80%; margin-right: auto; margin-left: auto;">Weekly Schedule: Semester 1 2024<br></h1>
     
 <h2 style="text-align: center; color: #fff;">
@@ -1322,7 +1323,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
 <div id="page2" class="content">
     <br><br><br> <br>
 
-
+<div class="brformobile"> <br> <br> </div>
 
 <div class="mobile-container">
   <!-- Header -->
@@ -1538,6 +1539,15 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
       display: none;
     }
   }
+
+ @media screen and (min-width: 600px) {
+    .brformobile {
+      display: none;
+    }
+  }
+
+
+                   
 </style>
                 <script>
     const playPauseButton10 = document.getElementById('playPauseButton1');
