@@ -523,25 +523,27 @@ document.querySelectorAll('.audio-button').forEach(button => {
                 playIcon.style.display = 'none';  // Hide Play Icon
                 pauseIcon.style.display = 'none';  // Hide Pause Icon initially
 
-                // Only show the spinner and disable the button on the first click
                 if (isFirstClick) {
+                    // Only show the spinner and disable the button on the first click
                     spinnerIcon.style.display = 'block';  // Show Spinner
                     spinnerIcon.classList.add('loading'); // Start the spinner animation
                     button.disabled = true;  // Disable the button during loading
-                    isFirstClick = false; // Set flag to false after the first click
-                } else {
-                    // No spinner animation, just show the pause icon
-                    spinnerIcon.style.display = 'none';  // Hide the spinner immediately
-                    pauseIcon.style.display = 'block';  // Show Pause Icon
-                }
 
-                // After 4 seconds, hide the spinner and show the pause icon
-                setTimeout(() => {
-                    spinnerIcon.classList.remove('loading'); // Remove loading class
+                    // After 4 seconds, hide the spinner and show the pause icon
+                    setTimeout(() => {
+                        spinnerIcon.classList.remove('loading'); // Remove loading class
+                        spinnerIcon.style.display = 'none';  // Hide the spinner
+                        pauseIcon.style.display = 'block';  // Show Pause Icon
+                        button.disabled = false;  // Re-enable the button after the loading animation
+                    }, 4000); // 4 seconds delay for the spinner
+
+                    // After the first click, set flag to false so subsequent clicks won't show the spinner
+                    isFirstClick = false;
+                } else {
+                    // No spinner animation, just show the pause icon immediately
                     spinnerIcon.style.display = 'none';  // Hide the spinner
                     pauseIcon.style.display = 'block';  // Show Pause Icon
-                    button.disabled = false;  // Re-enable the button after the loading animation
-                }, 4000); // 4 seconds delay for the spinner
+                }
             } else {
                 // If the audio is already playing, pause the audio
                 audio.pause();
