@@ -72,7 +72,7 @@
     </button>
 </div>
 
-
+<div id="dropdown-menufull" class="dropdown-menufull">
 <!-- Dropdown Menu (Initially hidden) -->
 <div id="dropdown-menu" class="dropdown-menu">
   <div class="header" data-page="page1"><a href="#schedule">Schedule</a></div>
@@ -82,6 +82,15 @@
   <div class="header" style="border-bottom: solid 1px #fff;" data-page="page5"><a href="#contact">Contact</a></div>
 </div>
 
+<!-- New Social Media Row (outside the drop own menu) -->
+<div class="social-media">
+  <a href="https://instagram.com" target="_blank" class="fa-instagra"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg></a>
+  <a href="https://facebook.com" target="_blank" class="fa fa-faceboo"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg></a>
+  <a href="https://tiktok.com" target="_blank" class="fa-brands fa-tiktok" style="margin-top: 1px;"><svg xmlns="http://www.w3.org/2000/svg" width="25px" height="30px" viewBox="0 0 448 512"><path fill="currentColor" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121 121 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"/></svg></a>
+  <a href="https://twitter.com" target="_blank" class="fa fa-twitte"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" viewBox="0 0 14 14"><g fill="none"><g clip-path="url(#primeTwitter0)"><path fill="currentColor" d="M11.025.656h2.147L8.482 6.03L14 13.344H9.68L6.294 8.909l-3.87 4.435H.275l5.016-5.75L0 .657h4.43L7.486 4.71zm-.755 11.4h1.19L3.78 1.877H2.504z"/></g><defs><clipPath id="primeTwitter0"><path fill="#fff" d="M0 0h14v14H0z"/></clipPath></defs></g></svg></a>
+
+</div>
+</div>
 </div>
 
         
@@ -266,33 +275,80 @@
 
     /* Dropdown Menu (Hidden by default) */
     #dropdown-menu {
-      display: none;
-      background-color: #bb0c0c;
-      position: fixed;
-      top: 76px; /* Position below the header */
-      left: 0;
-      right: 0;
-    
-      z-index: 999;
-    }
+        
+    background-color: #bb0c0c;
+    position: fixed;
+    top: 76px; /* Position below the header */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding-bottom: 20px; /* Padding to ensure space between menu and social icons */
+  }
+       #dropdown-menufull {
+        display: none;
+ }
+  #dropdown-menu a {
+    display: block;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center; /* Center the text inside the menu */
+  }
 
-    #dropdown-menu a {
-      display: block;
-      color: white;
-      padding: 10px 0;
-      text-decoration: none;
-      font-size: 18px;
-      text-align: center; /* Center the text inside the menu */
-    }
-#dropdown-menu .header {
-  background-color: #bb0c0c; 
-  border-top: solid 1px #fff;
-  border-right: solid 1px #fff;
-  border-left: solid 1px #fff;
- 
+  #dropdown-menu .header {
+    background-color: #bb0c0c; 
+    border-top: solid 1px #fff;
+    border-right: solid 1px #fff;
+    border-left: solid 1px #fff;
+    padding: 10px; /* Space inside the box */
+  }
 
-  padding: 10px; /* Space inside the box */
-}
+  /* Social Media Row Styling */
+  .social-media {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #bb0c0c;
+    position: fixed;
+    top: 400;
+    left: 0;
+    right: 0;
+    z-index: 998;
+  }
+
+  /* Styling for Social Media Icons */
+  .social-media a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+
+  /* Custom background colors for each social icon */
+  .fa-faceboo {
+    background: #a00000;;
+    color: white;
+  }
+
+  .fa-instagra {
+    background: #a00000;; /* Instagram's signature color */
+    color: white;
+  }
+
+  .fa-tiktok {
+    background: #a00000;; /* TikTok's signature color */
+    color: white;
+  }
+
+  .fa-twitte {
+    background: #a00000;; /* Twitter's signature color */
+    color: white;
+  }
+
     #dropdown-menu a:hover {
       background-color: #9b0a0a;
     }
@@ -302,7 +358,7 @@
         <script>
  
 document.getElementById('menu-toggle').addEventListener('click', function (e) {
-    const dropdownMenu = document.getElementById('dropdown-menu');
+    const dropdownMenu = document.getElementById('dropdown-menufull');
     const normalIcon = this.querySelector('.menu-icon.normal');  // Normal icon (☰)
     const rotatedIcon = this.querySelector('.menu-icon.rotated'); // Rotated icon (x)
 
@@ -322,7 +378,7 @@ document.getElementById('menu-toggle').addEventListener('click', function (e) {
 
 // Close the dropdown menu and reset icons when clicking outside the menu
 document.addEventListener('click', function (e) {
-    const dropdownMenu = document.getElementById('dropdown-menu');
+    const dropdownMenu = document.getElementById('dropdown-menufull');
     const menuToggleBtn = document.getElementById('menu-toggle');
 
     if (!menuToggleBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
