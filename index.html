@@ -46,13 +46,13 @@
     </audio>
 
     <button class="audio-button large-play-button" style="margin-left: 5px;">
-        <svg class="play-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 5v14l11-7z"></path>
-        </svg>
-        <svg class="pause-icon icon large-icon large-play-button" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
-            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
-        </svg>
-     <svg class="spinner-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+       <svg class="play-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5v14l11-7z"></path>
+    </svg>
+    <svg class="pause-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+    </svg>
+    <svg class="spinner-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="31.4">
             <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="1s" repeatCount="indefinite"></animate>
         </circle>
@@ -132,16 +132,19 @@
 
     <!-- Play/Pause Button -->
     <button class="audio-button" style="margin-left: 20px;">
-        <!-- Play Icon -->
-        <svg class="play-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 5v14l11-7z"></path>
-        </svg>
-        <!-- Pause Icon (Hidden by default) -->
-        <svg class="pause-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
-            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
-        </svg>
-        <span class="hover-effect" style="color: #fff;">Tune In</span>
-    </button>
+    <svg class="play-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5v14l11-7z"></path>
+    </svg>
+    <svg class="pause-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+    </svg>
+    <svg class="spinner-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="31.4">
+            <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="1s" repeatCount="indefinite"></animate>
+        </circle>
+    </svg>
+    <span class="hover-effect" style="color: #fff;">Tune In</span>
+</button>
 
 <div class="title">
    <div data-v-d239eb30="" data-v-2210cc27="" class="MarqueeConditional">
@@ -475,15 +478,17 @@ document.getElementById('dropdown-menufull').addEventListener('click', function 
 
 <!-- JavaScript -->
 <script>
+
 document.querySelectorAll('.audio-button').forEach(button => {
-    // Get the audio and icon elements for this specific button
-    const audio = button.closest('.audio-container').querySelector('.livestream');
+    const audio = button.closest('.audio-container') ? 
+        button.closest('.audio-container').querySelector('.livestream') : null; // Get the audio element (if present)
     const playIcon = button.querySelector('.play-icon');
     const pauseIcon = button.querySelector('.pause-icon');
     const spinnerIcon = button.querySelector('.spinner-icon');  // Get the spinner icon
 
     button.addEventListener('click', () => {
-        if (audio.paused) {
+        if (audio && audio.paused) {
+            // When clicked, start playing the audio
             audio.play();
             playIcon.style.display = 'none';  // Hide Play Icon
             spinnerIcon.style.display = 'block';  // Show Spinner
@@ -493,8 +498,9 @@ document.querySelectorAll('.audio-button').forEach(button => {
             setTimeout(() => {
                 spinnerIcon.style.display = 'none';  // Hide Spinner
                 pauseIcon.style.display = 'block';  // Show Pause Icon
-            }, 4000); // 4 seconds
-        } else {
+            }, 4000); // 4 seconds delay for the spinner
+        } else if (audio) {
+            // If the audio is already playing, pause the audio
             audio.pause();
             playIcon.style.display = 'block';  // Show Play Icon
             pauseIcon.style.display = 'none';  // Hide Pause Icon
@@ -505,9 +511,12 @@ document.querySelectorAll('.audio-button').forEach(button => {
     spinnerIcon.addEventListener('click', () => {
         spinnerIcon.style.display = 'none';  // Hide the spinner
         playIcon.style.display = 'block';  // Show the play icon again
-        audio.pause();  // Pause the audio
+        if (audio) {
+            audio.pause();  // Pause the audio if spinner is clicked
+        }
     });
 });
+
 
 
 </script>
