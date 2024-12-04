@@ -52,6 +52,12 @@
         <svg class="pause-icon icon large-icon large-play-button" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
         </svg>
+        <svg class="spinner-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"></circle>
+        <path d="M12 2 A10 10 0 1 1 2 12" stroke="white" stroke-width="2" fill="none" stroke-dasharray="63" stroke-dashoffset="63">
+            <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"></animateTransform>
+        </path>
+    </svg>
         <span style="color: #fff;"></span>
     </button>
   </div>
@@ -468,17 +474,25 @@ document.getElementById('dropdown-menufull').addEventListener('click', function 
 
 <!-- JavaScript -->
 <script>
-  document.querySelectorAll('.audio-button').forEach(button => {
+ document.querySelectorAll('.audio-button').forEach(button => {
     // Get the audio and icon elements for this specific button
     const audio = button.closest('.audio-container').querySelector('.livestream');
     const playIcon = button.querySelector('.play-icon');
     const pauseIcon = button.querySelector('.pause-icon');
+    const spinnerIcon = button.querySelector('.spinner-icon');  // Get the spinner icon
 
     button.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
             playIcon.style.display = 'none';  // Hide Play Icon
-            pauseIcon.style.display = 'block';  // Show Pause Icon
+            spinnerIcon.style.display = 'block';  // Show Spinner
+            pauseIcon.style.display = 'none';  // Ensure Pause Icon is hidden initially
+
+            // After 4 seconds, hide the spinner and show the pause icon
+            setTimeout(() => {
+                spinnerIcon.style.display = 'none';  // Hide Spinner
+                pauseIcon.style.display = 'block';  // Show Pause Icon
+            }, 4000); // 4 seconds
         } else {
             audio.pause();
             playIcon.style.display = 'block';  // Show Play Icon
@@ -486,6 +500,7 @@ document.getElementById('dropdown-menufull').addEventListener('click', function 
         }
     });
 });
+
 
 </script>
 
