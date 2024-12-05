@@ -804,10 +804,10 @@ main[data-v-f1b4c660] {
     --py1bar: 0.6rem 0 1rem 0;
     --p2: 1.4rem 2rem 1.6rem 2rem;
     --py2: 1.4rem 0 1.6rem 0;
-    --ffdub: AdieuLight ;
-    --ffsans: SuisseIntl ;
-    --ffsansmono: SwissMon;
-    --ffneue: SuisseNeue;
+    --ffdub: AdieuLight, Helvetica, Arial, sans-serif;
+    --ffsans: SuisseIntl, Helvetica, Arial, sans-serif;
+    --ffsansmono: SwissMono, Helvetica, Arial, sans-serif;
+    --ffneue: SuisseNeue, Helvetica, Arial, sans-serif;
     --fs0: 1.2rem;
     --fs1: 1.45rem;
     --fs2: 2rem;
@@ -1001,13 +1001,13 @@ summary {
 
 @font-face {
     font-family: AdieuLight;
-    src: url("Conduit ITC Medium Italic.otf") format("otf"), url("Conduit ITC Black Regular.otf") format("otf")
+    src: url("Adieu-Light.75979a4f.woff2") format("woff2"), url("Adieu-Light.f2a18449.woff") format("woff")
 }
 
 @font-face {
     font-family: Adieu;
-    src: url("Conduit ITC Black Regular.otf") format("otf"), url("Conduit ITC Black Regular.otf") format("otf");
-  
+    src: url("Adieu-Regular.29dff3b6.woff2") format("woff2"), url("Adieu-Regular.8032c8f7.woff") format("woff");
+    font-weight:700
 }
 
 @font-face {
@@ -1028,12 +1028,12 @@ summary {
 
 @font-face {
     font-family: SwissMono;
-    src: url("Conduit ITC Light Regular.otf") format("otf"), url("SwissMono.4ff583cd.woff") format("woff")
+    src: url("SwissMono.8c81cf16.woff2") format("woff2"), url("SwissMono.4ff583cd.woff") format("woff")
 }
 
 @font-face {
     font-family: SwissMono;
-    src: url("Conduit ITC Light Regular.otf") format("otf"), url("SuisseIntlMono-Bold.fb5d16e8.woff") format("woff");
+    src: url("SuisseIntlMono-Bold.95c0e8d7.woff2") format("woff2"), url("SuisseIntlMono-Bold.fb5d16e8.woff") format("woff");
     font-weight:700
 }
 
