@@ -19,199 +19,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <html lang="en"><head>
     
-    <script>
-    const schedule = {
-        Monday: [
-            ["9:00 AM", "10:00 AM", "Breakfast"],
-            ["10:00 AM", "11:00 AM", "Breakfast"],
-            ["11:00 AM", "12:00 PM", "Big Names on Campus / Chattergories"],
-            ["12:00 PM", "1:00 PM", "The Birth of The Beat"],
-            ["1:00 PM", "2:00 PM", "Sidilicious Selects"],
-            ["2:00 PM", "3:00 PM", "SPORT"],
-            ["3:00 PM", "4:00 PM", "LGBTQ+ SHOW"],
-            ["4:00 PM", "5:00 PM", "The More You Know (Show)"],
-            ["5:00 PM", "6:00 PM", "HOMETIME"],
-            ["6:00 PM", "7:00 PM", "HOMETIME"],
-            ["7:00 PM", "8:00 PM", "LIVE AND LOCAL"],
-            ["8:00 PM", "9:00 PM", "ROCK AND PUNK"],
-            ["9:00 PM", "10:00 PM", "Dad Music For Girls"],
-            ["10:00 PM", "11:00 PM", "Uni Music Library Finds"],
-            ["11:00 PM", "12:00 AM", "Spiritual Guide"]
-        ],
-        
-         Tuesday: [
-        ["9:00 AM", "10:00 AM", "Breakfast"],
-        ["10:00 AM", "11:00 AM", "Breakfast"],
-        ["11:00 AM", "12:00 PM", "What's Poppin!?"],
-        ["12:00 PM", "1:00 PM", "The Girls Got Guts"],
-        ["1:00 PM", "2:00 PM", "Taylor's Version / The Lame Show"],
-        ["2:00 PM", "3:00 PM", "Your LeedsList / And That's What You Missed On Glee"],
-        ["3:00 PM", "4:00 PM", "WOMEN'S HOUR"],
-        ["4:00 PM", "5:00 PM", "Golden Hour / I'm Just A Girl"],
-        ["5:00 PM", "6:00 PM", "HOMETIME"],
-        ["6:00 PM", "7:00 PM", "HOMETIME"],
-        ["7:00 PM", "8:00 PM", "JAZZ, FUNK AND SOUL"],
-        ["8:00 PM", "9:00 PM", "Two Cents and Nonsense"],
-        ["9:00 PM", "10:00 PM", "Politics of Punk / Time Machine"],
-        ["10:00 PM", "11:00 PM", "Thank You For The Music"],
-        ["11:00 PM", "12:00 AM", "Jungle Gems with Mylania"]
-    ],
-    Wednesday: [
-        ["9:00 AM", "10:00 AM", "Breakfast"],
-        ["10:00 AM", "11:00 AM", "Breakfast"],
-        ["11:00 AM", "12:00 PM", "Sounds Of The Sahara"],
-        ["12:00 PM", "1:00 PM", "SOCIETY SPOTLIGHT"],
-        ["1:00 PM", "2:00 PM", "LSTV.MP3 / GRYPH-ON-AIR"],
-        ["2:00 PM", "3:00 PM", "Life Lessons with Liv and Laura"],
-        ["3:00 PM", "4:00 PM", "POLITICS HOUR"],
-        ["4:00 PM", "5:00 PM", "Happy Hour"],
-        ["5:00 PM", "6:00 PM", "HOMETIME"],
-        ["6:00 PM", "7:00 PM", "HOMETIME"],
-        ["7:00 PM", "8:00 PM", "AFROBEATS"],
-        ["8:00 PM", "9:00 PM", "INTERNATIONAL"],
-        ["9:00 PM", "10:00 PM", "Antagonising Aunts"],
-        ["10:00 PM", "11:00 PM", "Low-Key with Rivah"],
-        ["11:00 PM", "12:00 AM", "Disco Hour"]
-    ],
-    Thursday: [
-        ["9:00 AM", "10:00 AM", "Breakfast"],
-        ["10:00 AM", "11:00 AM", "Breakfast"],
-        ["11:00 AM", "12:00 PM", "Vanity Unfair's Oscar Party / Last Days of Disco"],
-        ["12:00 PM", "1:00 PM", "Barricade"],
-        ["1:00 PM", "2:00 PM", "Never Been a BNOC"],
-        ["2:00 PM", "3:00 PM", "The Longest Leg / Continental Buffet"],
-        ["3:00 PM", "4:00 PM", "SAFE SPACE"],
-        ["4:00 PM", "5:00 PM", "Waffle House / The Tea Party"],
-        ["5:00 PM", "6:00 PM", "HOMETIME"],
-        ["6:00 PM", "7:00 PM", "HOMETIME"],
-        ["7:00 PM", "8:00 PM", "FOLK AND COUNTRY"],
-        ["8:00 PM", "9:00 PM", "INDIE AND ALT"],
-        ["9:00 PM", "10:00 PM", "Wisecrack"],
-        ["10:00 PM", "11:00 PM", "Garcia's Weekly Round Up"],
-        ["11:00 PM", "12:00 AM", "Beatscape"]
-    ],
-    Friday: [
-        ["9:00 AM", "10:00 AM", "Breakfast"],
-        ["10:00 AM", "11:00 AM", "Breakfast"],
-        ["11:00 AM", "12:00 PM", "M&P Megamix"],
-        ["12:00 PM", "1:00 PM", "Babe"],
-        ["1:00 PM", "2:00 PM", "NEWS OF THE WEEK"],
-        ["2:00 PM", "3:00 PM", "SPORT"],
-        ["3:00 PM", "4:00 PM", "'BUT WHERE ARE YOU REALLY FROM?'"],
-        ["4:00 PM", "5:00 PM", "Girlhood"],
-        ["5:00 PM", "6:00 PM", "HOMETIME"],
-        ["6:00 PM", "7:00 PM", "HOMETIME"],
-        ["7:00 PM", "8:00 PM", "HIP HOP, RAP & RnB"],
-        ["8:00 PM", "9:00 PM", "ELECTRONIC"],
-        ["9:00 PM", "10:00 PM", "The Midwest Emo Hour"],
-        ["10:00 PM", "11:00 PM", "Behind The Beat (biweekly)"],
-        ["11:00 PM", "12:00 AM", "Crank Wave"]
-    ],
-    Saturday: [
-        ["10:00 AM", "11:00 AM", "Leeds, What's Happening?"],
-        ["11:00 AM", "12:00 PM", "LSR Out N About"],
-        ["12:00 PM", "1:00 PM", "Box! Box! Box!"],
-        ["2:00 PM", "3:00 PM", "(Not So) Dumb Blondes"],
-        ["3:00 PM", "4:00 PM", "Soccer Punch"],
-        ["4:00 PM", "5:00 PM", "Soccer Punch"],
-        ["5:00 PM", "6:00 PM", "BA Honoured To Be Music"],
-        ["6:00 PM", "7:00 PM", "It Takes A Village"],
-        ["7:00 PM", "8:00 PM", "SATURDAY NIGHT FEVER"],
-        ["8:00 PM", "9:00 PM", "SATURDAY NIGHT FEVER"],
-        ["9:00 PM", "10:00 PM", "After Hours"],
-        ["10:00 PM", "11:00 PM", "Tjaro x LSR"],
-        ["11:00 PM", "12:00 AM", "Prog Ho!"]
-    ],
-    Sunday: [
-        ["10:00 AM", "11:00 AM", "Old, New, Borrowed, Blue"],
-        ["11:00 AM", "12:00 PM", "Jamie Goes To Mollywood"],
-        ["12:00 PM", "1:00 PM", "My Records / Creme de la Creme"],
-        ["1:00 PM", "2:00 PM", "BOX OFFICE"],
-        ["2:00 PM", "3:00 PM", "SRA CHART SHOW"],
-        ["3:00 PM", "4:00 PM", "SRA CHART SHOW"],
-        ["4:00 PM", "5:00 PM", "SUNDAY ROAST"],
-        ["5:00 PM", "6:00 PM", "SUNDAY ROAST"],
-        ["6:00 PM", "7:00 PM", "Syke Up Your Life / The Vinyl Frontier"],
-        ["7:00 PM", "8:00 PM", "ALBUM REVIEW"],
-        ["8:00 PM", "9:00 PM", "Space Age Love Songs"],
-        ["9:00 PM", "10:00 PM", "Sleepytime Songs"],
-        ["10:00 PM", "11:00 PM", "The Label Show"],
-        ["11:00 PM", "12:00 AM", "EKBeats"]
-    ]
-
-        // Add the rest of the days here in the same format
-    };
-
-    function getCurrentShow() {
-        const now = new Date(); // Current local time
-        const gmtNow = new Date(now.toUTCString()); // Convert to GMT
-        const day = gmtNow.toLocaleDateString("en-US", { weekday: "long" });
-        const currentTime = gmtNow.getHours() * 60 + gmtNow.getMinutes();
-
-        const todaySchedule = schedule[day] || [];
-        let liveNow = "No show live";
-        let upNext = "No upcoming show";
-
-        for (let i = 0; i < todaySchedule.length; i++) {
-            const [start, end, showName] = todaySchedule[i];
-            const [startHour, startMin] = parseTime(start);
-            const [endHour, endMin] = parseTime(end);
-
-            const startTime = startHour * 60 + startMin;
-            const endTime = endHour * 60 + endMin;
-
-            if (currentTime >= startTime && currentTime < endTime) {
-                liveNow = showName;
-                if (i + 1 < todaySchedule.length) {
-                    upNext = todaySchedule[i + 1][2];
-                }
-                break;
-            }
-        }
-
-        return { liveNow, upNext };
-    }
-
-    function parseTime(timeStr) {
-        const [time, meridian] = timeStr.split(" ");
-        const [hour, minute] = time.split(":").map(Number);
-        return [
-            (hour % 12) + (meridian === "PM" ? 12 : 0), // Convert to 24-hour format
-            minute
-        ];
-    }
-
-   function updateUI() {
-    const { liveNow, upNext } = getCurrentShow();
-
-    // First set of spans
-    const liveNowElement1 = document.getElementById("live-now-text");
-    const upNextElement1 = document.getElementById("up-next-text");
-
-    // Second set of spans
-    const liveNowElement2 = document.getElementById("live-now-text2");
-    const upNextElement2 = document.getElementById("up-next-text2");
-
-    // Update both sets if they exist
-    if (liveNowElement1 && upNextElement1) {
-        liveNowElement1.textContent = liveNow;
-        upNextElement1.textContent = upNext;
-    }
-
-    if (liveNowElement2 && upNextElement2) {
-        liveNowElement2.textContent = liveNow;
-        upNextElement2.textContent = upNext;
-    }
-}
-
-    // Initialize the UI
-    updateUI();
-
-    // Update every minute to reflect schedule changes
-    setInterval(updateUI, 60000);
-</script>
-    
-    
+   
     
     
     <meta name="theme-color" content="#a00000"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leeds Student Radio</title><script async="" src="https://www.clarity.ms/tag/j1xid1iq0r"></script><script>(function (c, l, a, r, i, t, y) {
@@ -2547,7 +2355,199 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
 </div>
 
 <div data-v-41749928="" class="footer-boxes"><div data-v-41749928="" class="footer-box"><div data-v-41749928="" class="description a-hover a-grey" style="color: #fff">Brought to you by our sponsor: The Careers Service: Discover, develop and decide your future with appointments, events and vacancies.<br><a class="hover-effect" href="https://mycareer.leeds.ac.uk/unauth" target="_blank" style="color: #fff; margin-left: -9px;"><u>Find out more</u></a></u></div></div><div data-v-41749928="" class="footer-box-middle"><a data-v-41749928="" href="https://engage.luu.org.uk/groups/VFG/leeds-student-radio/memberships" target="_blank" class="hover-effect" style="color: #fff"><span data-v-41749928="">Membership</span></a><a data-v-41749928="" href="https://engage.luu.org.uk/groups/VFG/leeds-student-radio/events" class=""><span data-v-41749928="" class="hover-effect" style="color: #fff">Events</span></a><a data-v-41749928="" href="/djs" class="" to="/djs"><span data-v-41749928="" class="hover-effect" style="color: #fff">DJs</span></a><a data-v-41749928=""  href="" rel="noopener" class=""><span data-v-41749928=""  class="hover-effect" style="color: #fff">Shop</span></a></div><div data-v-41749928="" class="footer-box-middle"><div data-v-41749928=""><a data-v-41749928="" href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f" target="_blank" class="hover-effect" style="color: #fff">Spotify</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://soundcloud.com/thisislsr" target="_blank" class="hover-effect" style="color: #fff">SoundCloud</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://www.youtube.com/@lsrfm" target="_blank" class="hover-effect" style="color: #fff">Youtube</a></div></div><div data-v-41749928="" class="footer-box"><div data-v-41749928="" class="link-list"><div data-v-41749928=""><a data-v-41749928="" href="https://www.instagram.com/thisislsr/" target="_blank" class="hover-effect" style="color: #fff">Instagram</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://www.facebook.com/thisislsr" target="_blank" class="hover-effect" style="color: #fff">Facebook</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://www.tiktok.com/@thisislsr" target="_blank" class="hover-effect" style="color: #fff">TikTok</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://twitter.com/thisislsr" target="_blank" class="hover-effect" style="color: #fff">X (Twitter)</a></div><div data-v-41749928=""></div></div></div></div>
+ <script>
+    const schedule = {
+        Monday: [
+            ["9:00 AM", "10:00 AM", "Breakfast"],
+            ["10:00 AM", "11:00 AM", "Breakfast"],
+            ["11:00 AM", "12:00 PM", "Big Names on Campus / Chattergories"],
+            ["12:00 PM", "1:00 PM", "The Birth of The Beat"],
+            ["1:00 PM", "2:00 PM", "Sidilicious Selects"],
+            ["2:00 PM", "3:00 PM", "SPORT"],
+            ["3:00 PM", "4:00 PM", "LGBTQ+ SHOW"],
+            ["4:00 PM", "5:00 PM", "The More You Know (Show)"],
+            ["5:00 PM", "6:00 PM", "HOMETIME"],
+            ["6:00 PM", "7:00 PM", "HOMETIME"],
+            ["7:00 PM", "8:00 PM", "LIVE AND LOCAL"],
+            ["8:00 PM", "9:00 PM", "ROCK AND PUNK"],
+            ["9:00 PM", "10:00 PM", "Dad Music For Girls"],
+            ["10:00 PM", "11:00 PM", "Uni Music Library Finds"],
+            ["11:00 PM", "12:00 AM", "Spiritual Guide"]
+        ],
+        
+         Tuesday: [
+        ["9:00 AM", "10:00 AM", "Breakfast"],
+        ["10:00 AM", "11:00 AM", "Breakfast"],
+        ["11:00 AM", "12:00 PM", "What's Poppin!?"],
+        ["12:00 PM", "1:00 PM", "The Girls Got Guts"],
+        ["1:00 PM", "2:00 PM", "Taylor's Version / The Lame Show"],
+        ["2:00 PM", "3:00 PM", "Your LeedsList / And That's What You Missed On Glee"],
+        ["3:00 PM", "4:00 PM", "WOMEN'S HOUR"],
+        ["4:00 PM", "5:00 PM", "Golden Hour / I'm Just A Girl"],
+        ["5:00 PM", "6:00 PM", "HOMETIME"],
+        ["6:00 PM", "7:00 PM", "HOMETIME"],
+        ["7:00 PM", "8:00 PM", "JAZZ, FUNK AND SOUL"],
+        ["8:00 PM", "9:00 PM", "Two Cents and Nonsense"],
+        ["9:00 PM", "10:00 PM", "Politics of Punk / Time Machine"],
+        ["10:00 PM", "11:00 PM", "Thank You For The Music"],
+        ["11:00 PM", "12:00 AM", "Jungle Gems with Mylania"]
+    ],
+    Wednesday: [
+        ["9:00 AM", "10:00 AM", "Breakfast"],
+        ["10:00 AM", "11:00 AM", "Breakfast"],
+        ["11:00 AM", "12:00 PM", "Sounds Of The Sahara"],
+        ["12:00 PM", "1:00 PM", "SOCIETY SPOTLIGHT"],
+        ["1:00 PM", "2:00 PM", "LSTV.MP3 / GRYPH-ON-AIR"],
+        ["2:00 PM", "3:00 PM", "Life Lessons with Liv and Laura"],
+        ["3:00 PM", "4:00 PM", "POLITICS HOUR"],
+        ["4:00 PM", "5:00 PM", "Happy Hour"],
+        ["5:00 PM", "6:00 PM", "HOMETIME"],
+        ["6:00 PM", "7:00 PM", "HOMETIME"],
+        ["7:00 PM", "8:00 PM", "AFROBEATS"],
+        ["8:00 PM", "9:00 PM", "INTERNATIONAL"],
+        ["9:00 PM", "10:00 PM", "Antagonising Aunts"],
+        ["10:00 PM", "11:00 PM", "Low-Key with Rivah"],
+        ["11:00 PM", "12:00 AM", "Disco Hour"]
+    ],
+    Thursday: [
+        ["9:00 AM", "10:00 AM", "Breakfast"],
+        ["10:00 AM", "11:00 AM", "Breakfast"],
+        ["11:00 AM", "12:00 PM", "Vanity Unfair's Oscar Party / Last Days of Disco"],
+        ["12:00 PM", "1:00 PM", "Barricade"],
+        ["1:00 PM", "2:00 PM", "Never Been a BNOC"],
+        ["2:00 PM", "3:00 PM", "The Longest Leg / Continental Buffet"],
+        ["3:00 PM", "4:00 PM", "SAFE SPACE"],
+        ["4:00 PM", "5:00 PM", "Waffle House / The Tea Party"],
+        ["5:00 PM", "6:00 PM", "HOMETIME"],
+        ["6:00 PM", "7:00 PM", "HOMETIME"],
+        ["7:00 PM", "8:00 PM", "FOLK AND COUNTRY"],
+        ["8:00 PM", "9:00 PM", "INDIE AND ALT"],
+        ["9:00 PM", "10:00 PM", "Wisecrack"],
+        ["10:00 PM", "11:00 PM", "Garcia's Weekly Round Up"],
+        ["11:00 PM", "12:00 AM", "Beatscape"]
+    ],
+    Friday: [
+        ["9:00 AM", "10:00 AM", "Breakfast"],
+        ["10:00 AM", "11:00 AM", "Breakfast"],
+        ["11:00 AM", "12:00 PM", "M&P Megamix"],
+        ["12:00 PM", "1:00 PM", "Babe"],
+        ["1:00 PM", "2:00 PM", "NEWS OF THE WEEK"],
+        ["2:00 PM", "3:00 PM", "SPORT"],
+        ["3:00 PM", "4:00 PM", "'BUT WHERE ARE YOU REALLY FROM?'"],
+        ["4:00 PM", "5:00 PM", "Girlhood"],
+        ["5:00 PM", "6:00 PM", "HOMETIME"],
+        ["6:00 PM", "7:00 PM", "HOMETIME"],
+        ["7:00 PM", "8:00 PM", "HIP HOP, RAP & RnB"],
+        ["8:00 PM", "9:00 PM", "ELECTRONIC"],
+        ["9:00 PM", "10:00 PM", "The Midwest Emo Hour"],
+        ["10:00 PM", "11:00 PM", "Behind The Beat (biweekly)"],
+        ["11:00 PM", "12:00 AM", "Crank Wave"]
+    ],
+    Saturday: [
+        ["10:00 AM", "11:00 AM", "Leeds, What's Happening?"],
+        ["11:00 AM", "12:00 PM", "LSR Out N About"],
+        ["12:00 PM", "1:00 PM", "Box! Box! Box!"],
+        ["2:00 PM", "3:00 PM", "(Not So) Dumb Blondes"],
+        ["3:00 PM", "4:00 PM", "Soccer Punch"],
+        ["4:00 PM", "5:00 PM", "Soccer Punch"],
+        ["5:00 PM", "6:00 PM", "BA Honoured To Be Music"],
+        ["6:00 PM", "7:00 PM", "It Takes A Village"],
+        ["7:00 PM", "8:00 PM", "SATURDAY NIGHT FEVER"],
+        ["8:00 PM", "9:00 PM", "SATURDAY NIGHT FEVER"],
+        ["9:00 PM", "10:00 PM", "After Hours"],
+        ["10:00 PM", "11:00 PM", "Tjaro x LSR"],
+        ["11:00 PM", "12:00 AM", "Prog Ho!"]
+    ],
+    Sunday: [
+        ["10:00 AM", "11:00 AM", "Old, New, Borrowed, Blue"],
+        ["11:00 AM", "12:00 PM", "Jamie Goes To Mollywood"],
+        ["12:00 PM", "1:00 PM", "My Records / Creme de la Creme"],
+        ["1:00 PM", "2:00 PM", "BOX OFFICE"],
+        ["2:00 PM", "3:00 PM", "SRA CHART SHOW"],
+        ["3:00 PM", "4:00 PM", "SRA CHART SHOW"],
+        ["4:00 PM", "5:00 PM", "SUNDAY ROAST"],
+        ["5:00 PM", "6:00 PM", "SUNDAY ROAST"],
+        ["6:00 PM", "7:00 PM", "Syke Up Your Life / The Vinyl Frontier"],
+        ["7:00 PM", "8:00 PM", "ALBUM REVIEW"],
+        ["8:00 PM", "9:00 PM", "Space Age Love Songs"],
+        ["9:00 PM", "10:00 PM", "Sleepytime Songs"],
+        ["10:00 PM", "11:00 PM", "The Label Show"],
+        ["11:00 PM", "12:00 AM", "EKBeats"]
+    ]
 
+        // Add the rest of the days here in the same format
+    };
+
+    function getCurrentShow() {
+        const now = new Date(); // Current local time
+        const gmtNow = new Date(now.toUTCString()); // Convert to GMT
+        const day = gmtNow.toLocaleDateString("en-US", { weekday: "long" });
+        const currentTime = gmtNow.getHours() * 60 + gmtNow.getMinutes();
+
+        const todaySchedule = schedule[day] || [];
+        let liveNow = "No show live";
+        let upNext = "No upcoming show";
+
+        for (let i = 0; i < todaySchedule.length; i++) {
+            const [start, end, showName] = todaySchedule[i];
+            const [startHour, startMin] = parseTime(start);
+            const [endHour, endMin] = parseTime(end);
+
+            const startTime = startHour * 60 + startMin;
+            const endTime = endHour * 60 + endMin;
+
+            if (currentTime >= startTime && currentTime < endTime) {
+                liveNow = showName;
+                if (i + 1 < todaySchedule.length) {
+                    upNext = todaySchedule[i + 1][2];
+                }
+                break;
+            }
+        }
+
+        return { liveNow, upNext };
+    }
+
+    function parseTime(timeStr) {
+        const [time, meridian] = timeStr.split(" ");
+        const [hour, minute] = time.split(":").map(Number);
+        return [
+            (hour % 12) + (meridian === "PM" ? 12 : 0), // Convert to 24-hour format
+            minute
+        ];
+    }
+
+   function updateUI() {
+    const { liveNow, upNext } = getCurrentShow();
+
+    // First set of spans
+    const liveNowElement1 = document.getElementById("live-now-text");
+    const upNextElement1 = document.getElementById("up-next-text");
+
+    // Second set of spans
+    const liveNowElement2 = document.getElementById("live-now-text2");
+    const upNextElement2 = document.getElementById("up-next-text2");
+
+    // Update both sets if they exist
+    if (liveNowElement1 && upNextElement1) {
+        liveNowElement1.textContent = liveNow;
+        upNextElement1.textContent = upNext;
+    }
+
+    if (liveNowElement2 && upNextElement2) {
+        liveNowElement2.textContent = liveNow;
+        upNextElement2.textContent = upNext;
+    }
+}
+
+    // Initialize the UI
+    updateUI();
+
+    // Update every minute to reflect schedule changes
+    setInterval(updateUI, 60000);
+</script>
+    
+    
 </body>
 
 
