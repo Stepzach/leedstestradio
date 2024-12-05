@@ -181,11 +181,28 @@
         ];
     }
 
-    function updateUI() {
-        const { liveNow, upNext } = getCurrentShow();
-        document.getElementById("live-now-text").textContent = liveNow;
-        document.getElementById("up-next-text").textContent = upNext;
+   function updateUI() {
+    const { liveNow, upNext } = getCurrentShow();
+
+    // First set of spans
+    const liveNowElement1 = document.getElementById("live-now-text");
+    const upNextElement1 = document.getElementById("up-next-text");
+
+    // Second set of spans
+    const liveNowElement2 = document.getElementById("live-now-text2");
+    const upNextElement2 = document.getElementById("up-next-text2");
+
+    // Update both sets if they exist
+    if (liveNowElement1 && upNextElement1) {
+        liveNowElement1.textContent = liveNow;
+        upNextElement1.textContent = upNext;
     }
+
+    if (liveNowElement2 && upNextElement2) {
+        liveNowElement2.textContent = liveNow;
+        upNextElement2.textContent = upNext;
+    }
+}
 
     // Initialize the UI
     updateUI();
