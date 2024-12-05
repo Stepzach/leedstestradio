@@ -804,10 +804,10 @@ main[data-v-f1b4c660] {
     --py1bar: 0.6rem 0 1rem 0;
     --p2: 1.4rem 2rem 1.6rem 2rem;
     --py2: 1.4rem 0 1.6rem 0;
-    --ffdub: AdieuLight, Helvetica, Arial, sans-serif;
-    --ffsans: SuisseIntl, Helvetica, Arial, sans-serif;
-    --ffsansmono: SwissMono, Helvetica, Arial, sans-serif;
-    --ffneue: SuisseNeue, Helvetica, Arial, sans-serif;
+    --ffdub: AdieuLight ;
+    --ffsans: SuisseIntl ;
+    --ffsansmono: SwissMon;
+    --ffneue: SuisseNeue;
     --fs0: 1.2rem;
     --fs1: 1.45rem;
     --fs2: 2rem;
