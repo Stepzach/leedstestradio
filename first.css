@@ -999,7 +999,7 @@ summary {
     pointer-events:none
 }
 
-@font-face {
+@font-face { 
     font-family: AdieuLight;
     src: url("Adieu-Light.75979a4f.woff2") format("woff2"), url("Adieu-Light.f2a18449.woff") format("woff")
 }
