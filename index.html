@@ -23,7 +23,7 @@ const livestreamElement = document.getElementById('livestream');
 if ('mediaSession' in navigator) {
     // Set up metadata for the media session
     navigator.mediaSession.metadata = new MediaMetadata({
-        title: '<span id="live-now-text3">Loading...</span>',
+      
         artist: 'Leeds Student Radio', // Optional
        
         artwork: [
@@ -2553,6 +2553,10 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
    function updateUI() {
     const { liveNow, upNext } = getCurrentShow();
 
+         const liveNowElement3 = document.getElementById("live-now-text3");
+        if (liveNowElement3) {
+            liveNowElement3.textContent = liveNow;
+        }
     // First set of spans
     const liveNowElement1 = document.getElementById("live-now-text");
     const upNextElement1 = document.getElementById("up-next-text");
@@ -2561,7 +2565,7 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     const liveNowElement2 = document.getElementById("live-now-text2");
     const upNextElement2 = document.getElementById("up-next-text2");
 
-    const liveNowElement3 = document.getElementById("live-now-text3");
+ 
 
     // Update both sets if they exist
     if (liveNowElement1 && upNextElement1) {
@@ -2573,16 +2577,19 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
         liveNowElement2.textContent = liveNow;
         upNextElement2.textContent = upNext;
     }
-         if (liveNowElement3) {
-        liveNowElement3.textContent = liveNow;
-
+      if ('mediaSession' in navigator) {
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: liveNow,
+            
+        
+            });
              
     }
 }
 
     // Initialize the UI
     updateUI();
-
+  updateMediaSession();
     // Update every minute to reflect schedule changes
     setInterval(updateUI, 60000);
 </script>
