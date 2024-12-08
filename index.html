@@ -23,7 +23,7 @@ const livestreamElement = document.getElementById('livestream');
 if ('mediaSession' in navigator) {
     // Set up metadata for the media session
     navigator.mediaSession.metadata = new MediaMetadata({
-        title: 'Leeds Student Radio',
+        title: <span id="live-now-text3">Loading...</span>,
         artist: 'Leeds Student Radio', // Optional
        
         artwork: [
@@ -2561,6 +2561,8 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     const liveNowElement2 = document.getElementById("live-now-text2");
     const upNextElement2 = document.getElementById("up-next-text2");
 
+    const liveNowElement3 = document.getElementById("live-now-text3");
+
     // Update both sets if they exist
     if (liveNowElement1 && upNextElement1) {
         liveNowElement1.textContent = liveNow;
@@ -2570,6 +2572,11 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     if (liveNowElement2 && upNextElement2) {
         liveNowElement2.textContent = liveNow;
         upNextElement2.textContent = upNext;
+    }
+         if (liveNowElement3) {
+        liveNowElement3.textContent = liveNow;
+
+             
     }
 }
 
