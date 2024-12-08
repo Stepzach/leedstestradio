@@ -14,6 +14,23 @@
     // Then, change the clicked element to black
     element.style.color = 'black';
   }
+
+
+    
+const livestreamElement = document.getElementById('livestream');
+
+// Ensure the MediaSession API is supported
+if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+        title: 'Leeds Student Radioo',
+        artwork: [
+            { src: 'LSR Logo.png.webp', sizes: '96x96', type: 'image/webp' },
+            { src: 'LSR Logo.png.webp', sizes: '128x128', type: 'image/webp' },
+            { src: 'LSR Logo.png.webp', sizes: '256x256', type: 'image/webp' }
+        ]
+    });
+}
+
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
