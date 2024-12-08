@@ -21,15 +21,22 @@ const livestreamElement = document.getElementById('livestream');
 
 // Ensure the MediaSession API is supported
 if ('mediaSession' in navigator) {
+    // Set up metadata for the media session
     navigator.mediaSession.metadata = new MediaMetadata({
-        title: 'Leeds Student Radioo',
+        title: 'Leeds Student Radio',
+        artist: 'Your Station Name', // Optional
+        album: 'Your Album or Stream Name', // Optional
         artwork: [
-            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '96x96', type: 'image/jpeg' },
-            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '128x128', type: 'image/jpeg' },
-            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg: '256x256', type: 'image/jpeg' }
+            { src: 'https://your-image-url.com/image-96x96.jpeg', sizes: '96x96', type: 'image/jpeg' },
+            { src: 'https://your-image-url.com/image-128x128.jpeg', sizes: '128x128', type: 'image/jpeg' },
+            { src: 'https://your-image-url.com/image-256x256.jpeg', sizes: '256x256', type: 'image/jpeg' },
+            { src: 'https://your-image-url.com/image-512x512.jpeg', sizes: '512x512', type: 'image/jpeg' }
         ]
     });
+
+
 }
+
 
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
