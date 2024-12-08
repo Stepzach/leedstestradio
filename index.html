@@ -24,13 +24,13 @@ if ('mediaSession' in navigator) {
     // Set up metadata for the media session
     navigator.mediaSession.metadata = new MediaMetadata({
         title: 'Leeds Student Radio',
-        artist: 'Your Station Name', // Optional
-        album: 'Your Album or Stream Name', // Optional
+        artist: 'Leeds Student Radio', // Optional
+       
         artwork: [
-            { src: 'https://your-image-url.com/image-96x96.jpeg', sizes: '96x96', type: 'image/jpeg' },
-            { src: 'https://your-image-url.com/image-128x128.jpeg', sizes: '128x128', type: 'image/jpeg' },
-            { src: 'https://your-image-url.com/image-256x256.jpeg', sizes: '256x256', type: 'image/jpeg' },
-            { src: 'https://your-image-url.com/image-512x512.jpeg', sizes: '512x512', type: 'image/jpeg' }
+            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '96x96', type: 'image/jpeg' },
+            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '128x128', type: 'image/jpeg' },
+            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '256x256', type: 'image/jpeg' },
+            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '512x512', type: 'image/jpeg' }
         ]
     });
 
@@ -98,7 +98,7 @@ if ('mediaSession' in navigator) {
   <div class="audio-container">
     <audio class="livestream" preload="none"
          title="Leeds Student Radio"
-    data-artwork="ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg">
+          data-artwork="ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg">
         <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
         Your browser does not support the audio element.
          
