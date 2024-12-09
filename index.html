@@ -1442,16 +1442,16 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
   <h1 style="text-align: center; color: #fff; font-size:25px;">Listen!<br></h1><br>
    <br>
     
-
+<!--
     <div class="layout-container">
         <div class="side-box side-box-1">LSR Stream  <br><div class="audio-player-container1">
-    <!-- Play/Pause button -->
+  
     <button id="playPauseButton1">
-      <i class="fas fa-play"></i> <!-- Play icon initially -->
+      <i class="fas fa-play"></i>
     </button>
-    <!-- Audio element for the live stream -->
+
     <audio id="livestream1" preload="none">
-      <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg"> <!-- Replace with actual live stream URL -->
+      <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
   </div></div>
@@ -1499,10 +1499,15 @@ bodyoo {
 .side-box-2 {
     width:530px; /* Takes up 2 parts of the available space, double the size of the first box */
 }
-</style> 
-    <!-- <lol>
+</style> -->
+     <lol>
  <div class="custom-container">
-   
+   <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+    new Crate({
+        server: '1315795219559743488', // LSR
+        channel: '1315795220603998293' // #live-chat
+    })
+</script>
     <div class="custom-titles">
       <div class="custom-title-left">
         <h2>Listen Live:</h2>
@@ -1561,8 +1566,8 @@ bodyoo {
            </div> 
       </div>
     </div>
-  </div> </lol> --></div>
-<br>  <br><broski>
+  </div> </lol> </div>
+<br>  <br> <broski>
  <div class="bruhbruh" style=" width: 80%;  justify-content: center; align-items: center;  display: flex; ">   
 <h2 style="text-align: center; color: #fff;   font-size: var(--small_mono); font:    var(--small_mono);">
 DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides students with the tools to learn journalistic practices as they go. Leeds University Union (LUU) is not liable for opinions or views expressed in this broadcast, which are also not necessarily reflective of LSR or LUU as whole organisations. Please do not take opinions expressed in the following broadcasts as fact, and always use external, reputable media sources to supplement discussions of current affairs on LSR. Enjoy the show. </h2>
