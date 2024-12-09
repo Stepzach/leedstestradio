@@ -1441,23 +1441,10 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
 <div class="desktop-contain">
   <h1 style="text-align: center; color: #fff; font-size:25px;">Listen!<br></h1><br>
    <br>
-    <lol>
- <div class="custom-container">
-    <!-- Titles Section -->
-    <div class="custom-titles">
-      <div class="custom-title-left">
-        <h2>Listen Live:</h2>
-      </div>
-      <div class="custom-title-right">
-        <h2>Listen Back:</h2>
-      </div>
-    </div>
+    
 
-    <!-- Boxes Section -->
-    <div class="custom-box-container">
-      <div class="custom-box">
-        <div class="custom-subtitle">LSR Stream</div>
-           <div class="audio-player-container1">
+    <div class="layout-container">
+        <div class="side-box side-box-1">LSR Stream  <br><div class="audio-player-container1">
     <!-- Play/Pause button -->
     <button id="playPauseButton1">
       <i class="fas fa-play"></i> <!-- Play icon initially -->
@@ -1467,23 +1454,92 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
       <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg"> <!-- Replace with actual live stream URL -->
       Your browser does not support the audio element.
     </audio>
+  </div></div>
+         <div class="side-box side-box-2"><widgetbot
+  server="1315795219559743488"
+  channel="1315795220603998293"
+ 
+  width="520px"
+  height="500px"
+></widgetbot>
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"> 
+
+</script></div>
+    </div>
+    
+
+
+<style>
+
+bodyoo {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.layout-container {
+    display: flex;
+    gap: 10px; /* Space between the boxes */
+}
+
+.side-box {
+    padding: 20px;
+    text-align: center;
+         background-color: #a00000;
+    color: white;
+    border-radius: 8px;
+}
+
+.side-box-1 {
+    flex: 1; /* Takes up 1 part of the available space */
+ 
+
+.side-box-2 {
+    width:530px; /* Takes up 2 parts of the available space, double the size of the first box */
+}
+</style> 
+    <!-- <lol>
+ <div class="custom-container">
+   
+    <div class="custom-titles">
+      <div class="custom-title-left">
+        <h2>Listen Live:</h2>
+      </div>
+      <div class="custom-title-right">
+        <h2>Listen Back:</h2>
+      </div>
+    </div>
+
+  
+    <div class="custom-box-container">
+      <div class="custom-box">
+        <div class="custom-subtitle">LSR Stream</div>
+           <div class="audio-player-container1">
+  
+    <button id="playPauseButton1">
+      <i class="fas fa-play"></i> 
+    </button>
+  
+    <audio id="livestream1" preload="none">
+      <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg"> 
+      Your browser does not support the audio element.
+    </audio>
   </div>
-        <!-- Add content here -->
+       
       </div>
       <div class="custom-box">
         <div class="custom-subtitle">Alternate Stream</div>
             <div class="audio-player-container2">
-    <!-- Play/Pause button -->
+  
     <button id="playPauseButton2">
-      <i class="fas fa-play"></i> <!-- Play icon initially -->
+      <i class="fas fa-play"></i> 
     </button>
-    <!-- Audio element for the live stream -->
+  
     <audio id="livestream2" preload="none">
-      <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg"> <!-- Replace with actual live stream URL -->
+      <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg"> 
       Your browser does not support the audio element.
     </audio>
   </div>
-        <!-- Add content here -->
+       
       </div>
       <div class="custom-box">
         <div class="custom-subtitle">SoundCloud</div>
@@ -1502,7 +1558,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
            </div> 
       </div>
     </div>
-  </div> </lol> </div>
+  </div> </lol> --></div>
 <br>  <br><broski>
  <div class="bruhbruh" style=" width: 80%;  justify-content: center; align-items: center;  display: flex; ">   
 <h2 style="text-align: center; color: #fff;   font-size: var(--small_mono); font:    var(--small_mono);">
