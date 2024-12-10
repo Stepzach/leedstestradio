@@ -1497,17 +1497,41 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
       Your browser does not support the audio element.
     </audio>
   </div></div>
-         <div class="side-box side-box-2"><widgetbot
-  server="1315795219559743488"
-  channel="1315795220603998293"
- 
-  width="520px"
-  height="500px"
-></widgetbot>
-<script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"> 
+        <div class="side-box side-box-2" id="widget-container">
+  <widgetbot
+    server="1315795219559743488"
+    channel="1315795220603998293"
+    width="520px"
+    height="500px"
+  ></widgetbot>
+  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+</div>
 
-</script></div>
-    </div>
+<p>If chat isn't working, please <button class="refresh-btn" onclick="refreshWidget()">Refresh Here</button>.</p>
+
+<script>
+  function refreshWidget() {
+    const container = document.getElementById('widget-container');
+
+    // Clear the container
+    container.innerHTML = '';
+
+    // Re-add the WidgetBot widget and script
+    const widgetBotElement = document.createElement('widgetbot');
+    widgetBotElement.setAttribute('server', '1315795219559743488');
+    widgetBotElement.setAttribute('channel', '1315795220603998293');
+    widgetBotElement.setAttribute('width', '520px');
+    widgetBotElement.setAttribute('height', '500px');
+    container.appendChild(widgetBotElement);
+
+    const scriptElement = document.createElement('script');
+    scriptElement.src = 'https://cdn.jsdelivr.net/npm/@widgetbot/html-embed';
+    container.appendChild(scriptElement);
+
+    console.log('Widget refreshed!');
+  }
+</script>
+
     
 
 
