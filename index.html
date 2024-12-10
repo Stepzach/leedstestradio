@@ -32,6 +32,14 @@ if ('mediaSession' in navigator) {
 
 
 </script>
+ <script>
+    function refreshChat() {
+      const iframe = document.getElementById('chilll');
+      iframe.src = iframe.src; // Reload the iframe
+      console.log('Chat iframe refreshed');
+    }
+  </script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <html lang="en"><head>
@@ -1382,6 +1390,17 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
     audio {
       display: none; /* Hide the audio element */
     }
+    .refresh-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
 </style>
 <div id="page2" class="content">
     <br><br><br> <br>
@@ -1427,8 +1446,9 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
      
        <h2 style="font-size:20px !important; text-align: center;">Live Chat</h2>
        <div style="width: 95%; margin-left: auto; margin-right: auto">
-<iframe src="https://e.widgetbot.io/channels/1315795219559743488/1315795220603998293" allow="clipboard-write; fullscreen" height="400px" width="100%" margin-left="auto" margin-right="auto"></iframe>
-      </div><br>
+<iframe id="chilll" src="https://e.widgetbot.io/channels/1315795219559743488/1315795220603998293" allow="clipboard-write; fullscreen" height="400px" width="100%" margin-left="auto" margin-right="auto"></iframe>
+      <p>If chat isn't working, please <button class="refresh-btn" onclick="refreshChat()">Refresh Here</button>.</p>
+       </div><br>
     <!-- Listen Back Section -->
     <div class="listen-back-section">
       <h2 style="font-size:25px !important; text-align: center;">Listen Back</h2>
