@@ -1300,21 +1300,34 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
 
 
 
-      .audio-player-container1 {
-      position: ;
-      width: 95%;
-      height: 95%;
-      background-image: url(ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg); /* Replace with your background image URL */
-          background-size: cover; /* Ensure the image covers the box proportionally */
-  background-position: center; /* Center the image inside the box */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-      background-position: center;
-      
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-    }
+     .audio-player-container1 {
+  position: relative;
+  width: 95%;
+  height: 95%;
+  background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg'); /* Replace with your background image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Add the rotating animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Class to trigger rotation */
+.audio-player-container1.rotating {
+  animation: rotate 5s linear infinite;
+}
 
        .audio-player-container2 {
       position: ;
@@ -1692,15 +1705,17 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
     const playIcon10 = '<i class="fas fa-play"></i>';
     const pauseIcon10 = '<i class="fas fa-pause"></i>';
 
-    playPauseButton10.addEventListener('click', function() {
-      if (livestream10.paused) {
-        livestream10.play();
-        playPauseButton10.innerHTML = pauseIcon10; // Change icon to pause
-      } else {
-        livestream10.pause();
-        playPauseButton10.innerHTML = playIcon10; // Change icon to play
-      }
-    });
+   playPauseButton10.addEventListener('click', function() {
+  if (livestream10.paused) {
+    livestream10.play();
+    playPauseButton10.innerHTML = pauseIcon10; // Change icon to pause
+    audioPlayerContainer.classList.add('rotating'); // Start rotation
+  } else {
+    livestream10.pause();
+    playPauseButton10.innerHTML = playIcon10; // Change icon to play
+    audioPlayerContainer.classList.remove('rotating'); // Stop rotation
+  }
+});
 
 
     const playPauseButton20 = document.getElementById('playPauseButton2');
