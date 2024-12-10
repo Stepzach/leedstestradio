@@ -32,6 +32,28 @@ if ('mediaSession' in navigator) {
 
 
 </script>
+<script>
+  function refreshWidget() {
+    const container = document.getElementById('widget-container1');
+
+    // Clear the container
+    container.innerHTML = '';
+
+    // Re-add the WidgetBot widget and script
+    const widgetBotElement = document.createElement('widgetbot');
+    widgetBotElement.setAttribute('server', '1315795219559743488');
+    widgetBotElement.setAttribute('channel', '1315795220603998293');
+    widgetBotElement.setAttribute('width', '520px');
+    widgetBotElement.setAttribute('height', '500px');
+    container.appendChild(widgetBotElement);
+
+    const scriptElement = document.createElement('script');
+    scriptElement.src = 'https://cdn.jsdelivr.net/npm/@widgetbot/html-embed';
+    container.appendChild(scriptElement);
+
+    console.log('Widget refreshed!');
+  }
+</script>
  <script>
     function refreshChat() {
       const iframe = document.getElementById('chilll');
@@ -1512,63 +1534,12 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
 
 
 
-<script>
-  function refreshWidget() {
-    const container = document.getElementById('widget-container1');
 
-    // Clear the container
-    container.innerHTML = '';
-
-    // Re-add the WidgetBot widget and script
-    const widgetBotElement = document.createElement('widgetbot');
-    widgetBotElement.setAttribute('server', '1315795219559743488');
-    widgetBotElement.setAttribute('channel', '1315795220603998293');
-    widgetBotElement.setAttribute('width', '520px');
-    widgetBotElement.setAttribute('height', '500px');
-    container.appendChild(widgetBotElement);
-
-    const scriptElement = document.createElement('script');
-    scriptElement.src = 'https://cdn.jsdelivr.net/npm/@widgetbot/html-embed';
-    container.appendChild(scriptElement);
-
-    console.log('Widget refreshed!');
-  }
-</script>
 
     
 
 
-<style>
 
-bodyoo {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-.layout-container {
-    display: flex;
-    gap: 10px; /* Space between the boxes */
-        width:80%;
-    margin-left:auto;
-    margin-right: auto;
-}
-
-.side-box {
-    padding: 20px;
-    text-align: center;
-         background-color: #a00000;
-    color: white;
-    border-radius: 8px;
-}
-
-.side-box-1 {
-    flex: 1; /* Takes up 1 part of the available space */
- 
-
-.side-box-2 {
-    width:530px; /* Takes up 2 parts of the available space, double the size of the first box */
-}
-</style>
    <!--  <lol>
  <div class="custom-container">
  
@@ -2885,4 +2856,34 @@ function parseTimeTo24Hour(time) {
     // Call the function immediately to show the time on load
     updateTime();
 </script>
+<style>
 
+bodyoo {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.layout-container {
+    display: flex;
+    gap: 10px; /* Space between the boxes */
+        width:80%;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.side-box {
+    padding: 20px;
+    text-align: center;
+         background-color: #a00000;
+    color: white;
+    border-radius: 8px;
+}
+
+.side-box-1 {
+    flex: 1; /* Takes up 1 part of the available space */
+ 
+
+.side-box-2 {
+    width:530px; /* Takes up 2 parts of the available space, double the size of the first box */
+}
+</style>
