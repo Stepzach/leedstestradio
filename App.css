@@ -1,0 +1,160 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ba0d0d;
+  color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  height: 90%;
+  background-color: #ba0d0d;
+  
+  
+  overflow: hidden;
+  position: relative; /* Added to make logout button position relative to app-container */
+  border: solid 2px;
+  border-color: #6b0b0b;
+  border-radius: 4px;
+}
+
+/* Top section */
+.user-info {
+  padding: 15px;
+  background-color: #9f0000; /* Dark red */
+  display: flex;
+  align-items: center;
+  
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.user-name {
+  font-weight: bold;
+  color: white; /* White text for user name */
+}
+
+.logout-button {
+  padding: 6px 12px;
+  background-color: #ba0d0d; /* Bright red */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  position: absolute; /* Position it relative to .app-container */
+  top: 8px; /* Place it near the top */
+  right: 15px; /* Place it near the right */
+  border: solid 1px #fff
+}
+
+.logout-button:hover {
+  background-color: #000000; /* Dark red on hover */
+}
+
+/* Messages section */
+.messages-container {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 400px; /* Set a fixed height for the message container */
+  scroll-behavior: smooth; /* Smooth scroll */
+}
+
+.message-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.message-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.message-content {
+  
+  padding: 10px;
+  border-radius: 6px;
+  max-width: 90%;
+}
+
+.message-author {
+  font-weight: bold;
+  color: #ffffff; /* Bright red for message author */
+  margin-bottom: 5px;
+}
+
+.message-text {
+  margin: 0;
+  word-wrap: break-word;
+  color: rgb(255, 209, 209); /* White text for message content */
+}
+
+/* Bottom section */
+.message-input {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  background-color: #9f0000; /* Dark red */
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.input-box {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #620e0e;
+  
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+}
+
+.input-box::placeholder {
+  color: #000000;
+}
+
+.send-button {
+  padding: 10px 15px;
+  background-color: #ba0d0d; /* Bright red */
+  color: white;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.send-button:hover {
+  background-color: #000000; /* Dark red on hover */
+}
+
+/* Scrollbar customization */
+.messages-container::-webkit-scrollbar {
+  width: 8px;
+  color: #864747;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background-color: #4f1010;
+  border-radius: 4px;
+  
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+  background-color: #410909;
+ 
+}
