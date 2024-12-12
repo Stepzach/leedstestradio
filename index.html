@@ -9,36 +9,41 @@
 <script type="module" src="index-BY3oB68H.js"></script>
 <script>
     (function() {
-    // Override the default scroll behavior
+    // Allow user to scroll, but prevent script-driven scrolling
     window.addEventListener('scroll', function(event) {
-        // Prevent scroll to bottom
-        window.scrollTo(0, 0); // Always scroll back to the top
-        
-        // Prevent default scroll behavior
-        event.preventDefault();
-        event.stopPropagation();
+        // Prevent automatic scroll to bottom by capturing scroll events
+        // but allow user scrolling normally
+        if (event.target === window) {
+            return; // Allow the user to scroll
+        }
+        event.preventDefault(); // Prevent other unwanted scroll actions
     }, { passive: false });
-    
-    // Ensure that no script can modify scroll position by overriding scroll functions
-    Object.defineProperty(window, 'scroll', {
-        value: function() {
-            // Prevent scroll from being triggered
-        },
-        writable: false,
-        configurable: false
-    });
 
-    // Block any attempts to scroll using `window.scrollTo()`
+    // Intercept all calls to window.scrollTo and window.scrollBy to prevent automatic scroll
     const originalScrollTo = window.scrollTo;
+    const originalScrollBy = window.scrollBy;
+
+    // Override window.scrollTo
     window.scrollTo = function(x, y) {
-        // If y is positive, prevent scroll to bottom
-        if (y > 0) {
+        // Check if the scroll position is attempting to move to the bottom
+        if (y >= document.documentElement.scrollHeight - window.innerHeight) {
+            // Prevent scrolling to the bottom
             return;
         }
         originalScrollTo.call(window, x, y);
     };
 
+    // Override window.scrollBy
+    window.scrollBy = function(x, y) {
+        // Block scroll that would push the page down
+        if (y > 0) {
+            return; // Prevent scrolling downward
+        }
+        originalScrollBy.call(window, x, y);
+    };
+
 })();
+
 
   function toggleColor(element) {
     // First, reset all text elements to white
