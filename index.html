@@ -8,6 +8,38 @@
 <link rel="stylesheet" href="index-DRKWMah2.css">
 <script type="module" src="index-BY3oB68H.js"></script>
 <script>
+    (function() {
+    // Override the default scroll behavior
+    window.addEventListener('scroll', function(event) {
+        // Prevent scroll to bottom
+        window.scrollTo(0, 0); // Always scroll back to the top
+        
+        // Prevent default scroll behavior
+        event.preventDefault();
+        event.stopPropagation();
+    }, { passive: false });
+    
+    // Ensure that no script can modify scroll position by overriding scroll functions
+    Object.defineProperty(window, 'scroll', {
+        value: function() {
+            // Prevent scroll from being triggered
+        },
+        writable: false,
+        configurable: false
+    });
+
+    // Block any attempts to scroll using `window.scrollTo()`
+    const originalScrollTo = window.scrollTo;
+    window.scrollTo = function(x, y) {
+        // If y is positive, prevent scroll to bottom
+        if (y > 0) {
+            return;
+        }
+        originalScrollTo.call(window, x, y);
+    };
+
+})();
+
   function toggleColor(element) {
     // First, reset all text elements to white
     const spans = document.querySelectorAll('span');
