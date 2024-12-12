@@ -1,13 +1,2879 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<link rel="stylesheet" href="first.css">
+<link rel="stylesheet" href="sec.css">
+<script type="text/javascript" src="bruh.js"></script>
+<script type="text/javascript" src="bro.js"></script>
+    <script src=/bruh.js></script>
+    <script src=/bro.js></script>
+<script>
+  function toggleColor(element) {
+    // First, reset all text elements to white
+    const spans = document.querySelectorAll('span');
+    spans.forEach(span => span.style.color = 'white');
+
+    // Then, change the clicked element to black
+    element.style.color = 'black';
+  }
+
+
+    
+const livestreamElement = document.getElementById('livestream');
+
+// Ensure the MediaSession API is supported
+if ('mediaSession' in navigator) {
+    // Set up metadata for the media session
+    navigator.mediaSession.metadata = new MediaMetadata({
+      
+      
+    });
+
+
+}
+
+
+</script>
+<script>
+  function refreshWidget() {
+    const container = document.getElementById('widget-container1');
+
+    // Clear the container
+    container.innerHTML = '';
+
+    // Re-add the WidgetBot widget and script
+    const widgetBotElement = document.createElement('widgetbot');
+    widgetBotElement.setAttribute('server', '1315795219559743488');
+    widgetBotElement.setAttribute('channel', '1315795220603998293');
+    widgetBotElement.setAttribute('width', '520px');
+    widgetBotElement.setAttribute('height', '500px');
+    container.appendChild(widgetBotElement);
+
+    const scriptElement = document.createElement('script');
+    scriptElement.src = 'https://cdn.jsdelivr.net/npm/@widgetbot/html-embed';
+    container.appendChild(scriptElement);
+
+    console.log('Widget refreshed!');
+  }
+</script>
+ <script>
+    function refreshChat() {
+      const iframe = document.getElementById('chilll');
+      iframe.src = iframe.src; // Reload the iframe
+      console.log('Chat iframe refreshed');
+    }
+  </script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<html lang="en"><head>
+    
+  
+ 
+
+
+    
+    <meta name="theme-color" content="#a00000"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leeds Student Radio</title><script async="" src="https://www.clarity.ms/tag/j1xid1iq0r"></script><script>(function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "j1xid1iq0r");</script>
+    
+    <meta charset="utf-8" data-vue-meta="true"><meta name="viewport" content="width=device-width, initial-scale=1" data-vue-meta="true">
+   <link rel="icon" href="ab6765630000ba8a51445deb0fe8b8c4b173e6a1.ico" type="image/x-icon">
+<link rel="icon" href="ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg">
+<meta property="og:image" content="IMG_4527.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:title" content="Leeds Student Radio">
+<meta property="og:description" content="Officially the UK's Best Student Station 2024">
+<meta property="og:url" content="https://stepzach.github.io//leedstestradio/">
+
+
+</head> 
+    
+  
+    
+    
+    <body><noscript>&lt;strong&gt;We're sorry but lsr doesn't work properly without JavaScript enabled. Please enable it to continue.&lt;/strong&gt;</noscript>
+
+
+
+
+<style> 
+    .spinner-icon {
+    display: none;
+    width: 24px; /* Default size for the smaller button */
+    height: 24px;
+    transform-origin: center;
+}
+
+/* Spinner icon size for the "large icon" (large-play-button) */
+.large-play-button .spinner-icon {
+    width: 30px !important; /* Smaller size for the large button */
+    height: 30px !important;
+    margin-left: 5px !important;
+}
+
+ .spinner-icon.loading {
+        animation: spin 4s linear forwards;  /* Rotate the spinner over 4 seconds once */
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+ </style>       
+
+<div class="header-mobile">
+  <div class="audio-container">
+    <audio class="livestream" preload="none"
+         title="Leeds Student Radio"
+          data-artwork="ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg">
+        <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
+        Your browser does not support the audio element.
+         
+    </audio>
+
+    <button class="audio-button large-play-button" style="margin-left: 5px;">
+       <svg class="play-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5v14l11-7z"></path>
+    </svg>
+    <svg class="pause-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+    </svg>
+    <svg class="spinner-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="31.4">
+         <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="1s" fill="freeze"></animate>
+        </circle>
+    </svg>
+        <span style="color: #fff;"></span>
+    </button>
+  </div>
+
+  <!-- Logo in the Center -->
+  <div class="header-logo"><div class="header" data-page="welcome">
+    <img src="IMG_4467.png" alt="Logo" class="logo-img">
+  </div>
+  </div>
+
+  <!-- Right-side Menu Button (only visible on smaller screens) -->
+<div class="menu-button" style="margin-right: 5px;">
+    <button id="menu-toggle" class="menu-toggle-btn">
+        <!-- Normal menu icon (☰) -->
+        <span class="menu-icon normal">☰</span>
+        <!-- Rotated menu icon (✖) -->
+        <span class="menu-icon rotated">x</span> 
+    </button>
+</div>
+
+<div id="dropdown-menufull" class="dropdown-menufull">
+<!-- Dropdown Menu (Initially hidden) -->
+<div id="dropdown-menu" class="dropdown-menu">
+  <div class="header" data-page="page1"><a href="#schedule">Schedule</a></div>
+  <div class="header" data-page="page2"><a href="#listen">Listen</a></div>
+  <div class="header" data-page="page3"><a href="#get-involved">Get Involved</a></div>
+  <div class="header" data-page="page4"><a href="#about">About</a></div>
+  <div class="header" style="border-bottom: solid 1px #fff;" data-page="page5"><a href="#contact">Contact</a></div>
+</div>
+
+<!-- New Social Media Row (outside the drop own menu) -->
+<div class="social-media">
+   
+<div class="livenowmenu">
+    <div class="live-nowbop">
+        <div class="circleopp green-circler" style="width: 20px !important; height: 20px !important;"></div>
+       <span style="margin-right: 10%;"><u>Live now:</u> <br><span id="live-now-text">Loading...</span></span>
+    </div>
+    <div class="up-next">
+       
+        <span style="margin-left: calc(29px + 10%); margin-right: 10%;"><u>Up Next:</u> <br><span id="up-next-text">Loading...</span></span>
+    </div>
+  
+</div>
+  <a href="https://www.instagram.com/thisislsr/" target="_blank" class="fa-instagra"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg></a>
+  <a href="https://www.facebook.com/thisislsr" target="_blank" class="fa fa-faceboo"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg></a>
+  <a href="https://www.tiktok.com/@thisislsr" target="_blank" class="fa-brands fa-tikto" style="margin-top: 1px;"><svg xmlns="http://www.w3.org/2000/svg" width="25px" height="30px" viewBox="0 0 448 512"><path fill="currentColor" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121 121 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"/></svg></a>
+  <a href="https://x.com/thisislsr" target="_blank" class="fa fa-twitte"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" viewBox="0 0 14 14"><g fill="none"><g clip-path="url(#primeTwitter0)"><path fill="currentColor" d="M11.025.656h2.147L8.482 6.03L14 13.344H9.68L6.294 8.909l-3.87 4.435H.275l5.016-5.75L0 .657h4.43L7.486 4.71zm-.755 11.4h1.19L3.78 1.877H2.504z"/></g><defs><clipPath id="primeTwitter0"><path fill="#fff" d="M0 0h14v14H0z"/></clipPath></defs></g></svg></a>
+
+</div>
+</div>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+       <div data-v-2a330032="" class="Header desktop a-hover" style=" position: fixed; top: 0;background-color: #bb0c0c;"><div data-v-2a330032="" class="header-holder" style=" position: fixed; top: 0;background-color: #bb0c0c;">
+        
+       <div class="header" data-page="welcome" style="cursor: pointer; display: block !important;"> <div data-v-2a330032="" class="header-logo"><img src="IMG_4466.png" alt="LOGOO" position="fixed" style="width:auto !important; margin-top: -7px !important; height:60px !important; padding-left: 20px; padding-right: 25px;" ><a data-v-2a330032="" class="dublab-link active router-link-active" aria-current="page" style="width:auto !important; padding-left: 0px; padding-right: 0px; color: #fff !important"></a></div></div><div data-v-2a330032="" class="header-stack"><div data-v-2a330032="" class="Navigation"><a data-v-2a330032="" href="/search" class="icon-search-sprite"><i class="fa fa-search" style="font-size:16px; color: white; margin-left: 25px"></i></a> <div class="header" data-page="page1" style="cursor: pointer;"><a data-v-2a330032="" class=""><span onclick="toggleColor(this)"data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px" class="hover-effect">
+         Schedule</span></a></div>
+            <div class="header" data-page="page2" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)" style="color: #fff ; padding-right: 5px;" class="hover-effect">Listen</span></a></div> 
+           <div class="header" data-page="page3" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px;" class="hover-effect">Get Involved</span></a></div>
+           <div class="header" data-page="page4" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px;" class="hover-effect">About</span></a></div>
+           <div class="header" data-page="page5" style="cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px;" class="hover-effect">Contact</span></a></div>
+           <h1 data-v-2a330032=""></h1><div data-v-2a330032="" class="time" style="color: #fff">
+           <div id="time-container"> <span id="time-text"></span> GMT </div>
+          </div></div>
+       
+      
+           
+           <div data-v-2210cc27="" data-v-2a330032="" class="BarStream"><div data-v-2210cc27="" class="status hover"> 
+             <div class="audio-container"><button data-v-2210cc27=""><span data-v-2210cc27="" class="icon-player-play">
+    <!-- Audio Element -->
+   
+    <audio class="livestream" preload="none">
+        <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Play/Pause Button -->
+    <button class="audio-button" style="margin-left: 20px;">
+    <svg class="play-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5v14l11-7z"></path>
+    </svg>
+    <svg class="pause-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+    </svg>
+    <svg class="spinner-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="31.4">
+          <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="1s" fill="freeze"></animate>
+        </circle>
+    </svg>
+    <span class="hover-effect" style="color: #fff;">Tune In: <span id="live-now-text2">Loading...</span></span>
+</button>
+
+<div class="title">
+   <div data-v-d239eb30="" data-v-2210cc27="" class="MarqueeConditional">
+        <div class="inner" style="position: relative;">
+            <div style="color: #fff; margin-left: 20px; ">    Up Next: <span id="up-next-text2">Loading...</span></div>
+            </button>
+               </div>
+        </div>
+    </div>
+  </div>
+
+<div class="spacer"></div></div></div></div></div> </span></span></span></button></button></button></div></div></div>
+
+<!-- CSS -->
+
+        <style>
+
+        @media (max-width: 987px) {
+  .sakagoat {
+    display: none;
+  }
+}
+.livenowmenu {
+          display: flex;
+            flex-direction: column;
+           position: fixed;
+           top: 420px;
+            align-items: center;
+           
+            text-align: left;
+             background-color: #bb0c0c;
+           
+              width: 100%; 
+              height: 150px;
+               
+              
+        }
+  
+        .live-nowbop, .up-next {
+       
+          display: flex;
+            align-items: center;
+            font-size: 19px;
+            margin: 10px 0;
+            justify-content: flex-start; /* Ensure text and circles are aligned to the left */
+            width: 100%; 
+            color: white;
+            
+        }
+
+        .circleopp {
+           width: 15px;
+            height: 13px;
+            border-radius: 50%;
+            margin-right: 14px;
+            border: solid 1px grey;
+            margin-left: 10%;
+           
+        }
+
+        .green-circler {
+            background-color: green;
+            animation: pulse 3.5s infinite;
+        }
+
+        .orange-circler {
+            background-color: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        
+        
+        .large-play-button .large-icon {
+    width: 46px; /* Double the size */
+    height: 46px;
+}
+/* Basic Reset */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Hide the mobile header by default (above 1000px) */
+  .header-mobile {
+    display: none;
+  }
+
+  /* Mobile Header Styles (only visible on smaller screens) */
+  @media (max-width: 930px) {
+    .header-mobile {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #a00000;
+      justify-content: space-between; /* Ensure elements are spaced out */
+      align-items: center;
+      padding: 8px 20px;
+      z-index: 1000;
+      border-bottom: solid 1px #fff;
+    }
+
+    /* Center Logo */
+    .header-logo {
+      display: flex;
+      justify-content: center;
+      flex: 1;  /* Ensure the logo stays centered */
+      
+    }
+
+    .logo-img {
+      height: 63px;
+      width: auto;
+      margin-top: -3px;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* Left Play Button */
+    .audio-container {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .audio-button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Right Menu Button */
+    .menu-button {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+  .menu-toggle-btn {
+    position: relative; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 46px;
+    width: 52px; /* Set a fixed width */
+    height: 52px;
+}
+
+/* Default state: Hide the rotated icon */
+.menu-icon.rotated {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Show the icon when toggled */
+.menu-icon.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Show rotated icon explicitly */
+.menu-icon.rotated.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Transition effect (optional) */
+.menu-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Match the button width */
+    height: 100%; /* Match the button height */
+    text-align: center;
+    line-height: 40px; /* Center vertically */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+    /* Dropdown Menu (Hidden by default) */
+    #dropdown-menu {
+        
+    background-color: #bb0c0c;
+    position: fixed;
+    top: 76px; /* Position below the header */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding-bottom: 40px; /* Padding to ensure space between menu and social icons */
+  }
+       #dropdown-menufull {
+        display: none;
+ }
+  #dropdown-menu a {
+    display: block;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center; /* Center the text inside the menu */
+  }
+
+  #dropdown-menu .header {
+    background-color: #bb0c0c; 
+    border-top: solid 1px #fff;
+    border-right: solid 1px #fff;
+    border-left: solid 1px #fff;
+    padding: 10px; /* Space inside the box */
+  }
+
+  /* Social Media Row Styling */
+  .social-media {
+      height: 300px;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #bb0c0c;
+    position: fixed;
+   bottom: 0px;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    border-bottom: solid 1px #fff;
+  }
+
+  /* Styling for Social Media Icons */
+  .social-media a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 30px;
+    width: 30px !important`; 
+    margin: 5px 2px;
+    border-radius: 50%;
+       position: relative; top: 150px;
+  }
+
+  /* Custom background colors for each social icon */
+  .fa-faceboo {
+    background: #a00000;;
+    color: white; width: 70px !important;  height: 70px !important; 
+  }
+
+  .fa-instagra {
+    background: #a00000;; /* Instagram's signature color */
+    color: white; width: 70px !important;  height: 70px !important; 
+  }
+
+  .fa-tikto {
+    background: #a00000;; /* TikTok's signature color */
+    color: white; width: 70px !important;  height: 70px !important; 
+  }
+
+  .fa-twitte {
+    background: #a00000;; /* Twitter's signature color */
+    color: white; width: 70px !important;  height: 70px !important; 
+  }
+
+    #dropdown-menu a:hover {
+      background-color: #9b0a0a;
+    }
+  }
+</style>
+       
+        <script>
+ 
+document.getElementById('menu-toggle').addEventListener('click', function (e) {
+    const dropdownMenu = document.getElementById('dropdown-menufull');
+    const normalIcon = this.querySelector('.menu-icon.normal');  // Normal icon (☰)
+    const rotatedIcon = this.querySelector('.menu-icon.rotated'); // Rotated icon (x)
+
+    // Toggle visibility of the menu icons
+    normalIcon.classList.toggle('hidden');
+    rotatedIcon.classList.toggle('show');
+
+    // Toggle the visibility of the dropdown menu
+    dropdownMenu.style.display =
+        dropdownMenu.style.display === 'none' || dropdownMenu.style.display === ''
+            ? 'block'
+            : 'none';
+
+    // Prevent the click event from propagating to avoid immediate closure of the menu
+    e.stopPropagation();
+});
+
+// Close the dropdown menu and reset icons when clicking outside the menu
+document.addEventListener('click', function (e) {
+    const dropdownMenu = document.getElementById('dropdown-menufull');
+    const menuToggleBtn = document.getElementById('menu-toggle');
+
+    if (!menuToggleBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        // Close the menu
+        dropdownMenu.style.display = 'none';
+
+        // Reset the icons
+        const normalIcon = menuToggleBtn.querySelector('.menu-icon.normal');
+        const rotatedIcon = menuToggleBtn.querySelector('.menu-icon.rotated');
+
+        normalIcon.classList.remove('hidden');
+        rotatedIcon.classList.remove('show');
+    }
+});
+
+// Close the menu only when clicking on clickable elements inside the dropdown
+document.getElementById('dropdown-menufull').addEventListener('click', function (e) {
+    const dropdownMenu = document.getElementById('dropdown-menufull');
+    const menuToggleBtn = document.getElementById('menu-toggle');
+
+    // Check if the clicked element is a clickable element
+    const isClickable = e.target.tagName === 'BUTTON' || 
+                        e.target.tagName === 'A' || 
+                        e.target.hasAttribute('onclick') || 
+                        e.target.getAttribute('role') === 'button';
+
+    if (isClickable) {
+        // Close the dropdown menu
+        dropdownMenu.style.display = 'none';
+
+        // Reset the icons
+        const normalIcon = menuToggleBtn.querySelector('.menu-icon.normal');
+        const rotatedIcon = menuToggleBtn.querySelector('.menu-icon.rotated');
+
+        normalIcon.classList.remove('hidden');
+        rotatedIcon.classList.remove('show');
+    }
+});
+
+
+</script>
+<style>
+/* General Reset */
+.audio-container {
+    display: flex;
+    align-items: center;
+}
+
+.audio-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: #fff; /* Icon color */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.hover-effect {
+    color: #fff;
+    padding-left: 10px;
+}
+
+@media (pointer: fine) {
+    .audio-button:hover .icon {
+        fill: #000; /* Change icon color on hover */
+    }
+
+    .audio-button:hover .hover-effect {
+        color: #000; /* Change text color on hover */
+    }
+}
+.content, .welcome {
+            display: none; /* Initially hidden */
+           
+        }
+
+.welcome {
+            display: block; /* Initially visible */
+        }
+
+.active {
+            display: block; /* Display active page */
+        }
+</style>
+
+<!-- JavaScript -->
+<script>
+
+document.querySelectorAll('.audio-button').forEach(button => {
+    const audio = button.closest('.audio-container') ? 
+        button.closest('.audio-container').querySelector('.livestream') : null; // Get the audio element (if present)
+    const playIcon = button.querySelector('.play-icon');
+    const pauseIcon = button.querySelector('.pause-icon');
+    const spinnerIcon = button.querySelector('.spinner-icon');  // Get the spinner icon
+
+    // Track if the spinner animation has already been shown (only on the first click)
+    let isFirstClick = true;
+
+    button.addEventListener('click', () => {
+        if (audio) {
+            if (audio.paused) {
+                // When clicked, start playing the audio
+                audio.play();
+                playIcon.style.display = 'none';  // Hide Play Icon
+                pauseIcon.style.display = 'none';  // Hide Pause Icon initially
+
+                if (isFirstClick) {
+                    // Only show the spinner and disable the button on the first click
+                    spinnerIcon.style.display = 'block';  // Show Spinner
+                    spinnerIcon.classList.add('loading'); // Start the spinner animation
+                    button.disabled = true;  // Disable the button during loading
+
+                    // After 4 seconds, hide the spinner and show the pause icon
+                    setTimeout(() => {
+                        spinnerIcon.classList.remove('loading'); // Remove loading class
+                        spinnerIcon.style.display = 'none';  // Hide the spinner
+                        pauseIcon.style.display = 'block';  // Show Pause Icon
+                        button.disabled = false;  // Re-enable the button after the loading animation
+                    }, 4000); // 4 seconds delay for the spinner
+
+                    // After the first click, set flag to false so subsequent clicks won't show the spinner
+                    isFirstClick = false;
+                } else {
+                    // No spinner animation, just show the pause icon immediately
+                    spinnerIcon.style.display = 'none';  // Hide the spinner
+                    pauseIcon.style.display = 'block';  // Show Pause Icon
+                }
+            } else {
+                // If the audio is already playing, pause the audio
+                audio.pause();
+                playIcon.style.display = 'block';  // Show Play Icon
+                pauseIcon.style.display = 'none';  // Hide Pause Icon
+            }
+        }
+    });
+
+    // Add an event listener to reset the spinner and show play icon if spinner is clicked
+    spinnerIcon.addEventListener('click', () => {
+        // This prevents the spinner from being shown on subsequent clicks
+        spinnerIcon.classList.remove('loading'); // Stop animation if clicked
+        spinnerIcon.style.display = 'none';  // Hide the spinner
+        playIcon.style.display = 'block';  // Show the play icon again
+        if (audio) {
+            audio.pause();  // Pause the audio if spinner is clicked
+        }
+        button.disabled = false; // Re-enable the button immediately when the spinner is clicked
+    });
+});
+
+
+</script>
+
+<style>
+    table {
+         margin: 0 auto;
+      border-collapse: collapse;
+      width: 90%;
+        margin-top: 20px;
+        table-layout: fixed;
+        
+    }
+
+    @media (max-width: 600px) {
+  table {
+    display: none;
+  }
+}
+    th {
+      border: 1px solid #d56859;
+      padding: 8px;
+      text-align: center;
+        color: #fff;
+    }
+    td {
+          border: 1px solid #d56859;
+      padding: 8px;
+      text-align: center;
+        color: #fff;
+    font-size: var(--small_mono);
+    font:    var(--small_mono);
+    }
+     td:first-child {
+      width: 150px; /* Adjust as needed */
+    }
+      .on-air {
+      border: 4px solid darkgreen; /* Thicker green border */
+      background-color: rgba(255, 255, 255, 0.1); /* white background for emphasis */
+      position: relative; /* To position the "on air" label */
+       
+    }
+
+    .on-air::after {
+      content: "On Air";
+      position: absolute;
+     top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: darkgreen;
+      color: white;
+      font-size: 0.8em;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+  .day {
+    position: relative;
+  }
+
+  /* Media Query for Small Screens (Tablet and Below) */
+  @media (max-width: 1200px) {
+    .day::after {
+      content: attr(data-short); /* Show abbreviated day names */
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the abbreviated text */
+      color: #fff; /* Ensure text is visible */
+      font-size: inherit; /* Matches the table font size */
+    }
+
+    .day {
+      color: transparent; /* Hides the original text */
+    }
+  }
+
+    @media (max-width: 1219px) {
+  .grid-auto-md > a:nth-of-type(3) {
+    display: none !important;
+  }
+}
+
+    
+
+      
+        .mobile-schedule {
+            display: none;
+            width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .mobile-schedule-grid {
+            display: grid;
+        }
+        .mobile-day-header {
+            background-color: #a00000;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+              border: 1px solid #fff;
+        }
+        .mobile-time-slot {
+           font-size: var(--small_mono);
+    font:    var(--small_mono);
+            padding: 5px;
+            border: 0.4px solid #fff;
+            color: #fff;
+        }
+        
+        @media (max-width: 600px) {
+            .mobile-schedule {
+                display: block;
+            }
+        }
+.live-now-circle {
+    width: 12px;  /* Circle size */
+    height: 12px;  /* Circle size */
+    background-color: green;  /* Green color */
+    border-radius: 50%;  /* Makes the circle shape */
+    display: inline-block;  /* Keeps it inline with the text */
+    margin-right: 10px;  /* Adds space between the circle and text */
+    vertical-align: middle;  /* Ensures vertical alignment with the text */
+    
+    /* Pulsing animation */
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Animation for the pulsing effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);   /* Starting size */
+        opacity: 1;  /* Full opacity */
+    }
+    50% {
+        transform: scale(1.2);  /* Grow to 120% of its size */
+        opacity: 0.6;  /* Fade to 60% opacity */
+    }
+    100% {
+        transform: scale(1);   /* Return to original size */
+        opacity: 1;  /* Full opacity again */
+    }
+}
+
+  </style>
+           <body>
+                <div id="welcome" class="welcome">
+<br><br><br>
+<div data-v-d676e41c="" data-v-f1b4c660="" class="Projects grid"><h1 data-v-d676e41c="" class="desktop-contain" style="color: #fff; font-size: 45px;">WELCOME TO LEEDS STUDENT RADIO.<div class="brformobile"><br><br><br></div><h1 data-v-d676e41c="" style="font-size: 20px; color: #fff !important; margin-top: -25px !important;">Officially the UK's Best Student Station 2024</h1></h1>
+    
+    <div data-v-d676e41c="" class="grid-auto-md"><a data-v-55127cac="" data-v-d676e41c="" href="https://www.studentradio.org.uk/awards/" target="_blank" class="AboutThumb block"><article data-v-55127cac=""><h2 data-v-55127cac=""><span data-v-55127cac="" class="hover-effect" style="color: #fff">2024 Student Radio Awards</span></h2><!--<div data-v-55127cac="" class="copy" style="color: #f3d2d0">--><div data-v-41749928="" class="description a-hover a-grey" style="color: #fff">An amazing evening celebrating all things student radio. We are so so PROUD to have won BEST STUDENT RADIO STATION for the second year in a row!!</div></article><div data-v-55127cac="" class="image" data-src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" lazy="loaded" style="background-image: url(316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp);"></div></a>
+        
+<a data-v-55127cac="" data-v-d676e41c="" href="https://www.studentradio.org.uk/awards/" target="_blank" rel="noopener" class="AboutThumb block"><article data-v-55127cac=""><h2 data-v-55127cac=""><span data-v-55127cac="" class="hover-effect" style="color: #fff">2024 Student Radio Awards</span></h2><!--<div data-v-55127cac="" class="copy" style="color: #f3d2d0">--><div data-v-41749928="" class="description a-hover a-grey" style="color: #fff">An amazing evening celebrating all things student radio. We are so so PROUD to have won BEST STUDENT RADIO STATION for the second year in a row!!</div></article><div data-v-55127cac="" class="image" data-src="316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg.webp" lazy="loaded" style="background-image: url(316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg.webp);"></div></a>
+        
+<a data-v-55127cac="" data-v-d676e41c="" href="https://www.studentradio.org.uk/awards/" target="_blank" rel="noopener" class="AboutThumb block"><article data-v-55127cac=""><h2 data-v-55127cac=""><span data-v-55127cac="" class="hover-effect" style="color: #fff">2024 Student Radio Awards</span></h2><!--<div data-v-55127cac="" class="copy" style="color: #f3d2d0">--><div data-v-41749928="" class="description a-hover a-grey" style="color: #fff">An amazing evening celebrating all things student radio. We are so so PROUD to have won BEST STUDENT RADIO STATION for the second year in a row!!</div></article><div data-v-55127cac="" class="image" data-src="316c00_e9bc5dac304c4beab0a8d82dcaa27b6c~mv2.jpg" lazy="loaded" style="background-image: url(316c00_e9bc5dac304c4beab0a8d82dcaa27b6c~mv2.jpg);"></div></a>
+        
+
+</div></div>
+                     </div>
+
+
+<div id="page1" class="content"> 
+<br><br><br> <br>
+    <div class="brformobile"> <br> <br> </div>
+    <h1 style="text-align: center; color: #fff; font-size:25px; width:80%; margin-right: auto; margin-left: auto;">Weekly Schedule: Semester 1 2024<br></h1>
+     <div class="brformobile"> <br> </div>
+<h2 style="text-align: center; color: #fff;">
+Our core shows are listed in colour, and the rest are our members' own shows! </h2>
+
+    <div class="mobile-schedule">
+        <div class="mobile-schedule-grid">
+            <!-- Monday -->
+            <div class="mobile-day-header">Monday</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="9:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>9-10am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="10:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>10-11am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="11:00am" style=" background-color: #"><div class="live-now-circle"></div>11-12pm: Big Names on Campus / Chattergories</div>
+             <div class="mobile-time-slot" data-day="Monday" data-time="12:00pm" style=" background-color: #"><div class="live-now-circle"></div>12-1pm: The Birth of the Beat</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="1:00pm" style=" background-color: #"><div class="live-now-circle"></div>1-2pm: Sidilicious Selects</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="2:00pm" style="background-color: #4a786e"><div class="live-now-circle"></div>2-3pm: SPORT</div>
+              <div class="mobile-time-slot" data-day="Monday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: LGBTQ+ Show</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="4:00pm" style=" background-color: #"><div class="live-now-circle"></div>4-5pm: The More You Know (Show)</div>
+            <div class="mobile-time-slot"  data-day="Monday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
+              <div class="mobile-time-slot" data-day="Monday"  data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETME</div>
+            <div class="mobile-time-slot"  data-day="Monday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Live and Local</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>8-9pm: Rock and Punk</div>
+              <div class="mobile-time-slot" data-day="Monday" data-time="9:00pm" style=" background-color: #"><div class="live-now-circle"></div>9-10pm: Dad Music for Girls</div>
+            <div class="mobile-time-slot"  data-day="Monday" data-time="10:00pm" style=" background-color: #"><div class="live-now-circle"></div>10-11pm: Uni Music Library Finds</div>
+            <div class="mobile-time-slot" data-day="Monday" data-time="11:00pm" style=" background-color: #"><div class="live-now-circle"></div>11-12am: Spiritual Guide</div>
+            <!-- More time slots for Monday -->
+            
+            <!-- Tuesday -->
+            <div class="mobile-day-header">Tuesday</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="9:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>9-10am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="10:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>10-11am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="11:00am" ><div class="live-now-circle"></div>11-12pm: What's Poppin!?</div>
+             <div class="mobile-time-slot" data-day="Tuesday"  data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: The Girls got Guts</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="1:00pm"><div class="live-now-circle"></div>1-2pm: Taylor's Version / The Lame Show</div>
+            <div class="mobile-time-slot" data-day="Tuesday"  data-time="2:00pm"><div class="live-now-circle"></div>2-3pm: Your LeedsList / And That's What You Missed On Glee</div>
+              <div class="mobile-time-slot" data-day="Tuesday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: Women's Hour</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="4:00pm"><div class="live-now-circle"></div>4-5pm: Golden Hour / I'm Just a Girl</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
+              <div class="mobile-time-slot" data-day="Tuesday" data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Jazz, Funk and Soul</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>8-9pm: Two Cents and Nonsense</div>
+              <div class="mobile-time-slot" data-day="Tuesday" data-time="9:00pm" ><div class="live-now-circle"></div>9-10pm: Politics of Punk / Time Machine</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="10:00pm"><div class="live-now-circle"></div>10-11pm: Thank you for the Music</div>
+            <div class="mobile-time-slot" data-day="Tuesday" data-time="11:00pm"><div class="live-now-circle"></div>11-12am: Jungle Gems with Mylania</div>
+            
+             <div class="mobile-day-header">Wednesday</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="9:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>9-10am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="10:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>10-11am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="11:00am"><div class="live-now-circle"></div>11-12pm: Sounds of the Sahara</div>
+             <div class="mobile-time-slot" data-day="Wednesday" data-time="12:00pm" style="background-color: #668120"><div class="live-now-circle"></div>12-1pm: SOCIETY SPOTLIGHT</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="1:00pm"><div class="live-now-circle"></div>1-2pm: LSTV.MP3 / GRYPH-ON-AIR</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="2:00pm"><div class="live-now-circle"></div>2-3pm: Life Lessons with Liv and Laura</div>
+              <div class="mobile-time-slot" data-day="Wednesday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: Politics Hour</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="4:00pm"><div class="live-now-circle"></div>4-5pm: Happy Hour</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
+              <div class="mobile-time-slot" data-day="Wednesday" data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Afrobeats</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>8-9pm: International</div>
+              <div class="mobile-time-slot" data-day="Wednesday" data-time="9:00pm"><div class="live-now-circle"></div>9-10pm: Antagonising Aunts</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="10:00pm"><div class="live-now-circle"></div>10-11pm: Low-Key with Rivah</div>
+            <div class="mobile-time-slot" data-day="Wednesday" data-time="11:00pm"><div class="live-now-circle"></div>11-12am: Disco Hour</div>
+            
+             <div class="mobile-day-header">Thursday</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="9:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>9-10am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="10:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>10-11am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="11:00am"><div class="live-now-circle"></div>11-12pm: Vanity Unfair's Oscar Party / Last Days of Disco</div>
+             <div class="mobile-time-slot" data-day="Thursday" data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: Barricade</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="1:00pm"><div class="live-now-circle"></div>1-2pm: Never been a BNOC</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="2:00pm"><div class="live-now-circle"></div>2-3pm: The Longest Leg / Continental Buffet</div>
+              <div class="mobile-time-slot" data-day="Thursday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: Safe Space</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="4:00pm"><div class="live-now-circle"></div>4-5pm: Waffle House / The Tea Party</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
+              <div class="mobile-time-slot" data-day="Thursday" data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Folk and Country</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>8-9pm: Indie and Alt</div>
+              <div class="mobile-time-slot" data-day="Thursday" data-time="9:00pm"><div class="live-now-circle"></div>9-10pm: Wisecrack</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="10:00pm"><div class="live-now-circle"></div>10-11pm: Garcia's Weekly Round Up</div>
+            <div class="mobile-time-slot" data-day="Thursday" data-time="11:00pm"><div class="live-now-circle"></div>11-12am: Beatscape</div>
+            
+             <div class="mobile-day-header">Friday</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="9:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>9-10am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="10:00am" style=" background-color: #df3b00;"><div class="live-now-circle"></div>10-11am: Breakfast</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="11:00am" ><div class="live-now-circle"></div>11-12pm: M&P Megamix</div>
+             <div class="mobile-time-slot" data-day="Friday" data-time="12:00pm" ><div class="live-now-circle"></div>12-1pm: Babe</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="1:00pm" style="background-color: #668120"><div class="live-now-circle"></div>1-2pm: News of the Week</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="2:00pm" style="background-color: #4a786e"><div class="live-now-circle"></div>2-3pm: SPORT</div>
+              <div class="mobile-time-slot" data-day="Friday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: 'But where are you really from?'</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="4:00pm" ><div class="live-now-circle"></div>4-5pm: Girlhood</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="5:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
+              <div class="mobile-time-slot" data-day="Friday" data-time="6:00pm" style="background-color: #2e446d"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Hip-Hop, Rap & RnB</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="8:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>8-9pm: Electronic</div>
+              <div class="mobile-time-slot" data-day="Friday" data-time="9:00pm" ><div class="live-now-circle"></div>9-10pm: The Midwest Emo Hour</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="10:00pm" ><div class="live-now-circle"></div>10-11pm: Behind the Beat (biweekly)</div>
+            <div class="mobile-time-slot" data-day="Friday" data-time="11:00pm" ><div class="live-now-circle"></div>11-12am: Crank Wave</div>
+            
+             <div class="mobile-day-header">Saturday</div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="9:00am"><div class="live-now-circle"></div>9-10am: </div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="10:00am" style="background-color: #870665"><div class="live-now-circle"></div>10-11am: Leeds, Whats Happening?</div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="11:00am"><div class="live-now-circle"></div>11-12pm: LSR Out N About</div>
+             <div class="mobile-time-slot" data-day="Saturday" data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: Box! Box! Box!</div>
+            <div class="mobile-time-slot"  data-day="Saturday" data-time="1:00pm" ><div class="live-now-circle"></div>1-2pm: </div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="2:00pm" ><div class="live-now-circle"></div>2-3pm: (Not So) Dumb Blondes</div>
+              <div class="mobile-time-slot" data-day="Saturday" data-time="3:00pm"  style="background-color: #4a786e"><div class="live-now-circle"></div>3-4pm: Soccer Punch</div>
+            <div class="mobile-time-slot"  data-day="Saturday" data-time="4:00pm" style="background-color: #4a786e"><div class="live-now-circle"></div>4-5pm: Soccer Punch</div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="5:00pm" ><div class="live-now-circle"></div>5-6pm: BA Honoured To Be Music</div>
+              <div class="mobile-time-slot" data-day="Saturday" data-time="6:00pm" ><div class="live-now-circle"></div>6-7pm: It Takes a Village</div>
+            <div class="mobile-time-slot"  data-day="Saturday" data-time="7:00pm" style="background-color: #870665"><div class="live-now-circle"></div>7-8pm: Saturday Night Fever</div>
+              <div class="mobile-time-slot"  data-day="Saturday" data-time="8:00pm" style="background-color: #870665"><div class="live-now-circle"></div>8-9pm: Saturday Night Fever</div>
+            <div class="mobile-time-slot"  data-day="Saturday" data-time="9:00pm" ><div class="live-now-circle"></div>9-10pm: After Hours</div>
+            <div class="mobile-time-slot" data-day="Saturday" data-time="10:00pm" ><div class="live-now-circle"></div>10-11pm: Tjaro x LSR</div>
+               <div class="mobile-time-slot"  data-day="Saturday" data-time="11:00pm" ><div class="live-now-circle"></div>11-12am: Prog Ho!</div>
+            
+             <div class="mobile-day-header">Sunday</div>
+            <div class="mobile-time-slot" data-day="Sunday" data-time="9:00am" ><div class="live-now-circle"></div>9-10am: </div>
+            <div class="mobile-time-slot" data-day="Sunday" data-time="10:00am"><div class="live-now-circle"></div>10-11am: Old, New, Borrowed, Blue</div>
+            <div class="mobile-time-slot" data-day="Sunday" data-time="11:00am"><div class="live-now-circle"></div>11-12pm: Jamie Goes to Mollywood</div>
+             <div class="mobile-time-slot" data-day="Sunday" data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: My Records / Creme de la Creme</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="1:00pm" style="background-color: #870665"><div class="live-now-circle"></div>1-2pm: Box Office</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="2:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>2-3pm: SRA Chart Show</div>
+              <div class="mobile-time-slot"  data-day="Sunday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: SRA Chart Show</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="4:00pm" style="background-color: #870665"><div class="live-now-circle"></div>4-5pm: SUNDAY ROAST</div>
+            <div class="mobile-time-slot"   data-day="Sunday" data-time="5:00pm" style="background-color: #870665"><div class="live-now-circle"></div>5-6pm: SUNDAY ROAST</div>
+              <div class="mobile-time-slot"  data-day="Sunday" data-time="6:00pm" ><div class="live-now-circle"></div>6-7pm: Syke Up your Life / The Vinyl Frontier</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="7:00pm" style="background-color: #4b4a2e"><div class="live-now-circle"></div>7-8pm: Album Review</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="8:00pm" ><div class="live-now-circle"></div>8-9pm: Space Age Love Songs</div>
+              <div class="mobile-time-slot" data-day="Sunday" data-time="9:00pm" ><div class="live-now-circle"></div>9-10pm: Sleepytime Songs</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="10:00pm"><div class="live-now-circle"></div>10-11pm: The Label Show</div>
+            <div class="mobile-time-slot" data-day="Sunday" data-time="11:00pm"><div class="live-now-circle"></div>11-12am: EKBeats</div>
+           
+            <!-- More time slots for Tuesday -->
+
+            <!-- Repeat for each day up to Sunday -->
+            <!-- ... -->
+        </div>
+    </div>
+  <script>
+      
+        function highlightCurrentSlot() {
+            const slots = document.querySelectorAll('.mobile-time-slot');
+            const now = new Date();
+
+            // Calculate the minutes elapsed since Monday at 9 AM
+            const startOfWeek = new Date(now);
+            startOfWeek.setDate(now.getDate() - (now.getDay() === 0 ? 6 : now.getDay() - 1)); // Move to the most recent Monday
+            startOfWeek.setHours(9, 0, 0, 0); // Set to 9 AM
+            
+            const minutesSinceStart = Math.floor((now - startOfWeek) / 60000);
+
+            // Determine the schedule duration in minutes (7 days * 15 hours/day * 60 minutes/hour)
+            const scheduleDuration = 7 * 15 * 60;
+
+            // If the time is outside the schedule (e.g., after midnight), do nothing
+            if (minutesSinceStart < 0 || minutesSinceStart >= scheduleDuration) {
+                slots.forEach(slot => {
+                    const circle = slot.querySelector('.live-now-circle');
+                    if (circle) circle.remove();
+                });
+                return;
+            }
+
+            // Determine the index of the current slot
+            const currentSlotIndex = Math.floor(minutesSinceStart / 60); // Each slot is 1 hour
+
+            // Clear existing indicators
+            slots.forEach(slot => {
+                const circle = slot.querySelector('.live-now-circle');
+                if (circle) circle.remove();
+            });
+
+            // Add the live-now indicator to the current slot
+            if (slots[currentSlotIndex]) {
+                const circle = document.createElement('span');
+                circle.className = 'live-now-circle';
+                slots[currentSlotIndex].prepend(circle);
+            }
+        }
+
+        // Run the highlight logic every minute
+        setInterval(highlightCurrentSlot, 60000);
+
+        // Initial call on page load
+        highlightCurrentSlot();
+    
+    </script>
+<table>
+  <thead>
+    <tr>
+      <th style=" background-color: #a00000;  font:var(--small_mono); font-size:14px;">Time</th>
+      <th class="day" data-short="Mon" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Monday</th>
+      <th class="day" data-short="Tue" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Tuesday</th>
+      <th class="day" data-short="Wed" style=" background-color: #a00000;font-size: clamp(10px, 2vw, 19px)">Wednesday</th>
+      <th class="day" data-short="Thu" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Thursday</th>
+      <th class="day" data-short="Fri" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Friday</th>
+      <th class="day" data-short="Sat" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Saturday</th>
+      <th class="day" data-short="Sun" style=" background-color: #a00000; font-size: clamp(10px, 2vw, 19px)">Sunday</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+      <td style=" background-color: #a00000;">9:00 AM - 10:00 AM</td>
+      <td style="background-color: #df3b00"><a href="https://www.instagram.com/thisislsrbreakfast?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Breakfast</a></td>
+      <td style="background-color: #df3b00"><a href="https://www.instagram.com/thisislsrbreakfast?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Breakfast</a></td>
+      <td style="background-color: #df3b00"><a href="https://www.instagram.com/thisislsrbreakfast?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Breakfast</a></td>
+      <td style="background-color: #df3b00"><a href="https://www.instagram.com/thisislsrbreakfast?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Breakfast</a></td>
+      <td style="background-color: #df3b00"><a href="https://www.instagram.com/thisislsrbreakfast?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Breakfast</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style=" background-color: #a00000;">10:00 AM - 11:00 AM</td>
+      <td style="background-color: #df3b00"><a href="https://www.instagram.com/thisislsrbreakfast?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Breakfast</a></td>
+      <td style="background-color: #df3b00"><a href="https://www.instagram.com/thisislsrbreakfast?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Breakfast</a></td>
+      <td style="background-color: #df3b00"><a href="https://www.instagram.com/thisislsrbreakfast?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Breakfast</a></td>
+      <td style="background-color: #df3b00"><a href="https://www.instagram.com/thisislsrbreakfast?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Breakfast</a></td>
+      <td style="background-color: #df3b00"><a href="https://www.instagram.com/thisislsrbreakfast?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Breakfast</a></td>
+      <td style="background-color: #870665"><a href="https://www.instagram.com/thisislsr_weekend?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">Leeds, Whats Happening?</a></td>
+      <td>Old, New, Borrowed, Blue</td>
+    </tr>
+       <tr>
+      <td style=" background-color: #a00000;">11:00 AM - 12:00 PM</td>
+      <td >Big Names on Campus / Chattergories</td>
+      <td >What's Poppin!?</td>
+      <td >Sounds Of The Sahara</td>
+      <td >Vanity Unfair's Oscar Party / Last Days of Disco</td>
+      <td >M&P Megamix</td>
+      <td ><a href="https://www.instagram.com/thisislsr_weekend?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">LSR Out N About</a></td>
+      <td>Jamie Goes To Mollywood</td>
+    </tr>
+
+
+<tr>
+  <td style=" background-color: #a00000;">12:00 PM - 1:00 PM</td>
+  <td>The Birth of The Beat</td>
+  <td>The Girls Got Guts</td>
+  <td style="background-color: #668120">SOCIETY SPOTLIGHT</td>
+  <td>Barricade</td>
+  <td>Babe</td>
+  <td>Box! Box! Box!</td>
+  <td>My Records / Creme de la Creme</td>
+</tr>
+
+      <tr>
+  <td style=" background-color: #a00000;">1:00 PM - 2:00 PM</td>
+  <td>Sidilicious Selects</td>
+  <td>Taylor's Version / The Lame Show</td>
+  <td>LSTV.MP3 / GRYPH-ON-AIR</td>
+  <td>Never Been a BNOC</td>
+  <td style="background-color: #668120"><a href="https://www.instagram.com/thisislsr_news?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">NEWS OF THE WEEK</a></td>
+        <td></td>    
+  <td style="background-color: #870665"><a href="https://www.instagram.com/thisislsr_weekend?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">BOX OFFICE</a></td>
+</tr>
+      <tr>
+  <td style=" background-color: #a00000;">2:00 PM - 3:00 PM</td>
+  <td style="background-color: #4a786e"><a href="https://www.instagram.com/thisislsr_sport?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SPORT</a></td>
+  <td>Your LeedsList / And That's What You Missed On Glee</td>
+  <td>Life Lessons with Liv and Laura</td>
+  <td>The Longest Leg / Continental Buffet</td>
+  <td style="background-color: #4a786e"><a href="https://www.instagram.com/thisislsr_sport?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SPORT</a></td>
+  <td>(Not So) Dumb Blondes</td>
+  <td style="background-color: #ce3c85"><a href="https://www.instagram.com/studentradioassociation?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SRA CHART SHOW</a></td>
+</tr>
+
+      <tr>
+  <td style=" background-color: #a00000;">3:00 PM - 4:00 PM</td>
+  <td style="background-color: #ce3c85">LGBTQ+ SHOW</td>
+  <td style="background-color: #ce3c85"><a href="https://www.instagram.com/thisislsr_womenshour?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">WOMEN'S HOUR</a></td>
+  <td style="background-color: #ce3c85">POLITICS HOUR</td>
+  <td style="background-color: #ce3c85"><a href="https://www.instagram.com/thisislsr_safespace?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SAFE SPACE</a></td>
+  <td style="background-color: #ce3c85">'BUT WHERE ARE YOU REALLY FROM?'</td>
+  <td style="background-color: #4a786e">Soccer Punch</td>
+  <td style="background-color: #ce3c85"><a href="https://www.instagram.com/studentradioassociation?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SRA CHART SHOW</a></td>
+</tr>
+
+      
+<tr>
+  <td style=" background-color: #a00000;">4:00 PM - 5:00 PM</td>
+  <td>The More You Know (Show)</td>
+  <td>Golden Hour / I'm Just A Girl</td>
+  <td>Happy Hour</td>
+  <td>Waffle House / The Tea Party</td>
+  <td>Girlhood</td>
+  <td style="background-color: #4a786e">Soccer Punch</td>
+  <td style="background-color: #870665"><a href="https://www.instagram.com/sundayroastlsr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SUNDAY ROAST</a></td>
+</tr>
+
+      <tr>
+  <td style=" background-color: #a00000;">5:00 PM - 6:00 PM</td>
+  <td style="background-color: #2e446d"><a href="https://www.instagram.com/thisislsr_hometime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HOMETIME</a></td>
+  <td style="background-color: #2e446d"><a href="https://www.instagram.com/thisislsr_hometime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HOMETIME</a></td>
+  <td style="background-color: #2e446d"><a href="https://www.instagram.com/thisislsr_hometime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HOMETIME</a></td>
+  <td style="background-color: #2e446d"><a href="https://www.instagram.com/thisislsr_hometime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HOMETIME</a></td>
+  <td style="background-color: #2e446d"><a href="https://www.instagram.com/thisislsr_hometime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HOMETIME</a></td>
+  <td>BA Honoured To Be Music</td>
+  <td style="background-color: #870665"><a href="https://www.instagram.com/sundayroastlsr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SUNDAY ROAST</a></td>
+</tr>
+<tr>
+  <td style=" background-color: #a00000;">6:00 PM - 7:00 PM</td>
+  <td style="background-color: #2e446d"><a href="https://www.instagram.com/thisislsr_hometime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HOMETIME</a></td>
+  <td style="background-color: #2e446d"><a href="https://www.instagram.com/thisislsr_hometime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HOMETIME</a></td>
+  <td style="background-color: #2e446d"><a href="https://www.instagram.com/thisislsr_hometime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HOMETIME</a></td>
+  <td style="background-color: #2e446d"><a href="https://www.instagram.com/thisislsr_hometime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HOMETIME</a></td>
+  <td style="background-color: #2e446d"><a href="https://www.instagram.com/thisislsr_hometime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HOMETIME</a></td>
+  <td>It Takes A Village</td>
+  <td>Syke Up Your Life / The Vinyl Frontier</td>
+</tr>
+<tr>
+  <td style=" background-color: #a00000;">7:00 PM - 8:00 PM</td>
+  <td style="background-color: #4b4a2e"><a href="https://www.instagram.com/thisislsr_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">LIVE AND LOCAL</a></td>
+  <td style="background-color: #4b4a2e"><a href="https://www.instagram.com/thisislsr_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">JAZZ, FUNK AND SOUL</a></td>
+  <td style="background-color: #4b4a2e"><a href="https://www.instagram.com/thisislsr_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">AFROBEATS</a></td>
+  <td style="background-color: #4b4a2e"><a href="https://www.instagram.com/thisislsr_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">FOLK AND COUNTRY</a></td>
+  <td style="background-color: #4b4a2e"><a href="https://www.instagram.com/thisislsr_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">HIP HOP, RAP & RnB</a></td>
+  <td style="background-color: #870665"><a href="https://www.instagram.com/thisislsr_weekend?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SATURDAY NIGHT FEVER</a></td>
+  <td style="background-color: #4b4a2e"><a href="https://www.instagram.com/thisislsr_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">ALBUM REVIEW</a></td>
+</tr>
+<tr>
+  <td style=" background-color: #a00000;">8:00 PM - 9:00 PM</td>
+  <td style="background-color: #4b4a2e"><a href="https://www.instagram.com/thisislsr_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">ROCK AND PUNK</a></td>
+  <td style="background-color: #4b4a2e">Two Cents and Nonsense</td>
+  <td style="background-color: #4b4a2e"><a href="https://www.instagram.com/thisislsr_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">INTERNATIONAL</a></td>
+  <td style="background-color: #4b4a2e"><a href="https://www.instagram.com/thisislsr_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">INDIE AND ALT</a></td>
+  <td style="background-color: #4b4a2e"><a href="https://www.instagram.com/thisislsr_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">ELECTRONIC</a></td>
+  <td style="background-color: #870665"><a href="https://www.instagram.com/thisislsr_weekend?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SATURDAY NIGHT FEVER</a></td>
+  <td>Space Age Love Songs</td>
+</tr>
+<tr>
+  <td style=" background-color: #a00000;">9:00 PM - 10:00 PM</td>
+  <td>Dad Music For Girls</td>
+  <td>Politics of Punk / Time Machine</td>
+  <td>Antagonising Aunts</td>
+  <td>Wisecrack</td>
+  <td>The Midwest Emo Hour</td>
+  <td>After Hours</td>
+  <td>Sleepytime Songs</td>
+</tr>
+<tr>
+  <td style=" background-color: #a00000;">10:00 PM - 11:00 PM</td>
+  <td>Uni Music Library Finds</td>
+  <td>Thank You For The Music</td>
+  <td>Low-Key with Rivah</td>
+  <td>Garcia's Weekly Round Up</td>
+  <td>Behind The Beat (biweekly)</td>
+  <td>Tjaro x LSR</td>
+  <td>The Label Show</td>
+</tr>
+<tr>
+  <td style=" background-color: #a00000;">11:00 PM - 12:00 AM</td>
+  <td>Spiritual Guide</td>
+  <td>Jungle Gems with Mylania</td>
+  <td>Disco Hour</td>
+  <td>Beatscape</td>
+  <td>Crank Wave</td>
+  <td>Prog Ho!</td>
+  <td>EKBeats</td>
+</tr>
+
+
+      
+  </tbody>
+</table>
+</div>
+<style>
+  broski {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    lol {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+     .custom-container {
+          display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 80%;
+    
+    }
+
+    .custom-titles {
+     display: flex;
+      justify-content: space-between;
+      width: 100%;
+        color: white;
+    }
+
+    .custom-title-left {
+      flex: 1;
+      text-align: center;
+        color: white;
+    }
+
+    .custom-title-right {
+      flex: 2;
+      text-align: center;
+        color: white;
+    }
+
+    .custom-box-container {
+       display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 10px;
+    }
+
+    .custom-box {
+         width: 25%;
+      height: 310px;
+      background-color: #a00000;
+     
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      padding: 10px;
+     
+     
+    }
+
+    .custom-subtitle {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+        color: white;
+    }
+
+
+
+     .audio-player-container1 {
+  position: relative;
+  width: 95%;
+  height: 95%;
+  background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg'); /* Replace with your background image URL */
+    background-size: cover; /* Ensure the image covers the box proportionally */
+  background-position: center; /* Center the image inside the box */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+      background-position: center;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+}
+
+/* Add the rotating animation */
+
+
+       .audio-player-container2 {
+      position: ;
+      width: 95%;
+      height: 95%;
+      background-image: url(IMG_4447.jpeg); /* Replace with your background image URL */
+          background-size: cover; /* Ensure the image covers the box proportionally */
+  background-position: center; /* Center the image inside the box */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+      background-position: center;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .audio-player-container1 button {
+      position: ;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 24px; /* Icon size */
+    
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      border-radius: 35%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+     .audio-player-container2 button {
+      position: ;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 24px; /* Icon size */
+    
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      border-radius: 35%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+
+    .audio-player-container1 button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+     .audio-player-container2 button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    audio {
+      display: none; /* Hide the audio element */
+    }
+    .refresh-btn {
+      display: inline-block;
+      padding: 7px 10px;
+      font-size: 13px;
+      color: #fff;
+      background-color: #5e1d22;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+</style>
+<div id="page2" class="content">
+    <br><br><br> <br>
+
+<div class="brformobile"> <br> <br> </div>
+
+<div class="mobile-container">
+  <!-- Header -->
+  
+
+  <!-- Content Section -->
+  <section class="mobile-content">
+    <!-- Live Stream Section -->
+    <div class="stream-section">
+      <h2 style="font-size:25px !important; text-align: center;">Live Streams</h2>
+      <div class="stream-box">
+        <h3 style="margin-bottom: 10px !important;">LSR Stream</h3>
+       <div class="audio-container1" style="background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg');">
+     
+          <button id="playPauseButton4">
+            <i class="fas fa-play"></i>
+          </button>
+          <audio id="livestream4" preload="none">
+            <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+      <div class="stream-box">
+        <h3 style="margin-bottom: 10px !important;">Alternate Stream</h3>
+        <div class="audio-container1" style="background-image: url('IMG_4447.jpeg');">
+          <button id="playPauseButton3">
+            <i class="fas fa-play"></i>
+          </button>
+          <audio id="livestream3" preload="none">
+            <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </div>
+      <br>
+     
+       <h2 style="font-size:20px !important; text-align: center;">Live Chat</h2>
+       <div style="width: 95%; margin-left: auto; margin-right: auto">
+<iframe id="chilll" src="https://e.widgetbot.io/channels/1315795219559743488/1315795220603998293" allow="clipboard-write; fullscreen" height="400px" width="100%" margin-left="auto" margin-right="auto"></iframe>
+      <p style="color: #fff !important; font-size: 12px !important; margin-top:3px;">If chat isn't working, please <button class="refresh-btn" onclick="refreshChat()">Refresh Here</button></p>
+       </div><br>
+    <!-- Listen Back Section -->
+    <div class="listen-back-section">
+      <h2 style="font-size:25px !important; text-align: center;">Listen Back</h2>
+      <div class="platform-box">
+        <h3 style="margin-bottom: 10px !important;">SoundCloud</h3>
+
+
+          
+        <div class="audio-container1" style="background-image: url('IMG_4462.jpeg');"> 
+        <button id="playPauseButton300"><a href="https://soundcloud.com/thisislsr" target="_blank">
+            <i class="fas fa-play"></i></a>
+          </button>
+        </div>
+         
+        
+        </div>
+      <div class="platform-box2">
+        <h3 style="margin-bottom: 10px !important;">Spotify</h3>
+        <div class="audio-container1" style="background-image: url('IMG_4459.jpeg');">  
+        <button id="playPauseButton300"> <a href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f" target="_blank">
+            <i class="fas fa-play"></i></a>
+          </button>
+        </div>   
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+<div class="desktop-contain">
+  <h1 style="text-align: center; color: #fff; font-size:25px;">Listen!<br></h1><br>
+   <br>
+    
+    <div class="layout-container">
+        <div class="side-box side-box-1">LSR Stream  <br><div class="audio-player-container1">
+  
+    <button id="playPauseButton1">
+      <i class="fas fa-play"></i>
+    </button>
+
+    <audio id="livestream1" preload="none">
+      <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div></div>
+        <div class="side-box side-box-2" id="widget-container">
+             <div id="widget-container1">
+  <widgetbot
+    server="1315795219559743488"
+    channel="1315795220603998293"
+    width="520px"
+    height="490px"
+  ></widgetbot>
+  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+                 </div>
+ <p style="color: #fff !important; font-size: 14px !important; margin-top:7px;">If chat isn't working, please <button class="refresh-btn" onclick="refreshWidget()">Refresh Here</button></p>
+</div>
+
+
+
+
+
+    
+
+
+
+   <!--  <lol>
+ <div class="custom-container">
+ 
+    <div class="custom-titles">
+      <div class="custom-title-left">
+        <h2>Listen Live:</h2>
+      </div>
+      <div class="custom-title-right">
+        <h2>Listen Back:</h2>
+      </div>
+    </div>
+
+  
+    <div class="custom-box-container">
+      <div class="custom-box">
+        <div class="custom-subtitle">LSR Stream</div>
+           <div class="audio-player-container1">
+  
+    <button id="playPauseButton1">
+      <i class="fas fa-play"></i> 
+    </button>
+  
+    <audio id="livestream1" preload="none">
+      <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg"> 
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+       
+      </div>
+      <div class="custom-box">
+        <div class="custom-subtitle">Alternate Stream</div>
+            <div class="audio-player-container2">
+  
+    <button id="playPauseButton2">
+      <i class="fas fa-play"></i> 
+    </button>
+  
+    <audio id="livestream2" preload="none">
+      <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg"> 
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+       
+      </div>
+      <div class="custom-box">
+        <div class="custom-subtitle">SoundCloud</div>
+           <div class="audio-container1" style="background-image: url('IMG_4462.jpeg'); margin-top:20px;">  
+               <button id="playPauseButton300"><a href="https://soundcloud.com/thisislsr" target="_blank">
+            <i class="fas fa-play"></i> </a>
+          </button>
+           </div>
+      </div>
+      <div class="custom-box">
+        <div class="custom-subtitle">Spotify</div>
+           <div class="audio-container1" style="background-image: url('IMG_4459.jpeg'); margin-top:20px;">
+                <button id="playPauseButton300"><a href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f" target="_blank">
+            <i class="fas fa-play"></i></a>
+          </button>
+           </div> 
+      </div>
+    </div>
+  </div> </lol> --> </div>
+<br>  <br> <broski>
+ <div class="bruhbruh" style=" width: 80%;  justify-content: center; align-items: center;  display: flex; ">   
+<h2 style="text-align: center; color: #fff;   font-size: var(--small_mono); font:    var(--small_mono);">
+DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides students with the tools to learn journalistic practices as they go. Leeds University Union (LUU) is not liable for opinions or views expressed in this broadcast, which are also not necessarily reflective of LSR or LUU as whole organisations. Please do not take opinions expressed in the following broadcasts as fact, and always use external, reputable media sources to supplement discussions of current affairs on LSR. Enjoy the show. </h2>
+ </div> </broski></div></div><br>
+               <style>
+ 
+
+ .mobile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .mobile-header h1 {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .mobile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stream-section, .listen-back-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .platform-box {
+    background-color: #a00000;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+     }
+    
+  .platform-box2 {
+    background-color: #a00000;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .stream-box {
+    background-color: #a00000;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+   
+
+  .audio-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+  }
+
+  .audio-container1 button {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  
+
+  /* Hide content on larger screens */
+  @media screen and (min-width: 600px) {
+    .mobile-container {
+      display: none;
+    }
+  }
+                     @media screen and (max-width: 600px) {
+    .desktop-contain {
+      display: none;
+    }
+  }
+
+ @media screen and (min-width: 600px) {
+    .brformobile {
+      display: none;
+    }
+  }
+
+  .background-box {
+    position: fixed; /* Fixed position stays in place even when scrolling */
+    top: -50px;
+    left: 0;
+    width: 100%; /* Full width of the viewport */
+    height: 70px; /* Full height of the viewport */
+    background-color: #bb0c0c; /* Solid blue color */
+    z-index: -1; /* Places the box behind all other elements */
+}
+                   
+</style>
+                 <div class="brformobile"> <div class="background-box"></div> </div>
+                <script>
+    const playPauseButton10 = document.getElementById('playPauseButton1');
+    const livestream10 = document.getElementById('livestream1');
+    const playIcon10 = '<i class="fas fa-play"></i>';
+    const pauseIcon10 = '<i class="fas fa-pause"></i>';
+
+   playPauseButton10.addEventListener('click', function() {
+  if (livestream10.paused) {
+    livestream10.play();
+    playPauseButton10.innerHTML = pauseIcon10; // Change icon to pause
+    audioPlayerContainer.classList.add('rotating'); // Start rotation
+  } else {
+    livestream10.pause();
+    playPauseButton10.innerHTML = playIcon10; // Change icon to play
+    audioPlayerContainer.classList.remove('rotating'); // Stop rotation
+  }
+});
+
+
+    const playPauseButton20 = document.getElementById('playPauseButton2');
+    const livestream20 = document.getElementById('livestream2');
+    const playIcon20 = '<i class="fas fa-play"></i>';
+    const pauseIcon20 = '<i class="fas fa-pause"></i>';
+
+    playPauseButton20.addEventListener('click', function() {
+      if (livestream20.paused) {
+        livestream20.play();
+        playPauseButton20.innerHTML = pauseIcon20; // Change icon to pause
+      } else {
+        livestream20.pause();
+        playPauseButton20.innerHTML = playIcon20; // Change icon to play
+      }
+    });
+
+
+ const playPauseButton30 = document.getElementById('playPauseButton3');
+    const livestream30 = document.getElementById('livestream3');
+    const playIcon30 = '<i class="fas fa-play"></i>';
+    const pauseIcon30 = '<i class="fas fa-pause"></i>';
+
+    playPauseButton30.addEventListener('click', function() {
+      if (livestream30.paused) {
+        livestream30.play();
+        playPauseButton30.innerHTML = pauseIcon30; // Change icon to pause
+      } else {
+        livestream30.pause();
+        playPauseButton30.innerHTML = playIcon30; // Change icon to play
+      }
+    });
+
+ const playPauseButton40 = document.getElementById('playPauseButton4');
+    const livestream40 = document.getElementById('livestream4');
+    const playIcon40 = '<i class="fas fa-play"></i>';
+    const pauseIcon40 = '<i class="fas fa-pause"></i>';
+
+    playPauseButton40.addEventListener('click', function() {
+      if (livestream40.paused) {
+        livestream40.play();
+        playPauseButton40.innerHTML = pauseIcon40; // Change icon to pause
+      } else {
+        livestream40.pause();
+        playPauseButton40.innerHTML = playIcon40; // Change icon to play
+      }
+    });
+
+                    
+  </script>
+
+               
+<div id="page3" class="content">
+    <br><br>
+    <title>Apply for a Show</title>
+<style>
+  bodyhii {
+   
+    margin: 0;
+    padding: 0;
+   
+    color: white;
+  }
+
+  .show-container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #b80000;
+    border-radius: 10px;
+  }
+
+  h1, h2, h3 {
+    color: white;
+  }
+
+  ul.show-list {
+    padding-left: 20px;
+  }
+
+  .show-section {
+    margin-bottom: 20px;
+  }
+
+  .show-tips {
+    background-color: #a00000;
+    border-left: 4px solid #630202;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+
+  .show-tips h3 {
+    margin-top: 0;
+  }
+
+  .show-apply-links ul.show-link-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .show-apply-links ul.show-link-list li {
+    margin-bottom: 10px;
+  }
+
+  .show-apply-links ul.show-link-list li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .show-apply-links ul.show-link-list li a:hover {
+    text-decoration: underline;
+  }
+
+  .show-cta {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .show-cta button {
+    background-color: #630202; #0078D7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .show-cta button:hover {
+    background-color: #dc6558;
+  }
+  
+  .show-ctas {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .show-ctas button {
+    z-index: 100000;
+    background-color: #630202;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .show-ctas button:hover {
+    background-color: #dc6558;
+  }
+
+  .show-insta-links {
+    font-style: italic;
+    color: light-grey;
+  }
+
+  .show-image-gallery {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    justify-content: center;
+  }
+
+  .show-image-gallery img {
+    width: 30%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .show-studio-section {
+    background-color: #a00000;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #630202;
+    margin: 20px 0;
+  }
+
+  .show-studio-section a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .show-studio-section a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<bodyhii>
+  <div class="show-container">
+    <h1 class="show-heading" style="text-align: center; font-size: 45px;">Apply for a Show</h1><br>
+    <p style="color: white; text-align: center; font: var(--medium_mono) !important;">Are you a student in Leeds? Want to get involved with the UK's best student radio? Why not apply to be on one of our shows! Choose from our range of existing core shows below or pitch an idea for your very own.</p><br>
+    <p style="color: white; text-align: center; font: var(--small_mono) !important;"><strong>Applications for semester 1 2024 open at 9am on Monday 23rd September 2024, and close at 2pm on Friday 27th September 2024.</strong></p><br>
+    <div class="show-image-gallery">
+      <img src="lsrtransmission-004.jpg" alt="Student Radio 1">
+      <img src="316c00_97fbd91f59754425949fd7a851336bf6~mv2.jpg.webp" alt="Student Radio 2">
+      <img src="Presenting_15.jpg" alt="Student Radio 3">
+    </div>
+<br>
+    <div class="show-section show-tips" style="color: white">
+      <h3>Here's some top tips and tricks when applying for a show...</h3><br>
+      <ul class="show-list" style="color: white; font: var(--small_mono) !important;">
+        <li><strong>Show us your personality:</strong> We want to know what you’re interested in and what you’d be like on the radio!</li><br>
+        <li><strong>Be original:</strong> Make yourself stand out and show us your best ideas!</li><br>
+        <li><strong>Be available:</strong> The more times you’re free the more likely you are to get a show!</li><br>
+        <li><strong>No one word answers:</strong> We want to see your passion and enthusiasm shine through. A few succinct sentences are perfect!</li><br>
+        <li><strong>Take your time:</strong> Applications are open for a week, so take the time to think about what you want to apply for, what you can feasibly commit to, and most importantly, why you want to be part of our society!</li>
+      </ul>
+    </div>
+<br>
+    <div class="show-apply-links-grid" id="apply-section">
+      <h2 style="font-size: 38px !important;">Apply for Core Music Shows</h2>
+      <div class="show-grid-container">
+        <a href="#">Live and Local</a>
+        <a href="#">Jazz, Funk and Soul</a>
+        <a href="#">Rock and Punk</a>
+        <a href="#">Afrobeat</a>
+        <a href="#">Folk and Country</a>
+        <a href="#">Indie and Alternative</a>
+        <a href="#">Hip Hop, Rap, and RnB</a>
+        <a href="#">Electronic</a>
+        <a href="#">Album Review</a>
+        <a href="#">International Hour</a>
+        <a href="#">Core Music LSR Podcast</a>
+      </div> <br>
+      <p class="show-insta-links" style="color: white; font: var(--small_mono) !important;">
+        *Find out more about our core music shows on Instagram: 
+        <a href="https://instagram.com/thisislsr_music" style="color: white">@thisislsr_music</a>
+      </p>
+    </div>
+    <div class="show-cta">
+      <button onclick="window.location.href='#apply-section'">Start Applying - Good Luck!</button>
+    </div>
+ 
+<br><br>
+  <style>
+    .show-apply-links-grid {
+      text-align: center;
+      margin: 20px;
+      color: white;
+    }
+
+    .show-apply-links-grid h2 {
+      margin-bottom: 20px;
+    }
+
+    .show-grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+      gap: 15px; /* Spacing between grid items */
+      justify-items: center;
+    }
+      
+@media screen and (max-width: 600px) {
+    .show-grid-container {
+      display: none;
+    }
+  }
+    .show-grid-container a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+
+  <div class="show-studio-section" style="color: white">
+    <h2 style="text-align: center; font-size: 45px;">Book Studio 2</h2> <br>
+    <p style="text-align: center;">If you'd like to record your podcast or make use of our CDJs/Turntable, LSR's Studio 2 is available for our members to book out.</p> <br>
+    <p style="text-align: center;">Our booking system allows for 30-minute slots. If you require a full hour, ensure you make two consecutive bookings.</p> <br>
+    <div class="show-ctas"><button><a href="#">Make a Studio 2 booking here</a></div></button>
+    <p style="text-align: center; font: var(--small_mono) !important;"><em>PLEASE NOTE: You must have received training and be an LSR member to use our booking system.</em></p>
+
+</div>
+</bodyhii>
+
+</div></div>
+               
+<div id="page4" class="content">
+    <br><br><br> 
+     <title>About us</title>
+  <style>
+    .bodylol {
+      width: 100%;
+
+        
+     
+      margin: 0;
+      padding: 0;
+     
+      color: white;
+    }
+       /* Hide content on larger screens */
+  @media screen and (max-width: 600px) {
+    .bodylol {
+      display: none;
+    }
+      }
+
+       .bodylol2 {
+      width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+        
+     
+      margin: 0;
+      padding: 0;
+
+      color: white;
+    }
+       /* Hide content on larger screens */
+  @media screen and (min-width: 600px) {
+    .bodylol2 {
+      display: none;
+    }
+      }
+
+    .su-container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .su-about-section {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .su-about-left {
+      flex: 1;
+    }
+
+    .su-about-left img {
+      width: 100%;
+      height: auto;
+    
+      
+    }
+
+    .su-about-right {
+      flex: 2;
+         margin-left: 30px;
+    }
+
+    .su-about-left h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+ .su-grid-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.su-grid-item {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items horizontally */
+  justify-content: flex-start; /* Align to top for consistent spacing */
+ 
+  padding: 15px;
+  text-align: center;
+  
+}
+
+.su-grid-item h3 {
+  font-size: 20px;
+  margin-white 10px;
+  color: white;
+  min-height: 50px; /* Add a consistent height for titles */
+  display: flex;
+  align-items: center; /* Center text vertically within the title area */
+  justify-content: center;
+}
+
+.su-grid-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 10px 0;
+  object-fit: contain;
+}
+
+.su-grid-item p {
+  font-size: 14px;
+  color: white;
+  min-height: 60px; /* Add a consistent height for descriptions */
+  display: flex;
+  align-items: center; /* Center text vertically within the description area */
+  justify-content: center;
+  text-align: center; /* Ensure text wraps and aligns nicely */
+}
+ .mobile1-container {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobile1-about-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .mobile1-about-left img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+        margin-left: auto;
+ margin-right: auto;
+  }
+
+  .mobile1-about-left h1 {
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .mobile1-about-right p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    color: white;
+    width: 100%;
+  }
+
+  .mobile1-grid-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mobile1-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+
+  .mobile1-grid-item img {
+    width: 90%; /* Make image responsive */
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: contain;
+  }
+
+  .mobile1-grid-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+  }
+
+  .mobile1-grid-item p {
+    font-size: 12px;
+    color: white;
+    margin: 0;
+  }
+  </style>
+</head>
+    <div class="bodylol2">
+  <div class="mobile1-container">
+    <!-- About Section -->
+    <div class="mobile1-about-section">
+      <div class="mobile1-about-left">
+        <h1>About Us</h1>
+        <img src="LSR Logo.png.webp" alt="LOGO">
+      </div>
+      <div class="mobile1-about-right">
+        <p>
+          Leeds Student Radio is the only radio station in Leeds run by students, for students. We broadcast live from Leeds University Union every day during term time from 9am 'til late, and students from ANY Leeds University are welcome to be on a show! 
+          <br><br>
+          Whatever you’re interested in, there’s a space here for you: presenting, producing, DJing, design, tech, event management, marketing. The list goes on. And the best part is, no previous experience is required! We’ll help you find your place and provide you with the help and resources you need to kickstart your career or just have some fun. Our schedule ranges from arts, comedy, and music to sport, film, and politics. So no matter what you’re interested in, we’ll help you get it on-air (we even have shows about Taylor Swift and Eurovision... so anything goes!)
+        </p>
+      </div>
+    </div>
+
+    <!-- Grid Section -->
+    <div class="mobile1-grid-section">
+      <!-- Grid Item 1 -->
+      <div class="mobile1-grid-item">
+        <img src="316c00_f94fec6fbefb4d47aef6441c3d43af74~mv2.png.webp" alt="Event Management">
+        <h3>Head of Marketing</h3>
+        <p>Alex acts as LSR's treasurer, contact her regarding sponsorships and fundraising.</p>
+      </div>
+
+      <!-- Grid Item 2 -->
+      <div class="mobile1-grid-item">
+        <img src="316c00_641091c525ec48a9b3547eeff3174a2f~mv2.png.webp" alt="Sports Club">
+        <h3>Deputy Station Manager</h3>
+        <p>Millie organises our socials and hosts 'Wellbeing Wednesday' in the LSR studios every week.</p>
+      </div>
+
+      <!-- Grid Item 3 -->
+      <div class="mobile1-grid-item">
+        <img src="316c00_0b1678ae9f7441c58bf08b07aee38475~mv2.png.webp">
+        <h3>Programme Controller</h3>
+        <p>Sophie is in charge of our schedule and coming up with unique ideas for outside broadcasting.</p>
+      </div>
+
+      <!-- Repeat other grid items -->
+      <!-- Example for additional items -->
+      <div class="mobile1-grid-item">
+        <img src="316c00_fbf02c80f8d84513aa7bfdb2195625fe~mv2.png.webp" alt="Academic Support">
+        <h3>Head of News</h3>
+        <p>Contact Jenna or Ria regarding news-based content or programming at news@thisislsr.com.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bodylol">
+  <div class="su-container">
+    <!-- About Section -->
+    <div class="su-about-section">
+      <div class="su-about-left">
+        <h1 style="font-size: 50px; text-align: center;">About Us</h1>
+        <img src="LSR Logo.png.webp" alt="LOGO">
+      </div>
+      <div class="su-about-right">
+        <p>
+         Leeds Student Radio is the only radio station in Leeds run by students, for students. We broadcast live from Leeds University Union every day during term time from 9am 'til late and students from ANY Leeds University are welcome be on a show! Whatever you’re interested in, there’s a space here for you: presenting, producing, DJing, design, tech, event management, marketing. The list goes on. And the best part is, no previous experience is required! We’ll help you find your place and provide you with the help and resources you need to kickstart your career or just have some fun. Our schedule ranges from arts, comedy and music to sport, film and politics so no matter what you’re interested in, we’ll help you get it on-air (we even have shows about Taylor Swift and Eurovision... so anything goes!)
+        </p>
+      </div>
+    </div>
+
+    <!-- Grid Section -->
+    <div class="su-grid-section">
+      <!-- Grid Item 1 -->
+      <div class="su-grid-item">
+        <h3>Head of Marketing</h3>
+        <img src="316c00_f94fec6fbefb4d47aef6441c3d43af74~mv2.png.webp" alt="Event Management">
+        <p>Alex acts as LSR's treasurer, contact her regarding sponsorhips and fundraising.</p>
+      </div>
+
+      <!-- Grid Item 2 -->
+      <div class="su-grid-item">
+        <h3>Duputy Station Manager</h3>
+        <img src="316c00_641091c525ec48a9b3547eeff3174a2f~mv2.png.webp" alt="Sports Club">
+        <p>Millie organises our socials and hosts 'Wellbeing Wednesday' in the LSR studios every week.</p>
+      </div>
+
+      <!-- Grid Item 3 -->
+      <div class="su-grid-item">
+        <h3>Programme Controller</h3>
+        <img src="316c00_0b1678ae9f7441c58bf08b07aee38475~mv2.png.webp">
+        <p>Sophie is in charge of our schedule and coming up with unique ideas for outside broadcasting.</p>
+      </div>
+
+      <!-- Grid Item 4 -->
+      <div class="su-grid-item">
+        <h3>Head of News</h3>
+        <img src="316c00_fbf02c80f8d84513aa7bfdb2195625fe~mv2.png.webp" alt="Academic Support">
+        <p>AYou can contact Jenna or Ria regarding news-based content or programming at news@thisislsr.com.</p>
+      </div>
+
+      <!-- Grid Item 5 -->
+      <div class="su-grid-item">
+        <h3>Head of Hometime</h3>
+        <img src="316c00_9798ec6b97c8405c8f572ee5995efb12~mv2.png.webp" alt="Student Council">
+        <p>Carys manages our Hometime team (every weekday 5-7pm), soundtracking your commute home from uni with uplifting conversation and fun segments.</p>
+      </div>
+
+      <!-- Grid Item 6 -->
+      <div class="su-grid-item">
+        <h3>Head of Online</h3>
+        <img src="316c00_ae16481e2ba74c45ad7e93269e29211f~mv2.png.webp" alt="Creative Arts">
+        <p>Molly and Harry are in charge of LSR's online branding. Including this very website, and our Instagram page (@thisislsr).</p>
+      </div>
+
+      <!-- Grid Item 7 -->
+      <div class="su-grid-item">
+        <h3>Head of Music</h3>
+        <img src="316c00_6ce347b81ab54599b5f35fcce0f0f66c~mv2.png.webp" alt="Health and Wellness">
+        <p>???</p>
+      </div>
+
+      <!-- Grid Item 8 -->
+      <div class="su-grid-item">
+        <h3>Head of Music</h3>
+        <img src="316c00_73c2b84bca1345f38bb74867af30922f~mv2.png.webp" alt="Career Development">
+        <p>???</p>
+      </div>
+
+      <!-- Grid Item 9 -->
+      <div class="su-grid-item">
+        <h3>Lead Technician</h3>
+        <img src="316c00_6240682da80542f995199661c7070254~mv2.png.webp" alt="Volunteer Opportunities">
+        <p>???</p>
+      </div>
+        <div class="su-grid-item">
+  <h3>Head of Podcasting</h3>
+  <img src="316c00_8bdd1365ac474f53a2811753e9751e37~mv2.png.webp" alt="New Image 1">
+  <p>???</p>
+</div>
+<div class="su-grid-item">
+  <h3>Head of Breakfast</h3>
+  <img src="316c00_d0eb223c13984fce8b60c1ee5425967e~mv2.png.webp" alt="New Image 2">
+  <p>???</p>
+</div>
+<div class="su-grid-item">
+  <h3>Evening Editor</h3>
+  <img src="316c00_2ae9608a78ac466ca9166e868c2fb3dd~mv2.png.webp" alt="New Image 3">
+  <p>???</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+               
+<div id="page5" class="content">
+    <br><br><br>
+  <title>Contact Us</title>
+  <style>
+    bodaa {
+     
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      
+      color: white;
+    }
+
+    .lsr-contact-wrapper {
+        width: 80%;
+      display: flex;
+      max-width: 1200px;
+      margin: 40px auto;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .lsr-map-container {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+     
+    }
+      /* Hide content on larger screens */
+  @media screen and (max-width: 600px) {
+    .lsr-map-container {
+      display: none;
+    }
+}
+     .lsr-map-container2 {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-left: auto;
+         margin-right: auto;
+         width: 80%;
+     
+    }
+     /* Hide content on larger screens */
+  @media screen and (min-width: 600px) {
+    .lsr-map-container2 {
+      display: none;
+    }
+}
+    .lsr-map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+     .lsr-map-container2 iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .lsr-contact-info {
+      flex: 1;
+      
+      border-radius: 10px;
+     
+      padding: 20px;
+    }
+
+    .lsr-contact-info h1 {
+      font-size: 28px;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .lsr-contact-info p {
+      font-size: 16px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .lsr-contact-info a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .lsr-contact-info a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<bodaa>
+  <div class="lsr-contact-wrapper">
+    <!-- Apple Maps Embed -->
+    <div class="lsr-map-container">
+   <iframe 
+  src="https://www.google.com/maps?q=Leeds+University+Union,+Lifton+Place,+LS2+9JZ&hl=en&z=17&output=embed" 
+  width="600" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy">
+</iframe>
+
+
+
+    </div>
+
+    <!-- Contact Information -->
+    <div class="lsr-contact-info">
+      <h1>Contact Us</h1>
+      <p>Leeds University Union, Lifton Place, LS2 9JZ</p>
+      <p>Email: <a href="mailto:info@thisislsr.com">info@thisislsr.com</a></p>
+      <p>DM us on Instagram: <a href="https://instagram.com/thisislsr" target="_blank">@thisislsr</a></p>
+      <p>Phone: 0113 380 1278 <br><span style=" font-size: var(--small_mono); color: white;">Office hours Mon-Fri 9-5</span></p>
+    </div>
+      <br> 
+    
+  </div>
+   
+</bodaa>
+     <br> <br> <br> <br>
+</div>
+
+<div data-v-41749928="" class="footer-boxes"><div data-v-41749928="" class="footer-box"><div data-v-41749928="" class="description a-hover a-grey" style="color: #fff">Brought to you by our sponsor: The Careers Service: Discover, develop and decide your future with appointments, events and vacancies.<br><a class="hover-effect" href="https://mycareer.leeds.ac.uk/unauth" target="_blank" style="color: #fff; margin-left: -9px;"><u>Find out more</u></a></u></div></div><div data-v-41749928="" class="footer-box-middle"><a data-v-41749928="" href="https://engage.luu.org.uk/groups/VFG/leeds-student-radio/memberships" target="_blank" class="hover-effect" style="color: #fff"><span data-v-41749928="">Membership</span></a><a data-v-41749928="" href="https://engage.luu.org.uk/groups/VFG/leeds-student-radio/events" class=""><span data-v-41749928="" class="hover-effect" style="color: #fff">Events</span></a><a data-v-41749928="" href="/djs" class="" to="/djs"><span data-v-41749928="" class="hover-effect" style="color: #fff">DJs</span></a><a data-v-41749928=""  href="" rel="noopener" class=""><span data-v-41749928=""  class="hover-effect" style="color: #fff">Shop</span></a></div><div data-v-41749928="" class="footer-box-middle"><div data-v-41749928=""><a data-v-41749928="" href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f" target="_blank" class="hover-effect" style="color: #fff">Spotify</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://soundcloud.com/thisislsr" target="_blank" class="hover-effect" style="color: #fff">SoundCloud</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://www.youtube.com/@lsrfm" target="_blank" class="hover-effect" style="color: #fff">Youtube</a></div></div><div data-v-41749928="" class="footer-box"><div data-v-41749928="" class="link-list"><div data-v-41749928=""><a data-v-41749928="" href="https://www.instagram.com/thisislsr/" target="_blank" class="hover-effect" style="color: #fff">Instagram</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://www.facebook.com/thisislsr" target="_blank" class="hover-effect" style="color: #fff">Facebook</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://www.tiktok.com/@thisislsr" target="_blank" class="hover-effect" style="color: #fff">TikTok</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://twitter.com/thisislsr" target="_blank" class="hover-effect" style="color: #fff">X (Twitter)</a></div><div data-v-41749928=""></div></div></div></div>
+ <script>
+    const schedule = {
+        Monday: [
+            ["9:00 AM", "10:00 AM", "Breakfast"],
+            ["10:00 AM", "11:00 AM", "Breakfast"],
+            ["11:00 AM", "12:00 PM", "Big Names on Campus / Chattergories"],
+            ["12:00 PM", "1:00 PM", "The Birth of The Beat"],
+            ["1:00 PM", "2:00 PM", "Sidilicious Selects"],
+            ["2:00 PM", "3:00 PM", "SPORT"],
+            ["3:00 PM", "4:00 PM", "LGBTQ+ SHOW"],
+            ["4:00 PM", "5:00 PM", "The More You Know (Show)"],
+            ["5:00 PM", "6:00 PM", "HOMETIME"],
+            ["6:00 PM", "7:00 PM", "HOMETIME"],
+            ["7:00 PM", "8:00 PM", "LIVE AND LOCAL"],
+            ["8:00 PM", "9:00 PM", "ROCK AND PUNK"],
+            ["9:00 PM", "10:00 PM", "Dad Music For Girls"],
+            ["10:00 PM", "11:00 PM", "Uni Music Library Finds"],
+            ["11:00 PM", "12:00 AM", "Spiritual Guide"]
+        ],
+        
+         Tuesday: [
+        ["9:00 AM", "10:00 AM", "Breakfast"],
+        ["10:00 AM", "11:00 AM", "Breakfast"],
+        ["11:00 AM", "12:00 PM", "What's Poppin!?"],
+        ["12:00 PM", "1:00 PM", "The Girls Got Guts"],
+        ["1:00 PM", "2:00 PM", "Taylor's Version / The Lame Show"],
+        ["2:00 PM", "3:00 PM", "Your LeedsList / And That's What You Missed On Glee"],
+        ["3:00 PM", "4:00 PM", "WOMEN'S HOUR"],
+        ["4:00 PM", "5:00 PM", "Golden Hour / I'm Just A Girl"],
+        ["5:00 PM", "6:00 PM", "HOMETIME"],
+        ["6:00 PM", "7:00 PM", "HOMETIME"],
+        ["7:00 PM", "8:00 PM", "JAZZ, FUNK AND SOUL"],
+        ["8:00 PM", "9:00 PM", "Two Cents and Nonsense"],
+        ["9:00 PM", "10:00 PM", "Politics of Punk / Time Machine"],
+        ["10:00 PM", "11:00 PM", "Thank You For The Music"],
+        ["11:00 PM", "12:00 AM", "Jungle Gems with Mylania"]
+    ],
+    Wednesday: [
+        ["9:00 AM", "10:00 AM", "Breakfast"],
+        ["10:00 AM", "11:00 AM", "Breakfast"],
+        ["11:00 AM", "12:00 PM", "Sounds Of The Sahara"],
+        ["12:00 PM", "1:00 PM", "SOCIETY SPOTLIGHT"],
+        ["1:00 PM", "2:00 PM", "LSTV.MP3 / GRYPH-ON-AIR"],
+        ["2:00 PM", "3:00 PM", "Life Lessons with Liv and Laura"],
+        ["3:00 PM", "4:00 PM", "POLITICS HOUR"],
+        ["4:00 PM", "5:00 PM", "Happy Hour"],
+        ["5:00 PM", "6:00 PM", "HOMETIME"],
+        ["6:00 PM", "7:00 PM", "HOMETIME"],
+        ["7:00 PM", "8:00 PM", "AFROBEATS"],
+        ["8:00 PM", "9:00 PM", "INTERNATIONAL"],
+        ["9:00 PM", "10:00 PM", "Antagonising Aunts"],
+        ["10:00 PM", "11:00 PM", "Low-Key with Rivah"],
+        ["11:00 PM", "12:00 AM", "Disco Hour"]
+    ],
+    Thursday: [
+        ["9:00 AM", "10:00 AM", "Breakfast"],
+        ["10:00 AM", "11:00 AM", "Breakfast"],
+        ["11:00 AM", "12:00 PM", "Vanity Unfair's Oscar Party / Last Days of Disco"],
+        ["12:00 PM", "1:00 PM", "Barricade"],
+        ["1:00 PM", "2:00 PM", "Never Been a BNOC"],
+        ["2:00 PM", "3:00 PM", "The Longest Leg / Continental Buffet"],
+        ["3:00 PM", "4:00 PM", "SAFE SPACE"],
+        ["4:00 PM", "5:00 PM", "Waffle House / The Tea Party"],
+        ["5:00 PM", "6:00 PM", "HOMETIME"],
+        ["6:00 PM", "7:00 PM", "HOMETIME"],
+        ["7:00 PM", "8:00 PM", "FOLK AND COUNTRY"],
+        ["8:00 PM", "9:00 PM", "INDIE AND ALT"],
+        ["9:00 PM", "10:00 PM", "Wisecrack"],
+        ["10:00 PM", "11:00 PM", "Garcia's Weekly Round Up"],
+        ["11:00 PM", "12:00 AM", "Beatscape"]
+    ],
+    Friday: [
+        ["9:00 AM", "10:00 AM", "Breakfast"],
+        ["10:00 AM", "11:00 AM", "Breakfast"],
+        ["11:00 AM", "12:00 PM", "M&P Megamix"],
+        ["12:00 PM", "1:00 PM", "Babe"],
+        ["1:00 PM", "2:00 PM", "NEWS OF THE WEEK"],
+        ["2:00 PM", "3:00 PM", "SPORT"],
+        ["3:00 PM", "4:00 PM", "'BUT WHERE ARE YOU REALLY FROM?'"],
+        ["4:00 PM", "5:00 PM", "Girlhood"],
+        ["5:00 PM", "6:00 PM", "HOMETIME"],
+        ["6:00 PM", "7:00 PM", "HOMETIME"],
+        ["7:00 PM", "8:00 PM", "HIP HOP, RAP & RnB"],
+        ["8:00 PM", "9:00 PM", "ELECTRONIC"],
+        ["9:00 PM", "10:00 PM", "The Midwest Emo Hour"],
+        ["10:00 PM", "11:00 PM", "Behind The Beat (biweekly)"],
+        ["11:00 PM", "12:00 AM", "Crank Wave"]
+    ],
+    Saturday: [
+        ["10:00 AM", "11:00 AM", "Leeds, What's Happening?"],
+        ["11:00 AM", "12:00 PM", "LSR Out N About"],
+        ["12:00 PM", "1:00 PM", "Box! Box! Box!"],
+        ["2:00 PM", "3:00 PM", "(Not So) Dumb Blondes"],
+        ["3:00 PM", "4:00 PM", "Soccer Punch"],
+        ["4:00 PM", "5:00 PM", "Soccer Punch"],
+        ["5:00 PM", "6:00 PM", "BA Honoured To Be Music"],
+        ["6:00 PM", "7:00 PM", "It Takes A Village"],
+        ["7:00 PM", "8:00 PM", "SATURDAY NIGHT FEVER"],
+        ["8:00 PM", "9:00 PM", "SATURDAY NIGHT FEVER"],
+        ["9:00 PM", "10:00 PM", "After Hours"],
+        ["10:00 PM", "11:00 PM", "Tjaro x LSR"],
+        ["11:00 PM", "12:00 AM", "Prog Ho!"]
+    ],
+    Sunday: [
+        ["10:00 AM", "11:00 AM", "Old, New, Borrowed, Blue"],
+        ["11:00 AM", "12:00 PM", "Jamie Goes To Mollywood"],
+        ["12:00 PM", "1:00 PM", "My Records / Creme de la Creme"],
+        ["1:00 PM", "2:00 PM", "BOX OFFICE"],
+        ["2:00 PM", "3:00 PM", "SRA CHART SHOW"],
+        ["3:00 PM", "4:00 PM", "SRA CHART SHOW"],
+        ["4:00 PM", "5:00 PM", "SUNDAY ROAST"],
+        ["5:00 PM", "6:00 PM", "SUNDAY ROAST"],
+        ["6:00 PM", "7:00 PM", "Syke Up Your Life / The Vinyl Frontier"],
+        ["7:00 PM", "8:00 PM", "ALBUM REVIEW"],
+        ["8:00 PM", "9:00 PM", "Space Age Love Songs"],
+        ["9:00 PM", "10:00 PM", "Sleepytime Songs"],
+        ["10:00 PM", "11:00 PM", "The Label Show"],
+        ["11:00 PM", "12:00 AM", "EKBeats"]
+    ]
+
+        // Add the rest of the days here in the same format
+    };
+
+    function getCurrentShow() {
+        const now = new Date(); // Current local time
+        const gmtNow = new Date(now.toUTCString()); // Convert to GMT
+        const day = gmtNow.toLocaleDateString("en-US", { weekday: "long" });
+        const currentTime = gmtNow.getHours() * 60 + gmtNow.getMinutes();
+
+        const todaySchedule = schedule[day] || [];
+        let liveNow = "No show live";
+        let upNext = "No upcoming show";
+
+        for (let i = 0; i < todaySchedule.length; i++) {
+            const [start, end, showName] = todaySchedule[i];
+            const [startHour, startMin] = parseTime(start);
+            const [endHour, endMin] = parseTime(end);
+
+            const startTime = startHour * 60 + startMin;
+            const endTime = endHour * 60 + endMin;
+
+            if (currentTime >= startTime && currentTime < endTime) {
+                liveNow = showName;
+                if (i + 1 < todaySchedule.length) {
+                    upNext = todaySchedule[i + 1][2];
+                }
+                break;
+            }
+        }
+
+        return { liveNow, upNext };
+    }
+
+    function parseTime(timeStr) {
+        const [time, meridian] = timeStr.split(" ");
+        const [hour, minute] = time.split(":").map(Number);
+        return [
+            (hour % 12) + (meridian === "PM" ? 12 : 0), // Convert to 24-hour format
+            minute
+        ];
+    }
+
+   function updateUI() {
+    const { liveNow, upNext } = getCurrentShow();
+
+         const liveNowElement3 = document.getElementById("live-now-text3");
+        if (liveNowElement3) {
+            liveNowElement3.textContent = liveNow;
+        }
+    // First set of spans
+    const liveNowElement1 = document.getElementById("live-now-text");
+    const upNextElement1 = document.getElementById("up-next-text");
+
+    // Second set of spans
+    const liveNowElement2 = document.getElementById("live-now-text2");
+    const upNextElement2 = document.getElementById("up-next-text2");
+
+ 
+
+    // Update both sets if they exist
+    if (liveNowElement1 && upNextElement1) {
+        liveNowElement1.textContent = liveNow;
+        upNextElement1.textContent = upNext;
+    }
+
+    if (liveNowElement2 && upNextElement2) {
+        liveNowElement2.textContent = liveNow;
+        upNextElement2.textContent = upNext;
+    }
+      if ('mediaSession' in navigator) {
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: liveNow,
+              artist: 'Leeds Student Radio', // Optional
+       
+        artwork: [
+            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '96x96', type: 'image/jpeg' },
+            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '128x128', type: 'image/jpeg' },
+            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '256x256', type: 'image/jpeg' },
+            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '512x512', type: 'image/jpeg' }
+        ]
+        
+            });
+             
+    }
+}
+
+    // Initialize the UI
+    updateUI();
+  updateMediaSession();
+    // Update every minute to reflect schedule changes
+    setInterval(updateUI, 60000);
+</script>
+    
+    
+</body>
+
+
+
+
+           
+            <style>
+                body {
+  background-color: #b80000;
+                    z-index: 10;
+}
+              .hover-effect {
+    color: inherit; /* Use the current color as the default */
+}
+
+.hover-effect:hover {
+    color: black !important; /* Force text to turn black on hover */
+
+
+}
+    
+    #app { 
+    display: flex; 
+    flex-direction: column; 
+  
+}
+
+.main-content { 
+    flex: 1; /* Pushes the footer to the bottom if there's not enough content */
+}
+
+ 
+
+            </style>
+        <script>
+  // Get current time and day in GMT
+ function updateOnAirStatus() {
+  const now = new Date();
+  const currentHour = now.getUTCHours(); // GMT hour
+  const currentDay = now.getUTCDay();   // GMT day (0 = Sunday, 1 = Monday, ...)
+
+  // Map days of the week to table columns (Monday = 1, ..., Sunday = 7)
+  const dayToColumnIndex = [8, 2, 3, 4, 5, 6, 7]; // Correctly maps Monday to 1, Sunday to 7
+
+  // Get all table rows
+  const rows = document.querySelectorAll("tbody tr");
+
+  // Remove existing 'on-air' class from all cells
+  document.querySelectorAll(".on-air").forEach(cell => cell.classList.remove("on-air"));
+
+  // Loop through the rows to find the matching time slot
+  rows.forEach(row => {
+    const timeCell = row.querySelector("td:first-child"); // First column has the time
+    const timeRange = timeCell.textContent.split(" - ");
+    const startTime = parseTimeTo24Hour(timeRange[0]);
+    const endTime = parseTimeTo24Hour(timeRange[1]);
+
+    if (currentHour >= startTime && currentHour < endTime) {
+      const dayColumnIndex = dayToColumnIndex[currentDay];
+      const cell = row.querySelector(`td:nth-child(${dayColumnIndex})`);
+
+      if (cell) {
+        cell.classList.add("on-air"); // Add the 'on-air' styling
+      }
+    }
+  });
+}
+
+// Call the function immediately to update on page load
+updateOnAirStatus();
+
+// Set up an interval to refresh the logic every 2 minutes (120000ms)
+setInterval(updateOnAirStatus, 120000);
+
+// Utility function: Parse time in "hh:mm AM/PM" format to 24-hour format
+function parseTimeTo24Hour(time) {
+  const [timePart, meridiem] = time.split(" ");
+  let [hours, minutes] = timePart.split(":").map(Number);
+  
+  if (meridiem === "PM" && hours !== 12) hours += 12;
+  if (meridiem === "AM" && hours === 12) hours = 0;
+
+  return hours; // Only hours are used for comparison
+}
+
+  // Function to convert 12-hour time (e.g., "09:00 AM") to 24-hour time (e.g., 9)
+  function parseTimeTo24Hour(timeStr) {
+    const [time, modifier] = timeStr.split(" ");
+    let [hours, minutes] = time.split(":").map(Number);
+    if (modifier === "PM" && hours !== 12) hours += 12;
+    if (modifier === "AM" && hours === 12) hours = 0;
+    return hours;
+  }
+</script>
+         <script>
+        // Select all headers
+        const headers = document.querySelectorAll('.header');
+        // Select all content divs
+        const pages = document.querySelectorAll('.content');
+        // Select the welcome message
+        const welcome = document.getElementById('welcome');
+
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                // Hide all pages
+                pages.forEach(page => page.classList.remove('active'));
+                // Check if the clicked header is "Home"
+                if (header.dataset.page === 'welcome') {
+                    // Show the welcome message
+                    welcome.style.display = 'block';
+                } else {
+                    // Hide the welcome message
+                    welcome.style.display = 'none';
+                    // Show the clicked header's page
+                    const targetPage = document.getElementById(header.dataset.page);
+                    targetPage.classList.add('active');
+                }
+            });
+        });
+    </script>
+        <script>
+    function updateTime() {
+        const timeContainer = document.getElementById('time-text');
+        const currentTime = new Date();
+
+        // Get GMT hours and minutes
+        let hours = currentTime.getUTCHours();
+        const minutes = String(currentTime.getUTCMinutes()).padStart(2, '0');
+
+        // Determine a.m. or p.m. and adjust hours for 12-hour format
+        const period = hours >= 12 ? 'p.m.' : 'a.m.';
+        hours = hours % 12 || 12; // Convert 0 to 12 for midnight, and keep 12 for noon
+
+        // Format the time as HH:MM a.m./p.m.
+        const formattedTime = `${hours}:${minutes} ${period}`;
+
+        // Update the text content of the time container
+        timeContainer.textContent = formattedTime;
+    }
+
+    // Update the time every minute (since seconds are not shown)
+    setInterval(updateTime, 60000);
+
+    // Call the function immediately to show the time on load
+    updateTime();
+</script>
+<style>
+
+bodyoo {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.layout-container {
+    display: flex;
+    gap: 10px; /* Space between the boxes */
+        width:80%;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.side-box {
+    padding: 20px;
+    text-align: center;
+         background-color: #a00000;
+    color: white;
+    border-radius: 8px;
+}
+
+.side-box-1 {
+    flex: 1; /* Takes up 1 part of the available space */
+ 
+
+.side-box-2 {
+    width:530px; /* Takes up 2 parts of the available space, double the size of the first box */
+}
+</style>
