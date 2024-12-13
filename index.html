@@ -33,6 +33,7 @@
         originalScrollTo.call(window, x, y);
     };
 
+        
     // Override window.scrollBy
     window.scrollBy = function(x, y) {
         // Block scroll that would push the page down
@@ -2910,11 +2911,13 @@ bodyoo {
     border-radius: 8px;
     min-width: 200px;
     width: 50%;
-    height: 580px;
+    height: 541px;
       flex: 1;
 }
 .side-box2 {
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     text-align: center;
          background-color: #a00000;
     color: white;
