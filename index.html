@@ -1538,7 +1538,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
    <br>
     
     <div class="layout-container">
-        <div class="side-box side-box-1">LSR Stream  <br><div class="audio-player-container1">
+        <div class="side-box1">LSR Stream  <br><div class="audio-player-container1">
   
     <button id="playPauseButton1">
       <i class="fas fa-play"></i>
@@ -1549,7 +1549,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
       Your browser does not support the audio element.
     </audio>
   </div></div>
-        <div class="side-box side-box-2" id="widget-container" style="background-color: transparent !important">
+        <div class="side-box2" id="widget-container" style="background-color: transparent !important">
             <!--  <div id="widget-container1">
  <widgetbot
     server="1315795219559743488"
@@ -2902,7 +2902,18 @@ bodyoo {
     margin-right: auto;
 }
 
-.side-box {
+.side-box1 {
+    padding: 20px;
+    text-align: center;
+         background-color: #a00000;
+    color: white;
+    border-radius: 8px;
+    min-width: 200px;
+    width: 50%;
+    height: 580px;
+      flex: 1;
+}
+.side-box2 {
     padding: 20px;
     text-align: center;
          background-color: #a00000;
@@ -2911,13 +2922,7 @@ bodyoo {
     min-width: 200px;
     width: 50%;
     height: 628px;
-}
+}    
 
-.side-box-1 {
-    flex: 1; /* Takes up 1 part of the available space */
- 
 
-.side-box-2 {
-    width:530px; /* Takes up 2 parts of the available space, double the size of the first box */
-}
 </style>
