@@ -3042,4 +3042,36 @@ This typically indicates that your device does not have a healthy Internet conne
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */oi(sA,oA,"app");const aA={apiKey:"AIzaSyCBFpZV-UFODiRIbS6BMRmhDI-7nWn85VI",authDomain:"mychatapp-56623.firebaseapp.com",projectId:"mychatapp-56623",storageBucket:"mychatapp-56623.firebasestorage.app",messagingSenderId:"183438867440",appId:"1:183438867440:web:9c96843122e778cc917b35",measurementId:"G-K1MBVJ8XB3"},Y_=Qg(aA),jh=zT(Y_),zg=MS(Y_);function lA(){const[i,e]=Gn.useState(null),[t,s]=Gn.useState([]),[o,u]=Gn.useState(""),h=Gn.useRef(null),m=Gn.useRef(null);Gn.useEffect(()=>{const V=KS(Lg(zg,"messages"),QS("timestamp"));return tA(V,Q=>{s(Q.docs.map(X=>({id:X.id,data:X.data()})))})},[]),Gn.useEffect(()=>{h.current&&(h.current.scrollTop=h.current.scrollHeight)},[t]),Gn.useEffect(()=>kw(jh,z=>{e(z||null)}),[]),Gn.useEffect(()=>{const V=()=>{y()&&m.current&&setTimeout(()=>{m.current.scrollIntoView({behavior:"smooth",block:"center"})},300)},z=m.current;return z&&z.addEventListener("focus",V),()=>{z&&z.removeEventListener("focus",V)}},[]);const y=()=>/iPhone|iPad|iPod|Android/i.test(navigator.userAgent),v=async()=>{o.trim()!==""&&(await eA(Lg(zg,"messages"),{uid:i.uid,photoURL:i.photoURL,displayName:i.displayName,text:o,timestamp:iA()}),u(""))},w=async()=>{const V=new yr;try{await Qw(jh,V)}catch(z){console.error("Google login error:",z)}},C=V=>V?V.toDate().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"}):"";return nt.jsx("div",{className:"app-container",children:nt.jsxs("div",{className:"chat-wrapper",children:[i?nt.jsx("div",{className:"user-info",children:nt.jsx("span",{className:"user-name",children:i.displayName})}):nt.jsx("div",{className:"user-info",children:nt.jsx("span",{className:"user-name"})}),nt.jsxs("div",{className:"message-input",children:[nt.jsx("input",{type:"text",ref:m,placeholder:"Type a message...",value:o,onChange:V=>u(V.target.value),className:"input-box",disabled:!i}),nt.jsx("button",{onClick:v,className:"send-button",disabled:!i,children:"Send"})]}),i?nt.jsx("button",{onClick:()=>jh.signOut(),className:"logout-button",children:"Logout"}):nt.jsx("button",{onClick:w,className:"login-button",children:"Login with Google to chat"}),nt.jsx("div",{className:"messages-container",ref:h,children:t.map(V=>nt.jsxs("div",{className:"message-item",children:[nt.jsx("img",{src:V.data.photoURL,alt:`${V.data.displayName}'s profile`,className:"message-avatar"}),nt.jsxs("div",{className:"message-content",children:[nt.jsxs("div",{className:"message-header",children:[nt.jsx("span",{className:"message-author",children:V.data.displayName}),nt.jsx("span",{className:"message-time",children:V.data.timestamp?C(V.data.timestamp):"Sending..."})]}),nt.jsx("p",{className:"message-text",children:V.data.text})]})]},V.id))})]})})}u0.createRoot(document.getElementById("root")).render(nt.jsx(Gn.StrictMode,{children:nt.jsx(lA,{})}));
+ */oi(sA,oA,"app");const aA={apiKey:"AIzaSyCBFpZV-UFODiRIbS6BMRmhDI-7nWn85VI",authDomain:"mychatapp-56623.firebaseapp.com",projectId:"mychatapp-56623",storageBucket:"mychatapp-56623.firebasestorage.app",messagingSenderId:"183438867440",appId:"1:183438867440:web:9c96843122e778cc917b35",measurementId:"G-K1MBVJ8XB3"},Y_=Qg(aA),jh=zT(Y_),zg=MS(Y_);function lA(){const[i,e]=Gn.useState(null),[t,s]=Gn.useState([]),[o,u]=Gn.useState(""),h=Gn.useRef(null),m=Gn.useRef(null);Gn.useEffect(()=>{const V=KS(Lg(zg,"messages"),QS("timestamp"));return tA(V,Q=>{s(Q.docs.map(X=>({id:X.id,data:X.data()})))})},[]),Gn.useEffect(()=>{h.current&&(h.current.scrollTop=h.current.scrollHeight)},[t]),Gn.useEffect(()=>kw(jh,z=>{e(z||null)}),[]),Gn.useEffect(() => {
+  const handleFocus = () => {
+    if (isMobile() && inputRef.current) {
+      // Prevent zooming by adjusting the viewport settings
+      document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+      
+      setTimeout(() => {
+        inputRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 300); // Wait for the keyboard animation
+    }
+  };
+
+  const handleBlur = () => {
+    if (isMobile()) {
+      // Restore the viewport to its default settings when the input loses focus
+      document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1');
+    }
+  };
+
+  const inputElement = inputRef.current;
+  if (inputElement) {
+    inputElement.addEventListener("focus", handleFocus);
+    inputElement.addEventListener("blur", handleBlur);
+  }
+
+  return () => {
+    if (inputElement) {
+      inputElement.removeEventListener("focus", handleFocus);
+      inputElement.removeEventListener("blur", handleBlur);
+    }
+  };
+}, []);
+const y=()=>/iPhone|iPad|iPod|Android/i.test(navigator.userAgent),v=async()=>{o.trim()!==""&&(await eA(Lg(zg,"messages"),{uid:i.uid,photoURL:i.photoURL,displayName:i.displayName,text:o,timestamp:iA()}),u(""))},w=async()=>{const V=new yr;try{await Qw(jh,V)}catch(z){console.error("Google login error:",z)}},C=V=>V?V.toDate().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"}):"";return nt.jsx("div",{className:"app-container",children:nt.jsxs("div",{className:"chat-wrapper",children:[i?nt.jsx("div",{className:"user-info",children:nt.jsx("span",{className:"user-name",children:i.displayName})}):nt.jsx("div",{className:"user-info",children:nt.jsx("span",{className:"user-name"})}),nt.jsxs("div",{className:"message-input",children:[nt.jsx("input",{type:"text",ref:m,placeholder:"Type a message...",value:o,onChange:V=>u(V.target.value),className:"input-box",disabled:!i}),nt.jsx("button",{onClick:v,className:"send-button",disabled:!i,children:"Send"})]}),i?nt.jsx("button",{onClick:()=>jh.signOut(),className:"logout-button",children:"Logout"}):nt.jsx("button",{onClick:w,className:"login-button",children:"Login with Google to chat"}),nt.jsx("div",{className:"messages-container",ref:h,children:t.map(V=>nt.jsxs("div",{className:"message-item",children:[nt.jsx("img",{src:V.data.photoURL,alt:`${V.data.displayName}'s profile`,className:"message-avatar"}),nt.jsxs("div",{className:"message-content",children:[nt.jsxs("div",{className:"message-header",children:[nt.jsx("span",{className:"message-author",children:V.data.displayName}),nt.jsx("span",{className:"message-time",children:V.data.timestamp?C(V.data.timestamp):"Sending..."})]}),nt.jsx("p",{className:"message-text",children:V.data.text})]})]},V.id))})]})})}u0.createRoot(document.getElementById("root")).render(nt.jsx(Gn.StrictMode,{children:nt.jsx(lA,{})}));
