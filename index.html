@@ -2939,32 +2939,7 @@ function parseTimeTo24Hour(time) {
     return hours;
   }
 </script>
-         <script>
-        // Select all headers
-        const headers = document.querySelectorAll('.header');
-        // Select all content divs
-        const pages = document.querySelectorAll('.content');
-        // Select the welcome message
-        const welcome = document.getElementById('welcome');
-
-        headers.forEach(header => {
-            header.addEventListener('click', () => {
-                // Hide all pages
-                pages.forEach(page => page.classList.remove('active'));
-                // Check if the clicked header is "Home"
-                if (header.dataset.page === 'welcome') {
-                    // Show the welcome message
-                    welcome.style.display = 'block';
-                } else {
-                    // Hide the welcome message
-                    welcome.style.display = 'none';
-                    // Show the clicked header's page
-                    const targetPage = document.getElementById(header.dataset.page);
-                    targetPage.classList.add('active');
-                }
-            });
-        });
-    </script>
+       
         <script>
     function updateTime() {
         const timeContainer = document.getElementById('time-text');
