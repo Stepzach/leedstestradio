@@ -768,7 +768,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
     }
       .on-air {
       border: 4px solid darkgreen; /* Thicker green border */
-      background-color: rgba(255, 255, 255, 1); /* white background for emphasis */
+    
       position: relative; /* To position the "on air" label */
        
     }
@@ -884,8 +884,89 @@ document.querySelectorAll('.audio-button').forEach(button => {
   <div class="container">
     <div class="left-section">
      
-     <div class="image-container"> <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" style="/* width: 110%; */ margin-left: auto; margin-right: auto; height: 100%; overflow: hidden; object-fit: cover; border-radius: 10px;" alt="Image description">
+    <div class="carousel-container">
+  <div class="carousel-track">
+    <div class="carousel-slide">
+      <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 1">
+    </div>
+    <div class="carousel-slide">
+      <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 2">
+    </div>
+    <div class="carousel-slide">
+      <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 3">
+    </div>
+    <div class="carousel-slide">
+      <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 4">
+    </div>
+    <div class="carousel-slide">
+      <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 5">
+    </div>
+  </div>
 </div>
+
+<style>
+  .carousel-container {
+    height: 100%; /* Adjust as needed */
+    overflow: hidden;
+    border-radius: 10px; /* Keep the rounded corners */
+  }
+
+  .carousel-track {
+        height: 100%; /* Adjust as needed */
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+  }
+
+  .carousel-slide {
+        height: 100%; /* Adjust as needed */
+    min-width: 100%; /* Each slide takes full width */
+    box-sizing: border-box;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Remove extra space below image */
+  }
+</style>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const slideWidth = slides[0].offsetWidth; // Calculate slide width dynamically
+  let currentSlide = 0;
+  const intervalTime = 5000; // 5 seconds
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    const offset = -slideWidth * currentSlide;
+    track.style.transform = `translateX(${offset}px)`;
+
+    // Infinite loop: instantly move back to the beginning when at the end
+    if (currentSlide === slides.length - 1) {
+      setTimeout(() => {
+        track.style.transition = 'none'; // Disable transition for instant jump
+        currentSlide = 0;
+        track.style.transform = `translateX(0)`;
+        // Restore transition after a very short delay
+        setTimeout(() => {
+          track.style.transition = 'transform 0.5s ease-in-out';
+        }, 10);
+      }, 500); // 500ms is the duration of your slide transition
+    }
+  }
+
+  let slideInterval = setInterval(nextSlide, intervalTime);
+
+  // Pause on hover (optional)
+  track.addEventListener('mouseover', () => clearInterval(slideInterval));
+  track.addEventListener('mouseout', () => slideInterval = setInterval(nextSlide, intervalTime));
+</script>
     </div>
 
     <div class="right-section">
@@ -1087,7 +1168,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
              <div class="mobile-time-slot" data-day="Monday" data-time="12:00pm" style=" background-color: #"><div class="live-now-circle"></div>12-1pm: The Birth of the Beat</div>
             <div class="mobile-time-slot" data-day="Monday" data-time="1:00pm" style=" background-color: #"><div class="live-now-circle"></div>1-2pm: Sidilicious Selects</div>
             <div class="mobile-time-slot" data-day="Monday" data-time="2:00pm" style="background-color: #4ab9a1"><div class="live-now-circle"></div>2-3pm: SPORT</div>
-              <div class="mobile-time-slot" data-day="Monday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: LGBTQ+ Show</div>
+              <div class="mobile-time-slot" data-day="Monday" data-time="3:00pm" style="background-color: #f24141"><div class="live-now-circle"></div>3-4pm: LGBTQ+ Show</div>
             <div class="mobile-time-slot" data-day="Monday" data-time="4:00pm" style=" background-color: #"><div class="live-now-circle"></div>4-5pm: The More You Know (Show)</div>
             <div class="mobile-time-slot"  data-day="Monday" data-time="5:00pm" style="background-color: #4b82e8"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
               <div class="mobile-time-slot" data-day="Monday"  data-time="6:00pm" style="background-color: #4b82e8"><div class="live-now-circle"></div>6-7pm: HOMETME</div>
@@ -1106,7 +1187,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
              <div class="mobile-time-slot" data-day="Tuesday"  data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: The Girls got Guts</div>
             <div class="mobile-time-slot" data-day="Tuesday" data-time="1:00pm"><div class="live-now-circle"></div>1-2pm: Taylor's Version / The Lame Show</div>
             <div class="mobile-time-slot" data-day="Tuesday"  data-time="2:00pm"><div class="live-now-circle"></div>2-3pm: Your LeedsList / And That's What You Missed On Glee</div>
-              <div class="mobile-time-slot" data-day="Tuesday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: Women's Hour</div>
+              <div class="mobile-time-slot" data-day="Tuesday" data-time="3:00pm" style="background-color: #f24141"><div class="live-now-circle"></div>3-4pm: Women's Hour</div>
             <div class="mobile-time-slot" data-day="Tuesday" data-time="4:00pm"><div class="live-now-circle"></div>4-5pm: Golden Hour / I'm Just a Girl</div>
             <div class="mobile-time-slot" data-day="Tuesday" data-time="5:00pm" style="background-color: #4b82e8"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
               <div class="mobile-time-slot" data-day="Tuesday" data-time="6:00pm" style="background-color: #4b82e8"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
@@ -1123,7 +1204,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
              <div class="mobile-time-slot" data-day="Wednesday" data-time="12:00pm" style="background-color: #82a820"><div class="live-now-circle"></div>12-1pm: SOCIETY SPOTLIGHT</div>
             <div class="mobile-time-slot" data-day="Wednesday" data-time="1:00pm"><div class="live-now-circle"></div>1-2pm: LSTV.MP3 / GRYPH-ON-AIR</div>
             <div class="mobile-time-slot" data-day="Wednesday" data-time="2:00pm"><div class="live-now-circle"></div>2-3pm: Life Lessons with Liv and Laura</div>
-              <div class="mobile-time-slot" data-day="Wednesday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: Politics Hour</div>
+              <div class="mobile-time-slot" data-day="Wednesday" data-time="3:00pm" style="background-color: #f24141"><div class="live-now-circle"></div>3-4pm: Politics Hour</div>
             <div class="mobile-time-slot" data-day="Wednesday" data-time="4:00pm"><div class="live-now-circle"></div>4-5pm: Happy Hour</div>
             <div class="mobile-time-slot" data-day="Wednesday" data-time="5:00pm" style="background-color: #4b82e8"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
               <div class="mobile-time-slot" data-day="Wednesday" data-time="6:00pm" style="background-color: #4b82e8"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
@@ -1140,7 +1221,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
              <div class="mobile-time-slot" data-day="Thursday" data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: Barricade</div>
             <div class="mobile-time-slot" data-day="Thursday" data-time="1:00pm"><div class="live-now-circle"></div>1-2pm: Never been a BNOC</div>
             <div class="mobile-time-slot" data-day="Thursday" data-time="2:00pm"><div class="live-now-circle"></div>2-3pm: The Longest Leg / Continental Buffet</div>
-              <div class="mobile-time-slot" data-day="Thursday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: Safe Space</div>
+              <div class="mobile-time-slot" data-day="Thursday" data-time="3:00pm" style="background-color: #f24141"><div class="live-now-circle"></div>3-4pm: Safe Space</div>
             <div class="mobile-time-slot" data-day="Thursday" data-time="4:00pm"><div class="live-now-circle"></div>4-5pm: Waffle House / The Tea Party</div>
             <div class="mobile-time-slot" data-day="Thursday" data-time="5:00pm" style="background-color: #4b82e8"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
               <div class="mobile-time-slot" data-day="Thursday" data-time="6:00pm" style="background-color: #4b82e8"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
@@ -1157,7 +1238,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
              <div class="mobile-time-slot" data-day="Friday" data-time="12:00pm" ><div class="live-now-circle"></div>12-1pm: Babe</div>
             <div class="mobile-time-slot" data-day="Friday" data-time="1:00pm" style="background-color: #82a820"><div class="live-now-circle"></div>1-2pm: News of the Week</div>
             <div class="mobile-time-slot" data-day="Friday" data-time="2:00pm" style="background-color: #4ab9a1"><div class="live-now-circle"></div>2-3pm: SPORT</div>
-              <div class="mobile-time-slot" data-day="Friday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: 'But where are you really from?'</div>
+              <div class="mobile-time-slot" data-day="Friday" data-time="3:00pm" style="background-color: #f24141"><div class="live-now-circle"></div>3-4pm: 'But where are you really from?'</div>
             <div class="mobile-time-slot" data-day="Friday" data-time="4:00pm" ><div class="live-now-circle"></div>4-5pm: Girlhood</div>
             <div class="mobile-time-slot" data-day="Friday" data-time="5:00pm" style="background-color: #4b82e8"><div class="live-now-circle"></div>5-6pm: HOMETIME</div>
               <div class="mobile-time-slot" data-day="Friday" data-time="6:00pm" style="background-color: #4b82e8"><div class="live-now-circle"></div>6-7pm: HOMETIME</div>
@@ -1190,8 +1271,8 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             <div class="mobile-time-slot" data-day="Sunday" data-time="11:00am"><div class="live-now-circle"></div>11-12pm: Jamie Goes to Mollywood</div>
              <div class="mobile-time-slot" data-day="Sunday" data-time="12:00pm"><div class="live-now-circle"></div>12-1pm: My Records / Creme de la Creme</div>
             <div class="mobile-time-slot"  data-day="Sunday" data-time="1:00pm" style="background-color: #de55ba"><div class="live-now-circle"></div>1-2pm: Box Office</div>
-            <div class="mobile-time-slot"  data-day="Sunday" data-time="2:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>2-3pm: SRA Chart Show</div>
-              <div class="mobile-time-slot"  data-day="Sunday" data-time="3:00pm" style="background-color: #ce3c85"><div class="live-now-circle"></div>3-4pm: SRA Chart Show</div>
+            <div class="mobile-time-slot"  data-day="Sunday" data-time="2:00pm" style="background-color: #f24141"><div class="live-now-circle"></div>2-3pm: SRA Chart Show</div>
+              <div class="mobile-time-slot"  data-day="Sunday" data-time="3:00pm" style="background-color: #f24141"><div class="live-now-circle"></div>3-4pm: SRA Chart Show</div>
             <div class="mobile-time-slot"  data-day="Sunday" data-time="4:00pm" style="background-color: #de55ba"><div class="live-now-circle"></div>4-5pm: SUNDAY ROAST</div>
             <div class="mobile-time-slot"   data-day="Sunday" data-time="5:00pm" style="background-color: #de55ba"><div class="live-now-circle"></div>5-6pm: SUNDAY ROAST</div>
               <div class="mobile-time-slot"  data-day="Sunday" data-time="6:00pm" ><div class="live-now-circle"></div>6-7pm: Syke Up your Life / The Vinyl Frontier</div>
@@ -1331,18 +1412,18 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
   <td>The Longest Leg / Continental Buffet</td>
   <td style="background-color: #4ab9a1"><a href="https://www.instagram.com/thisislsr_sport?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SPORT</a></td>
   <td>(Not So) Dumb Blondes</td>
-  <td style="background-color: #ce3c85"><a href="https://www.instagram.com/studentradioassociation?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SRA CHART SHOW</a></td>
+  <td style="background-color: #f24141"><a href="https://www.instagram.com/studentradioassociation?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SRA CHART SHOW</a></td>
 </tr>
 
       <tr>
   <td style=" background-color: wheat">3:00 PM - 4:00 PM</td>
-  <td style="background-color: #ce3c85">LGBTQ+ SHOW</td>
-  <td style="background-color: #ce3c85"><a href="https://www.instagram.com/thisislsr_womenshour?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">WOMEN'S HOUR</a></td>
-  <td style="background-color: #ce3c85">POLITICS HOUR</td>
-  <td style="background-color: #ce3c85"><a href="https://www.instagram.com/thisislsr_safespace?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SAFE SPACE</a></td>
-  <td style="background-color: #ce3c85">'BUT WHERE ARE YOU REALLY FROM?'</td>
+  <td style="background-color: #f24141">LGBTQ+ SHOW</td>
+  <td style="background-color: #f24141"><a href="https://www.instagram.com/thisislsr_womenshour?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">WOMEN'S HOUR</a></td>
+  <td style="background-color: #f24141">POLITICS HOUR</td>
+  <td style="background-color: #f24141"><a href="https://www.instagram.com/thisislsr_safespace?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SAFE SPACE</a></td>
+  <td style="background-color: #f24141">'BUT WHERE ARE YOU REALLY FROM?'</td>
   <td style="background-color: #4ab9a1">Soccer Punch</td>
-  <td style="background-color: #ce3c85"><a href="https://www.instagram.com/studentradioassociation?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SRA CHART SHOW</a></td>
+  <td style="background-color: #f24141"><a href="https://www.instagram.com/studentradioassociation?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">SRA CHART SHOW</a></td>
 </tr>
 
       
