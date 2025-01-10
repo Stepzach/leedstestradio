@@ -1064,7 +1064,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
     display: flex;
     flex-wrap: wrap;
    justify-content: center;
-margin: 20px;
+margin: 15px;
 margin-top: 5px; 
       margin-bottom: 5px;
   }
@@ -1481,264 +1481,118 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
   </tbody>
 </table>
 </div>
-<style>
-  broski {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    lol {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-     .custom-container {
-          display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      width: 80%;
-    
-    }
-
-    .custom-titles {
-     display: flex;
-      justify-content: space-between;
-      width: 100%;
-        color: white;
-    }
-
-    .custom-title-left {
-      flex: 1;
-      text-align: center;
-        color: white;
-    }
-
-    .custom-title-right {
-      flex: 2;
-      text-align: center;
-        color: white;
-    }
-
-    .custom-box-container {
-       display: flex;
-      justify-content: space-between;
-      width: 100%;
-      gap: 10px;
-    }
-
-    .custom-box {
-         width: 25%;
-      height: 310px;
-      background-color: #a00000;
-     
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: center;
-      padding: 10px;
-     
-     
-    }
-
-    .custom-subtitle {
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-align: center;
-        color: white;
-    }
-
-
-
-     .audio-player-container1 {
- 
-  width: 95%;
-  height: 95%;
-  background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg'); /* Replace with your background image URL */
-    background-size: cover; /* Ensure the image covers the box proportionally */
-  background-position: center; /* Center the image inside the box */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-      background-position: center;
-      
-      display: flex;
-      justify-content: center;
-      align-items: center;
-         margin-left: auto;
-margin-right: auto;
-      
-}
-
-/* Add the rotating animation */
-
-
-       .audio-player-container2 {
-      position: ;
-      width: 95%;
-      height: 95%;
-      background-image: url(IMG_4447.jpeg); /* Replace with your background image URL */
-          background-size: cover; /* Ensure the image covers the box proportionally */
-  background-position: center; /* Center the image inside the box */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-      background-position: center;
-      
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-    }
-    .audio-player-container1 button {
-      position: ;
-      bottom: 20px;
-      padding: 15px;
-      font-size: 24px; /* Icon size */
-    
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      border: none;
-      border-radius: 35%;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-     .audio-player-container2 button {
-      position: ;
-      bottom: 20px;
-      padding: 15px;
-      font-size: 24px; /* Icon size */
-    
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      border: none;
-      border-radius: 35%;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-
-    .audio-player-container1 button:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-     .audio-player-container2 button:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-    
-    audio {
-      display: none; /* Hide the audio element */
-    }
-    .refresh-btn {
-      display: inline-block;
-      padding: 7px 10px;
-      font-size: 13px;
-      color: #fff;
-      background-color: #5e1d22;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-</style>
 <div class="content" style="margin: 20px; background-color: rgb(149, 13, 13); border-radius: 10px; padding: 20px;">
-   
 
-<div class="brformobile"> <br> <br> </div>
+  <div class="brformobile"> <br> <br> </div>
 
-<div class="mobile-container">
-  <!-- Header -->
-  
+  <div class="mobile-container">
+    <!-- Header -->
 
-  <!-- Content Section -->
-  <section class="mobile-content">
-    <!-- Live Stream Section -->
-    <div class="stream-section">
-      <h2 style="font-size:35px !important; text-align: center;">Live Streams</h2>
-      <div class="stream-box">
-        <h3 style="margin-bottom: 10px !important;">LSR Stream</h3>
-       <div class="audio-container1" style="background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg');">
-     
-          <button id="playPauseButton4">
-            <i class="fas fa-play"></i>
-          </button>
-          <audio id="livestream4" preload="none">
-            <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
+    <!-- Content Section -->
+    <section class="mobile-content">
+      <!-- Live Stream Section -->
+      <div class="stream-section">
+        <h2 style="font-size:35px !important; text-align: center;">Live Streams</h2>
+        <div class="stream-box">
+          <h3 style="margin-bottom: 10px !important;">LSR Stream</h3>
+          <div class="audio-container1" style="background-image: url('ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg');">
+
+            <button id="playPauseButton4">
+              <i class="fas fa-play"></i>
+            </button>
+            <audio id="livestream4" preload="none">
+              <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+        <div class="stream-box">
+          <h3 style="margin-bottom: 10px !important;">Alternate Stream</h3>
+          <div class="audio-container1" style="background-image: url('IMG_4447.jpeg');">
+            <button id="playPauseButton3">
+              <i class="fas fa-play"></i>
+            </button>
+            <audio id="livestream3" preload="none">
+              <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
         </div>
       </div>
-      <div class="stream-box">
-        <h3 style="margin-bottom: 10px !important;">Alternate Stream</h3>
-        <div class="audio-container1" style="background-image: url('IMG_4447.jpeg');">
-          <button id="playPauseButton3">
-            <i class="fas fa-play"></i>
-          </button>
-          <audio id="livestream3" preload="none">
-            <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
-      </div>
-    </div>
-      <br>
      
-       <h2 style="font-size:20px !important; text-align: center;">Live Chat</h2>
-       <div style="width: 95%; margin-left: auto; margin-right: auto">
-           <iframe src="livechat.html" frameborder="0" height="650px" width="100%"></iframe>
-<!--<iframe id="chilll" src="https://e.widgetbot.io/channels/1315795219559743488/1315795220603998293" allow="clipboard-write; fullscreen" height="400px" width="100%" margin-left="auto" margin-right="auto"></iframe>-->
+
+     <!--  <h2 style="font-size:20px !important; text-align: center;">Live Chat</h2>
+      <div style="width: 95%; margin-left: auto; margin-right: auto">
+        <iframe src="livechat.html" frameborder="0" height="650px" width="100%" data-gtm-yt-inspected-6="true"></iframe>
+        <!--<iframe id="chilll" src="https://e.widgetbot.io/channels/1315795219559743488/1315795220603998293" allow="clipboard-write; fullscreen" height="400px" width="100%" margin-left="auto" margin-right="auto"></iframe>-->
         <!--   <div id="root"></div> -->
-     <!-- <p style="color: #fff !important; font-size: 12px !important; margin-top:3px;">If chat isn't working, please <button class="refresh-btn" onclick="refreshChat()">Refresh Here</button></p>-->
-       </div><br>
-    <!-- Listen Back Section -->
-    <div class="listen-back-section">
-      <h2 style="font-size:25px !important; text-align: center;">Listen Back</h2>
-      <div class="platform-box">
-        <h3 style="margin-bottom: 10px !important;">SoundCloud</h3>
+        <!-- <p style="color: #fff !important; font-size: 12px !important; margin-top:3px;">If chat isn't working, please <button class="refresh-btn" onclick="refreshChat()">Refresh Here</button></p>-->
+      </div><br>
+      <!-- Listen Back Section -->
+      <div class="listen-back-section">
+        <h2 style="font-size:25px !important; text-align: center;">Listen Back</h2>
+        <div class="platform-box">
+          <h3 style="margin-bottom: 10px !important;">SoundCloud</h3>
 
+          <div class="audio-container1" style="background-image: url('IMG_4462.jpeg');">
+            <button id="playPauseButton300"><a href="https://soundcloud.com/thisislsr" target="_blank">
+                <i class="fas fa-play"></i></a>
+            </button>
+          </div>
 
-          
-        <div class="audio-container1" style="background-image: url('IMG_4462.jpeg');"> 
-        <button id="playPauseButton300"><a href="https://soundcloud.com/thisislsr" target="_blank">
-            <i class="fas fa-play"></i></a>
-          </button>
         </div>
-         
-        
+        <div class="platform-box2">
+          <h3 style="margin-bottom: 10px !important;">Spotify</h3>
+          <div class="audio-container1" style="background-image: url('IMG_4459.jpeg');">
+            <button id="playPauseButton300"> <a href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f" target="_blank">
+                <i class="fas fa-play"></i></a>
+            </button>
+          </div>
         </div>
-      <div class="platform-box2">
-        <h3 style="margin-bottom: 10px !important;">Spotify</h3>
-        <div class="audio-container1" style="background-image: url('IMG_4459.jpeg');">  
-        <button id="playPauseButton300"> <a href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f" target="_blank">
-            <i class="fas fa-play"></i></a>
-          </button>
-        </div>   
       </div>
-    </div>
-  </section>
-</div>
+    </section>
+  </div>
 
+  <div class="desktop-contain" id="Listen">
+    <h1 style="text-align: center; color: #fff; font-size:25px;">Listen!<br></h1><br>
+    <br>
 
-
-
-
-<div class="desktop-contain" id="Listen">
-  <h1 style="text-align: center; color: #fff; font-size:25px;">Listen!<br></h1><br>
-   <br>
-    
     <div class="layout-container">
-        <div class="side-box1"><div style="margin-bottom: -15px;">LSR Stream</div> <br><div class="audio-player-container1">
-  
-    <button id="playPauseButton1">
-      <i class="fas fa-play"></i>
-    </button>
-
-    <audio id="livestream1" preload="none">
-      <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div></div>
-        <div class="side-box2" id="widget-container" style="background-color: transparent !important">
+      <div class="custom-container">
+        <div class="custom-titles">
+          <div class="custom-title-left">
+            <h2>Listen Live:</h2>
+          </div>
+          <div class="custom-title-right">
+            <h2>Listen Back:</h2>
+          </div>
+        </div>
+        <div class="custom-box-container">
+          <div class="custom-box">
+            <div class="custom-subtitle">LSR Stream</div>
+            <div class="audio-player-container1">
+              <button id="playPauseButton1">
+                <i class="fas fa-play"></i>
+              </button>
+              <audio id="livestream1" preload="none">
+                <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+          <div class="custom-box">
+            <div class="custom-subtitle">Alternate Stream</div>
+            <div class="audio-player-container2">
+              <button id="playPauseButton2">
+                <i class="fas fa-play"></i>
+              </button>
+              <audio id="livestream2" preload="none">
+                <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+           <div class="custom-box side-box2" id="widget-container" style="background-color: transparent !important">
             <!--  <div id="widget-container1">
  <widgetbot
     server="1315795219559743488"
@@ -1747,86 +1601,116 @@ margin-right: auto;
     height="490px"
   ></widgetbot>
   <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
-             </div>     <div id="root"></div> --><iframe src="livechat.html" frameborder="0" height="650px" width="100%"></iframe>
+             </div>     <div id="root"></div> --><iframe src="livechat.html" frameborder="0" height="650px" width="100%" data-gtm-yt-inspected-6="true"></iframe>
 
  <!--<p style="color: #fff !important; font-size: 14px !important; margin-top:7px;">If chat isn't working, please <button class="refresh-btn" onclick="refreshWidget()">Refresh Here</button></p>-->
 </div>
-
-
-
-
-
-    
-
-
-
-   <!--  <lol>
- <div class="custom-container">
- 
-    <div class="custom-titles">
-      <div class="custom-title-left">
-        <h2>Listen Live:</h2>
-      </div>
-      <div class="custom-title-right">
-        <h2>Listen Back:</h2>
-      </div>
-    </div>
-
-  
-    <div class="custom-box-container">
-      <div class="custom-box">
-        <div class="custom-subtitle">LSR Stream</div>
-           <div class="audio-player-container1">
-  
-    <button id="playPauseButton1">
-      <i class="fas fa-play"></i> 
-    </button>
-  
-    <audio id="livestream1" preload="none">
-      <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg"> 
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-       
-      </div>
-      <div class="custom-box">
-        <div class="custom-subtitle">Alternate Stream</div>
-            <div class="audio-player-container2">
-  
-    <button id="playPauseButton2">
-      <i class="fas fa-play"></i> 
-    </button>
-  
-    <audio id="livestream2" preload="none">
-      <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg"> 
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-       
-      </div>
-      <div class="custom-box">
-        <div class="custom-subtitle">SoundCloud</div>
-           <div class="audio-container1" style="background-image: url('IMG_4462.jpeg'); margin-top:20px;">  
-               <button id="playPauseButton300"><a href="https://soundcloud.com/thisislsr" target="_blank">
-            <i class="fas fa-play"></i> </a>
-          </button>
-           </div>
-      </div>
-      <div class="custom-box">
-        <div class="custom-subtitle">Spotify</div>
-           <div class="audio-container1" style="background-image: url('IMG_4459.jpeg'); margin-top:20px;">
-                <button id="playPauseButton300"><a href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f" target="_blank">
-            <i class="fas fa-play"></i></a>
-          </button>
-           </div> 
+          <div class="custom-box">
+            <div class="custom-subtitle">SoundCloud</div>
+            <div class="audio-container1" style="background-image: url('IMG_4462.jpeg'); margin-top:20px;">
+              <button id="playPauseButton300"><a href="https://soundcloud.com/thisislsr" target="_blank">
+                  <i class="fas fa-play"></i> </a>
+              </button>
+            </div>
+          </div>
+          <div class="custom-box">
+            <div class="custom-subtitle">Spotify</div>
+            <div class="audio-container1" style="background-image: url('IMG_4459.jpeg'); margin-top:20px;">
+              <button id="playPauseButton300"><a href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f" target="_blank">
+                  <i class="fas fa-play"></i></a>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div> </lol> --> </div>
-<br>  <br> <broski>
- <div class="bruhbruh" style=" width: 80%;  justify-content: center; align-items: center;  display: flex; ">   
-<h2 style="text-align: center; color: #fff;   font-size: var(--small_mono); font:    var(--small_mono);">
-DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides students with the tools to learn journalistic practices as they go. Leeds University Union (LUU) is not liable for opinions or views expressed in this broadcast, which are also not necessarily reflective of LSR or LUU as whole organisations. Please do not take opinions expressed in the following broadcasts as fact, and always use external, reputable media sources to supplement discussions of current affairs on LSR. Enjoy the show. </h2>
- </div> </broski></div></div><br>
+    <br> <br>
+    <broski>
+      <div class="bruhbruh" style=" width: 80%;  justify-content: center; align-items: center;  display: flex; ">
+        <h2 style="text-align: center; color: #fff;   font-size: var(--small_mono); font:    var(--small_mono);">
+          DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides students with the tools to learn
+          journalistic practices as they go. Leeds University Union (LUU) is not liable for opinions or views expressed
+          in this broadcast, which are also not necessarily reflective of LSR or LUU as whole organisations. Please do
+          not take opinions expressed in the following broadcasts as fact, and always use external, reputable media
+          sources to supplement discussions of current affairs on LSR. Enjoy the show. </h2>
+      </div>
+    </broski>
+  </div>
+</div>
+<style>
+.custom-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.custom-titles {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.custom-title-left,
+.custom-title-right {
+  text-align: center;
+  width: 45%; /* Adjust width as needed */
+}
+
+.custom-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.custom-box {
+  background-color: #FFCCCB;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+  width: calc(22% - 10px); /* Adjust width for 4 items per row */
+  box-sizing: border-box;
+}
+
+.custom-box:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.custom-subtitle {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .custom-box {
+    width: calc(45% - 10px); /* Adjust for 2 items per row */
+  }
+
+   .custom-box#widget-container {
+    width: calc(95% - 10px) !important; /* Adjust for 2 items per row */
+       margin: auto !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .custom-box {
+    width: calc(95% - 10px); /* Adjust for 1 item per row */
+      margin: auto;
+  }
+
+  .custom-titles {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-title-left,
+  .custom-title-right {
+    width: 90%; /* Adjust width as needed */
+  }
+}
+</style>
                <style>
  
 
