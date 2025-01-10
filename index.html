@@ -1472,7 +1472,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
 </tr>
 
       <tr style="height: 37px;">
-  <td style=" background-color: wheat">3:00 PM - 4:00 PM</td>
+  <td style=" background-color: wheat; border-right: solid 2px;">3:00 PM - 4:00 PM</td>
   <td style="background-color: #f24141">LGBTQ+ SHOW</td>
   <td style="background-color: #f24141"><a href="https://www.instagram.com/thisislsr_womenshour?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover-effect">WOMEN'S HOUR</a></td>
   <td style="background-color: #f24141">POLITICS HOUR</td>
@@ -1575,69 +1575,75 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
 <div class="desktop-contain" id="Listen">
   <div class="layout-container">
     <div class="custom-container">
-      <div class="custom-titles">
-        <div class="custom-title-left">
-          <h2>Listen Live:</h2>
-        </div>
-        <div class="custom-title-right">
-          <h2>Listen Back:</h2>
+      <div class="content-wrapper">
+        <div class="listen-section">
+          <div class="custom-titles">
+            <div class="custom-title-left">
+              <h2>Listen Live:</h2>
+            </div>
+          </div>
+          <div class="custom-box-container">
+            <div class="custom-box" style="background-color:rgb(255, 151, 0);">
+              <div class="custom-subtitle" style="color: black;">LSR Stream</div>
+              <div class="audio-player-container1" style="background-image: url('IMG_4462.jpeg'); margin-top:20px; height: 80%;">
+                <button id="playPauseButton1">
+                  <i class="fas fa-play"></i>
+                </button>
+                <audio id="livestream1" preload="none">
+                  <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+            <div class="custom-box">
+              <div class="custom-subtitle">Alternate Stream</div>
+              <div class="audio-player-container2">
+                <button id="playPauseButton2">
+                  <i class="fas fa-play"></i>
+                </button>
+                <audio id="livestream2" preload="none">
+                  <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+          </div>
+           <div class="custom-titles" style="margin-top: 20px;">
+            <div class="custom-title-right">
+              <h2>Listen Back:</h2>
+            </div>
+          </div>
+          <div class="custom-box-container">
+            <div class="custom-box">
+              <div class="custom-subtitle">SoundCloud</div>
+              <div class="audio-container1" style="background-image: url('IMG_4462.jpeg'); margin-top:20px;">
+                <button id="playPauseButton300"><a href="https://soundcloud.com/thisislsr" target="_blank">
+                    <i class="fas fa-play"></i> </a>
+                </button>
+              </div>
+            </div>
+            <div class="custom-box">
+              <div class="custom-subtitle">Spotify</div>
+              <div class="audio-container1" style="background-image: url('IMG_4459.jpeg'); margin-top:20px;">
+                <button id="playPauseButton300"><a href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f" target="_blank">
+                    <i class="fas fa-play"></i></a>
+                </button>
+              </div>
+            </div>
         </div>
       </div>
-      <div class="custom-box-container">
-        <div class="custom-box" style="background-color:rgb(255, 151, 0);">
-          <div class="custom-subtitle" style="color: black;">LSR Stream</div>
-          <div class="audio-player-container1" style="background-image: url('IMG_4462.jpeg'); margin-top:20px; height: 80%;">
-              
-           
-          
-
-
-
-              
-            <button id="playPauseButton1">
-              <i class="fas fa-play"></i>
-            </button>
-            <audio id="livestream1" preload="none">
-              <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-        <div class="custom-box">
-          <div class="custom-subtitle">Alternate Stream</div>
-          <div class="audio-player-container2">
-            <button id="playPauseButton2">
-              <i class="fas fa-play"></i>
-            </button>
-            <audio id="livestream2" preload="none">
-              <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-
-        <div class="custom-box">
-          <div class="custom-subtitle">SoundCloud</div>
-          <div class="audio-container1" style="background-image: url('IMG_4462.jpeg'); margin-top:20px;">
-            <button id="playPauseButton300"><a href="https://soundcloud.com/thisislsr" target="_blank">
-                <i class="fas fa-play"></i> </a>
-            </button>
-          </div>
-        </div>
-        <div class="custom-box">
-          <div class="custom-subtitle">Spotify</div>
-          <div class="audio-container1" style="background-image: url('IMG_4459.jpeg'); margin-top:20px;">
-            <button id="playPauseButton300"><a
-                href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f"
-                target="_blank">
-                <i class="fas fa-play"></i></a>
-            </button>
+        <div class="live-chat-section">
+          {/* Live chat content will go here */}
+           <div class="custom-titles" style="margin-top: 20px;">
+            <div class="custom-title-right">
+              <h2>Live Chat:</h2>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
- 
+
   <broski>
     <div class="bruhbruh" style=" width: 80%;  justify-content: center; align-items: center;  display: flex; margin-left: auto;
 margin-right: auto;">
@@ -1650,13 +1656,29 @@ margin-right: auto;">
     </div>
   </broski>
 </div>
-
 <style>
   .custom-container {
     width: 100%;
     box-sizing: border-box;
   }
 
+ .content-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 20px; /* Spacing between the two sections */
+  }
+
+  .listen-section {
+    width: 60%; /* Listen section takes up 60% width */
+  }
+
+  .live-chat-section {
+    width: 40%; /* Live chat section takes up 40% width */
+      border-radius: 10px;
+      background-color: rgb(149, 13, 13);
+      height: 50%;
+  }
+    
   .custom-titles {
     display: flex;
     justify-content: space-around;
@@ -1666,15 +1688,16 @@ margin-right: auto;">
   .custom-title-left,
   .custom-title-right {
     text-align: center;
-    width: 45%;
+    width: 100%;
     /* Adjust width as needed */
   }
 
   .custom-box-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the boxes */
+    justify-content: center;
     margin: 15px;
+      
   }
 
   .custom-box {
@@ -1684,9 +1707,8 @@ margin-right: auto;">
     text-align: center;
     box-sizing: border-box;
     margin: 5px;
-      min-height: 21vw;
-    /* Responsive widths */
-    width: calc(25% - 10px); /* 4 items per row on large screens */
+    min-height: 21vw;
+    width: calc(50% - 10px); /* 2 items per row */
   }
 
   .custom-box:hover {
@@ -1701,10 +1723,18 @@ margin-right: auto;">
 
   /* Responsive adjustments */
   @media (max-width: 1200px) {
-    .custom-box {
-      width: calc(50% - 10px);
-      /* 2 items per row on medium screens */
+    .content-wrapper {
+      flex-direction: column; /* Stack sections vertically */
+      gap: 20px;
     }
+  
+    .listen-section,
+    .live-chat-section {
+      width: 100%; /* Each section takes full width */
+    }
+      .live-chat-section {
+          height: 200px;
+      }
   }
 
   @media (max-width: 700px) {
@@ -1721,7 +1751,6 @@ margin-right: auto;">
     .custom-title-left,
     .custom-title-right {
       width: 90%;
-      /* Adjust width as needed */
     }
   }
 </style>
