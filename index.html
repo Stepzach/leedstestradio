@@ -220,14 +220,14 @@ if ('mediaSession' in navigator) {
        <div data-v-2a330032="" class="Header desktop a-hover" style="z-index:100000; position: fixed; top: 0;background-color: #bb0c0c;"><div data-v-2a330032="" class="header-holder" style=" position: fixed; top: 0;background-color: #bb0c0c; padding-top: 10px; border: none !important;">
         
     <div data-v-2a330032="" class="header-stack"><div data-v-2a330032="" class="Navigation" style="padding-left: 80px; border-bottom: 6px solid black; height:40px; width: 100%"> 
-        <div class="header" href="#Home" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Home" class=""><span onclick="toggleColor(this)" data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
+        <div class="header" href="#Home" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Home" data-offset="-50" class=""><span onclick="toggleColor(this)" data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
          Home</span></a></div>
-        <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Schedule" class=""><span onclick="toggleColor(this)"data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
+        <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Schedule" data-offset="-50" class=""><span onclick="toggleColor(this)"data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
          Schedule</span></a></div>
-            <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Listen"  class="" ><span data-v-2a330032="" onclick="toggleColor(this)" style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Listen</span></a></div> 
-           <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#GetInvolved" class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Get Involved</span></a></div>
-           <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032=""  href="#About" class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">About</span></a></div>
-           <div class="header" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Contact"   class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Contact</span></a></div>
+            <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Listen"  data-offset="-50" class="" ><span data-v-2a330032="" onclick="toggleColor(this)" style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Listen</span></a></div> 
+           <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#GetInvolved" data-offset="-50" class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Get Involved</span></a></div>
+           <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032=""  href="#About"  data-offset="-50" class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">About</span></a></div>
+           <div class="header" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Contact" data-offset="-50"  class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Contact</span></a></div>
            <h1 data-v-2a330032=""></h1><div data-v-2a330032="" class="time" style="color: #fff">
            <div id="time-container" style=" font-family: SuisseIntl; font-size: 25px;"> <span id="time-text"></span> GMT </div>
           </div></div>
@@ -2696,7 +2696,7 @@ border-radius: 10px;
     setInterval(updateUI, 60000);
 </script>
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
 
@@ -2704,10 +2704,13 @@ border-radius: 10px;
     const targetElement = document.querySelector(targetId);
 
     if (targetElement) {
-      // Calculate the target's top offset, considering any fixed headers
-      const headerOffset = 0; // Adjust this if you have a fixed header
+      const headerOffset = 0; // Adjust for fixed header if needed
       const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Get custom offset from data-offset attribute
+      const customOffset = parseInt(this.dataset.offset) || 0;
+
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset + customOffset;
 
       window.scrollTo({
         top: offsetPosition,
