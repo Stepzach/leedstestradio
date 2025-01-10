@@ -927,28 +927,26 @@ document.querySelectorAll('.audio-button').forEach(button => {
 <div class=""> <div id="Home">
   <div class="container">
     <div class="left-section">
-   
-      <h2 data-v-d676e41c="" style="font-size: ; color: #fff !important; text-align: center; /* margin-left: 25px; */">
+      <h2 data-v-d676e41c="" style="font-size: ; color: #fff !important; text-align: center;">
         Officially the UK's Best Student Station 2024
       </h2>
-
       <div class="image-container">
         <a data-v-55127cac="" data-v-d676e41c="" href="https://www.studentradio.org.uk/awards/" target="_blank" class="AboutThumb block">
-          
-          <div data-v-55127cac="" class="image" data-src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" lazy="loaded" style="background-image: url(316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp); width: 80%;
-margin-left: auto;
-margin-right: auto; height:20vw; padding-top: 0;"></div>
+          <div data-v-55127cac="" class="image" data-src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" lazy="loaded" style="background-image: url(316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp); width: 80%; margin-left: auto; margin-right: auto; height:20vw; padding-top: 0;"></div>
         </a>
-
-        
       </div>
     </div>
 
     <div class="right-section">
       <a data-v-55127cac="" data-v-d676e41c="" href="https://www.studentradio.org.uk/awards/" target="_blank" rel="noopener" class="AboutThumb block">
-        
         <div data-v-55127cac="" class="image" data-src="https://stepzach.github.io//leedstestradio/LSR%20Logo.png.webp" lazy="loaded" style="background-image: url(https://stepzach.github.io//leedstestradio/LSR%20Logo.png.webp); width: 100%; height: 100%; background-size: contain;"></div>
       </a>
+    </div>
+
+    <div class="sponsor-section">
+      <div class="sponsor-text">Brought to you</div>
+    </div> <div class="sponsor-text">by our Sponsor:</div>
+    </div> <div class="sponsor-text" style="font-weight: bold">The Careers Centre</div>
     </div>
   </div>
 </div>
@@ -957,32 +955,56 @@ margin-right: auto; height:20vw; padding-top: 0;"></div>
   .container {
     display: flex;
     width: 100%;
-      height: 28vw;
+    height: 28vw;
   }
 
   .left-section {
-    width: 70%;
+    width: 55%;
     padding: 20px;
     box-sizing: border-box;
-     margin-left:20px;
-      margin-top:40px;
-     background-color: rgb(149, 13, 13);
-border-radius: 10px;
-margin-right: 5px;
+    margin-left: 20px;
+    margin-top: 40px;
+    background-color: rgb(149, 13, 13);
+    border-radius: 10px;
+    margin-right: 5px;
   }
 
   .right-section {
     width: 30%;
     display: flex;
-   margin-top: 40px;
+    margin-top: 40px;
     justify-content: center;
     padding: 20px;
     box-sizing: border-box;
-       margin-right:20px;
-      margin-top:40px;
+    margin-right: 5px;
+    margin-top: 40px;
     background-color: rgb(149, 13, 13);
-border-radius: 10px;
-margin-left: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+  }
+
+  .sponsor-section {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-top: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgb(149, 13, 13);
+    border-radius: 10px;
+    margin-left: 5px;
+  }
+
+  .sponsor-text {
+    color: #fff;
+    writing-mode: vertical-rl; /* Rotate text 90 degrees */
+    text-orientation: mixed; /* For better compatibility */
+    transform: rotate(180deg); /* Adjust orientation if needed */
+    white-space: nowrap; /* Prevent text wrapping */
+    font-size: 20px;
+    font-weight: bold;
   }
 
   .image-container {
@@ -993,12 +1015,17 @@ margin-left: 5px;
   }
 
   .image-container .image {
-    
+    /* ... */
   }
+
   .right-section .image {
-    
+    /* ... */
   }
 </style>
+  </div>
+</div>
+
+
     
     </div>
              
