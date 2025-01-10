@@ -264,14 +264,14 @@ if ('mediaSession' in navigator) {
        <div data-v-2a330032="" class="Header desktop a-hover" style="z-index:100000; position: fixed; top: 0;background-color: #bb0c0c;"><div data-v-2a330032="" class="header-holder" style=" position: fixed; top: 0;background-color: #bb0c0c; padding-bottom: 5px; padding-top: 10px;">
         
     <div data-v-2a330032="" class="header-stack"><div data-v-2a330032="" class="Navigation" style="padding-left: 80px;"> 
-        <div class="header" data-page="Home" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" class=""><span onclick="toggleColor(this)" data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
+        <div class="header" href="#Home" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" class=""><span onclick="toggleColor(this)" data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
          Home</span></a></div>
-        <div class="header" data-page="Schedule" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" class=""><span onclick="toggleColor(this)"data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
+        <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Schedule" class=""><span onclick="toggleColor(this)"data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
          Schedule</span></a></div>
-            <div class="header" data-page="Listen" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)" style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Listen</span></a></div> 
-           <div class="header" data-page="GetInvolved" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Get Involved</span></a></div>
-           <div class="header" data-page="About" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">About</span></a></div>
-           <div class="header" data-page="Contact" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032=""  class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Contact</span></a></div>
+            <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Listen"  class="" ><span data-v-2a330032="" onclick="toggleColor(this)" style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Listen</span></a></div> 
+           <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#GetInvolved" class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Get Involved</span></a></div>
+           <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032=""  href="#About" class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">About</span></a></div>
+           <div class="header" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Contact"   class="" ><span data-v-2a330032="" onclick="toggleColor(this)"style="color: #fff ; padding-right: 5px; font-size: 25px;" class="hover-effect">Contact</span></a></div>
            <h1 data-v-2a330032=""></h1><div data-v-2a330032="" class="time" style="color: #fff">
            <div id="time-container" style=" font-family: SuisseIntl; font-size: 25px;"> <span id="time-text"></span> GMT </div>
           </div></div>
@@ -919,9 +919,9 @@ document.querySelectorAll('.audio-button').forEach(button => {
 
   </style>
            <body>
-               <div id="welcome" class="welcome">
+               <div id="home" class="welcome">
 <br><br><br>
-<div class=""> <div class="">
+<div class=""> <div id="Home">
   <div class="container">
     <div class="left-section">
       <h1 data-v-d676e41c="" class="desktop-contain" style="color: #fff; font-size:; text-align: center; margin-bottom: 10px;">
@@ -1125,10 +1125,10 @@ padding: 20px;
 
         </div>
 
-<div class="content"> 
-<br><br><br> <br>
+<div id="Schedule" class="content" style="background-color: rgb(149, 13, 13); margin: 20px; border-radius: 10px; padding: 20px;"> 
+
     <div class="brformobile"> <br> <br> </div>
-    <h1 style="text-align: center; color: #fff; font-size:25px; width:80%; margin-right: auto; margin-left: auto;">Weekly Schedule: Semester 1 2024<br></h1>
+    <h1 style="text-align: center; color: #fff; font-size:35px; width:100%; margin-right: auto; margin-left: auto;">Weekly Schedule: Semester 1 2024<br></h1>
      <div class="brformobile"> <br> </div>
 <h2 style="text-align: center; color: #fff;">
 Our core shows are listed in colour, and the rest are our members' own shows! </h2>
@@ -1730,7 +1730,7 @@ margin-right: auto;
 
 
 
-<div class="desktop-contain">
+<div class="desktop-contain" id="Listen">
   <h1 style="text-align: center; color: #fff; font-size:25px;">Listen!<br></h1><br>
    <br>
     
@@ -2019,7 +2019,7 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
   </script>
 
                
-<div class="content">
+<div class="content" id="GetInvolved">
     <br><br>
     <title>Apply for a Show</title>
 <style>
@@ -2251,7 +2251,7 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
 
 </div></div>
                
-<div class="content">
+<div class="content" id="About">
     <br><br><br> 
      <title>About us</title>
   <style>
@@ -2599,7 +2599,7 @@ DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides student
 </div>
 </div>
                
-<div id="page5" class="content">
+<div id="Contact" class="content">
     <br><br><br>
   <title>Contact Us</title>
   <style>
