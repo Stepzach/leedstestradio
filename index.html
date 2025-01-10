@@ -945,8 +945,10 @@ document.querySelectorAll('.audio-button').forEach(button => {
 
     <div class="sponsor-section">
       <div class="sponsor-text">Brought to you</div>
-    </div> <div class="sponsor-text">by our Sponsor:</div>
-    </div> <div class="sponsor-text" style="font-weight: bold">The Careers Centre</div>
+     <div class="sponsor-text">by our Sponsor:</div>
+    <div class="sponsor-text" style="font-weight: bold">The Careers Centre</div>
+        </div> 
+      </div>
     </div>
   </div>
 </div>
@@ -1032,40 +1034,28 @@ document.querySelectorAll('.audio-button').forEach(button => {
                
   
 <div class="custom-embed-container">
-
-
   <!-- Facebook Post -->
   <div class="custom-embed">
     <img src="https://scontent-man2-1.xx.fbcdn.net/v/t51.75761-15/467778129_18469179055049363_8433803915504203548_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=dq5NGlsutCYQ7kNvgGq71Uk&_nc_zt=23&_nc_ht=scontent-man2-1.xx&_nc_gid=A8BGa853qDxK7kTvd58--es&oh=00_AYCq3x9Izday8RIgUrBW-b3p4srKvvggR5Wa4zjhuZo28w&oe=67634DFA" alt="Facebook Post">
-   
     <p>🎉 Exciting news from our station manager!</p>
-  
-     
   </div>
 
   <!-- Facebook Post -->
   <div class="custom-embed">
     <img src="https://scontent-man2-1.xx.fbcdn.net/v/t51.75761-15/467778129_18469179055049363_8433803915504203548_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=dq5NGlsutCYQ7kNvgGq71Uk&_nc_zt=23&_nc_ht=scontent-man2-1.xx&_nc_gid=A8BGa853qDxK7kTvd58--es&oh=00_AYCq3x9Izday8RIgUrBW-b3p4srKvvggR5Wa4zjhuZo28w&oe=67634DFA" alt="Facebook Post">
-   
     <p>🎉 Exciting news from our station manager!</p>
-  
-    
   </div>
 
   <!-- Instagram Post -->
   <div class="custom-embed">
     <img src="468584312_522558964268979_599695724531707474_n.jpeg" alt="Instagram Post">
-  
     <p>Society Spotlight ⭐️ from the UK's best Student Radio!</p>
-   
   </div>
 
   <!-- TikTok Post -->
   <div class="custom-embed">
     <img src="Screenshot 2024-12-14 at 13.14.22.png" alt="TikTok Video">
-   
     <p>🎵 Our station manager never fails to amaze!</p>
-  
   </div>
 </div>
 
@@ -1075,11 +1065,11 @@ document.querySelectorAll('.audio-button').forEach(button => {
     gap: 2vw;
     justify-content: center;
     flex-wrap: wrap;
-      margin: 20px;
-border-radius: 10px;
-padding: 20px;
-       background-color: rgb(149, 13, 13);
-      margin-top: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(149, 13, 13);
+    margin-top: 10px;
   }
 
   .custom-embed {
@@ -1087,8 +1077,9 @@ padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    /* Updated width calculation for responsiveness */
-    width: 22%;
+    /* Responsive width calculation */
+    width: calc((100% - 6vw) / 4); /* Default: 4 items per row, with 3 gaps */
+    min-width: 150px; /* Prevent shrinking too much */
     
     text-align: center;
     transition: box-shadow 0.3s;
@@ -1105,12 +1096,6 @@ padding: 20px;
     object-fit: cover; /* Ensures images are cropped to fit */
   }
 
-  .custom-embed h3 {
-    font-size: 18px;
-    margin: 15px 0;
-    color: #000;
-  }
-
   .custom-embed p {
     padding: 0 15px;
     font-size: 14px;
@@ -1118,26 +1103,10 @@ padding: 20px;
     line-height: 1.5;
   }
 
-  .custom-embed a {
-    display: inline-block;
-    margin: 15px 0 20px;
-    padding: 10px 20px;
-    font-size: 14px;
-    color: #ffffff;
-    background-color: #a00000;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-
-  .custom-embed a:hover {
-    background-color: #2b78c5;
-  }
-
   /* Media Queries for Responsiveness */
   @media (max-width: 1200px) {
     .custom-embed {
-      width: calc((100% - 5vw) / 2); /* 2 items per row */
+      width: calc((100% - 2vw) / 2); /* 2 items per row, with 1 gap */
     }
   }
 
@@ -1147,7 +1116,6 @@ padding: 20px;
     }
   }
 </style>
-
 
         </div>
 
