@@ -1631,14 +1631,14 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
               </div>
             </div>
         </div>
-      </div>
+        </div>
         <div class="live-chat-section">
-          {/* Live chat content will go here */}
-           <div class="custom-titles" style="margin-top: 20px;">
+          <div class="custom-titles">
             <div class="custom-title-right">
               <h2>Live Chat:</h2>
             </div>
-          </div>
+           </div>
+          {/* Live chat content will go here */}
         </div>
       </div>
     </div>
@@ -1662,23 +1662,25 @@ margin-right: auto;">
     box-sizing: border-box;
   }
 
- .content-wrapper {
+  .content-wrapper {
     display: flex;
     width: 100%;
-    gap: 20px; /* Spacing between the two sections */
+    gap: 20px;
+    align-items: flex-start; /* Align items to the start (top) */
   }
 
   .listen-section {
-    width: 60%; /* Listen section takes up 60% width */
+    width: 60%; 
   }
 
   .live-chat-section {
-    width: 40%; /* Live chat section takes up 40% width */
-      border-radius: 10px;
-      background-color: rgb(149, 13, 13);
-      height: 50%;
+    width: 40%; 
+    border-radius: 10px;
+    background-color: rgb(149, 13, 13);
+    display: flex;
+    flex-direction: column;
   }
-    
+
   .custom-titles {
     display: flex;
     justify-content: space-around;
@@ -1689,15 +1691,17 @@ margin-right: auto;">
   .custom-title-right {
     text-align: center;
     width: 100%;
-    /* Adjust width as needed */
+  }
+ .live-chat-section .custom-title-right {
+      margin-top: 0px;
+      
   }
 
   .custom-box-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 15px;
-      
+    margin: 15px;  
   }
 
   .custom-box {
@@ -1708,7 +1712,7 @@ margin-right: auto;">
     box-sizing: border-box;
     margin: 5px;
     min-height: 21vw;
-    width: calc(50% - 10px); /* 2 items per row */
+    width: calc(50% - 10px);
   }
 
   .custom-box:hover {
@@ -1721,26 +1725,31 @@ margin-right: auto;">
     margin-bottom: 10px;
   }
 
-  /* Responsive adjustments */
+  /* Responsive adjustments for smaller screens */
   @media (max-width: 1200px) {
     .content-wrapper {
-      flex-direction: column; /* Stack sections vertically */
+      flex-direction: column;
       gap: 20px;
+      align-items: center;
     }
-  
+
     .listen-section,
     .live-chat-section {
-      width: 100%; /* Each section takes full width */
+      width: 90%; 
     }
-      .live-chat-section {
-          height: 200px;
-      }
+      
+  .live-chat-section .custom-titles{
+       margin-top: 20px;
+      
+  }
+    .live-chat-section {
+      height: 350px; /* Adjust height as needed for mobile */
+    }
   }
 
   @media (max-width: 700px) {
     .custom-box {
       width: calc(100% - 10px);
-      /* 1 item per row on small screens */
     }
 
     .custom-titles {
