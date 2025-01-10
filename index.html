@@ -884,7 +884,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
   <div class="container">
     <div class="left-section">
      
-    <div class="carousel-container">
+   <div class="carousel-container">
   <div class="carousel-track">
     <div class="carousel-slide">
       <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 1">
@@ -906,20 +906,19 @@ document.querySelectorAll('.audio-button').forEach(button => {
 
 <style>
   .carousel-container {
-    height: 100%; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
+      height:100%;
     overflow: hidden;
-    border-radius: 10px; /* Keep the rounded corners */
+    border-radius: 10px;
   }
 
   .carousel-track {
-        height: 100%; /* Adjust as needed */
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Smooth transition */
+    transition: transform 0.5s ease-in-out;
   }
 
   .carousel-slide {
-        height: 100%; /* Adjust as needed */
-    min-width: 100%; /* Each slide takes full width */
+    min-width: 100%;
     box-sizing: border-box;
   }
 
@@ -927,16 +926,16 @@ document.querySelectorAll('.audio-button').forEach(button => {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block; /* Remove extra space below image */
+    display: block;
   }
 </style>
 
 <script>
   const track = document.querySelector('.carousel-track');
   const slides = document.querySelectorAll('.carousel-slide');
-  const slideWidth = slides[0].offsetWidth; // Calculate slide width dynamically
+  let slideWidth; // Calculate slideWidth after window has loaded
   let currentSlide = 0;
-  const intervalTime = 5000; // 5 seconds
+  const intervalTime = 5000;
 
   function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
@@ -947,25 +946,29 @@ document.querySelectorAll('.audio-button').forEach(button => {
     const offset = -slideWidth * currentSlide;
     track.style.transform = `translateX(${offset}px)`;
 
-    // Infinite loop: instantly move back to the beginning when at the end
     if (currentSlide === slides.length - 1) {
       setTimeout(() => {
-        track.style.transition = 'none'; // Disable transition for instant jump
+        track.style.transition = 'none';
         currentSlide = 0;
         track.style.transform = `translateX(0)`;
-        // Restore transition after a very short delay
         setTimeout(() => {
           track.style.transition = 'transform 0.5s ease-in-out';
         }, 10);
-      }, 500); // 500ms is the duration of your slide transition
+      }, 500);
     }
   }
 
-  let slideInterval = setInterval(nextSlide, intervalTime);
+  // Calculate slideWidth after the window has fully loaded
+  window.addEventListener('load', () => {
+    slideWidth = slides[0].offsetWidth; // Get the accurate width
+    updateCarousel(); // Initial alignment
 
-  // Pause on hover (optional)
-  track.addEventListener('mouseover', () => clearInterval(slideInterval));
-  track.addEventListener('mouseout', () => slideInterval = setInterval(nextSlide, intervalTime));
+    slideInterval = setInterval(nextSlide, intervalTime);
+
+    // Pause on hover (optional)
+    track.addEventListener('mouseover', () => clearInterval(slideInterval));
+    track.addEventListener('mouseout', () => slideInterval = setInterval(nextSlide, intervalTime));
+  });
 </script>
     </div>
 
