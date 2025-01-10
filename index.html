@@ -11,53 +11,7 @@ html {
   scroll-behavior: smooth;
 }
 <script> 
-    (function() {
-    // Allow user to scroll, but prevent script-driven scrolling
-    window.addEventListener('scroll', function(event) {
-        // Prevent automatic scroll to bottom by capturing scroll events
-        // but allow user scrolling normally
-        if (event.target === window) {
-            return; // Allow the user to scroll
-        }
-        event.preventDefault(); // Prevent other unwanted scroll actions
-    }, { passive: false });
-
-    // Intercept all calls to window.scrollTo and window.scrollBy to prevent automatic scroll
-    const originalScrollTo = window.scrollTo;
-    const originalScrollBy = window.scrollBy;
-
-    // Override window.scrollTo
-    window.scrollTo = function(x, y) {
-        // Check if the scroll position is attempting to move to the bottom
-        if (y >= document.documentElement.scrollHeight - window.innerHeight) {
-            // Prevent scrolling to the bottom
-            return;
-        }
-        originalScrollTo.call(window, x, y);
-    };
-
-        
-    // Override window.scrollBy
-    window.scrollBy = function(x, y) {
-        // Block scroll that would push the page down
-        if (y > 0) {
-            return; // Prevent scrolling downward
-        }
-        originalScrollBy.call(window, x, y);
-    };
-
-})();
-
-
-  function toggleColor(element) {
-    // First, reset all text elements to white
-    const spans = document.querySelectorAll('span');
-    spans.forEach(span => span.style.color = 'white');
-
-    // Then, change the clicked element to black
-    element.style.color = 'black';
-  }
-
+   
 
     
 const livestreamElement = document.getElementById('livestream');
