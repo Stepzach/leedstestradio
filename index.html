@@ -884,91 +884,105 @@ document.querySelectorAll('.audio-button').forEach(button => {
   <div class="container">
     <div class="left-section">
      
-   <div class="carousel-container">
-  <div class="carousel-track">
-    <div class="carousel-slide">
-      <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 1">
+  <div class="carousel-container">
+    <div class="carousel-track">
+        <div class="carousel-slide">
+            <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 1">
+        </div>
+        <div class="carousel-slide">
+            <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 2">
+        </div>
+        <div class="carousel-slide">
+            <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 3">
+        </div>
+        <div class="carousel-slide">
+            <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 4">
+        </div>
+        <div class="carousel-slide">
+            <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 5">
+        </div>
     </div>
-    <div class="carousel-slide">
-      <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 2">
-    </div>
-    <div class="carousel-slide">
-      <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 3">
-    </div>
-    <div class="carousel-slide">
-      <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 4">
-    </div>
-    <div class="carousel-slide">
-      <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 5">
-    </div>
-  </div>
 </div>
 
 <style>
-  .carousel-container {
-    width: 100%; /* Adjust as needed */
-      height:100%;
-    overflow: hidden;
-    border-radius: 10px;
-  }
+    .carousel-container {
+        width: 100%;
+        height:100%
+        /* Adjust as needed */
+        overflow: hidden;
+        border-radius: 10px;
+    }
 
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
 
-  .carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-  }
+    .carousel-slide {
+        min-width: 100%;
+        box-sizing: border-box;
+    }
 
-  .carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+    .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
 </style>
 
 <script>
-  const track = document.querySelector('.carousel-track');
-  const slides = document.querySelectorAll('.carousel-slide');
-  let slideWidth; // Calculate slideWidth after window has loaded
-  let currentSlide = 0;
-  const intervalTime = 5000;
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    let slideWidth;
+    let currentSlide = 0;
+    const intervalTime = 9000;
+    let slideInterval; // Declare slideInterval in the outer scope
 
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateCarousel();
-  }
-
-  function updateCarousel() {
-    const offset = -slideWidth * currentSlide;
-    track.style.transform = `translateX(${offset}px)`;
-
-    if (currentSlide === slides.length - 1) {
-      setTimeout(() => {
-        track.style.transition = 'none';
-        currentSlide = 0;
-        track.style.transform = `translateX(0)`;
-        setTimeout(() => {
-          track.style.transition = 'transform 0.5s ease-in-out';
-        }, 10);
-      }, 500);
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
     }
-  }
 
-  // Calculate slideWidth after the window has fully loaded
-  window.addEventListener('load', () => {
-    slideWidth = slides[0].offsetWidth; // Get the accurate width
-    updateCarousel(); // Initial alignment
+    function updateCarousel() {
+        const offset = -slideWidth * currentSlide;
+        track.style.transform = `translateX(${offset}px)`;
 
-    slideInterval = setInterval(nextSlide, intervalTime);
+        if (currentSlide === slides.length - 1) {
+            setTimeout(() => {
+                track.style.transition = 'none';
+                currentSlide = 0;
+                track.style.transform = `translateX(0)`;
+                setTimeout(() => {
+                    track.style.transition = 'transform 0.5s ease-in-out';
+                }, 10);
+            }, 500);
+        }
+    }
+
+    // Calculate slideWidth and start the carousel after the window has fully loaded
+    window.addEventListener('load', () => {
+        slideWidth = slides[0].offsetWidth;
+        updateCarousel(); // Initial alignment
+
+        // Start the interval immediately after initial setup
+        slideInterval = setInterval(nextSlide, intervalTime);
+    });
 
     // Pause on hover (optional)
-    track.addEventListener('mouseover', () => clearInterval(slideInterval));
-    track.addEventListener('mouseout', () => slideInterval = setInterval(nextSlide, intervalTime));
-  });
+    function handleHover() {
+        clearInterval(slideInterval);
+        slideInterval = null; // Reset the interval variable
+    }
+
+    function handleMouseOut() {
+        if (!slideInterval) { // Only start a new interval if one isn't already running
+            slideInterval = setInterval(nextSlide, intervalTime);
+        }
+    }
+
+    track.addEventListener('mouseover', handleHover);
+    track.addEventListener('mouseout', handleMouseOut);
 </script>
     </div>
 
@@ -1070,84 +1084,119 @@ document.querySelectorAll('.audio-button').forEach(button => {
                
   
 <div class="custom-embed-container">
-  <!-- Facebook Post -->
-  <div class="custom-embed">
-   <img src="468584312_522558964268979_599695724531707474_n.jpeg" alt="Instagram Post">
+  <div class="custom-embed-slider">
+    <!-- Facebook Post -->
+    <div class="custom-embed">
+      <img src="468584312_522558964268979_599695724531707474_n.jpeg" alt="Instagram Post">
       <p>🎉 Exciting news from our station manager!</p>
-  </div>
+    </div>
 
-  <!-- Facebook Post -->
-  <div class="custom-embed">
-     <img src="Screenshot 2024-12-14 at 13.14.22.png" alt="TikTok Video">
+    <!-- Facebook Post -->
+    <div class="custom-embed">
+      <img src="Screenshot 2024-12-14 at 13.14.22.png" alt="TikTok Video">
       <p>🎉 Exciting news from our station manager!</p>
-  </div>
+    </div>
 
-  <!-- Instagram Post -->
-  <div class="custom-embed">
-    <img src="468584312_522558964268979_599695724531707474_n.jpeg" alt="Instagram Post">
-    <p>Society Spotlight ⭐️ from the UK's best Student Radio!</p>
-  </div>
+    <!-- Instagram Post -->
+    <div class="custom-embed">
+      <img src="468584312_522558964268979_599695724531707474_n.jpeg" alt="Instagram Post">
+      <p>Society Spotlight ⭐️ from the UK's best Student Radio!</p>
+    </div>
 
-  <!-- TikTok Post -->
-  <div class="custom-embed">
-    <img src="Screenshot 2024-12-14 at 13.14.22.png" alt="TikTok Video">
-    <p>🎵 Our station manager never fails to amaze!</p>
+    <!-- TikTok Post -->
+    <div class="custom-embed">
+      <img src="Screenshot 2024-12-14 at 13.14.22.png" alt="TikTok Video">
+      <p>🎵 Our station manager never fails to amaze!</p>
+    </div>
+    <!-- Add 4 more boxes -->
+    <div class="custom-embed">
+      <img src="image5.jpg" alt="Placeholder 5">
+      <p>Placeholder content 5</p>
+    </div>
+    <div class="custom-embed">
+      <img src="image6.jpg" alt="Placeholder 6">
+      <p>Placeholder content 6</p>
+    </div>
+    <div class="custom-embed">
+      <img src="image7.jpg" alt="Placeholder 7">
+      <p>Placeholder content 7</p>
+    </div>
+    <div class="custom-embed">
+      <img src="image8.jpg" alt="Placeholder 8">
+      <p>Placeholder content 8</p>
+    </div>
+        <!-- Duplicate the first 4 boxes to create a loop -->
+    <div class="custom-embed">
+      <img src="468584312_522558964268979_599695724531707474_n.jpeg" alt="Instagram Post">
+      <p>🎉 Exciting news from our station manager!</p>
+    </div>
+
+    <!-- Facebook Post -->
+    <div class="custom-embed">
+      <img src="Screenshot 2024-12-14 at 13.14.22.png" alt="TikTok Video">
+      <p>🎉 Exciting news from our station manager!</p>
+    </div>
+
+    <!-- Instagram Post -->
+    <div class="custom-embed">
+      <img src="468584312_522558964268979_599695724531707474_n.jpeg" alt="Instagram Post">
+      <p>Society Spotlight ⭐️ from the UK's best Student Radio!</p>
+    </div>
+
+    <!-- TikTok Post -->
+    <div class="custom-embed">
+      <img src="Screenshot 2024-12-14 at 13.14.22.png" alt="TikTok Video">
+      <p>🎵 Our station manager never fails to amaze!</p>
+    </div>
   </div>
 </div>
 
 <style>
   .custom-embed-container {
-    display: flex;
-    flex-wrap: wrap;
-   justify-content: center;
-margin: 15px;
-margin-top: 5px; 
-      margin-bottom: 5px;
+    overflow: hidden; /* Hide overflowing content */
   }
+.custom-embed-slider{
+    display: flex;
+    animation: slide 20s linear infinite; /* Adjust duration as needed */
+    width: max-content;
+}
 
   .custom-embed {
     background-color: rgb(0, 87, 0);
-   padding:15px;
+    padding: 15px;
     border-radius: 10px;
-    overflow: hidden;
     box-sizing: border-box;
     text-align: center;
     transition: box-shadow 0.3s;
+    flex-shrink: 0;
 
     /* Width and margin for responsiveness */
-    width: calc(25% - 10px); /* Adjust for margin */
+    width: calc(25vw - 10px); /* Adjust for margin and viewport width */
     margin: 5px;
-    
   }
 
-  .custom-embed:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
+  /* ... rest of your existing CSS for .custom-embed ... */
 
-  .custom-embed img {
-    width: 100%;
-    height: 300px;
-    display: block;
-    object-fit: cover;
-  }
-
-  .custom-embed p {
-    padding: 0 15px;
-    font-size: 14px;
-    color: #fff;
-    line-height: 1.5;
+  /* Animation Keyframes */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Move by half the slider width to create a loop*/
+    }
   }
 
   /* Media Queries for Responsiveness */
   @media (max-width: 1200px) {
     .custom-embed {
-      width: calc(50% - 10px); /* 2 items per row, adjust for margin */
+      width: calc(50vw - 10px); /* 2 items per row */
     }
   }
 
   @media (max-width: 700px) {
     .custom-embed {
-      width: calc(100% - 10px); /* 1 item per row, adjust for margin */
+      width: calc(100vw - 10px); /* 1 item per row */
     }
   }
 </style>
