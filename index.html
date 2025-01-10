@@ -1069,15 +1069,15 @@ document.querySelectorAll('.audio-button').forEach(button => {
 
   .custom-embed {
     background-color: #FFCCCB;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+   
+    border-radius: 10px;
     overflow: hidden;
     box-sizing: border-box;
     text-align: center;
     transition: box-shadow 0.3s;
 
     /* Width and margin for responsiveness */
-    width: 23%; 
+    width: calc(25% - 10px); /* Adjust for margin */
     margin: 5px;
     
   }
@@ -1103,13 +1103,13 @@ document.querySelectorAll('.audio-button').forEach(button => {
   /* Media Queries for Responsiveness */
   @media (max-width: 1200px) {
     .custom-embed {
-      width: 45%; /* 2 items per row */
+      width: calc(50% - 10px); /* 2 items per row, adjust for margin */
     }
   }
 
   @media (max-width: 700px) {
     .custom-embed {
-      width: 95%; /* 1 item per row (almost full width) */
+      width: calc(100% - 10px); /* 1 item per row, adjust for margin */
     }
   }
 </style>
