@@ -266,7 +266,7 @@ if ('mediaSession' in navigator) {
        <div data-v-2a330032="" class="Header desktop a-hover" style="z-index:100000; position: fixed; top: 0;background-color: #bb0c0c;"><div data-v-2a330032="" class="header-holder" style=" position: fixed; top: 0;background-color: #bb0c0c; padding-top: 10px; border: none !important;">
         
     <div data-v-2a330032="" class="header-stack"><div data-v-2a330032="" class="Navigation" style="padding-left: 80px; border-bottom: 6px solid black; height:40px; width: 100%"> 
-        <div class="header" href="#Home" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" class=""><span onclick="toggleColor(this)" data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
+        <div class="header" href="#Home" style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Home" class=""><span onclick="toggleColor(this)" data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
          Home</span></a></div>
         <div class="header"  style="font-family:  SuisseIntl; font-weight: 550; cursor: pointer;"><a data-v-2a330032="" href="#Schedule" class=""><span onclick="toggleColor(this)"data-v-2a330032="" style="color: #fff ; padding-right: 5px; padding-left: 10px; font-size: 25px;" class="hover-effect">
          Schedule</span></a></div>
@@ -2404,7 +2404,7 @@ border-radius: 10px;
 </div>
 </div>
                
-<div id="Contact" class="content">
+<div id="Contact" class="content" style="background-color: rgb(255, 151, 0);">
 
   <title>Contact Us</title>
   <style>
@@ -2741,7 +2741,28 @@ border-radius: 10px;
     // Update every minute to reflect schedule changes
     setInterval(updateUI, 60000);
 </script>
-    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      // Calculate the target's top offset, considering any fixed headers
+      const headerOffset = 0; // Adjust this if you have a fixed header
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+    </script>
     
 </body>
 
