@@ -2007,43 +2007,63 @@ width: 90%;
     <br><br>
     <title>Apply for a Show</title>
 <style>
-  bodyhii {
-   
+  bodyhi {
     margin: 0;
     padding: 0;
-   
     color: white;
+  
   }
 
   .show-container {
-   max-width: 100%;
-margin: 20px;
+    max-width: 100%;
+    margin: 0 20px; /* Left and right margin of 20px */
     padding: 20px;
     background: #b80000;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px; /* Add spacing between rows */
+  }
+
+  .section {
+    background-color: #a00000;
     border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px; /* 10px margin between sections */
+    flex-grow: 1; /* Allow sections to grow to fill the row */
+  }
+
+  /* Specific section width adjustments */
+  .section-full {
+    flex-basis: calc(100% - 20px); /* Full width section minus margins*/
+    
+  }
+
+  .section-half {
+    flex-basis: calc(50% - 20px); /* Half width section minus margins*/
+  }
+
+  .section-third {
+    flex-basis: calc(33.33% - 20px); /* One-third width section minus margins*/
+  }
+    
+ .section-two-third {
+    flex-basis: calc(66.66% - 20px); /* Two-third width section minus margins*/
   }
 
   h1, h2, h3 {
     color: white;
+    margin-top: 0; /* Remove default top margin for consistent spacing */
   }
 
   ul.show-list {
     padding-left: 20px;
   }
 
-  .show-section {
-    margin-bottom: 20px;
-  }
-
   .show-tips {
-    background-color: #a00000;
     border-left: 4px solid #630202;
-    padding: 10px 15px;
-    border-radius: 5px;
-  }
-
-  .show-tips h3 {
-    margin-top: 0;
   }
 
   .show-apply-links ul.show-link-list {
@@ -2067,11 +2087,10 @@ margin: 20px;
 
   .show-cta {
     text-align: center;
-    margin: 20px 0;
   }
 
   .show-cta button {
-    background-color: #630202; #0078D7;
+    background-color: #630202;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -2083,14 +2102,13 @@ margin: 20px;
   .show-cta button:hover {
     background-color: #dc6558;
   }
-  
+
   .show-ctas {
     text-align: center;
-    margin: 20px 0;
+    margin-top: 20px; /* Adjusted margin for consistent spacing*/
   }
 
   .show-ctas button {
-    z-index: 100000;
     background-color: #630202;
     color: #fff;
     border: none;
@@ -2112,23 +2130,21 @@ margin: 20px;
   .show-image-gallery {
     display: flex;
     gap: 15px;
-    margin: 20px 0;
     justify-content: center;
+      
   }
 
   .show-image-gallery img {
-    width: 30%;
+    width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 8px;
+      flex-basis: 0;
+      flex-grow: 1;
   }
 
   .show-studio-section {
-    background-color: #a00000;
-    padding: 15px;
-    border-radius: 8px;
     border-left: 4px solid #630202;
-    margin: 20px 0;
   }
 
   .show-studio-section a {
@@ -2140,57 +2156,7 @@ margin: 20px;
   .show-studio-section a:hover {
     text-decoration: underline;
   }
-</style>
-</head>
-<bodyhii>
-  <div class="show-container">
-    <h1 class="show-heading" style="text-align: center; font-size: 45px;">Apply for a Show</h1><br>
-    <p style="color: white; text-align: center; font: var(--medium_mono) !important;">Are you a student in Leeds? Want to get involved with the UK's best student radio? Why not apply to be on one of our shows! Choose from our range of existing core shows below or pitch an idea for your very own.</p><br>
-    <p style="color: white; text-align: center; font: var(--small_mono) !important;"><strong>Applications for semester 1 2024 open at 9am on Monday 23rd September 2024, and close at 2pm on Friday 27th September 2024.</strong></p><br>
-    <div class="show-image-gallery">
-      <img src="lsrtransmission-004.jpg" alt="Student Radio 1">
-      <img src="316c00_97fbd91f59754425949fd7a851336bf6~mv2.jpg.webp" alt="Student Radio 2">
-      <img src="Presenting_15.jpg" alt="Student Radio 3">
-    </div>
-<br>
-    <div class="show-section show-tips" style="color: white">
-      <h3>Here's some top tips and tricks when applying for a show...</h3><br>
-      <ul class="show-list" style="color: white; font: var(--small_mono) !important;">
-        <li><strong>Show us your personality:</strong> We want to know what you’re interested in and what you’d be like on the radio!</li><br>
-        <li><strong>Be original:</strong> Make yourself stand out and show us your best ideas!</li><br>
-        <li><strong>Be available:</strong> The more times you’re free the more likely you are to get a show!</li><br>
-        <li><strong>No one word answers:</strong> We want to see your passion and enthusiasm shine through. A few succinct sentences are perfect!</li><br>
-        <li><strong>Take your time:</strong> Applications are open for a week, so take the time to think about what you want to apply for, what you can feasibly commit to, and most importantly, why you want to be part of our society!</li>
-      </ul>
-    </div>
-<br>
-    <div class="show-apply-links-grid" id="apply-section">
-      <h2 style="font-size: 38px !important;">Apply for Core Music Shows</h2>
-      <div class="show-grid-container">
-        <a href="#">Live and Local</a>
-        <a href="#">Jazz, Funk and Soul</a>
-        <a href="#">Rock and Punk</a>
-        <a href="#">Afrobeat</a>
-        <a href="#">Folk and Country</a>
-        <a href="#">Indie and Alternative</a>
-        <a href="#">Hip Hop, Rap, and RnB</a>
-        <a href="#">Electronic</a>
-        <a href="#">Album Review</a>
-        <a href="#">International Hour</a>
-        <a href="#">Core Music LSR Podcast</a>
-      </div> <br>
-      <p class="show-insta-links" style="color: white; font: var(--small_mono) !important;">
-        *Find out more about our core music shows on Instagram: 
-        <a href="https://instagram.com/thisislsr_music" style="color: white">@thisislsr_music</a>
-      </p>
-    </div>
-    <div class="show-cta">
-      <button onclick="window.location.href='#apply-section'">Start Applying - Good Luck!</button>
-    </div>
- 
-<br><br>
-  <style>
-    .show-apply-links-grid {
+      .show-apply-links-grid {
       text-align: center;
       margin: 20px;
       color: white;
@@ -2221,17 +2187,77 @@ margin: 20px;
       width: 100%;
       text-align: center;
     }
-  </style>
+</style>
+<bodyhi>
+  <div class="show-container">
+    <div class="row">
+      <div class="section section-full">
+        <h1 class="show-heading" style="text-align: center; font-size: 45px;">Apply for a Show</h1><br>
+        <p style="color: white; text-align: center; font-family: var(--medium_mono) !important;">Are you a student in Leeds? Want to get involved with the UK's best student radio? Why not apply to be on one of our shows! Choose from our range of existing core shows below or pitch an idea for your very own.</p><br>
+        <p style="color: white; text-align: center; font-family: var(--small_mono) !important;"><strong>Applications for semester 1 2024 open at 9am on Monday 23rd September 2024, and close at 2pm on Friday 27th September 2024.</strong></p><br>
+      </div>
+    </div>
+      
+      <div class="row">
+          <div class="section section-full show-image-gallery">
+            <img src="lsrtransmission-004.jpg" alt="Student Radio 1">
+            <img src="316c00_97fbd91f59754425949fd7a851336bf6~mv2.jpg.webp" alt="Student Radio 2">
+            <img src="Presenting_15.jpg" alt="Student Radio 3">
+          </div>
+      </div>
 
-  <div class="show-studio-section" style="color: white">
-    <h2 style="text-align: center; font-size: 45px;">Book Studio 2</h2> <br>
-    <p style="text-align: center;">If you'd like to record your podcast or make use of our CDJs/Turntable, LSR's Studio 2 is available for our members to book out.</p> <br>
-    <p style="text-align: center;">Our booking system allows for 30-minute slots. If you require a full hour, ensure you make two consecutive bookings.</p> <br>
-    <div class="show-ctas"><button><a href="#">Make a Studio 2 booking here</a></div></button>
-    <p style="text-align: center; font: var(--small_mono) !important;"><em>PLEASE NOTE: You must have received training and be an LSR member to use our booking system.</em></p>
+    <div class="row">
+      <div class="section section-full show-tips" style="color: white">
+        <h3>Here's some top tips and tricks when applying for a show...</h3><br>
+        <ul class="show-list" style="color: white; font-family: var(--small_mono) !important;">
+          <li><strong>Show us your personality:</strong> We want to know what you’re interested in and what you’d be like on the radio!</li><br>
+          <li><strong>Be original:</strong> Make yourself stand out and show us your best ideas!</li><br>
+          <li><strong>Be available:</strong> The more times you’re free the more likely you are to get a show!</li><br>
+          <li><strong>No one word answers:</strong> We want to see your passion and enthusiasm shine through. A few succinct sentences are perfect!</li><br>
+          <li><strong>Take your time:</strong> Applications are open for a week, so take the time to think about what you want to apply for, what you can feasibly commit to, and most importantly, why you want to be part of our society!</li>
+        </ul>
+      </div>
+    </div>
 
-</div>
-</bodyhii>
+    <div class="row">
+        <div class="section section-two-third show-apply-links-grid" id="apply-section">
+            <h2 style="font-size: 38px !important;">Apply for Core Music Shows</h2>
+            <div class="show-grid-container">
+              <a href="#">Live and Local</a>
+              <a href="#">Jazz, Funk and Soul</a>
+              <a href="#">Rock and Punk</a>
+              <a href="#">Afrobeat</a>
+              <a href="#">Folk and Country</a>
+              <a href="#">Indie and Alternative</a>
+              <a href="#">Hip Hop, Rap, and RnB</a>
+              <a href="#">Electronic</a>
+              <a href="#">Album Review</a>
+              <a href="#">International Hour</a>
+              <a href="#">Core Music LSR Podcast</a>
+            </div> <br>
+            <p class="show-insta-links" style="color: white; font: var(--small_mono) !important;">
+              *Find out more about our core music shows on Instagram: 
+              <a href="https://instagram.com/thisislsr_music" style="color: white">@thisislsr_music</a>
+            </p>
+        </div>
+        <div class="section section-third">
+          <div class="show-cta">
+              <button onclick="window.location.href='#apply-section'">Start Applying - Good Luck!</button>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="section section-full show-studio-section" style="color: white">
+        <h2 style="text-align: center; font-size: 45px;">Book Studio 2</h2> <br>
+        <p style="text-align: center;">If you'd like to record your podcast or make use of our CDJs/Turntable, LSR's Studio 2 is available for our members to book out.</p> <br>
+        <p style="text-align: center;">Our booking system allows for 30-minute slots. If you require a full hour, ensure you make two consecutive bookings.</p> <br>
+        <div class="show-ctas"><button><a href="#">Make a Studio 2 booking here</a></button></div>
+        <p style="text-align: center; font: var(--small_mono) !important;"><em>PLEASE NOTE: You must have received training and be an LSR member to use our booking system.</em></p>
+      </div>
+    </div>
+  </div>
+</bodyhi>
 
 </div></div>
                
