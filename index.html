@@ -2016,6 +2016,7 @@ width: 90%;
     max-width: 100%;
    margin: 15px;
       margin-top: 10px;
+      margin-bottom: -10px;
     /* Remove background color and padding */
   }
 
@@ -2312,11 +2313,14 @@ width: 90%;
       width: 100%;
      
       margin: 20px auto;
+        margin-top: 0;
     }
 
     .su-row {
       display: flex;
-      margin-bottom: 20px;
+     margin-left: 20px;
+margin-right: 20px;
+margin-top: 10px;
       align-items: stretch;
       gap: 20px;
     }
@@ -2324,7 +2328,7 @@ width: 90%;
     /* About Section Styles */
     .su-about-section {
       display: flex;
-      gap: 20px;
+      gap: 10px;
       align-items: center;
       width: 100%;
     }
@@ -2332,6 +2336,10 @@ width: 90%;
     .su-about-left {
       flex: 0 0 30%; /* Fixed width: 30% */
       text-align: center;
+        background-color: rgb(149, 13, 13);
+padding: 20px;
+
+        border-radius: 10px;
     }
 
     .su-about-left img {
@@ -2350,6 +2358,13 @@ width: 90%;
 
     .su-about-right {
       flex: 0 0 70%; /* Fixed width: 70% */
+        background-color: rgb(149, 13, 13);
+padding: 20px;
+
+height: 100%;
+border-radius: 10px;
+/* justify-content: center; */
+text-align: center;
     }
 
     .su-about-right p {
@@ -2361,7 +2376,7 @@ width: 90%;
    .su-grid-section {
       display: flex;
       flex-wrap: wrap; /* Wrap items to the next line */
-      gap: 20px;
+      gap: 10px;
     }
 
     .su-grid-item {
@@ -2443,14 +2458,15 @@ width: 90%;
     <div class="su-row">
       <div class="su-about-section">
         <div class="su-about-left">
-          <h1>About Us</h1>
+        
           <img src="LSR Logo.png.webp" alt="LOGO">
         </div>
         <div class="su-about-right">
+            <h1 style="font-size: 35px; margin-bottom: 10px;">About Us</h1>
           <p>
             Leeds Student Radio is the only radio station in Leeds run by students, for students. We broadcast live from
             Leeds University Union every day during term time from 9am 'til late and students from ANY Leeds University are
-            welcome be on a show! Whatever you’re interested in, there’s a space here for you: presenting, producing,
+            welcome be on a show! <br>Whatever you’re interested in, there’s a space here for you: presenting, producing,
             DJing, design, tech, event management, marketing. The list goes on. And the best part is, no previous
             experience is required! We’ll help you find your place and provide you with the help and resources you need
             to kickstart your career or just have some fun. Our schedule ranges from arts, comedy and music to sport, film
