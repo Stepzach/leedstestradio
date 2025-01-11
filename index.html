@@ -1634,11 +1634,13 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
         </div>
         <div class="live-chat-section">
           <div class="custom-titles">
-            <div class="custom-title-right">
+            <div class="custom-title-right" id="live-chat-title">
               <h2>Live Chat:</h2>
             </div>
            </div>
-          {/* Live chat content will go here */}
+          <div class="live-chat-content-box">
+              {/* Live chat content will go here */}
+          </div>
         </div>
       </div>
     </div>
@@ -1675,10 +1677,14 @@ margin-right: auto;">
 
   .live-chat-section {
     width: 40%; 
-    border-radius: 10px;
-    background-color: rgb(149, 13, 13);
     display: flex;
     flex-direction: column;
+  }
+    
+  .live-chat-content-box{
+    border-radius: 10px;
+    background-color: rgb(149, 13, 13);
+    height: 100%;
   }
 
   .custom-titles {
@@ -1692,6 +1698,7 @@ margin-right: auto;">
     text-align: center;
     width: 100%;
   }
+ 
  .live-chat-section .custom-title-right {
       margin-top: 0px;
       
@@ -1738,11 +1745,11 @@ margin-right: auto;">
       width: 90%; 
     }
       
-  .live-chat-section .custom-titles{
+    .live-chat-section .custom-titles{
        margin-top: 20px;
       
-  }
-    .live-chat-section {
+    }
+    .live-chat-content-box {
       height: 350px; /* Adjust height as needed for mobile */
     }
   }
