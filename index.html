@@ -76,7 +76,7 @@ if ('mediaSession' in navigator) {
 
 
     
-    <meta name="theme-color" content="#a00000"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leeds Student Radio</title><script async="" src="https://www.clarity.ms/tag/j1xid1iq0r"></script><script>(function (c, l, a, r, i, t, y) {
+    <meta name="theme-color" content="rgb(149, 13, 13)"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leeds Student Radio</title><script async="" src="https://www.clarity.ms/tag/j1xid1iq0r"></script><script>(function (c, l, a, r, i, t, y) {
         c[a] =
           c[a] ||
           function () {
@@ -376,7 +376,7 @@ if ('mediaSession' in navigator) {
       top: 0;
       left: 0;
       right: 0;
-      background-color: #a00000;
+      background-color: rgb(149, 13, 13);
       justify-content: space-between; /* Ensure elements are spaced out */
       align-items: center;
       padding: 8px 20px;
@@ -531,22 +531,22 @@ if ('mediaSession' in navigator) {
 
   /* Custom background colors for each social icon */
   .fa-faceboo {
-    background: #a00000;;
+    background: rgb(149, 13, 13);;
     color: white; width: 70px !important;  height: 70px !important; 
   }
 
   .fa-instagra {
-    background: #a00000;; /* Instagram's signature color */
+    background: rgb(149, 13, 13);; /* Instagram's signature color */
     color: white; width: 70px !important;  height: 70px !important; 
   }
 
   .fa-tikto {
-    background: #a00000;; /* TikTok's signature color */
+    background: rgb(149, 13, 13);; /* TikTok's signature color */
     color: white; width: 70px !important;  height: 70px !important; 
   }
 
   .fa-twitte {
-    background: #a00000;; /* Twitter's signature color */
+    background: rgb(149, 13, 13);; /* Twitter's signature color */
     color: white; width: 70px !important;  height: 70px !important; 
   }
 
@@ -835,7 +835,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
             display: grid;
         }
         .mobile-day-header {
-            background-color: #a00000;
+            background-color: rgb(149, 13, 13);
             color: #fff;
             padding: 10px;
             margin-top: 20px;
@@ -1793,7 +1793,7 @@ margin-right: 20px;
 
     .listen-section,
     .live-chat-section {
-      width: 90%;
+      width: 100%;
     }
 
     .live-chat-section .custom-titles {
@@ -1847,7 +1847,7 @@ margin-right: 20px;
   }
 
   .platform-box {
-    background-color: #a00000;
+    background-color: rgb(149, 13, 13);
     border-radius: 8px;
     padding: 10px;
     text-align: center;
@@ -1857,7 +1857,7 @@ margin-right: 20px;
      }
     
   .platform-box2 {
-    background-color: #a00000;
+    background-color: rgb(149, 13, 13);
     border-radius: 8px;
     padding: 10px;
     text-align: center;
@@ -1868,7 +1868,7 @@ margin-right: 20px;
   }
   
   .stream-box {
-    background-color: #a00000;
+    background-color: rgb(149, 13, 13);
     border-radius: 8px;
     padding: 10px;
     text-align: center;
@@ -2027,7 +2027,7 @@ width: 90%;
   }
 
   .section {
-    background-color: #a00000;
+    background-color: rgb(149, 13, 13);
     border-radius: 10px;
     padding: 20px;
     margin: 0 5px;
@@ -2295,7 +2295,7 @@ width: 90%;
         <p style="text-align: center; font: var(--small_mono) !important;"><em>PLEASE NOTE: You must have received training and be an LSR member to use our booking system.</em></p>
       </div>
         <div class="section section-third" style="padding: 0; border-radius: 10px;">
-            <div class="show-studio-img">
+            <div class="show-studio-img" style="height: 100%;">
              <img src="Presenting_15.jpg" alt="Studio 2">
             </div>
         </div>
@@ -2309,21 +2309,28 @@ width: 90%;
   <style>
     /* Base styles for all screen sizes */
     .su-container {
-      width: 95%;
-      max-width: 1200px;
+      width: 100%;
+     
       margin: 20px auto;
     }
 
+    .su-row {
+      display: flex;
+      margin-bottom: 20px;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    /* About Section Styles */
     .su-about-section {
       display: flex;
       gap: 20px;
-      margin-bottom: 20px;
       align-items: center;
+      width: 100%;
     }
 
     .su-about-left {
-      flex: 0 0 auto; /* Prevents the left side from growing */
-      width: 300px; /* Fixed width based on image size */
+      flex: 0 0 30%; /* Fixed width: 30% */
       text-align: center;
     }
 
@@ -2342,7 +2349,7 @@ width: 90%;
     }
 
     .su-about-right {
-      flex: 1 1 auto; /* Allow the right side to grow and shrink */
+      flex: 0 0 70%; /* Fixed width: 70% */
     }
 
     .su-about-right p {
@@ -2350,9 +2357,10 @@ width: 90%;
       line-height: 1.6;
     }
 
-    .su-grid-section {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    /* Grid Section Styles */
+   .su-grid-section {
+      display: flex;
+      flex-wrap: wrap; /* Wrap items to the next line */
       gap: 20px;
     }
 
@@ -2364,6 +2372,8 @@ width: 90%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      flex: 1 1 calc(25% - 20px); /* Each item takes up approximately 25% of the width minus the gap */
+      min-width: 200px; /* Minimum width of the grid item */
     }
 
     .su-grid-item h3 {
@@ -2392,134 +2402,150 @@ width: 90%;
       justify-content: center;
     }
 
-    /* Styles for mobile devices (screen width under 700px) */
-    @media screen and (max-width: 700px) {
+    /* Media Queries for Responsive Behavior */
+    @media screen and (max-width: 768px) {
+      .su-row {
+          flex-direction: column;
+          gap: 0; /* Adjust row to stack vertically */
+      }
+
       .su-about-section {
-        flex-direction: column;
-        text-align: center;
-      }
-      .su-about-left{
-        width: 100%;
+          flex-direction: column; /* Stack vertically */
+          align-items: stretch; /* Stretch to full width */
       }
 
+      .su-about-left,
       .su-about-right {
-        margin-top: 20px; /* Add space above text when stacked */
+          flex: 0 0 100%; /* Full width on smaller screens */
+          margin-bottom: 20px; /* Add space between stacked elements */
       }
+    }
+      
+   @media screen and (max-width: 792px) {
 
-      .su-grid-section {
-        grid-template-columns: 1fr; /* Single column layout */
+      .su-grid-item {
+        flex: 1 1 calc(50% - 20px); /* Each item takes up approximately 50% of the width minus the gap */
       }
-      .su-grid-item p{
-        min-height: 0px; /* Consistent description height */
+      .su-grid-section{
+         justify-content: center; /* Center items when they don't fill the row */
+      }
+   }
+
+    @media screen and (max-width: 500px) {
+      .su-grid-item {
+          flex: 1 1 100%; /* Each item takes up 100% width */
       }
     }
   </style>
 
   <div class="su-container">
     <!-- About Section -->
-    <div class="su-about-section">
-      <div class="su-about-left">
-        <h1>About Us</h1>
-        <img src="LSR Logo.png.webp" alt="LOGO">
-      </div>
-      <div class="su-about-right">
-        <p>
-          Leeds Student Radio is the only radio station in Leeds run by students, for students. We broadcast live from
-          Leeds University Union every day during term time from 9am 'til late and students from ANY Leeds University are
-          welcome be on a show! Whatever you’re interested in, there’s a space here for you: presenting, producing,
-          DJing, design, tech, event management, marketing. The list goes on. And the best part is, no previous
-          experience is required! We’ll help you find your place and provide you with the help and resources you need
-          to kickstart your career or just have some fun. Our schedule ranges from arts, comedy and music to sport, film
-          and politics so no matter what you’re interested in, we’ll help you get it on-air (we even have shows about
-          Taylor Swift and Eurovision... so anything goes!)
-        </p>
+    <div class="su-row">
+      <div class="su-about-section">
+        <div class="su-about-left">
+          <h1>About Us</h1>
+          <img src="LSR Logo.png.webp" alt="LOGO">
+        </div>
+        <div class="su-about-right">
+          <p>
+            Leeds Student Radio is the only radio station in Leeds run by students, for students. We broadcast live from
+            Leeds University Union every day during term time from 9am 'til late and students from ANY Leeds University are
+            welcome be on a show! Whatever you’re interested in, there’s a space here for you: presenting, producing,
+            DJing, design, tech, event management, marketing. The list goes on. And the best part is, no previous
+            experience is required! We’ll help you find your place and provide you with the help and resources you need
+            to kickstart your career or just have some fun. Our schedule ranges from arts, comedy and music to sport, film
+            and politics so no matter what you’re interested in, we’ll help you get it on-air (we even have shows about
+            Taylor Swift and Eurovision... so anything goes!)
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- Grid Section -->
-    <div class="su-grid-section">
-      <!-- Grid Item 1 -->
-      <div class="su-grid-item">
-        <h3>Head of Marketing</h3>
-        <img src="316c00_f94fec6fbefb4d47aef6441c3d43af74~mv2.png.webp" alt="Event Management">
-        <p>Alex acts as LSR's treasurer, contact her regarding sponsorhips and fundraising.</p>
-      </div>
+    <div class="su-row">
+      <div class="su-grid-section">
+        <!-- Grid Item 1 -->
+        <div class="su-grid-item">
+          <h3>Head of Marketing</h3>
+          <img src="316c00_f94fec6fbefb4d47aef6441c3d43af74~mv2.png.webp" alt="Event Management">
+          <p>Alex acts as LSR's treasurer, contact her regarding sponsorhips and fundraising.</p>
+        </div>
 
-      <!-- Grid Item 2 -->
-      <div class="su-grid-item">
-        <h3>Duputy Station Manager</h3>
-        <img src="316c00_641091c525ec48a9b3547eeff3174a2f~mv2.png.webp" alt="Sports Club">
-        <p>Millie organises our socials and hosts 'Wellbeing Wednesday' in the LSR studios every week.</p>
-      </div>
+        <!-- Grid Item 2 -->
+        <div class="su-grid-item">
+          <h3>Duputy Station Manager</h3>
+          <img src="316c00_641091c525ec48a9b3547eeff3174a2f~mv2.png.webp" alt="Sports Club">
+          <p>Millie organises our socials and hosts 'Wellbeing Wednesday' in the LSR studios every week.</p>
+        </div>
 
-      <!-- Grid Item 3 -->
-      <div class="su-grid-item">
-        <h3>Programme Controller</h3>
-        <img src="316c00_0b1678ae9f7441c58bf08b07aee38475~mv2.png.webp">
-        <p>Sophie is in charge of our schedule and coming up with unique ideas for outside broadcasting.</p>
-      </div>
+        <!-- Grid Item 3 -->
+        <div class="su-grid-item">
+          <h3>Programme Controller</h3>
+          <img src="316c00_0b1678ae9f7441c58bf08b07aee38475~mv2.png.webp" alt="Image of person">
+          <p>Sophie is in charge of our schedule and coming up with unique ideas for outside broadcasting.</p>
+        </div>
 
-      <!-- Grid Item 4 -->
-      <div class="su-grid-item">
-        <h3>Head of News</h3>
-        <img src="316c00_fbf02c80f8d84513aa7bfdb2195625fe~mv2.png.webp" alt="Academic Support">
-        <p>AYou can contact Jenna or Ria regarding news-based content or programming at news@thisislsr.com.</p>
-      </div>
+        <!-- Grid Item 4 -->
+        <div class="su-grid-item">
+          <h3>Head of News</h3>
+          <img src="316c00_fbf02c80f8d84513aa7bfdb2195625fe~mv2.png.webp" alt="Academic Support">
+          <p>AYou can contact Jenna or Ria regarding news-based content or programming at news@thisislsr.com.</p>
+        </div>
 
-      <!-- Grid Item 5 -->
-      <div class="su-grid-item">
-        <h3>Head of Hometime</h3>
-        <img src="316c00_9798ec6b97c8405c8f572ee5995efb12~mv2.png.webp" alt="Student Council">
-        <p>Carys manages our Hometime team (every weekday 5-7pm), soundtracking your commute home from uni with
-          uplifting conversation and fun segments.</p>
-      </div>
+        <!-- Grid Item 5 -->
+        <div class="su-grid-item">
+          <h3>Head of Hometime</h3>
+          <img src="316c00_9798ec6b97c8405c8f572ee5995efb12~mv2.png.webp" alt="Student Council">
+          <p>Carys manages our Hometime team (every weekday 5-7pm), soundtracking your commute home from uni with
+            uplifting conversation and fun segments.</p>
+        </div>
 
-      <!-- Grid Item 6 -->
-      <div class="su-grid-item">
-        <h3>Head of Online</h3>
-        <img src="316c00_ae16481e2ba74c45ad7e93269e29211f~mv2.png.webp" alt="Creative Arts">
-        <p>Molly and Harry are in charge of LSR's online branding. Including this very website, and our Instagram page
-          (@thisislsr).</p>
-      </div>
+        <!-- Grid Item 6 -->
+        <div class="su-grid-item">
+          <h3>Head of Online</h3>
+          <img src="316c00_ae16481e2ba74c45ad7e93269e29211f~mv2.png.webp" alt="Creative Arts">
+          <p>Molly and Harry are in charge of LSR's online branding. Including this very website, and our Instagram page
+            (@thisislsr).</p>
+        </div>
 
-      <!-- Grid Item 7 -->
-      <div class="su-grid-item">
-        <h3>Head of Music</h3>
-        <img src="316c00_6ce347b81ab54599b5f35fcce0f0f66c~mv2.png.webp" alt="Health and Wellness">
-        <p>???</p>
-      </div>
+        <!-- Grid Item 7 -->
+        <div class="su-grid-item">
+          <h3>Head of Music</h3>
+          <img src="316c00_6ce347b81ab54599b5f35fcce0f0f66c~mv2.png.webp" alt="Health and Wellness">
+          <p>???</p>
+        </div>
 
-      <!-- Grid Item 8 -->
-      <div class="su-grid-item">
-        <h3>Head of Music</h3>
-        <img src="316c00_73c2b84bca1345f38bb74867af30922f~mv2.png.webp" alt="Career Development">
-        <p>???</p>
-      </div>
+        <!-- Grid Item 8 -->
+        <div class="su-grid-item">
+          <h3>Head of Music</h3>
+          <img src="316c00_73c2b84bca1345f38bb74867af30922f~mv2.png.webp" alt="Career Development">
+          <p>???</p>
+        </div>
 
-      <!-- Grid Item 9 -->
-      <div class="su-grid-item">
-        <h3>Lead Technician</h3>
-        <img src="316c00_6240682da80542f995199661c7070254~mv2.png.webp" alt="Volunteer Opportunities">
-        <p>???</p>
-      </div>
-      <div class="su-grid-item">
-        <h3>Head of Podcasting</h3>
-        <img src="316c00_8bdd1365ac474f53a2811753e9751e37~mv2.png.webp" alt="New Image 1">
-        <p>???</p>
-      </div>
-      <div class="su-grid-item">
-        <h3>Head of Breakfast</h3>
-        <img src="316c00_d0eb223c13984fce8b60c1ee5425967e~mv2.png.webp" alt="New Image 2">
-        <p>???</p>
-      </div>
-      <div class="su-grid-item">
-        <h3>Evening Editor</h3>
-        <img src="316c00_2ae9608a78ac466ca9166e868c2fb3dd~mv2.png.webp" alt="New Image 3">
-        <p>???</p>
+        <!-- Grid Item 9 -->
+        <div class="su-grid-item">
+          <h3>Lead Technician</h3>
+          <img src="316c00_6240682da80542f995199661c7070254~mv2.png.webp" alt="Volunteer Opportunities">
+          <p>???</p>
+        </div>
+        <div class="su-grid-item">
+          <h3>Head of Podcasting</h3>
+          <img src="316c00_8bdd1365ac474f53a2811753e9751e37~mv2.png.webp" alt="New Image 1">
+          <p>???</p>
+        </div>
+        <div class="su-grid-item">
+          <h3>Head of Breakfast</h3>
+          <img src="316c00_d0eb223c13984fce8b60c1ee5425967e~mv2.png.webp" alt="New Image 2">
+          <p>???</p>
+        </div>
+        <div class="su-grid-item">
+          <h3>Evening Editor</h3>
+          <img src="316c00_2ae9608a78ac466ca9166e868c2fb3dd~mv2.png.webp" alt="New Image 3">
+          <p>???</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
                
 <div id="Contact" class="content" style="background-color: rgb(255, 151, 0); margin: 20px;
@@ -3026,7 +3052,7 @@ bodyoo {
 .side-box1 {
     padding: 20px;
     text-align: center;
-         background-color: #a00000;
+         background-color: rgb(149, 13, 13);
     color: white;
     border-radius: 8px;
     min-width: 200px;
@@ -3039,7 +3065,7 @@ bodyoo {
     padding-right: 20px;
     padding-bottom: 20px;
     text-align: center;
-         background-color: #a00000;
+         background-color: rgb(149, 13, 13);
     color: white;
     border-radius: 8px;
     min-width: 200px;
