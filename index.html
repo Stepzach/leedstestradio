@@ -2393,7 +2393,7 @@ text-align: center;
         transition: background-color 0.3s ease; /* Add a smooth transition */
     }
      .su-grid-item:hover {
-  background-color: rgb(13, 149, 149); /* Complementary purple */
+  background-color: rgb(158, 0, 133); /* Complementary purple */
 }
 
     .su-grid-item h3 {
@@ -2569,75 +2569,45 @@ text-align: center;
   </div>
 </div>
                
-<div id="Contact" class="content" style="background-color: rgb(255, 151, 0); margin: 20px;
-border: black;
-border-radius: 10px; margin-top: 9px;">
+<div id="Contact" class="content" style=" margin: 20px; margin-top: 9px;">
 
   <title>Contact Us</title>
   <style>
-    bodaa {
-     
+    bodyu {
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      
       color: white;
     }
 
     .lsr-contact-wrapper {
-        width: 80%;
       display: flex;
       max-width: 1200px;
-      margin: 40px auto;
-      gap: 20px;
-      padding: 20px;
+      margin: 20px; 
+      gap: 10px;
     }
 
     .lsr-map-container {
       flex: 1;
       border-radius: 10px;
       overflow: hidden;
-     
+      width: 50%;
+   
     }
-      /* Hide content on larger screens */
-  @media screen and (max-width: 600px) {
-    .lsr-map-container {
-      display: none;
-    }
-}
-     .lsr-map-container2 {
-      flex: 1;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-left: auto;
-         margin-right: auto;
-         width: 80%;
-     
-    }
-     /* Hide content on larger screens */
-  @media screen and (min-width: 600px) {
-    .lsr-map-container2 {
-      display: none;
-    }
-}
+
     .lsr-map-container iframe {
       width: 100%;
-      height: 100%;
+      height: 400px;
       border: none;
-    }
-
-     .lsr-map-container2 iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+      
     }
 
     .lsr-contact-info {
       flex: 1;
-      
       border-radius: 10px;
-     
       padding: 20px;
+      width: 50%;
+         background-color:rgb(149, 13, 13);
     }
 
     .lsr-contact-info h1 {
@@ -2660,23 +2630,31 @@ border-radius: 10px; margin-top: 9px;">
     .lsr-contact-info a:hover {
       text-decoration: underline;
     }
+    
+    /* Mobile Styles */
+    @media screen and (max-width: 600px) {
+      .lsr-contact-wrapper {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 20px;
+      }
+ 
+      .lsr-map-container,
+      .lsr-contact-info {
+        width: 100%; /* Full width on mobile */
+      }
+      
+      .lsr-map-container iframe{
+          height: 250px;
+      }
+    }
   </style>
-</head>
-<bodaa>
+
+<bodyu>
   <div class="lsr-contact-wrapper">
-    <!-- Apple Maps Embed -->
+    <!-- Google Maps Embed -->
     <div class="lsr-map-container">
-   <iframe 
-  src="https://www.google.com/maps?q=Leeds+University+Union,+Lifton+Place,+LS2+9JZ&hl=en&z=17&output=embed" 
-  width="600" 
-  height="450" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy">
-</iframe>
-
-
-
+      <iframe src="https://www.google.com/maps?q=Leeds+University+Union,+Lifton+Place,+LS2+9JZ&hl=en&z=17&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" data-gtm-yt-inspected-6="true">
+      </iframe>
     </div>
 
     <!-- Contact Information -->
@@ -2687,13 +2665,10 @@ border-radius: 10px; margin-top: 9px;">
       <p>DM us on Instagram: <a href="https://instagram.com/thisislsr" target="_blank">@thisislsr</a></p>
       <p>Phone: 0113 380 1278 <br><span style=" font-size: var(--small_mono); color: white;">Office hours Mon-Fri 9-5</span></p>
     </div>
-      <br> 
-    
   </div>
-   
-</bodaa>
- 
+</bodyu>
 </div>
+ 
 
 <div data-v-41749928="" class="footer-boxes"><div data-v-41749928="" class="footer-box"><div data-v-41749928="" class="description a-hover a-grey" style="color: #fff">Brought to you by our sponsor: The Careers Service: Discover, develop and decide your future with appointments, events and vacancies.<br><a class="hover-effect" href="https://mycareer.leeds.ac.uk/unauth" target="_blank" style="color: #fff; margin-left: -9px;"><u>Find out more</u></a></u></div></div><div data-v-41749928="" class="footer-box-middle"><a data-v-41749928="" href="https://engage.luu.org.uk/groups/VFG/leeds-student-radio/memberships" target="_blank" class="hover-effect" style="color: #fff"><span data-v-41749928="">Membership</span></a><a data-v-41749928="" href="https://engage.luu.org.uk/groups/VFG/leeds-student-radio/events" class=""><span data-v-41749928="" class="hover-effect" style="color: #fff">Events</span></a><a data-v-41749928="" href="/djs" class="" to="/djs"><span data-v-41749928="" class="hover-effect" style="color: #fff">DJs</span></a><a data-v-41749928=""  href="" rel="noopener" class=""><span data-v-41749928=""  class="hover-effect" style="color: #fff">Shop</span></a></div><div data-v-41749928="" class="footer-box-middle"><div data-v-41749928=""><a data-v-41749928="" href="https://open.spotify.com/show/36MV4v6eQjy2dOlDTezLoA?si=be44a1986d7448bd&nd=1&dlsi=51cc85551eb3439f" target="_blank" class="hover-effect" style="color: #fff">Spotify</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://soundcloud.com/thisislsr" target="_blank" class="hover-effect" style="color: #fff">SoundCloud</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://www.youtube.com/@lsrfm" target="_blank" class="hover-effect" style="color: #fff">Youtube</a></div></div><div data-v-41749928="" class="footer-box"><div data-v-41749928="" class="link-list"><div data-v-41749928=""><a data-v-41749928="" href="https://www.instagram.com/thisislsr/" target="_blank" class="hover-effect" style="color: #fff">Instagram</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://www.facebook.com/thisislsr" target="_blank" class="hover-effect" style="color: #fff">Facebook</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://www.tiktok.com/@thisislsr" target="_blank" class="hover-effect" style="color: #fff">TikTok</a></div><div data-v-41749928=""><a data-v-41749928="" href="https://twitter.com/thisislsr" target="_blank" class="hover-effect" style="color: #fff">X (Twitter)</a></div><div data-v-41749928=""></div></div></div></div>
  <script>
