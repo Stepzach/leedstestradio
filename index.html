@@ -1213,14 +1213,65 @@ document.querySelectorAll('.audio-button').forEach(button => {
   }
 </style>
         </div>
+<style>
+/* Basic styling for the container */
+.container-ACH {
+  display: flex; /* Use flexbox for easy side-by-side layout */
+  width: 100%;   /* Make the container take up full width */
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
 
-<div id="Schedule" class="content" style="background-color: rgb(149, 13, 13); margin: 20px; border-radius: 10px; padding: 20px; margin-top:0px;"> 
+/* Styling for the individual boxes */
+#box-ACH-1, #box-ACH-2 {
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 50%;             /* Each box takes up 50% of the container's width */
+  padding: 20px;          /* Add some padding inside the boxes */
+  border-radius: 10px;
+  background-color: red;
+}
+
+#box-ACH-1{
+  margin-right: 2.5px;
+}
+#box-ACH-2{
+  margin-left: 2.5px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) { /* Adjust the breakpoint (768px) as needed */
+  .container-ACH {
+    flex-direction: column; /* Stack boxes vertically on smaller screens */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #box-ACH-1, #box-ACH-2 {
+    width: 100%;            /* Each box takes up full width on smaller screens */
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  #box-ACH-1{
+    margin-bottom: 5px;
+  }
+}
+</style>
+<div class="container-ACH">
+  <div id="box-ACH-1">
+   
+    <h2 style="font-size: 50px !important;">Weekly Schedule: Semester 1 2024</h2>
+  </div>
+  <div id="box-ACH-2">
+   
+    <p>Our core shows are listed in colour, and the rest are our members' own shows!</p>
+  </div>
+</div>
+<div id="Schedule" class="content" style="background-color: rgb(149, 13, 13); margin: 20px; border-radius: 10px; padding: 20px; margin-top:0px; margin-bottom: 5px;"> 
 
     <div class="brformobile"> <br> <br> </div>
-    <h1 style="text-align: center; color: #fff; font-size:35px; width:100%; margin-right: auto; margin-left: auto;">Weekly Schedule: Semester 1 2024<br></h1>
+   
      <div class="brformobile"> <br> </div>
-<h2 style="text-align: center; color: #fff;">
-Our core shows are listed in colour, and the rest are our members' own shows! </h2>
 
     <div class="mobile-schedule">
         <div class="mobile-schedule-grid">
@@ -1585,11 +1636,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
     <div class="custom-container">
       <div class="content-wrapper">
         <div class="listen-section">
-          <div class="custom-titles">
-            <div class="custom-title-left">
-              <h2>Listen Live:</h2>
-            </div>
-          </div>
+         
           <div class="custom-box-container">
             <div class="custom-box" style="background-color:rgb(255, 151, 0);">
               <div class="custom-subtitle" style="color: black;">LSR Stream</div>
@@ -1616,11 +1663,7 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
               </div>
             </div>
           </div>
-           <div class="custom-titles" style="margin-top: 20px;">
-            <div class="custom-title-right">
-              <h2>Listen Back:</h2>
-            </div>
-          </div>
+          
           <div class="custom-box-container">
             <div class="custom-box">
               <div class="custom-subtitle">SoundCloud</div>
@@ -1640,12 +1683,8 @@ Our core shows are listed in colour, and the rest are our members' own shows! </
             </div>
         </div>
         </div>
-        <div class="live-chat-section" style="margin-right: 20px; margin-left: -20px;">
-          <div class="custom-titles">
-            <div class="custom-title-right" id="live-chat-title">
-              <h2 style="margin-bottom: 19px;">Live Chat:</h2>
-            </div>
-           </div>
+        <div class="live-chat-section" style="margin: 5px; margin-right: 20px; margin-left: -20px;">
+        
           <div class="live-chat-content-box">
                <iframe src="livechat.html" frameborder="0" height="650px" width="100% " style="height: 46.5vw;"></iframe>
           </div>
@@ -1717,7 +1756,10 @@ margin-right: auto;">
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 15px;  
+   margin: 5px;
+margin-left: 15px;
+      margin-top: 0px;
+      margin-bottom: 0px;
   }
 
   .custom-box {
