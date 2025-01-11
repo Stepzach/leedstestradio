@@ -1639,7 +1639,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
     <div class="custom-container">
       <div class="content-wrapper">
         <div class="listen-section">
-         
+
           <div class="custom-box-container">
             <div class="custom-box" style="background-color:rgb(255, 151, 0);">
               <div class="custom-subtitle" style="color: black;">LSR Stream</div>
@@ -1666,7 +1666,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
               </div>
             </div>
           </div>
-          
+
           <div class="custom-box-container">
             <div class="custom-box">
               <div class="custom-subtitle">SoundCloud</div>
@@ -1684,31 +1684,27 @@ document.querySelectorAll('.audio-button').forEach(button => {
                 </button>
               </div>
             </div>
-        </div>
-             <broski>
-    <div class="bruhbruh" style="width: auto; justify-content: center; align-items: center; display: flex; /* margin-left: auto; */ /* margin-right: auto; */ margin-left: 20px; margin-top: 5px; margin-right: 10px; background-color: rgb(221, 221, 221); padding: 8px; border-radius: 10px;">
-      <h2 style="/* text-align: center; */ color: #000; font-size: var(--small_mono); font: var(--small_mono);">
-        DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides students with the tools to learn
-        journalistic practices as they go. Leeds University Union (LUU) is not liable for opinions or views expressed
-        in this broadcast, which are also not necessarily reflective of LSR or LUU as whole organisations. Please do
-        not take opinions expressed in the following broadcasts as fact, and always use external, reputable media
-        sources to supplement discussions of current affairs on LSR. Enjoy the show. </h2>
-    </div>
-  </broski>
-        </div>
-        <div class="live-chat-section" style="margin: 5px; margin-right: 20px; margin-left: -20px;">
-        
-          <div class="live-chat-content-box">
-               <iframe src="livechat.html" frameborder="0" height="650px" width="100% " style="height: 46.5vw;"></iframe>
           </div>
+          <broski>
+            <div class="bruhbruh" style="width: auto; justify-content: center; align-items: center; display: flex; /* margin-left: auto; */ /* margin-right: auto; */ margin-left: 20px; margin-top: 5px; margin-right: 10px; background-color: rgb(221, 221, 221); padding: 8px; border-radius: 10px;">
+              <h2 style="/* text-align: center; */ color: #000; font-size: var(--small_mono); font: var(--small_mono);">
+                DISCLAIMER: As a student media group, Leeds Student Radio (LSR) provides students with the tools to learn
+                journalistic practices as they go. Leeds University Union (LUU) is not liable for opinions or views expressed
+                in this broadcast, which are also not necessarily reflective of LSR or LUU as whole organisations. Please do
+                not take opinions expressed in the following broadcasts as fact, and always use external, reputable media
+                sources to supplement discussions of current affairs on LSR. Enjoy the show. </h2>
+            </div>
+          </broski>
+        </div>
+        <div class="live-chat-section">
+          <div class="live-chat-content-box">
+            </div>
         </div>
       </div>
     </div>
-     
   </div>
-
- 
 </div>
+
 <style>
   .custom-container {
     width: 100%;
@@ -1719,30 +1715,29 @@ document.querySelectorAll('.audio-button').forEach(button => {
     display: flex;
     width: 100%;
     gap: 20px;
-    align-items: flex-start; /* Align items to the start (top) */
+    align-items: stretch; /* Make items stretch to full height */
   }
 
   .listen-section {
-    width: 60%; 
+    width: 60%;
   }
 
   .live-chat-section {
-    width: 40%; 
+    width: 40%;
     display: flex;
     flex-direction: column;
-      
-  }
     
-  .live-chat-content-box{
+  }
+
+  .live-chat-content-box {
     border-radius: 10px;
     background-color: rgb(149, 13, 13);
-    height: 100%;
+    flex-grow: 1; /* Allow the box to grow and fill available space */
   }
 
   .custom-titles {
     display: flex;
     justify-content: space-around;
-    
   }
 
   .custom-title-left,
@@ -1750,20 +1745,19 @@ document.querySelectorAll('.audio-button').forEach(button => {
     text-align: center;
     width: 100%;
   }
- 
- .live-chat-section .custom-title-right {
-      margin-top: 0px;
-      
+
+  .live-chat-section .custom-title-right {
+    margin-top: 0px;
   }
 
   .custom-box-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-   margin: 5px;
-margin-left: 15px;
-      margin-top: 0px;
-      margin-bottom: 0px;
+    margin: 5px;
+    margin-left: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .custom-box {
@@ -1797,16 +1791,13 @@ margin-left: 15px;
 
     .listen-section,
     .live-chat-section {
-      width: 90%; 
+      width: 90%;
     }
-      
-    .live-chat-section .custom-titles{
-       margin-top: 20px;
-      
+
+    .live-chat-section .custom-titles {
+      margin-top: 20px;
     }
-    .live-chat-content-box {
-      height: 350px; /* Adjust height as needed for mobile */
-    }
+  
   }
 
   @media (max-width: 700px) {
