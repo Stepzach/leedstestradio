@@ -2188,14 +2188,13 @@ margin: 20px;
 
 </div></div>
                
-<div class="content" id="About" style="margin: 20px; width: 100%;">
-
+<div class="content" id="About">
   <style>
     /* Base styles for all screen sizes */
     .su-container {
       width: 95%;
-      max-width: 1200px; /* Prevent content from stretching too wide on large screens*/
-      margin: 20px auto; /* Center the container with 20px top/bottom margin */
+      max-width: 1200px;
+      margin: 20px auto;
     }
 
     .su-about-section {
@@ -2206,32 +2205,32 @@ margin: 20px;
     }
 
     .su-about-left {
-      flex: 1;
-      text-align: center; /* Center the logo */
+      flex: 0 0 auto; /* Prevents the left side from growing */
+      width: 300px; /* Fixed width based on image size */
+      text-align: center;
     }
 
     .su-about-left img {
-      max-width: 300px; /* Limit logo size*/
+      max-width: 100%;
       height: auto;
-      display: block;  /* Makes image take up its line to prevent text wrapping around it */
-      margin: 0 auto; /* Center the logo horizontally */
+      display: block;
+      margin: 0 auto;
     }
 
     .su-about-left h1 {
-      font-size: 2.5rem; /* Larger font size for heading */
-      margin-bottom: 1rem; /* Add some space below the heading */
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
       color: white;
       text-align: center;
     }
 
     .su-about-right {
-      flex: 2;
-      margin-left: 20px; /* Add space between logo and text */
+      flex: 1 1 auto; /* Allow the right side to grow and shrink */
     }
 
     .su-about-right p {
       color: white;
-      line-height: 1.6; /* Improve readability */
+      line-height: 1.6;
     }
 
     .su-grid-section {
@@ -2254,7 +2253,7 @@ margin: 20px;
       font-size: 1.25rem;
       color: white;
       margin-bottom: 0.5rem;
-      min-height: 3rem; /* Consistent title height */
+      min-height: 3rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2270,29 +2269,31 @@ margin: 20px;
     .su-grid-item p {
       font-size: 0.875rem;
       color: white;
-      min-height: 4rem; /* Consistent description height */
+      min-height: 4rem;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    /* Styles for mobile devices (screen width under 600px) */
-    @media screen and (max-width: 600px) {
+    /* Styles for mobile devices (screen width under 700px) */
+    @media screen and (max-width: 700px) {
       .su-about-section {
-        flex-direction: column; /* Stack logo and text vertically */
-        text-align: center; /* Center align text */
+        flex-direction: column;
+        text-align: center;
       }
-
-      .su-about-left img {
-        margin-bottom: 1rem; /* Add space between logo and text */
+      .su-about-left{
+        width: 100%;
       }
 
       .su-about-right {
-        margin-left: 0; /* Remove margin when stacked */
+        margin-top: 20px; /* Add space above text when stacked */
       }
 
       .su-grid-section {
         grid-template-columns: 1fr; /* Single column layout */
+      }
+      .su-grid-item p{
+        min-height: 0px; /* Consistent description height */
       }
     }
   </style>
