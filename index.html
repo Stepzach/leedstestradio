@@ -2004,58 +2004,66 @@ width: 90%;
 
                
 <div class="content" id="GetInvolved">
-    <br><br>
-    <title>Apply for a Show</title>
-<style>
+   <style>
   bodyhi {
     margin: 0;
     padding: 0;
     color: white;
-  
+   
   }
 
   .show-container {
     max-width: 100%;
-    margin: 0 20px; /* Left and right margin of 20px */
-    padding: 20px;
-    background: #b80000;
+    margin: 0 20px; 
+    /* Remove background color and padding */
   }
 
   .row {
     width: 100%;
     display: flex;
-    margin-bottom: 20px; /* Add spacing between rows */
+    margin-bottom: 20px; 
+    align-items: stretch; /* Make sections in a row the same height */
   }
 
   .section {
     background-color: #a00000;
     border-radius: 10px;
     padding: 20px;
-    margin: 0 10px; /* 10px margin between sections */
-    flex-grow: 1; /* Allow sections to grow to fill the row */
+    margin: 0 10px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    
   }
 
   /* Specific section width adjustments */
   .section-full {
-    flex-basis: calc(100% - 20px); /* Full width section minus margins*/
-    
+    flex-basis: calc(100% - 20px); 
   }
 
   .section-half {
-    flex-basis: calc(50% - 20px); /* Half width section minus margins*/
+    flex-basis: calc(50% - 20px); 
   }
 
   .section-third {
-    flex-basis: calc(33.33% - 20px); /* One-third width section minus margins*/
+    flex-basis: calc(33.33% - 20px); 
   }
     
  .section-two-third {
-    flex-basis: calc(66.66% - 20px); /* Two-third width section minus margins*/
+    flex-basis: calc(66.66% - 20px); 
+  }
+    
+  .section-40 {
+    flex-basis: calc(40% - 20px); 
+  }
+
+  .section-60 {
+    flex-basis: calc(60% - 20px); 
   }
 
   h1, h2, h3 {
     color: white;
-    margin-top: 0; /* Remove default top margin for consistent spacing */
+    margin-top: 0; 
   }
 
   ul.show-list {
@@ -2105,7 +2113,7 @@ width: 90%;
 
   .show-ctas {
     text-align: center;
-    margin-top: 20px; /* Adjusted margin for consistent spacing*/
+    margin-top: 20px; 
   }
 
   .show-ctas button {
@@ -2127,20 +2135,28 @@ width: 90%;
     color: light-grey;
   }
 
-  .show-image-gallery {
+ .show-image-gallery {
     display: flex;
     gap: 15px;
-    justify-content: center;
+    justify-content: space-between; /* Distribute images evenly */
+     
       
   }
+ .show-image-gallery-container{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+    align-items: center;
+       flex-basis: 0;
+    flex-grow: 1;
+      height: auto;
+ }
 
   .show-image-gallery img {
     width: 100%;
-    height: 250px;
+    max-height: 250px; /* Prevent images from being too tall */
     object-fit: cover;
     border-radius: 8px;
-      flex-basis: 0;
-      flex-grow: 1;
   }
 
   .show-studio-section {
@@ -2156,7 +2172,7 @@ width: 90%;
   .show-studio-section a:hover {
     text-decoration: underline;
   }
-      .show-apply-links-grid {
+    .show-apply-links-grid {
       text-align: center;
       margin: 20px;
       color: white;
@@ -2187,22 +2203,43 @@ width: 90%;
       width: 100%;
       text-align: center;
     }
+.show-studio-img {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 </style>
 <bodyhi>
   <div class="show-container">
     <div class="row">
-      <div class="section section-full">
-        <h1 class="show-heading" style="text-align: center; font-size: 45px;">Apply for a Show</h1><br>
+          <div class="section section-40">
+            <h1 class="show-heading" style="text-align: center; font-size: 45px;">Apply for a Show</h1>
+          </div>
+        
+      <div class="section section-60">
+        
         <p style="color: white; text-align: center; font-family: var(--medium_mono) !important;">Are you a student in Leeds? Want to get involved with the UK's best student radio? Why not apply to be on one of our shows! Choose from our range of existing core shows below or pitch an idea for your very own.</p><br>
         <p style="color: white; text-align: center; font-family: var(--small_mono) !important;"><strong>Applications for semester 1 2024 open at 9am on Monday 23rd September 2024, and close at 2pm on Friday 27th September 2024.</strong></p><br>
       </div>
     </div>
       
       <div class="row">
-          <div class="section section-full show-image-gallery">
-            <img src="lsrtransmission-004.jpg" alt="Student Radio 1">
-            <img src="316c00_97fbd91f59754425949fd7a851336bf6~mv2.jpg.webp" alt="Student Radio 2">
-            <img src="Presenting_15.jpg" alt="Student Radio 3">
+          <div class="section section-third show-image-gallery-container">
+            <div class="show-image-gallery">
+              <img src="lsrtransmission-004.jpg" alt="Student Radio 1">
+            </div>
+          </div>
+          <div class="section section-third show-image-gallery-container">
+            <div class="show-image-gallery">
+               <img src="316c00_97fbd91f59754425949fd7a851336bf6~mv2.jpg.webp" alt="Student Radio 2">
+            </div>
+          </div>
+           <div class="section section-third show-image-gallery-container">
+            <div class="show-image-gallery">
+               <img src="Presenting_15.jpg" alt="Student Radio 3">
+            </div>
           </div>
       </div>
 
@@ -2248,13 +2285,18 @@ width: 90%;
     </div>
 
     <div class="row">
-      <div class="section section-full show-studio-section" style="color: white">
+      <div class="section section-two-third show-studio-section" style="color: white">
         <h2 style="text-align: center; font-size: 45px;">Book Studio 2</h2> <br>
         <p style="text-align: center;">If you'd like to record your podcast or make use of our CDJs/Turntable, LSR's Studio 2 is available for our members to book out.</p> <br>
         <p style="text-align: center;">Our booking system allows for 30-minute slots. If you require a full hour, ensure you make two consecutive bookings.</p> <br>
         <div class="show-ctas"><button><a href="#">Make a Studio 2 booking here</a></button></div>
         <p style="text-align: center; font: var(--small_mono) !important;"><em>PLEASE NOTE: You must have received training and be an LSR member to use our booking system.</em></p>
       </div>
+        <div class="section section-third">
+            <div class="show-studio-img">
+             <img src="leeds-student-radio-desk.jpg" alt="Studio 2">
+            </div>
+        </div>
     </div>
   </div>
 </bodyhi>
