@@ -142,35 +142,45 @@ if ('mediaSession' in navigator) {
  </style>       
 
 <div class="header-mobile">
-  <div class="audio-container">
-    <audio class="livestream" preload="none"
-         title="Leeds Student Radio"
-          data-artwork="ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg">
+  <div data-v-2210cc27="" data-v-2a330032="" class="BarStream" style="background-color: rgb(255, 151, 0); padding-bottom: 5px; margin-bottom: 6px;  height: 40px;border-bottom-width: solid 6px black; border-radius: 10px; width: 90%; margin-left: auto; margin-right: auto;"><div data-v-2210cc27="" class="status hover"> 
+             <div class="audio-container" style="padding-left: 5px; margin-top: 5px;"><button data-v-2210cc27=""><span data-v-2210cc27="" class="icon-player-play">
+    <!-- Audio Element -->
+   
+    <audio class="livestream" preload="none">
         <source src="https://streamer.radio.co/s986435880/listen.m3u" type="audio/mpeg">
         Your browser does not support the audio element.
-         
     </audio>
 
-    <button class="audio-button large-play-button" style="margin-left: 5px;">
-       <svg class="play-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <!-- Play/Pause Button -->
+    </span></button><button class="audio-button" style="margin-left: 0px; font-size: 32px; margin-bottom: 5px;">
+    <svg class="play-icon icon" xmlns="http://www.w3.org/2000/svg" stroke="black" style="fill: black; /* width: 32px; */ /* height: 32px; */" viewbox="0 0 24 24">
         <path d="M8 5v14l11-7z"></path>
     </svg>
-    <svg class="pause-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <svg class="pause-icon icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="black" style="fill: black; display: none;">
         <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
     </svg>
-    <svg class="spinner-icon icon large-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="31.4">
-         <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="1s" fill="freeze"></animate>
+    <svg class="spinner-icon icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="31.4">
+          <animate attributeName="stroke-dashoffset" from="31.4" to="0" dur="1s" fill="freeze"></animate>
         </circle>
     </svg>
-        <span style="color: #fff;"></span>
-    </button>
+    <span class="" style="color: black;">Tune In: <span id="live-now-text2">Sounds Of The Sahara</span></span>
+</button>
+
+<div class="title">
+   <div data-v-d239eb30="" data-v-2210cc27="" class="MarqueeConditional">
+        <div class="inner" style="position: relative; font-size: 25px;">
+            <div style="color: black; margin-left: 20px; ">    Up Next: <span id="up-next-text2">SOCIETY SPOTLIGHT</span></div>
+            
+               </div>
+        </div>
+    </div>
   </div>
 
+<div class="spacer"></div></div></div>
+
   <!-- Logo in the Center -->
-  <div class="header-logo"><div class="header" data-page="welcome">
-    <img src="IMG_4467.png" alt="Logo" class="logo-img">
-  </div>
+  <div class="header-logo">
   </div>
 
   <!-- Right-side Menu Button (only visible on smaller screens) -->
@@ -183,7 +193,7 @@ if ('mediaSession' in navigator) {
     </button>
 </div>
 
-<div id="dropdown-menufull" class="dropdown-menufull">
+<div id="dropdown-menufull" class="dropdown-menufull" style="display: none;">
 <!-- Dropdown Menu (Initially hidden) -->
 <div id="dropdown-menu" class="dropdown-menu">
   <div class="header" data-page="page1"><a href="#schedule">Schedule</a></div>
@@ -199,18 +209,18 @@ if ('mediaSession' in navigator) {
 <div class="livenowmenu">
     <div class="live-nowbop">
         <div class="circleopp green-circler" style="width: 20px !important; height: 20px !important;"></div>
-       <span style="margin-right: 10%;"><u>Live now:</u> <br><span id="live-now-text">Loading...</span></span>
+       <span style="margin-right: 10%;"><u>Live now:</u> <br><span id="live-now-text">Sounds Of The Sahara</span></span>
     </div>
     <div class="up-next">
        
-        <span style="margin-left: calc(29px + 10%); margin-right: 10%;"><u>Up Next:</u> <br><span id="up-next-text">Loading...</span></span>
+        <span style="margin-left: calc(29px + 10%); margin-right: 10%;"><u>Up Next:</u> <br><span id="up-next-text">SOCIETY SPOTLIGHT</span></span>
     </div>
   
 </div>
-  <a href="https://www.instagram.com/thisislsr/" target="_blank" class="fa-instagra"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg></a>
-  <a href="https://www.facebook.com/thisislsr" target="_blank" class="fa fa-faceboo"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg></a>
-  <a href="https://www.tiktok.com/@thisislsr" target="_blank" class="fa-brands fa-tikto" style="margin-top: 1px;"><svg xmlns="http://www.w3.org/2000/svg" width="25px" height="30px" viewBox="0 0 448 512"><path fill="currentColor" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121 121 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"/></svg></a>
-  <a href="https://x.com/thisislsr" target="_blank" class="fa fa-twitte"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" viewBox="0 0 14 14"><g fill="none"><g clip-path="url(#primeTwitter0)"><path fill="currentColor" d="M11.025.656h2.147L8.482 6.03L14 13.344H9.68L6.294 8.909l-3.87 4.435H.275l5.016-5.75L0 .657h4.43L7.486 4.71zm-.755 11.4h1.19L3.78 1.877H2.504z"/></g><defs><clipPath id="primeTwitter0"><path fill="#fff" d="M0 0h14v14H0z"/></clipPath></defs></g></svg></a>
+  <a href="https://www.instagram.com/thisislsr/" target="_blank" class="fa-instagra"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"></path></svg></a>
+  <a href="https://www.facebook.com/thisislsr" target="_blank" class="fa fa-faceboo"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"></path></svg></a>
+  <a href="https://www.tiktok.com/@thisislsr" target="_blank" class="fa-brands fa-tikto" style="margin-top: 1px;"><svg xmlns="http://www.w3.org/2000/svg" width="25px" height="30px" viewBox="0 0 448 512"><path fill="currentColor" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121 121 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"></path></svg></a>
+  <a href="https://x.com/thisislsr" target="_blank" class="fa fa-twitte"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" viewBox="0 0 14 14"><g fill="none"><g clip-path="url(#primeTwitter0)"><path fill="currentColor" d="M11.025.656h2.147L8.482 6.03L14 13.344H9.68L6.294 8.909l-3.87 4.435H.275l5.016-5.75L0 .657h4.43L7.486 4.71zm-.755 11.4h1.19L3.78 1.877H2.504z"></path></g><defs><clipPath id="primeTwitter0"><path fill="#fff" d="M0 0h14v14H0z"></path></clipPath></defs></g></svg></a>
 
 </div>
 </div>
@@ -281,8 +291,8 @@ if ('mediaSession' in navigator) {
 
 <!-- CSS -->
 
-        <style>
-
+      
+<style>
         @media (max-width: 987px) {
   .sakagoat {
     display: none;
@@ -554,8 +564,7 @@ if ('mediaSession' in navigator) {
       background-color: #9b0a0a;
     }
   }
-</style>
-       
+    </style>
         <script>
  
 document.getElementById('menu-toggle').addEventListener('click', function (e) {
