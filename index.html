@@ -36,6 +36,12 @@ if ('mediaSession' in navigator) {
     display: none !important;
   }
 }
+@media (min-width: 919px) { /* Changed to max-width */
+ .w3-hide-large
+   {
+    display: none !important;
+  }
+}
  @font-face {
       font-family: 'AdieuLightSS';
       src: url('https://stepzach.github.io//leedstestradio/Adieu-Light.75979a4f.woff2') format('woff2');
@@ -890,7 +896,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
             <p class="text001">Officially the UK's Best Student Radio 2024</p>
         </div>
     </div>
-                   <div class="carousel-container">
+                   <div class="carousel-container w3-hide-large">
     <div class="carousel-track" style="transform: translateX(0px);">
         <div class="carousel-slide">
             <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 1">
