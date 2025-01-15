@@ -30,16 +30,17 @@ if ('mediaSession' in navigator) {
 <style>
 
 @media (max-width: 919px) { /* Changed to max-width */
-  .custom-embed-container,
- .right-section,
- .left-section,
+ .custom-embed-container,
+ .container .right-section,
+ .container .left-section,
 
-  .right-section,
+  
   .section.section-40, /* Added '.' to make it select class name */
   .section.section-60, /* Added '.' to make it select class name */
   .show-studio-img,
- .AHHHhidepls,
-  .sponsor-section, /* Removed indentation to match the syntax of a CSS selector list*/ 
+  .section.section-third .show-studio-img,
+
+ .container .sponsor-section, /* Removed indentation to match the syntax of a CSS selector list*/ 
    {
     display: none !important;
   }
