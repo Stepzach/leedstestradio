@@ -29,9 +29,19 @@ if ('mediaSession' in navigator) {
 </script>
 <style>
 
- @media (min-width: 920px)
-.custom-embed-container {
-display: none;
+@media (max-width: 919px) { /* Changed to max-width */
+  .custom-embed-container,
+ 
+    .left-section,
+ 
+    .right-section,
+  .section.section-40, /* Added '.' to make it select class name */
+  .section.section-60, /* Added '.' to make it select class name */
+  .show-studio-img,
+  .show-studio-img .sponsor-section /* Removed indentation to match the syntax of a CSS selector list*/ 
+   {
+    display: none;
+  }
 }
  @font-face {
       font-family: 'AdieuLightSS';
