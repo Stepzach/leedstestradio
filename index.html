@@ -889,7 +889,67 @@ document.querySelectorAll('.audio-button').forEach(button => {
   </style>
            <body>
                <div id="home" class="welcome">
+   <div class="container123">
+        <div class="image_container456">
+            <img src="placeholder.png" alt="Square Image" class="square_image789">
+        </div>
+        <div class="text_container012">
+            <p class="text001">Officially the UK's Best Student Radio 2024</p>
+        </div>
+    </div>
+    <style>
+   .container123 {
+    display: flex;
+    align-items: stretch; /* Changed from center to stretch */
+    width: 100%;
+}
 
+.image_container456 {
+    width: 70%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square_image789 {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.text_container012 {
+    width: 30%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    background-color: rgb(149, 13, 13);
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    border-radius: 10px;
+    margin-left:3px;
+    color: white;
+    
+}
+
+.text001 {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0; /* Added padding removal*/
+}
+
+/* Hide on screens larger than 919px */
+@media (min-width: 920px) {
+    .container123,
+    .image_container456,
+    .text_container012,
+    .square_image789,
+    .text001
+    {
+        display: none;
+    }
+}
+}</style>
 <div class=""> <div id="Home">
   <div class="container">
     <div class="left-section">
