@@ -1182,36 +1182,35 @@ border-radius: 10px;
     }
 </style>
 
-<script>
+
+ <script>
   const carouselInputs = document.querySelectorAll('.carousel-open');
   let currentSlide = 0;
-  let intervalId;
+  let autoSlideTimeout;
 
   function nextSlide() {
     currentSlide = (currentSlide + 1) % carouselInputs.length;
     carouselInputs[currentSlide].checked = true;
+    startAutoSlide(); // Schedule the next slide after a delay
   }
 
   function startAutoSlide() {
-    intervalId = setInterval(nextSlide, 8000); // 8000 milliseconds = 8 seconds
+    clearTimeout(autoSlideTimeout); // Clear any existing timeout
+    autoSlideTimeout = setTimeout(nextSlide, 8000); // Schedule next slide after 8 seconds
   }
 
   function stopAutoSlide() {
-    clearInterval(intervalId);
+    clearTimeout(autoSlideTimeout); // Clear the timeout if manual navigation occurs
   }
 
-  //Start autosliding on page load
-  startAutoSlide();
 
-  //Pause autosliding when user interacts with the carousel.
-  const controls = document.querySelectorAll('.carousel-control');
-  controls.forEach(control => control.addEventListener('click', stopAutoSlide));
-  controls.forEach(control => control.addEventListener('click', () => setTimeout(startAutoSlide, 8000))); //Restart after click
+  const interactiveElements = [...document.querySelectorAll('.carousel-control'), ...document.querySelectorAll('.carousel-bullet')];
+  interactiveElements.forEach(element => element.addEventListener('click', stopAutoSlide));
 
 
-  const bullets = document.querySelectorAll('.carousel-bullet');
-  bullets.forEach(bullet => bullet.addEventListener('click', stopAutoSlide));
-  bullets.forEach(bullet => bullet.addEventListener('click', () => setTimeout(startAutoSlide, 8000))); //Restart after bullet click
+  startAutoSlide(); // Start the automatic slideshow initially
+
+
 </script>
     </div>
 
@@ -1778,6 +1777,16 @@ border-radius: 10px;
 
 
 <div class="desktop-contain" id="Listen">
+    <div class="container-ACH" style="padding-left: 5px; padding-right: 5px; margin-top: 5px; margin-bottom: 5px;">
+  <div id="box-ACH-1">
+   
+    <h2 style="font-size: 40px !important;">Listen live or Listen back!</h2>
+  </div>
+  <div id="box-ACH-2">
+   
+    <p>Idk what to put here</p>
+  </div>
+</div>
   <div class="layout-container">
     <div class="custom-container">
       <div class="content-wrapper">
@@ -1931,7 +1940,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="live-chat-section">
         <div class="live-chat-content-box" style="position: relative; padding: 10px;">
-<div style="position: absolute; top: 0; left: 0; width: 96%; margin: 11px; height: 50px; background-color: white; border-radius: 10px;"></div><script src="https://minnit.chat/js/embed.js" defer=""></script><minnit-chat data-chatname="https://organizations.minnit.chat/674680946386011/Main?embed&amp;nickname=" data-style="width:100%;height:100%; border-radius: 10px;" style="border-radius: 10px;"><iframe src="https://organizations.minnit.chat/674680946386011/Main?embed&amp;embed&amp;nickname=&amp;nec=3781988" data-nec="3781988" style="border:none;width:100%;height:100%;" class="minnit-chat-iframe" allowtransparency="true" data-gtm-yt-inspected-6="true"></iframe></minnit-chat>  <!-- Overlay -->
+<script src="https://minnit.chat/js/embed.js" defer=""></script><minnit-chat data-chatname="https://organizations.minnit.chat/674680946386011/Main?embed&amp;nickname=" data-style="width:100%;height:100%; border-radius: 10px;" style="border-radius: 10px;"><iframe src="https://organizations.minnit.chat/674680946386011/Main?embed&amp;embed&amp;nickname=&amp;nec=3781988" data-nec="3781988" style="border:none;width:100%;height:100%;" class="minnit-chat-iframe" allowtransparency="true" data-gtm-yt-inspected-6="true"></iframe></minnit-chat>  <!-- Overlay -->
               <style>
 
 
