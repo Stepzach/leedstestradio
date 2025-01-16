@@ -967,7 +967,7 @@ padding: 5px;
 }
 }</style>
                    
- <div class="carousel-container w3-hide-small" style="margin: 5px; margin-top: 71px;">
+<div class="carousel-container w3-hide-small" style="margin: 5px; margin-top: 71px;">
     <div class="carousel">
         <div class="carousel-inner">
             <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
@@ -1001,11 +1001,12 @@ padding: 5px;
             </ol>
         </div>
     </div>
-   
+
     <div class="carousel-overlay-text">
         Officially the UK's best student radio 2024!
     </div>
 </div>
+
 <style>
 
 
@@ -1182,57 +1183,35 @@ border-radius: 10px;
 </style>
 
 <script>
-    const track = document.querySelector('.carousel-track');
-    const slides = document.querySelectorAll('.carousel-slide');
-    let slideWidth;
-    let currentSlide = 0;
-    const intervalTime = 9000;
-    let slideInterval; // Declare slideInterval in the outer scope
+  const carouselInputs = document.querySelectorAll('.carousel-open');
+  let currentSlide = 0;
+  let intervalId;
 
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateCarousel();
-    }
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % carouselInputs.length;
+    carouselInputs[currentSlide].checked = true;
+  }
 
-    function updateCarousel() {
-        const offset = -slideWidth * currentSlide;
-        track.style.transform = `translateX(${offset}px)`;
+  function startAutoSlide() {
+    intervalId = setInterval(nextSlide, 8000); // 8000 milliseconds = 8 seconds
+  }
 
-        if (currentSlide === slides.length - 1) {
-            setTimeout(() => {
-                track.style.transition = 'none';
-                currentSlide = 0;
-                track.style.transform = `translateX(0)`;
-                setTimeout(() => {
-                    track.style.transition = 'transform 0.5s ease-in-out';
-                }, 10);
-            }, 500);
-        }
-    }
+  function stopAutoSlide() {
+    clearInterval(intervalId);
+  }
 
-    // Calculate slideWidth and start the carousel after the window has fully loaded
-    window.addEventListener('load', () => {
-        slideWidth = slides[0].offsetWidth;
-        updateCarousel(); // Initial alignment
+  //Start autosliding on page load
+  startAutoSlide();
 
-        // Start the interval immediately after initial setup
-        slideInterval = setInterval(nextSlide, intervalTime);
-    });
+  //Pause autosliding when user interacts with the carousel.
+  const controls = document.querySelectorAll('.carousel-control');
+  controls.forEach(control => control.addEventListener('click', stopAutoSlide));
+  controls.forEach(control => control.addEventListener('click', () => setTimeout(startAutoSlide, 8000))); //Restart after click
 
-    // Pause on hover (optional)
-    function handleHover() {
-        clearInterval(slideInterval);
-        slideInterval = null; // Reset the interval variable
-    }
 
-    function handleMouseOut() {
-        if (!slideInterval) { // Only start a new interval if one isn't already running
-            slideInterval = setInterval(nextSlide, intervalTime);
-        }
-    }
-
-    track.addEventListener('mouseover', handleHover);
-    track.addEventListener('mouseout', handleMouseOut);
+  const bullets = document.querySelectorAll('.carousel-bullet');
+  bullets.forEach(bullet => bullet.addEventListener('click', stopAutoSlide));
+  bullets.forEach(bullet => bullet.addEventListener('click', () => setTimeout(startAutoSlide, 8000))); //Restart after bullet click
 </script>
     </div>
 
