@@ -1820,20 +1820,85 @@ border-radius: 10px;
 </style>
 <div class="custom-box">
   <div class="custom-subtitle">LSR Stream</div>
-  <img class="spinning-image" src="LSR Logo.png.webp" alt="LSR Logo">
+  <img class="spinning-image" src="LSR Logo.png.webp" alt="LSR Logo" data-audio="https://streamer.radio.co/s986435880/listen.m3u">
 </div>
-            <div class="custom-box">
-              <div class="custom-subtitle">Alternate Stream</div>
-              <div class="audio-player-container2">
-                <button id="playPauseButton2">
-                  <i class="fas fa-play"></i>
-                </button>
-                <audio id="livestream2" preload="none">
-                  <source src="https://s2.radio.co/seb5cdba5b/listen" type="audio/mpeg">
-                  Your browser does not support the audio element.
-                </audio>
-              </div>
-            </div>
+<div class="custom-box">
+  <div class="custom-subtitle">Alternate Stream</div>
+  <img class="spinning-image" src="LSR Logo.png.webp" alt="LSR Logo" data-audio="https://s2.radio.co/seb5cdba5b/listen">
+</div>
+
+<style>
+.custom-box {
+  width: 200px; /* Adjust as needed */
+  margin: 10px; /* Adjust as needed */
+  display: inline-block; /* Display boxes side-by-side */
+  text-align: center; /* Center the logo */
+}
+
+.custom-subtitle {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.spinning-image {
+  width: 80%;
+  background-color: black;
+  border-radius: 50%;
+  animation: none; /* Initially, no animation */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const spinningImages = document.querySelectorAll('.spinning-image');
+
+  spinningImages.forEach(image => {
+    let audio = null; //Keep track of the audio element
+
+    image.addEventListener('click', () => {
+      const audioUrl = image.dataset.audio;
+
+      if (!audio) {
+        audio = new Audio(audioUrl);
+        audio.onerror = () => {
+          console.error("Audio loading error:", audioUrl);
+          alert("There was an error loading the audio stream. Please try again later."); // Give User Feedback.
+        };
+      }
+
+
+      if (image.classList.contains('playing')) {
+        image.classList.remove('playing');
+        image.style.animation = 'none';
+        //Crucially: Stop the Audio playback. Add a timeout for the browser to properly stop playback, and also test for null state of the Audio Object.
+          if (audio){
+            audio.pause();
+          }
+          setTimeout(() => { // Allows a short delay for the browser to finalize audio pausing (important)
+                if (audio && !audio.paused) {
+                    audio.pause();
+                  }
+           }, 100);
+
+      } else {
+        image.classList.add('playing');
+        image.style.animation = 'rotate 10s linear infinite';
+        audio.play(); //Initiates Audio. 
+
+      }
+    });
+  });
+});
+</script>
           </div>
 
           <div class="custom-box-container">
