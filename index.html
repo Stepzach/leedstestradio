@@ -3170,90 +3170,107 @@ text-align: center;
 
 
 </style>
-<div class="grid-containerw w3-hide-large">
 
+<style>
+.expandable-container {
+ width: 95%;
+border: 2px solid #000;
+margin-bottom: -1px;
+margin-left: auto;
+margin-right: auto;
+border-radius: 10px;
+}
 
-  <div class="grid-itemw">
-    <div class="flipperw">
-      <div class="frontw">
-       <img src="316c00_f94fec6fbefb4d47aef6441c3d43af74~mv2.png.webp" alt="Event Management">
-      </div>
-      <div class="backw">
-        <h3>Head of Marketing</h3>
-        <p>Alex acts as LSR's treasurer, contact her regarding sponsorhips and fundraising.</p>
-      </div>
-    </div>
-  </div>
- <div class="grid-itemw">
-    <div class="flipperw">
-      <div class="frontw">
-        <img src="316c00_641091c525ec48a9b3547eeff3174a2f~mv2.png.webp" alt="Sports Club">
-      </div>
-      <div class="backw">
-        <h3>Programme Controller</h3>
-        <p>Sophie is in charge of our schedule and coming up with unique ideas for outside broadcasting.</p>
-      </div>
-    </div>
-  </div>
-   <div class="grid-itemw">
-    <div class="flipperw">
-      <div class="frontw">
-       <img src="316c00_0b1678ae9f7441c58bf08b07aee38475~mv2.png.webp" alt="Image of person">
-      </div>
-      <div class="backw">
-        <h3>Head of News</h3>
-        <p>AYou can contact Jenna or Ria regarding news-based content or programming at news@thisislsr.com</p>
-      </div>
-    </div>
-  </div>
-   <div class="grid-itemw">
-    <div class="flipperw">
-      <div class="frontw">
-     <img src="316c00_fbf02c80f8d84513aa7bfdb2195625fe~mv2.png.webp" alt="Academic Support">
-      </div>
-      <div class="backw">
-        <h3>Head of Hometime</h3>
-        <p>Carys manages our Hometime team (every weekday 5-7pm), soundtracking your commute home from uni with uplifting conversation and fun segments.</p>
-      </div>
-    </div>
-  </div>
-   <div class="grid-itemw">
-    <div class="flipperw">
-      <div class="frontw">
-       <img src="316c00_9798ec6b97c8405c8f572ee5995efb12~mv2.png.webp" alt="Student Council">
-      </div>
-      <div class="backw">
-        <h3>Head of Online</h3>
-        <p>Molly and Harry are in charge of LSR's online branding. Including this very website, and our Instagram page (@thisislsr).</p>
-      </div>
-    </div>
-  </div>
-   <div class="grid-itemw">
-    <div class="flipperw">
-      <div class="frontw">
-        <img src="316c00_ae16481e2ba74c45ad7e93269e29211f~mv2.png.webp" alt="Creative Arts">
-      </div>
-      <div class="backw">
-        <h3>Head of Music</h3>
-        <p>placeholder text.</p>
-      </div>
-    </div>
-  </div>
-   <div class="grid-itemw">
-    <div class="flipperw">
-      <div class="frontw">
-       <img src="316c00_6ce347b81ab54599b5f35fcce0f0f66c~mv2.png.webp" alt="Health and Wellness">
-      </div>
-      <div class="backw">
-        <h3>Head of Marketing</h3>
-        <p>Alex acts as LSR's treasurer, contact her regarding sponsorhips and fundraising.</p>
-      </div>
-    </div>
-  </div>
+.expandable-header {
+  padding: 8px;
+text-align: left;
+cursor: pointer;
+/* border-bottom: 1px solid #ddd; */
+background-color: wheat;
+border-radius: 9px;
 
+}
 
+.expandable-icon {
+  float: right;
+}
 
+.expandable-content {
+  display: none;
+  padding: 8px;
+  text-align: center;
+   border-bottom: 1px solid #ddd; /* Bottom border for content*/
+}
+
+.expandable-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+</style>
+
+<div class="expandable-container">
+  <div class="expandable-header">Alex: Head of Marketing <span class="expandable-icon">▼</span></div>
+  <div class="expandable-content">
+    <img src="316c00_f94fec6fbefb4d47aef6441c3d43af74~mv2.png.webp" alt="Image 1">
+    <p>Alex acts as LSR's treasurer, contact her regarding sponsorhips and fundraising.</p>
+  </div>
 </div>
+
+<div class="expandable-container">
+  <div class="expandable-header">Sofie: Programme Controller <span class="expandable-icon">▼</span></div>
+  <div class="expandable-content">
+    <img src="316c00_641091c525ec48a9b3547eeff3174a2f~mv2.png.webp" alt="Image 2">
+    <p>Sophie is in charge of our schedule and coming up with unique ideas for outside broadcasting.</p>
+  </div>
+</div>
+
+<div class="expandable-container">
+  <div class="expandable-header">Jenna & Ria: Head of News <span class="expandable-icon">▼</span></div>
+  <div class="expandable-content">
+    <img src="316c00_0b1678ae9f7441c58bf08b07aee38475~mv2.png.webp" alt="Image 3">
+    <p>You can contact Jenna or Ria regarding news-based content or programming at news@thisislsr.com</p>
+  </div>
+</div>
+
+<div class="expandable-container">
+  <div class="expandable-header">Carys: Head of Hometime <span class="expandable-icon">▼</span></div>
+  <div class="expandable-content">
+    <img src="316c00_fbf02c80f8d84513aa7bfdb2195625fe~mv2.png.webp" alt="Image 3">
+    <p>Carys manages our Hometime team (every weekday 5-7pm), soundtracking your commute home from uni with uplifting conversation and fun segments.</p>
+  </div>
+</div>
+
+<div class="expandable-container">
+  <div class="expandable-header">Molly & Harry: Head of Online <span class="expandable-icon">▼</span></div>
+  <div class="expandable-content">
+    <img src="316c00_9798ec6b97c8405c8f572ee5995efb12~mv2.png.webp" alt="Image 3">
+    <p>Molly and Harry are in charge of LSR's online branding. Including this very website, and our Instagram page (@thisislsr)</p>
+  </div>
+</div>
+
+
+
+<script>
+  const containers = document.querySelectorAll('.expandable-container');
+
+  containers.forEach(container => {
+    const header = container.querySelector('.expandable-header');
+    const content = container.querySelector('.expandable-content');
+    const icon = container.querySelector('.expandable-icon');
+
+    header.addEventListener('click', () => {
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        icon.innerHTML = '▲';
+      } else {
+        content.style.display = 'none';
+        icon.innerHTML = '▼';
+      }
+    });
+  });
+</script>
 
 
       
