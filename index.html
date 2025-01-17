@@ -2970,15 +2970,18 @@ text-align: center;
   perspective: 1000px; /* For 3D flipping */
   cursor: pointer;
  border-radius:10px;
+      /* Crucial:  Set aspect ratio to maintain square or desired proportions */
+  aspect-ratio: 1 / 1; /* Example: 1/1 for square, 4/3, 16/9, etc. */
+  overflow: hidden; /* Hide overflowing image content */
 }
 
 .flipperw {
   width: 100%;
-  height: 300px; /* Fixed height or adjust as needed */
+   height: 100%;  
   position: relative;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-    background-color: red;
+    background-color: rgb(149, 13, 13);
      border-radius:10px;
 }
 
@@ -2997,6 +3000,7 @@ text-align: center;
   padding: 5px;
   box-sizing: border-box; /* Include padding in width/height */
    border-radius:10px;
+      overflow: hidden; /* Prevents image from exceeding container bounds */
  
   
 }
@@ -3008,7 +3012,7 @@ text-align: center;
 }
 
 .backw {
-   background-color: red;
+   background-color: rgb(149, 13, 13);
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column; /* Align text content vertically */
@@ -3020,15 +3024,14 @@ text-align: center;
 }
 
 .frontw img {
-    max-width: calc(100% - 10px);  /* Account for 5px padding on both sides */
-    max-height: calc(100% - 10px);
+   display: block; /* Prevents a small gap below the image */
+  max-width: 100%; 
+  max-height: 100%;
+  width: auto; /* Allow image to scale naturally */
+  height: auto;
+  object-fit: cover; /* OR contain, depending on your desired behavior */
 }
-/* Responsive Images */
-@media (max-width: 768px) { /* Example breakpoint */
-.grid-itemw img {
-    max-width: 100%;  /* Ensures images always fit smaller screens */
-}
-}
+
 
 
 </style>
