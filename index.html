@@ -832,9 +832,10 @@ document.querySelectorAll('.audio-button').forEach(button => {
       
         .mobile-schedule {
             display: none;
-            width: 90%;
-          margin-left: auto;
-          margin-right: auto;
+          /* width: 90%; */
+margin-left: 5px;
+margin-right: 5px;
+border-radius: 10px;
         }
         .mobile-schedule-grid {
             display: grid;
@@ -1430,7 +1431,7 @@ border-radius: 10px;
 
 
                
-<div id="Schedule" class="content" style="background-color: rgb(149, 13, 13); margin: 5px; border-radius: 10px; padding-top: 10px; padding-bottom: 20px; margin-top:0px; margin-bottom: 5px;"> 
+<div id="Schedule" class="content" style="border-radius: 10px; padding-top: 5px; padding-bottom: 20px; margin-top:0px; margin-bottom: 5px;"> 
 
   
    
@@ -1442,36 +1443,47 @@ border-radius: 10px;
    
    
     display: none; /* Initially hidden */
-   
+  
   }
 
   .mobile-schedule-grid {
     display: none; /* Hide all day grids initially */
+       background-color: wheat;
   }
   .mobile-schedule-grid.active {
       display: block;
+      background-color: wheat;
   }
 
   .day-tabs {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 10px;
+   display: flex;
+/* justify-content: space-around; */
+padding-bottom: 5px;
+padding-top: 5px;
+padding: 5px;
+background-color: rgb(149, 13, 13);
+border-radius: 10px;
+      margin-bottom:5px;
+/* width: 100%; */
     
   }
 
   .day-tab {
-    background-color: #ccc;
-    padding: 5px;
-    cursor: pointer;
-   width:100%;
-   margin:2px;
-    border-radius: 5px;
-    text-align: center;
+  background-color: wheat;
+padding-top: 3px;
+      padding-bottom: 3px;
+cursor: pointer;
+width: 100%;
+margin: 1px;
+border-radius: 5px;
+text-align: center;
+border: solid 2px black;
   }
 
   .day-tab.active {
     background-color: black;
     color: #fff;
+    border: solid 2px black;
   }
 
   .mobile-day-header {
