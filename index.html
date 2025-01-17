@@ -2871,7 +2871,7 @@ text-align: center;
     </div>
 
     <!-- Grid Section -->
-    <div class="su-row" style="margin-right: 5px;">
+    <div class="su-row w3-hide-small" style="margin-right: 5px;">
       <div class="su-grid-section">
         <!-- Grid Item 1 -->
         <div class="su-grid-item">
@@ -2954,6 +2954,171 @@ text-align: center;
         </div>
       </div>
     </div>
+
+<style>
+.grid-containerw {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 5px;
+  padding: 5px;
+}
+
+.grid-itemw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px; /* For 3D flipping */
+  cursor: pointer;
+ border-radius:10px;
+}
+
+.flipperw {
+  width: 100%;
+  height: 300px; /* Fixed height or adjust as needed */
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+    background-color: red;
+     border-radius:10px;
+}
+
+.grid-itemw:hover .flipperw{
+     transform: rotateY(180deg);
+     
+}
+
+
+
+.frontw, .backw {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide back face during flip */
+  padding: 5px;
+  box-sizing: border-box; /* Include padding in width/height */
+   border-radius:10px;
+ 
+  
+}
+
+.frontw {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.backw {
+   background-color: red;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column; /* Align text content vertically */
+  justify-content: center;
+  align-items: center; /* Center text horizontally */
+  text-align: center;
+  color:white;
+  
+}
+
+.frontw img {
+    max-width: calc(100% - 10px);  /* Account for 5px padding on both sides */
+    max-height: calc(100% - 10px);
+}
+/* Responsive Images */
+@media (max-width: 768px) { /* Example breakpoint */
+.grid-itemw img {
+    max-width: 100%;  /* Ensures images always fit smaller screens */
+}
+}
+
+
+</style>
+<div class="grid-containerw w3-hide-large">
+
+
+  <div class="grid-itemw">
+    <div class="flipperw">
+      <div class="frontw">
+       <img src="316c00_f94fec6fbefb4d47aef6441c3d43af74~mv2.png.webp" alt="Event Management">
+      </div>
+      <div class="backw">
+        <h3>Head of Marketing</h3>
+        <p>Alex acts as LSR's treasurer, contact her regarding sponsorhips and fundraising.</p>
+      </div>
+    </div>
+  </div>
+ <div class="grid-itemw">
+    <div class="flipperw">
+      <div class="frontw">
+        <img src="316c00_641091c525ec48a9b3547eeff3174a2f~mv2.png.webp" alt="Sports Club">
+      </div>
+      <div class="backw">
+        <h3>Programme Controller</h3>
+        <p>Sophie is in charge of our schedule and coming up with unique ideas for outside broadcasting.</p>
+      </div>
+    </div>
+  </div>
+   <div class="grid-itemw">
+    <div class="flipperw">
+      <div class="frontw">
+       <img src="316c00_0b1678ae9f7441c58bf08b07aee38475~mv2.png.webp" alt="Image of person">
+      </div>
+      <div class="backw">
+        <h3>Head of News</h3>
+        <p>AYou can contact Jenna or Ria regarding news-based content or programming at news@thisislsr.com</p>
+      </div>
+    </div>
+  </div>
+   <div class="grid-itemw">
+    <div class="flipperw">
+      <div class="frontw">
+     <img src="316c00_fbf02c80f8d84513aa7bfdb2195625fe~mv2.png.webp" alt="Academic Support">
+      </div>
+      <div class="backw">
+        <h3>Head of Hometime</h3>
+        <p>Carys manages our Hometime team (every weekday 5-7pm), soundtracking your commute home from uni with uplifting conversation and fun segments.</p>
+      </div>
+    </div>
+  </div>
+   <div class="grid-itemw">
+    <div class="flipperw">
+      <div class="frontw">
+       <img src="316c00_9798ec6b97c8405c8f572ee5995efb12~mv2.png.webp" alt="Student Council">
+      </div>
+      <div class="backw">
+        <h3>Head of Online</h3>
+        <p>Molly and Harry are in charge of LSR's online branding. Including this very website, and our Instagram page (@thisislsr).</p>
+      </div>
+    </div>
+  </div>
+   <div class="grid-itemw">
+    <div class="flipperw">
+      <div class="frontw">
+        <img src="316c00_ae16481e2ba74c45ad7e93269e29211f~mv2.png.webp" alt="Creative Arts">
+      </div>
+      <div class="backw">
+        <h3>Head of Music</h3>
+        <p>placeholder text.</p>
+      </div>
+    </div>
+  </div>
+   <div class="grid-itemw">
+    <div class="flipperw">
+      <div class="frontw">
+       <img src="316c00_6ce347b81ab54599b5f35fcce0f0f66c~mv2.png.webp" alt="Health and Wellness">
+      </div>
+      <div class="backw">
+        <h3>Head of Marketing</h3>
+        <p>Alex acts as LSR's treasurer, contact her regarding sponsorhips and fundraising.</p>
+      </div>
+    </div>
+  </div>
+
+  // ... other grid items (repeat the above structure) ...
+
+</div>
+
+
+      
   </div>
 </div>
                
