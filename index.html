@@ -3610,10 +3610,9 @@ footer {
   margin-bottom: 10px;
 }
 </style>
-               <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const schedule = { 
-     Monday: [
+         <script>
+     const schedule = {
+        Monday: [
             ["9:00 AM", "10:00 AM", "Breakfast"],
             ["10:00 AM", "11:00 AM", "Breakfast"],
             ["11:00 AM", "12:00 PM", "Big Names on Campus / Chattergories"],
@@ -3731,12 +3730,13 @@ document.addEventListener('DOMContentLoaded', function() {
         ["11:00 PM", "12:00 AM", "EKBeats"]
     ]
 
-    
+        // Add the rest of the days here in the same format
     };
 
+
     function getCurrentShow() {
-        const now = new Date();
-        const utcNow = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
+        const now = new Date(); // Get the current time
+        const utcNow = new Date(now.getTime() + now.getTimezoneOffset() * 60000);  //Correctly convert to UTC
 
         const day = utcNow.toLocaleDateString("en-US", { weekday: "long" });
         const currentTime = utcNow.getHours() * 60 + utcNow.getMinutes();
@@ -3745,63 +3745,58 @@ document.addEventListener('DOMContentLoaded', function() {
         let liveNow = "No show live";
         let upNext = "No upcoming show";
 
-        // Crucial: Sort the schedule for the day.  This fixes a potential bug if your schedule isn't perfectly in time order.
-        todaySchedule.sort((a, b) => {
-            const [aStartHour, aStartMin] = parseTime(a[0]);
-            const [bStartHour, bStartMin] = parseTime(b[0]);
-            return (aStartHour * 60 + aStartMin) - (bStartHour * 60 + bStartMin);
-        });
-
-        let foundLive = false; // Keep track if a live show was found
 
         for (let i = 0; i < todaySchedule.length; i++) {
             const [start, end, showName] = todaySchedule[i];
             const [startHour, startMin] = parseTime(start);
             const [endHour, endMin] = parseTime(end);
+
             const startTime = startHour * 60 + startMin;
             const endTime = endHour * 60 + endMin;
 
             if (currentTime >= startTime && currentTime < endTime) {
                 liveNow = showName;
-                foundLive = true; // Mark that a live show is on
                 if (i + 1 < todaySchedule.length) {
                     upNext = todaySchedule[i + 1][2];
-                } else {
-                     upNext = getNextShow(day);
+                } else if (day !== "Sunday"){ // Handle Saturday -> Sunday transition.
+                    const nextDay = getNextDay(day);
+                    if (schedule[nextDay]){
+                        upNext = schedule[nextDay][0][2]; // First show of next day.
+                    }
+
                 }
-                
-                break; // Exit the loop once the current show is found
+                break;
+            } else if (currentTime < startTime){  //Handle upNext when no live show.
+                upNext = showName;
+                break;
             }
         }
-        if (!foundLive && todaySchedule.length > 0){
-            upNext = todaySchedule[0][2];
-        }
+
         return { liveNow, upNext };
-
     }
 
-        function getNextShow(currentDay) {
-        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-        let currentDayIndex = days.indexOf(currentDay);
-        let nextShow = "No upcoming show";
+   function getNextDay(day){   // Helper function to get next day.
+       const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+       const currentIndex = days.indexOf(day);
+       return days[(currentIndex + 1) % days.length];
+   }
 
-        for (let j = 0; j < days.length ; j++){
-            currentDayIndex = (currentDayIndex + 1 ) % days.length;
-            let nextDay = days[currentDayIndex]
-            if (schedule[nextDay] && schedule[nextDay].length > 0){
-                nextShow = schedule[nextDay][0][2];
-                return nextShow;
-            }
 
-        }
-            return nextShow
+    function parseTime(timeStr) {
+        const [time, meridian] = timeStr.split(" ");
+        let [hour, minute] = time.split(":").map(Number);
 
+
+
+        return [
+            (hour % 12) + (meridian === "PM" ? 12 : 0),
+            minute
+        ];
     }
 
-
-    function parseTime(timeStr) { // ... remains the same ... }
-
-     function updateUI() {
+  
+    
+      function updateUI() {
     const { liveNow, upNext } = getCurrentShow();
 
          const liveNowElement3 = document.getElementById("live-now-text3");
@@ -3845,11 +3840,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 
-
+    
+    
+    
 
     updateUI();
     setInterval(updateUI, 60000);
-});
 </script>
     <script>
        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
