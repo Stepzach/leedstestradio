@@ -3611,8 +3611,9 @@ footer {
 }
 </style>
                <script>
-    const schedule = {
-        Monday: [
+document.addEventListener('DOMContentLoaded', function() {
+    const schedule = { 
+     Monday: [
             ["9:00 AM", "10:00 AM", "Breakfast"],
             ["10:00 AM", "11:00 AM", "Breakfast"],
             ["11:00 AM", "12:00 PM", "Big Names on Campus / Chattergories"],
@@ -3730,49 +3731,77 @@ footer {
         ["11:00 PM", "12:00 AM", "EKBeats"]
     ]
 
-        // Add the rest of the days here in the same format
+    
     };
 
     function getCurrentShow() {
-        const now = new Date(); // Current local time
-        const gmtNow = new Date(now.toUTCString()); // Convert to GMT
-        const day = gmtNow.toLocaleDateString("en-US", { weekday: "long" });
-        const currentTime = gmtNow.getHours() * 60 + gmtNow.getMinutes();
+        const now = new Date();
+        const utcNow = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
+
+        const day = utcNow.toLocaleDateString("en-US", { weekday: "long" });
+        const currentTime = utcNow.getHours() * 60 + utcNow.getMinutes();
 
         const todaySchedule = schedule[day] || [];
         let liveNow = "No show live";
         let upNext = "No upcoming show";
 
+        // Crucial: Sort the schedule for the day.  This fixes a potential bug if your schedule isn't perfectly in time order.
+        todaySchedule.sort((a, b) => {
+            const [aStartHour, aStartMin] = parseTime(a[0]);
+            const [bStartHour, bStartMin] = parseTime(b[0]);
+            return (aStartHour * 60 + aStartMin) - (bStartHour * 60 + bStartMin);
+        });
+
+        let foundLive = false; // Keep track if a live show was found
+
         for (let i = 0; i < todaySchedule.length; i++) {
             const [start, end, showName] = todaySchedule[i];
             const [startHour, startMin] = parseTime(start);
             const [endHour, endMin] = parseTime(end);
-
             const startTime = startHour * 60 + startMin;
             const endTime = endHour * 60 + endMin;
 
             if (currentTime >= startTime && currentTime < endTime) {
                 liveNow = showName;
+                foundLive = true; // Mark that a live show is on
                 if (i + 1 < todaySchedule.length) {
                     upNext = todaySchedule[i + 1][2];
+                } else {
+                     upNext = getNextShow(day);
                 }
-                break;
+                
+                break; // Exit the loop once the current show is found
             }
         }
-
+        if (!foundLive && todaySchedule.length > 0){
+            upNext = todaySchedule[0][2];
+        }
         return { liveNow, upNext };
+
     }
 
-    function parseTime(timeStr) {
-        const [time, meridian] = timeStr.split(" ");
-        const [hour, minute] = time.split(":").map(Number);
-        return [
-            (hour % 12) + (meridian === "PM" ? 12 : 0), // Convert to 24-hour format
-            minute
-        ];
+        function getNextShow(currentDay) {
+        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        let currentDayIndex = days.indexOf(currentDay);
+        let nextShow = "No upcoming show";
+
+        for (let j = 0; j < days.length ; j++){
+            currentDayIndex = (currentDayIndex + 1 ) % days.length;
+            let nextDay = days[currentDayIndex]
+            if (schedule[nextDay] && schedule[nextDay].length > 0){
+                nextShow = schedule[nextDay][0][2];
+                return nextShow;
+            }
+
+        }
+            return nextShow
+
     }
 
-   function updateUI() {
+
+    function parseTime(timeStr) { // ... remains the same ... }
+
+     function updateUI() {
     const { liveNow, upNext } = getCurrentShow();
 
          const liveNowElement3 = document.getElementById("live-now-text3");
@@ -3816,11 +3845,11 @@ footer {
     }
 }
 
-    // Initialize the UI
+
+
     updateUI();
-  updateMediaSession();
-    // Update every minute to reflect schedule changes
     setInterval(updateUI, 60000);
+});
 </script>
     <script>
        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
