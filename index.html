@@ -203,11 +203,11 @@ if ('mediaSession' in navigator) {
 <div id="dropdown-menufull" class="dropdown-menufull" style="display: none;">
 <!-- Dropdown Menu (Initially hidden) -->
 <div id="dropdown-menu" class="dropdown-menu" style="top: 37px; background-color: black; padding-bottom: 0;">
-  <div class="header" style="/* border-top: solid 8px black; */" data-page="page1"><a href="#Schedule1">Weekly Schedule</a></div>
-  <div class="header" data-page="page2" style="margin-top: -4px;"><a href="#Listen1">Listen live &amp; back</a></div>
-  <div class="header" data-page="page3" style="margin-top: -4px;"><a href="#get-involved">Apply for a show</a></div><div class="header" data-page="page3" style="margin-top: -4px;"><a href="#get-involved">Book Studio 2</a></div>
-  <div class="header" data-page="page4" style="margin-top: -4px;"><a href="#about">About us</a></div>
-  <div class="header" style="/* border-bottom: solid 8px black; */ margin-top: -4px;" data-page="page5"><a href="#contact">Contact</a></div>
+  <div class="header" style="/* border-top: solid 8px black; */" data-page="page1"><a href="#Schedule1" data-offset="-40">Weekly Schedule</a></div>
+  <div class="header" data-page="page2" style="margin-top: -4px;"><a href="#Listen1" data-offset="-40">Listen live &amp; back</a></div>
+  <div class="header" data-page="page3" style="margin-top: -4px;"><a href="#Apply1" data-offset="-40">Apply for a show</a></div><div class="header" data-page="page3" style="margin-top: -4px;"><a href="#Book2">Book Studio 2</a></div>
+  <div class="header" data-page="page4" style="margin-top: -4px;"><a href="#About1" data-offset="-40">About us</a></div>
+  <div class="header" style="/* border-bottom: solid 8px black; */ margin-top: -4px;" data-page="page5"><a href="#Contact1" data-offset="-40">Contact</a></div>
 </div>
 
 <!-- New Social Media Row (outside the drop own menu) -->
@@ -2666,7 +2666,7 @@ width: 15vw;
 }
                    
 </style>
-              <div id="Schedule1" class="container-ACH w3-hide-large" style="padding: 5px; margin-bottom: -10px;">
+              <div id="Listen1" class="container-ACH w3-hide-large" style="padding: 5px; margin-bottom: -10px;">
   <div id="box-ACH-1" style="padding: 10px; padding-left: 20px; padding-right: 20px; text-align: center;">
    
     <h2 style="font-size: 25px !important; margin-bottom: 8px;">Listen live &amp; back</h2>
@@ -2995,7 +2995,7 @@ width: 15vw;
        
      </div>
     </div>
-<div class="row w3-hide-large">
+<div class="row w3-hide-large" id="Apply1">
           <div class="section section-40">
             <h1 class="show-heading" style="text-align: center; font-size: 25px;">Apply for a Show</h1>
               <p style="color: white; text-align: center; font-size: 17px;; margin-top: 10px;">Applications close: dd/m/y</p>
@@ -3104,7 +3104,7 @@ width: 15vw;
     </div>
    
 
-  <div class="row w3-hide-large">
+  <div class="row w3-hide-large" id="Book2">
       <div class="section section-two-third show-studio-section" style="color: white; border-left: none;">
         <h2 style="text-align: center; font-size: 25px;">Book Studio 2</h2> <br>
         <p style="text-align: center; font-size: 17px; margin-top: 5px; margin-bottom: 5px;">If you'd like to record your podcast or make use of our CDJs/Turntable, LSR's Studio 2 is available for our members to book out.</p> <div class="show-image-gallery" style="margin-top: 10px;">
@@ -3298,7 +3298,7 @@ text-align: center;
 
   <div class="su-container">
     <!-- About Section -->
-   <div class="su-row">
+   <div class="su-row" style="margin-right: 5px;">
       <div class="su-about-section">
         <div class="su-about-left w3-hide-small">
         <h1 style="font-size: 35px; margin-bottom: 10px;">About Us</h1>
@@ -3308,7 +3308,7 @@ text-align: center;
             welcome be on a show! </p>
           
         </div>
-            <div class="su-about-left w3-hide-large" style="margin-bottom: 5px;">
+            <div class="su-about-left w3-hide-large" id="About1" style="margin-bottom: 5px;">
         <h1 style="font-size: 35px; margin-bottom: 10px;">About Us</h1>
 <p style="color: white;">
             Leeds Student Radio is the only radio station in Leeds run by students, for students. We broadcast live from
@@ -3728,7 +3728,7 @@ align-content: center;
   </style>
 
 <bodyu>
-  <div class="lsr-contact-wrapper">
+  <div class="lsr-contact-wrapper" id="Contact1">
     <!-- Google Maps Embed -->
     <div class="lsr-map-container w3-hide-small" style="padding: 10px; background-color: rgb(149, 13, 13);">
       <iframe src="https://www.google.com/maps?q=Leeds+University+Union,+Lifton+Place,+LS2+9JZ&hl=en&z=17&output=embed" width="100%" height="100%" style="border-radius:10px; " allowfullscreen="" data-gtm-yt-inspected-6="true">
