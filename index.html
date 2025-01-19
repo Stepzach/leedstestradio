@@ -2701,33 +2701,50 @@ width: 15vw;
                    
 </style>
               <div id="Listen1" class="container-ACH w3-hide-large" style="padding: 5px; margin-bottom: -10px;">
- <div id="box-ACH-1" style="padding: 10px; padding-left: 10px; padding-right: 10px; text-align: center;">
-   
-    <h2 style="font-size: 25px !important; margin-bottom: 8px;">Listen live &amp; back</h2>
-  <p style="font-size: 17px;">Leeds Transmission Live from Headrow House: Friday 23rd Feb 5-7:30pm</p><div style="background-color: rgb(113, 8, 8); border-radius: 10px; margin-top: 10px; /* border: solid 2px wheat; */"><section id="section7778" style="margin-top: 1px; /* border-radius: 10px; */ background-color: rgba(140, 6, 6, 0); display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto auto auto; margin: 0px;">
-  <header id="header7778" style="color: white; padding-top: 30px; grid-column: 1; /* align-content: center; */ justify-content: center;"> 
-    <span id="title7778 live-now-text2" style="color: white; font-size: 25px; text-align: left; /* padding-left: 15px; */">Example show</span>
-  </header>
-  <div class="play-pause-container7778" style="border-radius: 50%; margin: 10px; margin-right: 15px; align-items: center; justify-content: center; grid-column: 2;">
-    <img id="albumArt7778" src="https://stepzach.github.io//leedstestradio/ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg" alt="Album Art" style="width: 100%; /* height: 100%; */ border-radius: 50%; border: solid 1.5px white;">
-    <span id="playPauseIcon7778" class="play-icon" style="color: white; user-select: none; /* background-color: rgba(110, 29, 29, 0.73); */ /* border-radius: 50%; */ /* width: 40px; */ height: 40px; display: flex; align-items: center; justify-content: center; font-size: 2.5em;"></span> 
-  </div>
-  <div class="progress-container7778" style="grid-column: 1 / span 2; height: 5px; background-color: white; border-radius: 5px; margin-bottom: 15px; margin-left: 20px; margin-right: 20px;">
-        <div id="progressBar7778" style="height: 100%; background-color: black; width: 0%; border-radius: 5px;"></div>
-    </div></section></div><div class="info7778" style="grid-column: 1 / span 2; padding-bottom: 10px; padding-top: 10px; padding-left: 0; text-align: left;">      
-      <span id="next7778" style="color: white; text-align: left; /* padding: 2px; */ font-size: 17px; margin-left: 10px; margin-right: 10px;">Up Next:</span><span id="up-next-text2" style="color: white; text-align: left; /* padding: 2px; */ font-size: 17px; /* margin-left: 10px; */ margin-right: 10px;">Example show</span>
-  </div>
-    
-</div>
-                  <script>
-    function updateProgressBar() {
-        const now = new Date();
-        const secondsSinceHourStart = (now.getMinutes() * 60) + now.getSeconds();
-        const percentage = (secondsSinceHourStart / 3600) * 100;
-        document.getElementById('progressBar7778').style.width = percentage + '%';
-    }
+<div id="box-ACH-1" style="padding: 10px; text-align: center;">
+  <h2 style="font-size: 25px; margin-bottom: 8px;">Listen live &amp; back</h2>
+  <p style="font-size: 17px;">Leeds Transmission Live from Headrow House: Friday 23rd Feb 5-7:30pm</p>
 
-    setInterval(updateProgressBar, 1000); // Update every second
+  <div style="background-color: rgb(113, 8, 8); border-radius: 10px; margin-top: 10px;">
+    <section style="display: grid; grid-template-columns: 50% 50%; margin: 0px;">
+      
+
+      <header style="color: white; padding-top: 30px; grid-column: 1; justify-content: center;">
+        <span style="color: white; font-size: 23px; text-align: left; padding-left: 10px;">Example show</span>
+      </header><div style="border-radius: 50%; margin: 10px; margin-right: 15px; align-items: center; justify-content: center; grid-column: 2;">
+        <img src="https://stepzach.github.io//leedstestradio/ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg" alt="Album Art" style="width: 100%; border-radius: 50%; border: solid 1.5px white; display: block;">
+        
+      </div>
+
+      <div style="grid-column: 1 / span 3; display: flex; align-items: center; margin-bottom: 5px; margin-left: 20px; margin-right: 20px;">
+        <span id="minutesFromStart" style="color: white; font-size: 12px; margin-right: 5px;"></span>
+        <div style="background-color: rgb(154, 25, 25); border-radius: 5px; border: solid 2px black; height: 8px; flex-grow: 1;">
+          <div id="progressBar7778" style="height: 100%; background-color: wheat; width: 43.194444%; border-radius: 5px;"></div>
+        </div>
+        <span id="minutesToNextHour" style="color: white; font-size: 12px; margin-left: 5px;"></span>
+      </div>
+
+
+      <div style="grid-column: 1 / span 3; padding-bottom: 20px; padding-top: 10px; padding-left: 10px; text-align: left;">
+        <span style="color: white; font-size: 17px; margin-left: 10px; margin-right: 10px;">Up Next:</span><span style="color: white; font-size: 17px; margin-right: 10px;">Example show</span>
+      </div>
+    </section>
+  </div>
+</div>
+                 <script>
+  function updateProgressBar() {
+    const now = new Date();
+    const minutesFromStart = now.getMinutes();
+    const minutesToNextHour = 60 - minutesFromStart;
+    const secondsSinceHourStart = (minutesFromStart * 60) + now.getSeconds();
+    const percentage = (secondsSinceHourStart / 3600) * 100;
+
+    document.getElementById('progressBar7778').style.width = percentage + '%';
+    document.getElementById('minutesFromStart').textContent = minutesFromStart + ' mins';
+    document.getElementById('minutesToNextHour').textContent = minutesToNextHour + ' mins';
+  }
+ 
+  setInterval(updateProgressBar, 1000);
 </script>
   <div class="custom-box-container" style="margin-left: auto; margin-right: auto;">
             <div class="custom-box" style="width: 47%;">
