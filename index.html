@@ -892,22 +892,92 @@ border-radius: 10px;
   </style>
            <body>
                <div id="home" class="welcome">
-   <div class="container123">
-        <div class="image_container456">
-            <img src="https://stepzach.github.io//leedstestradio/LSR%20Logo.png.webp" alt="Square Image" class="square_image789">
-        </div>
-        <div class="text_container012">
-            <p class="text001">Officially the UK's Best Student Radio 2024</p>
-        </div>
+ 
+<div class="w3-hide-large">
+   <section id="section7778" style="/* margin: 20px; */ width: 80%; /* position: static; */ margin-top: 30px; border-radius: 10px; background-color: rgb(140, 6, 6); /* color: white; */ /* margin-top: 20px; */">
+  <div class="play-pause-container7778" style="padding: 70px; padding-top: 20px; padding-bottom: 10px; border-radius: 10px; /* margin: 10px; */">
+    <img id="albumArt7778" src="https://stepzach.github.io//leedstestradio/ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg" alt="Album Art" style="border-radius: 10px;">
+    <span id="playPauseIcon7778" class="play-icon" style="color: rgb(255, 255, 255); user-select: none; /* border: solid; */ background-color: rgba(110, 29, 29, 0.73); border-radius: 50%; padding-left: 17px; width: 70px; height: 70px;"></span> 
+  </div>
+  <header id="header7778" style="color: white; padding-top: 5px;">
+    <div class="info7778" style="/* color: white; */">
+      <h1 id="title7778" style="color: white;">Tune in!</h1>
+      <h2 id="live7778" style="color: rgb(246, 246, 246); text-align: left; background-color: green; padding: 2px;">Live: Example Show</h2>
+      <h2 id="next7778" style="color: wheat; text-align: left; padding: 2px;">Up Next: Example show</h2>
     </div>
-                   <div class="carousel-container1 w3-hide-large">
-    <div class="carousel-track" style="transform: translateX(0px);">
-        <div class="carousel-slide">
-            <img src="316c00_e270ed388b21449d9bdd56622dbeb4ec~mv2.jpg.webp" alt="Image 1">
-        </div>
-       
-    </div>
+  </header>
+</section>
 </div>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,400);
+#section7778 {
+  width: 100%;
+  margin: 20px auto;
+  background: wheat; 
+  position: relative; /* Needed for overlay positioning */
+}
+#albumArt7778 {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.play-pause-container7778 {
+  position: relative; /* Create a positioning context */
+}
+#playPauseIcon7778 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em; /* Adjust icon size as needed */
+  cursor: pointer;
+  color: white; /* Or a suitable contrasting color */
+  user-select: none; /* Prevent text selection on click */
+}
+#header7778 {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info7778 {
+ text-align: center; 
+}
+#title7778 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+#live7778, #next7778 {
+  font-size: 1.2em;
+  margin: 0.2em 0;
+  color: black;
+}
+.play-icon::before {
+  content: '▶';
+}
+.pause-icon::before {
+  content: '⏸';
+}
+</style>
+<script>
+  const playPauseIcon = document.getElementById('playPauseIcon7778');
+  const albumArt = document.getElementById('albumArt7778'); // Optional: For visual feedback
+  playPauseIcon.addEventListener('click', function() {
+    if (playPauseIcon.classList.contains('play-icon')) {
+      playPauseIcon.classList.remove('play-icon');
+      playPauseIcon.classList.add('pause-icon');
+      // Here you would start your audio playback
+      // Example: albumArt.play(); If albumArt was an audio element
+    } else {
+      playPauseIcon.classList.remove('pause-icon');
+      playPauseIcon.classList.add('play-icon');
+       // Here you would pause your audio playback
+       // Example: albumArt.pause();
+    }
+  });
+</script>
+                 
     <style>
    .container123 {
        margin-top:25px;
