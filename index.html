@@ -2710,7 +2710,7 @@ width: 15vw;
       
 
       <header style="color: white; padding-top: 30px; grid-column: 1; justify-content: center;">
-        <span style="color: white; font-size: 23px; text-align: left; padding-left: 10px;">Example show</span>
+        <span id="live-now-text2" style="color: white; font-size: 23px; text-align: left; padding-left: 10px;">Example show</span>
       </header><div style="border-radius: 50%; margin: 10px; margin-right: 15px; align-items: center; justify-content: center; grid-column: 2;">
         <img src="https://stepzach.github.io//leedstestradio/ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg" alt="Album Art" style="width: 100%; border-radius: 50%; border: solid 1.5px white; display: block;">
         
@@ -2726,7 +2726,7 @@ width: 15vw;
 
 
       <div style="grid-column: 1 / span 3; padding-bottom: 20px; padding-top: 10px; padding-left: 10px; text-align: left;">
-        <span style="color: white; font-size: 17px; margin-left: 10px; margin-right: 10px;">Up Next:</span><span style="color: white; font-size: 17px; margin-right: 10px;">Example show</span>
+        <span style="color: white; font-size: 17px; margin-left: 10px; margin-right: 10px;">Up Next:</span><span id="up-next-text2" style="color: white; font-size: 17px; margin-right: 10px;">Example show</span>
       </div>
     </section>
   </div>
@@ -2740,8 +2740,8 @@ width: 15vw;
     const percentage = (secondsSinceHourStart / 3600) * 100;
 
     document.getElementById('progressBar7778').style.width = percentage + '%';
-    document.getElementById('minutesFromStart').textContent = minutesFromStart + ' mins';
-    document.getElementById('minutesToNextHour').textContent = minutesToNextHour + ' mins';
+    document.getElementById('minutesFromStart').textContent = minutesFromStart + 'm';
+    document.getElementById('minutesToNextHour').textContent = minutesToNextHour + 'm';
   }
  
   setInterval(updateProgressBar, 1000);
