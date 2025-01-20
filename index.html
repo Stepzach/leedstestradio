@@ -2712,11 +2712,42 @@ width: 15vw;
       <header style="color: white; align-content: center; grid-column: 1;">
           <span style="color: white; font-size: 23px; text-align: left; padding-left: 10px;">On Air:</span>
         <span id="live-now-text2" style="color: white; font-size: 23px; text-align: left; padding-left: 10px;">Example show</span>
-      </header><div style="border-radius: 50%; margin: 10px; margin-right: 15px; align-items: center; justify-content: center; grid-column: 2;">
-        <img src="https://stepzach.github.io//leedstestradio/ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg" alt="Album Art" style="width: 100%; border-radius: 50%; border: solid 1.5px white; display: block;">
-        
-      </div>
+      </header><div style="position: relative; border-radius: 50%; margin: 10px; margin-right: 15px; align-items: center; justify-content: center; grid-column: 2;">
+    <img id="slattAlbumArt" src="https://stepzach.github.io//leedstestradio/ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg" alt="Album Art" style="width: 100%; border-radius: 50%; border: solid 1.5px white; display: block;">
+    <div id="slattPlayPauseButton" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; height: 50px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.73); border: 2px solid rgba(0, 0, 0, 1); display: flex; align-items: center; justify-content: center; cursor: pointer;">
+        <svg id="slattPlayIcon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="black"><path d="M8 5v14l11-7z"></path></svg>
+        <svg id="slattPauseIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
 
+    </div>
+</div>
+<script>
+  const slattAudio = new Audio('https://streamer.radio.co/s986435880/listen.m3u');
+  const slattPlayPauseButton = document.getElementById('slattPlayPauseButton');
+  const slattPlayIcon = document.getElementById('slattPlayIcon');
+  const slattPauseIcon = document.getElementById('slattPauseIcon');
+
+
+  slattPlayPauseButton.addEventListener('click', () => {
+    if (slattAudio.paused) {
+      slattAudio.play();
+      slattPlayIcon.style.display = 'none';
+      slattPauseIcon.style.display = 'block';
+
+    } else {
+      slattAudio.pause();
+      slattPlayIcon.style.display = 'block';
+      slattPauseIcon.style.display = 'none';
+
+    }
+  });
+  
+  // Error handling for the audio stream
+  slattAudio.addEventListener('error', (error) => {
+        console.error("Error loading audio stream:", error);
+        // Here you could display a message to the user, or try a different stream URL
+  });
+
+</script>
       <div style="grid-column: 1 / span 3; margin-top: 5px; display: flex; align-items: center; margin-bottom: 5px; margin-left: 20px; margin-right: 20px;">
         <span id="minutesFromStart" style="color: white; font-size: 12px; margin-right: 5px;"></span>
         <div style="background-color: rgb(154, 25, 25); border-radius: 5px; border: solid 2px black; height: 8px; flex-grow: 1;">
