@@ -2731,7 +2731,50 @@ width: 15vw;
       </div>
     </section>
   </div>
+    <div style="background-color: rgb(113, 8, 8); border-radius: 10px; margin-top: 10px; padding: 5px;">
+    <section style="display: flex; /* align-items: center; */ margin: 0px;"> 
+        <div id="zzzlsr_playPauseBtnContainer" style="margin-left: 10px;">
+            <button id="zzzlsr_playPauseBtn" aria-label="Play/Pause">
+                <svg id="zzzlsr_playIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M8 5v14l11-7z"></path>
+                </svg>
+                <svg id="zzzlsr_pauseIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" style="display: none;">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                </svg>
+            </button>
+        </div>
+      
+        <span style="color: white; font-size: 20px; margin-left: 15px; margin-right: 10px;">Alternate Stream</span>
+    </section>
+  </div>
 </div>
+<script>
+  const zzzlsr_audio = new Audio("https://s2.radio.co/seb5cdba5b/listen");
+  const zzzlsr_playPauseBtn = document.getElementById("zzzlsr_playPauseBtn");
+  const zzzlsr_playIcon = document.getElementById("zzzlsr_playIcon");
+  const zzzlsr_pauseIcon = document.getElementById("zzzlsr_pauseIcon");
+
+  let isPlaying = false;
+
+  zzzlsr_playPauseBtn.addEventListener("click", () => {
+    if (isPlaying) {
+      zzzlsr_audio.pause();
+      zzzlsr_playIcon.style.display = "block";
+      zzzlsr_pauseIcon.style.display = "none";
+    } else {
+      zzzlsr_audio.play().catch(error => {
+          console.error("Audio playback failed:", error);
+          // Add error handling here, e.g., display a message to the user.
+      });
+      zzzlsr_playIcon.style.display = "none";
+      zzzlsr_pauseIcon.style.display = "block";
+    }
+    isPlaying = !isPlaying;
+  });
+
+</script>
+
+                  
                  <script>
   function updateProgressBar() {
     const now = new Date();
@@ -2747,7 +2790,7 @@ width: 15vw;
  
   setInterval(updateProgressBar, 1000);
 </script>
-  <div class="custom-box-container" style="margin-left: auto; margin-right: auto;">
+  <div class="custom-box-container w3-hide-small" style="margin-left: auto; margin-right: auto;">
             <div class="custom-box" style="width: 47%;">
               <div class="custom-subtitle">LSR Stream</div>
               <img class="spinning-image" src="IMG_4633.png" alt="LSR Disk" data-audio="https://streamer.radio.co/s986435880/listen.m3u" style="width: 100%; animation: 0s;">
