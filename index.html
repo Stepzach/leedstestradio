@@ -2315,65 +2315,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     schedule.addEventListener('click', function(event) {
-        const target = event.target.closest('td');
-        if (target) {
+         const target = event.target.closest('td');
+
+      if (target) {
             const showId = target.id;
-           const showInfo = target.querySelector('.show-info');
+          const showInfo = target.querySelector('.show-info');
 
-
-           if(showId && showInfo){
-
+            if(showId && showInfo){
               const imageUrl = `./images/${showId}.png`;
               const title = showInfo.querySelector('h2').textContent;
               const description = showInfo.querySelector('p').textContent;
-
-              showImage.src = imageUrl;
+            
+            showImage.src = imageUrl;
               showTitle.textContent = title;
               showDescription.textContent = description;
 
+          let instagramLinkElement  = target.querySelector('a[href*="instagram.com"]')
 
 
-                 const instagramLinkElement = showInfo.querySelector('a[href*="instagram.com"]');
-
-
-
-                    if(instagramLinkElement){
+                 if(instagramLinkElement){
                     const instagramUrl = instagramLinkElement.href;
 
-                    try{
+
+                  try{
                       const url = new URL(instagramUrl);
                       const pathname = url.pathname;
-                     const parts = pathname.split('/').filter(Boolean);
+                    const parts = pathname.split('/').filter(Boolean);
+
+                        const username = parts[0];
 
 
-                    const username = parts[0];
+                        if (username) {
+                            instagramUsernameSpan.textContent = username;
+                            instagramLink.href = instagramUrl;
+                             instagramContainer.style.display = "block";
+
+                        }else{
+                           instagramContainer.style.display = "none";
+                            }
+
+                  }catch(e){
+                           instagramContainer.style.display = "none";
+
+                     }
 
 
-                  if(username){
 
-                         instagramUsernameSpan.textContent = username;
-                       instagramLink.href = instagramUrl;
-                       instagramContainer.style.display = "block"
-                       }else{
+                  }else{
+                       instagramContainer.style.display = "none";
+                    }
 
-                                  instagramContainer.style.display = "none";
-                        }
+              overlay.style.display = 'block';
 
-
-
-                    }catch(e){
-                            instagramContainer.style.display = "none";
-
-                         }
-
-
-                    }else{
-                           instagramContainer.style.display = "none"
-                        }
-                  overlay.style.display = 'block';
-            }
         }
-    });
+    }
+});
 
     closeButton.addEventListener('click', function() {
         overlay.style.display = 'none';
@@ -2383,7 +2379,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(event.target == overlay){
             overlay.style.display = 'none';
         }
-    })
+    });
 });
 </script>
   
