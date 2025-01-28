@@ -2238,7 +2238,7 @@ border-radius: 10px;
   </table>
 </div>
 
-<div id="show-overlay" style="display: block; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; overflow: auto;">
+<div id="show-overlay" style="display: none; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; overflow: auto;">
     <div id="show-modal" style="background-color: rgb(149, 13, 13);  border-radius: 10px; padding: 20px; margin: 100px auto; width: 80%; max-width: 600px; position:relative">
          <span id="close-show" style="position: absolute; top: 10px; right: 15px; font-size: 25px; cursor: pointer; color: white;">×</span>
         <img id="show-image" src="./images/jazz-funk-soul-7-8-tue.png" alt="Show Image" style="width: 100%; max-height: 300px; object-fit: cover; display: block; margin-bottom: 15px; margin-top: 20px;">
@@ -2318,9 +2318,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const target = event.target.closest('td');
         if (target) {
             const showId = target.id;
-            const showInfo = target.querySelector('.show-info');
-            if(showId && showInfo){
-              const imageUrl = `./images/${showId}.png`; // Construct image URL (you can adjust as needed)
+           const showInfo = target.querySelector('.show-info');
+
+
+           if(showId && showInfo){
+
+              const imageUrl = `./images/${showId}.png`;
               const title = showInfo.querySelector('h2').textContent;
               const description = showInfo.querySelector('p').textContent;
 
@@ -2328,29 +2331,47 @@ document.addEventListener('DOMContentLoaded', function() {
               showTitle.textContent = title;
               showDescription.textContent = description;
 
-                const instagramLinkElement = showInfo.querySelector('a[href*="instagram.com"]');
 
-            if(instagramLinkElement){
-                  const instagramUrl = instagramLinkElement.href;
-                    const usernameMatch = instagramUrl.match(/instagram\.com\/([a-zA-Z0-9._]+)/);
-                  if (usernameMatch && usernameMatch[1]){
-                      const username = usernameMatch[1]
 
-                    instagramUsernameSpan.textContent = username;
-                      instagramLink.href = instagramUrl;
-                    instagramContainer.style.display = "block"
+                 const instagramLinkElement = showInfo.querySelector('a[href*="instagram.com"]');
 
-                 }else{
-                        instagramContainer.style.display = "none"
-                  }
 
-              }else {
-                 instagramContainer.style.display = "none"
+
+                    if(instagramLinkElement){
+                    const instagramUrl = instagramLinkElement.href;
+
+                    try{
+                      const url = new URL(instagramUrl);
+                      const pathname = url.pathname;
+                     const parts = pathname.split('/').filter(Boolean);
+
+
+                    const username = parts[0];
+
+
+                  if(username){
+
+                         instagramUsernameSpan.textContent = username;
+                       instagramLink.href = instagramUrl;
+                       instagramContainer.style.display = "block"
+                       }else{
+
+                                  instagramContainer.style.display = "none";
+                        }
+
+
+
+                    }catch(e){
+                            instagramContainer.style.display = "none";
+
+                         }
+
+
+                    }else{
+                           instagramContainer.style.display = "none"
+                        }
+                  overlay.style.display = 'block';
             }
-
-              overlay.style.display = 'block';
-           }
-
         }
     });
 
@@ -2363,7 +2384,6 @@ document.addEventListener('DOMContentLoaded', function() {
             overlay.style.display = 'none';
         }
     })
-
 });
 </script>
   
