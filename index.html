@@ -2321,11 +2321,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     schedule.addEventListener('click', function(event) {
-         const target = event.target.closest('td');
+          const target = event.target.closest('td');
+         if (target) {
+           
+        
+             const showId = target.id;
 
-      if (target) {
-            const showId = target.id;
-          const showInfo = target.querySelector('.show-info');
+
+            
+            const showInfo = target.querySelector('.show-info');
+
 
             if(showId && showInfo){
               const imageUrl = `./images/${showId}.png`;
@@ -2336,47 +2341,48 @@ document.addEventListener('DOMContentLoaded', function() {
               showTitle.textContent = title;
               showDescription.textContent = description;
 
-          let instagramLinkElement  = target.querySelector('a[href*="instagram.com"]')
 
+            
+          let instagramLinkElement = target.querySelector('a[href*="instagram.com"]');
 
-                 if(instagramLinkElement){
-                    const instagramUrl = instagramLinkElement.href;
-
+        
+             if(instagramLinkElement){
+                   const instagramUrl = instagramLinkElement.href;
 
                   try{
-                      const url = new URL(instagramUrl);
-                      const pathname = url.pathname;
-                    const parts = pathname.split('/').filter(Boolean);
+                     const url = new URL(instagramUrl);
+                     const pathname = url.pathname;
+                     const parts = pathname.split('/').filter(Boolean);
+
 
                         const username = parts[0];
 
 
-                        if (username) {
-                            instagramUsernameSpan.textContent = username;
-                            instagramLink.href = instagramUrl;
-                             instagramContainer.style.display = "block";
 
-                        }else{
-                           instagramContainer.style.display = "none";
-                            }
+                    if (username) {
+                       instagramUsernameSpan.textContent = username;
+                      instagramLink.href = instagramUrl;
+                       instagramContainer.style.display = "block";
+                      }else{
+                         instagramContainer.style.display = "none";
+                         }
 
-                  }catch(e){
-                           instagramContainer.style.display = "none";
 
+                   }catch(e){
+                    instagramContainer.style.display = "none";
                      }
-
-
-
-                  }else{
-                       instagramContainer.style.display = "none";
+                 }else{
+                  instagramContainer.style.display = "none";
                     }
 
-              overlay.style.display = 'block';
+            overlay.style.display = 'block';
+        }
+
 
         }
-    }
-});
 
+     
+});
     closeButton.addEventListener('click', function() {
         overlay.style.display = 'none';
     });
