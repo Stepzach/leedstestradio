@@ -3695,10 +3695,14 @@ width: 15vw;
       </div>
     </div>
 
-   <div class="row w3-hide-small">
+  <div class="row w3-hide-small">
     <div class="section section-two-third show-apply-links-grid" id="apply-section">
-        <h2 style="font-size: 38px !important;">Apply for Core Music Shows</h2>
-        <div class="show-grid-container">
+        <div class="toggle-header-container" >
+          <h2 style="font-size: 38px !important;">Apply for Core Music Shows</h2>
+           <span class="toggle-arrow music-toggle-arrow down-arrow"></span>
+        </div>
+       
+        <div class="show-grid-container music-content" style="display: none;">
           <a href="#">Live and Local</a>
           <a href="#">Jazz, Funk and Soul</a>
           <a href="#">Rock and Punk</a>
@@ -3709,20 +3713,24 @@ width: 15vw;
           <a href="#">Electronic</a>
           <a href="#">Album Review</a>
           <a href="#">International Hour</a>
-        </div> <br>
-        <p class="show-insta-links" style="color: white; font: var(--small_mono) !important;">
+        </div> 
+          <p class="show-insta-links music-insta-links" style="color: white; font: var(--small_mono) !important; display: none;">
           *Find out more about our core music shows on Instagram: 
           <a href="https://instagram.com/thisislsr_music" style="color: white">@thisislsr_music</a>
         </p>
     </div>
-    <div class="section section-third" style="position: relative">
+    <div class="section section-third show-cta-container" >
       <div class="show-cta">
+        <div class="toggle-header-container">
           <h2 style="font-size: 38px !important; margin-bottom: 20px !important;">Apply for News</h2>
-          <div class="show-grid-container" style="grid-template-columns: repeat(1, 1fr);">
+             <span class="toggle-arrow news-toggle-arrow down-arrow"></span>
+           </div>
+          
+          <div class="show-grid-container news-content" style="grid-template-columns: repeat(1, 1fr); display: none;">
               <a href="#">News Team</a>
               <a href="#">News of The Week, Politics Hour, bulletins, podcasts and more</a>
           </div>
-           <p class="show-insta-links" style="color: white; position: absolute; bottom:15px; font: var(--small_mono) !important; padding-right:20px; text-align: center;">
+           <p class="show-insta-links news-insta-links" style="color: white; font: var(--small_mono) !important; text-align: center; display:none;">
             *Find out more about LSR's news team head on our dedicated news insta 
             <a href="https://instagram.com/thisislsr_news" style="color: white">@thisislsr_news</a>
           </p>
@@ -3746,7 +3754,7 @@ bodyhi {
     width: 100%;
     display: flex;
     margin-bottom: 10px;
-    align-items: stretch;
+    align-items: flex-start; /* important change */
 }
 
 .section {
@@ -3755,8 +3763,9 @@ bodyhi {
     padding: 20px;
     margin: 0 5px;
     flex-grow: 1;
-    display: flex;
+     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Ensure content doesn't overflow */
 }
 
 .section-full {
@@ -3817,6 +3826,10 @@ ul.show-list {
 
 .show-cta {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* push the insta links to bottom*/
+     height: 100%; 
 }
 
 .show-cta button {
@@ -3908,6 +3921,7 @@ ul.show-list {
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     justify-items: center;
+    
 }
 
 @media screen and (max-width: 600px) {
@@ -3941,7 +3955,92 @@ ul.show-list {
     align-items: center;
     width: 100%;
 }
+.toggle-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    
+}
+.toggle-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    margin-left: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.down-arrow {
+    border-top: 10px solid white;
+}
+
+.up-arrow {
+   
+    border-bottom: 10px solid white;
+   transform: rotate(180deg);
+
+}
+
+.show-cta-container {
+    display:flex;
+}
 </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Music Section
+         const musicToggleHeader = document.querySelector('#apply-section .toggle-header-container');
+        const musicContent = document.querySelector('#apply-section .music-content');
+         const musicInstaLinks = document.querySelector('#apply-section .music-insta-links');
+        const musicArrow = document.querySelector('#apply-section .music-toggle-arrow');
+        let musicExpanded = false; // Track the expanded state
+
+
+         musicToggleHeader.addEventListener('click', function() {
+              if(!musicExpanded) {
+                   musicContent.style.display = 'grid';
+                   musicInstaLinks.style.display ='block';
+                 musicArrow.classList.remove('down-arrow')
+                musicArrow.classList.add('up-arrow')
+                  musicExpanded = true
+              } else{
+                     musicContent.style.display = 'none';
+                     musicInstaLinks.style.display ='none';
+                 musicArrow.classList.remove('up-arrow')
+                  musicArrow.classList.add('down-arrow')
+                    musicExpanded = false;
+              }
+
+        });
+        
+      
+          const newsToggleHeader = document.querySelector('.show-cta .toggle-header-container');
+        const newsContent = document.querySelector('.show-cta .news-content');
+        const newsInstaLinks = document.querySelector('.show-cta .news-insta-links');
+         const newsArrow = document.querySelector('.show-cta .news-toggle-arrow');
+          let newsExpanded = false;
+
+
+       
+           newsToggleHeader.addEventListener('click', function() {
+              if(!newsExpanded) {
+                newsContent.style.display = 'grid';
+                newsInstaLinks.style.display ='block';
+                 newsArrow.classList.remove('down-arrow')
+                 newsArrow.classList.add('up-arrow')
+                 newsExpanded = true;
+              } else{
+                     newsContent.style.display = 'none';
+                    newsInstaLinks.style.display ='none';
+                newsArrow.classList.remove('up-arrow')
+                  newsArrow.classList.add('down-arrow')
+                    newsExpanded = false;
+              }
+
+        });
+    });
+</script>
    
 
   <div class="row w3-hide-large" id="Book2">
