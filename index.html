@@ -3695,7 +3695,7 @@ width: 15vw;
       </div>
     </div>
 
- <div class="row w3-hide-small">
+<div class="row w3-hide-small">
   <div class="section section-two-third show-apply-links-grid" id="apply-section">
     <div class="toggle-header-container">
       <h2 style="font-size: 30px !important; margin-bottom: 0;">Apply for a Core Music Shows</h2>
@@ -3722,7 +3722,7 @@ width: 15vw;
       <a href="https://instagram.com/thisislsr_music" style="color: white">@thisislsr_music</a>
     </p>
   </div>
-  <div class="section section-third show-cta">
+  <div class="section section-third show-news-cta">
     <div class="show-cta">
       <div class="toggle-header-container">
         <h2 style="font-size: 30px !important; margin-bottom: 0px !important;">Apply for News</h2>
@@ -3770,7 +3770,7 @@ width: 15vw;
       <a href="https://instagram.com/thisislsr_weekend" style="color: white">@thisislsr_weekend</a>
     </p>
   </div>
-  <div class="section section-half show-cta">
+  <div class="section section-half show-news-cta">
     <div class="show-cta">
       <div class="toggle-header-container">
         <h2 style="font-size: 30px !important; margin-bottom: 0px !important;">
@@ -4053,8 +4053,8 @@ color:white;
 }
 </style>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-  // Function to handle toggle logic (avoiding code duplication)
+ document.addEventListener('DOMContentLoaded', function() {
+  // Function to handle toggle logic
   function setupToggle(container, contentClass, instaLinksClass, arrowClass) {
     const toggleHeader = container.querySelector('.toggle-header-container');
     const content = container.querySelector(`.${contentClass}`);
@@ -4085,7 +4085,7 @@ color:white;
   });
 
   // Loop through each news section
-  document.querySelectorAll('.show-cta').forEach(newsSection => {
+  document.querySelectorAll('.show-news-cta').forEach(newsSection => {
     setupToggle(newsSection, 'news-content', 'news-insta-links', 'news-toggle-arrow');
   });
 });
