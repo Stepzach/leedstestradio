@@ -3695,11 +3695,11 @@ width: 15vw;
       </div>
     </div>
 
-  <div class="row w3-hide-small">
+ <div class="row w3-hide-small">
     <div class="section section-two-third show-apply-links-grid" id="apply-section">
-        <div class="toggle-header-container" >
+        <div class="toggle-header-container">
           <h2 style="font-size: 30px !important; margin-bottom: 0; ">Apply for a Core Music Shows</h2>
-           <span class="toggle-arrow music-toggle-arrow down-arrow"></span>
+           <span class="toggle-arrow music-toggle-arrow down-arrow">﹀</span>
         </div>
        
         <div class="show-grid-container music-content" style="display: none; margin-top: 20px;">
@@ -3719,11 +3719,11 @@ width: 15vw;
           <a href="https://instagram.com/thisislsr_music" style="color: white">@thisislsr_music</a>
         </p>
     </div>
-    <div class="section section-third show-cta-container" >
+    <div class="section section-third show-cta-container">
       <div class="show-cta">
         <div class="toggle-header-container">
           <h2 style="font-size: 30px !important; margin-bottom: 0px !important;">Apply for News</h2>
-             <span class="toggle-arrow news-toggle-arrow down-arrow"></span>
+             <span class="toggle-arrow news-toggle-arrow down-arrow">﹀</span>
            </div>
           
           <div class="show-grid-container news-content" style="grid-template-columns: repeat(1, 1fr); display: none; margin-top: 20px;">
@@ -3963,25 +3963,28 @@ ul.show-list {
     
 }
 .toggle-arrow {
-display: inline-block;
-width: 20px;
-height: 20px;
-border-left: 10px solid transparent;
-border-right: 10px solid transparent;
-margin-left: 5px;
-transition: transform 0.2s ease-in-out;
-}
+color:white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    transition: transform 0.2s ease-in-out;
+    font-size: 20px;
+    line-height: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: 50% 20%; /* Set the rotation origin */
 }
 
 .down-arrow {
-  border-top: 20px solid white;
+  transform: rotate(0deg);
+    transform-origin: 50% 20%; /* Set the rotation origin */
 }
 
 .up-arrow {
-   
-    border-bottom: 10px solid white;
    transform: rotate(180deg);
-
+     transform-origin: 50% 20%; /* Set the rotation origin */
 }
 
 .show-cta-container {
@@ -4042,7 +4045,6 @@ transition: transform 0.2s ease-in-out;
         });
     });
 </script>
-   
 
   <div class="row w3-hide-large" id="Book2">
       <div class="section section-two-third show-studio-section" style="color: white; border-left: none;">
