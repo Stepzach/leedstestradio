@@ -4037,58 +4037,42 @@ color:white;
 }
 </style>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Music Section
-         const musicToggleHeader = document.querySelector('#apply-section .toggle-header-container');
-        const musicContent = document.querySelector('#apply-section .music-content');
-         const musicInstaLinks = document.querySelector('#apply-section .music-insta-links');
-        const musicArrow = document.querySelector('#apply-section .music-toggle-arrow');
-        let musicExpanded = false; // Track the expanded state
+  document.addEventListener('DOMContentLoaded', function() {
+  // Function to handle toggle logic (avoiding code duplication)
+  function setupToggle(container, contentClass, instaLinksClass, arrowClass) {
+    const toggleHeader = container.querySelector('.toggle-header-container');
+    const content = container.querySelector(`.${contentClass}`);
+    const instaLinks = container.querySelector(`.${instaLinksClass}`);
+    const arrow = container.querySelector(`.${arrowClass}`);
+    let expanded = false;
 
-
-         musicToggleHeader.addEventListener('click', function() {
-              if(!musicExpanded) {
-                   musicContent.style.display = 'grid';
-                   musicInstaLinks.style.display ='block';
-                 musicArrow.classList.remove('down-arrow')
-                musicArrow.classList.add('up-arrow')
-                  musicExpanded = true
-              } else{
-                     musicContent.style.display = 'none';
-                     musicInstaLinks.style.display ='none';
-                 musicArrow.classList.remove('up-arrow')
-                  musicArrow.classList.add('down-arrow')
-                    musicExpanded = false;
-              }
-
-        });
-        
-      
-          const newsToggleHeader = document.querySelector('.show-cta .toggle-header-container');
-        const newsContent = document.querySelector('.show-cta .news-content');
-        const newsInstaLinks = document.querySelector('.show-cta .news-insta-links');
-         const newsArrow = document.querySelector('.show-cta .news-toggle-arrow');
-          let newsExpanded = false;
-
-
-       
-           newsToggleHeader.addEventListener('click', function() {
-              if(!newsExpanded) {
-                newsContent.style.display = 'grid';
-                newsInstaLinks.style.display ='block';
-                 newsArrow.classList.remove('down-arrow')
-                 newsArrow.classList.add('up-arrow')
-                 newsExpanded = true;
-              } else{
-                     newsContent.style.display = 'none';
-                    newsInstaLinks.style.display ='none';
-                newsArrow.classList.remove('up-arrow')
-                  newsArrow.classList.add('down-arrow')
-                    newsExpanded = false;
-              }
-
-        });
+    toggleHeader.addEventListener('click', function() {
+      if (!expanded) {
+        content.style.display = 'grid';
+        instaLinks.style.display = 'block';
+        arrow.classList.remove('down-arrow');
+        arrow.classList.add('up-arrow');
+        expanded = true;
+      } else {
+        content.style.display = 'none';
+        instaLinks.style.display = 'none';
+        arrow.classList.remove('up-arrow');
+        arrow.classList.add('down-arrow');
+        expanded = false;
+      }
     });
+  }
+
+  // Loop through each music section
+  document.querySelectorAll('.show-apply-links-grid').forEach(musicSection => {
+    setupToggle(musicSection, 'music-content', 'music-insta-links', 'music-toggle-arrow');
+  });
+
+  // Loop through each news section
+  document.querySelectorAll('.show-cta').forEach(newsSection => {
+    setupToggle(newsSection, 'news-content', 'news-insta-links', 'news-toggle-arrow');
+  });
+});
 </script>
 
   <div class="row w3-hide-large" id="Book2">
