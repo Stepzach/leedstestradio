@@ -3803,7 +3803,7 @@ width: 15vw;
   <div class="section section-third show-apply-links-grid" id="apply-section">
     <div class="toggle-header-container">
       <h2 style="font-size: 30px !important; margin-bottom: 0;">Apply for a Sports Show</h2>
-      <span class="toggle-arrow music-toggle-arrow down-arrow">﹀</span>
+      <span class="toggle-arrow down-arrow">﹀</span>
     </div>
 
     <div class="show-grid-container music-content" style="grid-template-columns: repeat(1, 1fr); display: none; margin-top: 20px;">
@@ -3811,7 +3811,7 @@ width: 15vw;
       <a href="#">Core sports LSR podcast</a>
      
     </div>
-    <p class="show-insta-links music-insta-links" style="color: white; display: none; margin-top: 20px; font: var(--small_mono) !important;">
+    <p class="show-insta-links" style="color: white; display: none; margin-top: 20px; font: var(--small_mono) !important;">
       *Got questions about our sports team? Head on over to insta 
       <a href="https://instagram.com/thisislsr_sport" style="color: white">@thisislsr_sport</a>
     </p>
@@ -3819,14 +3819,14 @@ width: 15vw;
   <div class="section section-third show-apply-links-grid" id="apply-section">
     <div class="toggle-header-container">
       <h2 style="font-size: 30px !important; margin-bottom: 0;">Apply for Breakfast or Hometime</h2>
-      <span class="toggle-arrow music-toggle-arrow down-arrow">﹀</span>
+      <span class="toggle-arrow down-arrow">﹀</span>
     </div>
 
     <div class="show-grid-container music-content" style="grid-template-columns: repeat(1, 1fr); display: none; margin-top: 20px;">
       <a href="#">Breakfast Show</a>
         <a href="#">Hometime Show</a>
     </div>
-    <p class="show-insta-links music-insta-links" style="color: white; display: none; margin-top: 20px; font: var(--small_mono) !important;">
+    <p class="show-insta-links" style="color: white; display: none; margin-top: 20px; font: var(--small_mono) !important;">
       *Find out more about Breakfast or Hometime on Instagram:
       <a href="https://instagram.com/thisislsrbreakfast" style="color: white">@thisislsrbreakfast</a> <a href="https://instagram.com/thisislsr_hometime" style="color: white">@thisislsr_hometime</a>
     </p>
@@ -3835,7 +3835,7 @@ width: 15vw;
     <div class="show-cta">
       <div class="toggle-header-container">
         <h2 style="font-size: 30px !important; margin-bottom: 0px !important;">Apply for Your Own Show or Podcast</h2>
-        <span class="toggle-arrow news-toggle-arrow down-arrow">﹀</span>
+        <span class="toggle-arrow down-arrow">﹀</span>
       </div>
 
       <div class="show-grid-container news-content" style="grid-template-columns: repeat(1, 1fr); display: none; margin-top: 20px;">
@@ -3846,7 +3846,39 @@ width: 15vw;
     </div>
   </div>
 </div>
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+  // Function to handle toggle logic
+  function setupToggle(container) {
+    const toggleHeader = container.querySelector('.toggle-header-container');
+    const content = container.querySelector('.show-grid-container');
+     const instaLinks = container.querySelector('.show-insta-links');
+    const arrow = container.querySelector('.toggle-arrow');
+    let expanded = false;
 
+    toggleHeader.addEventListener('click', function() {
+      if (!expanded) {
+        content.style.display = 'grid';
+        if(instaLinks) instaLinks.style.display = 'block';
+        arrow.classList.remove('down-arrow');
+        arrow.classList.add('up-arrow');
+        expanded = true;
+      } else {
+        content.style.display = 'none';
+        if(instaLinks) instaLinks.style.display = 'none';
+        arrow.classList.remove('up-arrow');
+        arrow.classList.add('down-arrow');
+        expanded = false;
+      }
+    });
+  }
+
+  // Loop through each section with a toggle
+  document.querySelectorAll('.section').forEach(section => {
+    setupToggle(section);
+  });
+});
+</script>
 
       
 <style>
@@ -4103,44 +4135,7 @@ color:white;
     display:flex;
 }
 </style>
-<script>
- document.addEventListener('DOMContentLoaded', function() {
-  // Function to handle toggle logic
-  function setupToggle(container, contentClass, instaLinksClass, arrowClass) {
-    const toggleHeader = container.querySelector('.toggle-header-container');
-    const content = container.querySelector(`.${contentClass}`);
-    const instaLinks = container.querySelector(`.${instaLinksClass}`);
-    const arrow = container.querySelector(`.${arrowClass}`);
-    let expanded = false;
 
-    toggleHeader.addEventListener('click', function() {
-      if (!expanded) {
-        content.style.display = 'grid';
-        instaLinks.style.display = 'block';
-        arrow.classList.remove('down-arrow');
-        arrow.classList.add('up-arrow');
-        expanded = true;
-      } else {
-        content.style.display = 'none';
-        instaLinks.style.display = 'none';
-        arrow.classList.remove('up-arrow');
-        arrow.classList.add('down-arrow');
-        expanded = false;
-      }
-    });
-  }
-
-  // Loop through each music section
-  document.querySelectorAll('.show-apply-links-grid').forEach(musicSection => {
-    setupToggle(musicSection, 'music-content', 'music-insta-links', 'music-toggle-arrow');
-  });
-
-  // Loop through each news section
-  document.querySelectorAll('.show-news-cta').forEach(newsSection => {
-    setupToggle(newsSection, 'news-content', 'news-insta-links', 'news-toggle-arrow');
-  });
-});
-</script>
 
   <div class="row w3-hide-large" id="Book2">
       <div class="section section-two-third show-studio-section" style="color: white; border-left: none;">
