@@ -3800,7 +3800,7 @@ width: 15vw;
 </div>
 
 <div class="row w3-hide-small">
-  <div class="section section-third show-apply-links-grid" id="apply-section">
+  <div class="section section-third show-apply-links-grid toggle-section" id="apply-section">
     <div class="toggle-header-container">
       <h2 style="font-size: 30px !important; margin-bottom: 0;">Apply for a Sports Show</h2>
       <span class="toggle-arrow down-arrow">﹀</span>
@@ -3811,12 +3811,12 @@ width: 15vw;
       <a href="#">Core sports LSR podcast</a>
      
     </div>
-    <p class="show-insta-links" style="color: white; display: none; margin-top: 20px; font: var(--small_mono) !important;">
+    <p class="show-insta-links music-insta-links" style="color: white; display: none; margin-top: 20px; font: var(--small_mono) !important;">
       *Got questions about our sports team? Head on over to insta 
       <a href="https://instagram.com/thisislsr_sport" style="color: white">@thisislsr_sport</a>
     </p>
   </div>
-  <div class="section section-third show-apply-links-grid" id="apply-section">
+  <div class="section section-third show-apply-links-grid toggle-section" id="apply-section">
     <div class="toggle-header-container">
       <h2 style="font-size: 30px !important; margin-bottom: 0;">Apply for Breakfast or Hometime</h2>
       <span class="toggle-arrow down-arrow">﹀</span>
@@ -3826,12 +3826,12 @@ width: 15vw;
       <a href="#">Breakfast Show</a>
         <a href="#">Hometime Show</a>
     </div>
-    <p class="show-insta-links" style="color: white; display: none; margin-top: 20px; font: var(--small_mono) !important;">
+    <p class="show-insta-links music-insta-links" style="color: white; display: none; margin-top: 20px; font: var(--small_mono) !important;">
       *Find out more about Breakfast or Hometime on Instagram:
       <a href="https://instagram.com/thisislsrbreakfast" style="color: white">@thisislsrbreakfast</a> <a href="https://instagram.com/thisislsr_hometime" style="color: white">@thisislsr_hometime</a>
     </p>
   </div>
-  <div class="section section-third show-news-cta">
+  <div class="section section-third show-news-cta toggle-section">
     <div class="show-cta">
       <div class="toggle-header-container">
         <h2 style="font-size: 30px !important; margin-bottom: 0px !important;">Apply for Your Own Show or Podcast</h2>
@@ -3852,20 +3852,26 @@ width: 15vw;
   function setupToggle(container) {
     const toggleHeader = container.querySelector('.toggle-header-container');
     const content = container.querySelector('.show-grid-container');
-     const instaLinks = container.querySelector('.show-insta-links');
+    // dynamically check for content class names
+    const contentClass = content.classList.contains('music-content') ? 'music-content' : 'news-content';
+    const instaLinks = container.querySelector(`.show-insta-links.${contentClass.replace('content', 'insta-links')}`);
     const arrow = container.querySelector('.toggle-arrow');
     let expanded = false;
 
     toggleHeader.addEventListener('click', function() {
       if (!expanded) {
         content.style.display = 'grid';
-        if(instaLinks) instaLinks.style.display = 'block';
+         if (instaLinks) {
+            instaLinks.style.display = 'block';
+          }
         arrow.classList.remove('down-arrow');
         arrow.classList.add('up-arrow');
         expanded = true;
       } else {
         content.style.display = 'none';
-        if(instaLinks) instaLinks.style.display = 'none';
+         if (instaLinks) {
+            instaLinks.style.display = 'none';
+          }
         arrow.classList.remove('up-arrow');
         arrow.classList.add('down-arrow');
         expanded = false;
@@ -3874,7 +3880,7 @@ width: 15vw;
   }
 
   // Loop through each section with a toggle
-  document.querySelectorAll('.section').forEach(section => {
+  document.querySelectorAll('.toggle-section').forEach(section => {
     setupToggle(section);
   });
 });
