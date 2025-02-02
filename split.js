@@ -371,36 +371,6 @@ scheduleGrids.forEach(grid => {
     });
   });
 });
-const chatbox888 = document.getElementById('chatbox888');
-const messageInput888 = document.getElementById('message888');
-const sendButton888 = document.getElementById('send888');
-
-sendButton888.addEventListener('click', sendMessage888);
-messageInput888.addEventListener('keyup', (event) => {
-  if (event.key === 'Enter') {
-    sendMessage888();
-  }
-});
-
-function sendMessage888() {
-  const message = messageInput888.value.trim();
-  if (message !== '') {
-    addMessage888('user888', message); 
-    messageInput888.value = '';
-  }
-}
-
-function addMessage888(sender, text) {
-  const messageElement = document.createElement('div');
-  messageElement.classList.add('message888', sender);
-  messageElement.textContent = text;
-  chatbox888.appendChild(messageElement);
-  chatbox888.scrollTop = chatbox888.scrollHeight; 
-}
-
-setTimeout(() => {
-    addMessage888('streamer888', "Welcome to the stream!");
-}, 2000);
 
  const slattAudio = new Audio('https://streamer.radio.co/s986435880/listen.m3u');
   const slattPlayPauseButton = document.getElementById('slattPlayPauseButton');
