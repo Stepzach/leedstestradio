@@ -200,7 +200,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
   startAutoSlide(); // Start the automatic slideshow initially
 
 
-  
+   const schedules = document.getElementById('Schedule');
     const overlay = document.getElementById('show-overlay');
     const modal = document.getElementById('show-modal');
     const closeButton = document.getElementById('close-show');
@@ -212,7 +212,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
     const instagramUsernameSpan = document.getElementById('instagram-username');
 
 
-    schedule.addEventListener('click', function(event) {
+    schedules.addEventListener('click', function(event) {
           const target = event.target.closest('td');
          if (target) {
            
