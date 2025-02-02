@@ -1,4 +1,4 @@
-
+document.addEventListener('DOMContentLoaded', function() {
 const livestreamElement = document.getElementById('livestream');
 
 // Ensure the MediaSession API is supported
@@ -946,4 +946,5 @@ function parseTimeTo24Hour(time) {
 
     // Call the function immediately to show the time on load
     updateTime();
-      
+
+     }
