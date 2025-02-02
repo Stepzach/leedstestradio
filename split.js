@@ -933,4 +933,4 @@ function parseTimeTo24Hour(time) {
     // Call the function immediately to show the time on load
     updateTime();
 
-     }
+     });
