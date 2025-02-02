@@ -440,51 +440,9 @@ scheduleGrids.forEach(grid => {
 
 
 
-    const playPauseButton20 = document.getElementById('playPauseButton2');
-    const livestream20 = document.getElementById('livestream2');
-    const playIcon20 = '<i class="fas fa-play"></i>';
-    const pauseIcon20 = '<i class="fas fa-pause"></i>';
-
-    playPauseButton20.addEventListener('click', function() {
-      if (livestream20.paused) {
-        livestream20.play();
-        playPauseButton20.innerHTML = pauseIcon20; // Change icon to pause
-      } else {
-        livestream20.pause();
-        playPauseButton20.innerHTML = playIcon20; // Change icon to play
-      }
-    });
+   
 
 
- const playPauseButton30 = document.getElementById('playPauseButton3');
-    const livestream30 = document.getElementById('livestream3');
-    const playIcon30 = '<i class="fas fa-play"></i>';
-    const pauseIcon30 = '<i class="fas fa-pause"></i>';
-
-    playPauseButton30.addEventListener('click', function() {
-      if (livestream30.paused) {
-        livestream30.play();
-        playPauseButton30.innerHTML = pauseIcon30; // Change icon to pause
-      } else {
-        livestream30.pause();
-        playPauseButton30.innerHTML = playIcon30; // Change icon to play
-      }
-    });
-
- const playPauseButton40 = document.getElementById('playPauseButton4');
-    const livestream40 = document.getElementById('livestream4');
-    const playIcon40 = '<i class="fas fa-play"></i>';
-    const pauseIcon40 = '<i class="fas fa-pause"></i>';
-
-    playPauseButton40.addEventListener('click', function() {
-      if (livestream40.paused) {
-        livestream40.play();
-        playPauseButton40.innerHTML = pauseIcon40; // Change icon to pause
-      } else {
-        livestream40.pause();
-        playPauseButton40.innerHTML = playIcon40; // Change icon to play
-      }
-    });
  document.addEventListener('DOMContentLoaded', function() {
   // Function to handle toggle logic
   function setupToggle(container) {
