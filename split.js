@@ -199,7 +199,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
 
   startAutoSlide(); // Start the automatic slideshow initially
 
-document.addEventListener('DOMContentLoaded', function() {
+
     const schedule = document.getElementById('Schedule');
     const overlay = document.getElementById('show-overlay');
     const modal = document.getElementById('show-modal');
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
             overlay.style.display = 'none';
         }
     });
-});
+
 
  const dayTabs = document.querySelectorAll('.day-tab');
 const scheduleGrids = document.querySelectorAll('.mobile-schedule-grid');
@@ -331,7 +331,7 @@ scheduleGrids.forEach(grid => {
             // ... (Rest of highlightCurrentSlot logic - no changes needed)
         }
         
-        document.addEventListener('DOMContentLoaded', () => {
+     
   const spinningImages = document.querySelectorAll('.spinning-image');
 
   spinningImages.forEach(image => {
@@ -370,7 +370,7 @@ scheduleGrids.forEach(grid => {
       }
     });
   });
-});
+
 
  const slattAudio = new Audio('https://streamer.radio.co/s986435880/listen.m3u');
   const slattPlayPauseButton = document.getElementById('slattPlayPauseButton');
@@ -443,7 +443,7 @@ scheduleGrids.forEach(grid => {
    
 
 
- document.addEventListener('DOMContentLoaded', function() {
+
   // Function to handle toggle logic
   function setupToggle(container) {
     const toggleHeader = container.querySelector('.toggle-header-container');
@@ -479,7 +479,7 @@ scheduleGrids.forEach(grid => {
   document.querySelectorAll('.toggle-section').forEach(section => {
     setupToggle(section);
   });
-});
+
 
  const containers = document.querySelectorAll('.expandable-container');
 
