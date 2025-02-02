@@ -437,23 +437,7 @@ scheduleGrids.forEach(grid => {
   }
  
   setInterval(updateProgressBar, 1000);
-  
-   const playPauseButton10 = document.getElementById('playPauseButton1');
-    const livestream10 = document.getElementById('livestream1');
-    const playIcon10 = '<i class="fas fa-play"></i>';
-    const pauseIcon10 = '<i class="fas fa-pause"></i>';
 
-   playPauseButton10.addEventListener('click', function() {
-  if (livestream10.paused) {
-    livestream10.play();
-    playPauseButton10.innerHTML = pauseIcon10; // Change icon to pause
-    audioPlayerContainer.classList.add('rotating'); // Start rotation
-  } else {
-    livestream10.pause();
-    playPauseButton10.innerHTML = playIcon10; // Change icon to play
-    audioPlayerContainer.classList.remove('rotating'); // Stop rotation
-  }
-});
 
 
     const playPauseButton20 = document.getElementById('playPauseButton2');
