@@ -171,21 +171,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
     });
 });
 
-  const playPauseIcon = document.getElementById('playPauseIcon7778');
-  const albumArt = document.getElementById('albumArt7778'); // Optional: For visual feedback
-  playPauseIcon.addEventListener('click', function() {
-    if (playPauseIcon.classList.contains('play-icon')) {
-      playPauseIcon.classList.remove('play-icon');
-      playPauseIcon.classList.add('pause-icon');
-      // Here you would start your audio playback
-      // Example: albumArt.play(); If albumArt was an audio element
-    } else {
-      playPauseIcon.classList.remove('pause-icon');
-      playPauseIcon.classList.add('play-icon');
-       // Here you would pause your audio playback
-       // Example: albumArt.pause();
-    }
-  });
+ 
   
     const carouselInputs = document.querySelectorAll('.carousel-open');
   let currentSlide = 0;
