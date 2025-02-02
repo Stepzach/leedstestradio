@@ -314,12 +314,15 @@
       
   <!-- Desktop schedule table (in a sepearte file)-->
       
+      <div id="content-placeholderz"></div>
+
+      
 <script>
         // Load external content dynamically
         fetch('desktopschedule.html')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('content-placeholder').innerHTML = data;
+            document.getElementById('content-placeholderz').innerHTML = data;
         })
         .catch(error => console.error('Error loading content:', error));
     </script>
