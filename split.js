@@ -762,8 +762,7 @@ scheduleGrids.forEach(grid => {
 });
 
          
-// Get current time and day in GMT
- function updateOnAirStatus() {
+function updateOnAirStatus() {
   const now = new Date();
   const currentHour = now.getUTCHours(); // GMT hour
   const currentDay = now.getUTCDay();   // GMT day (0 = Sunday, 1 = Monday, ...)
@@ -777,6 +776,8 @@ scheduleGrids.forEach(grid => {
   // Remove existing 'on-air' class from all cells
   document.querySelectorAll(".on-air").forEach(cell => cell.classList.remove("on-air"));
 
+  let foundShow = false;
+
   // Loop through the rows to find the matching time slot
   rows.forEach(row => {
     const timeCell = row.querySelector("td:first-child"); // First column has the time
@@ -787,12 +788,34 @@ scheduleGrids.forEach(grid => {
     if (currentHour >= startTime && currentHour < endTime) {
       const dayColumnIndex = dayToColumnIndex[currentDay];
       const cell = row.querySelector(`td:nth-child(${dayColumnIndex})`);
-
+      
       if (cell) {
         cell.classList.add("on-air"); // Add the 'on-air' styling
+        foundShow = true;
       }
     }
   });
+
+  // If no show is found and it's between 9 AM and midnight, check the previous hour
+  if (!foundShow && currentHour >= 9 && currentHour < 24) {
+    const previousHour = currentHour - 1;
+    
+    rows.forEach(row => {
+      const timeCell = row.querySelector("td:first-child");
+      const timeRange = timeCell.textContent.split(" - ");
+      const startTime = parseTimeTo24Hour(timeRange[0]);
+      const endTime = parseTimeTo24Hour(timeRange[1]);
+
+      if (previousHour >= startTime && previousHour < endTime) {
+        const dayColumnIndex = dayToColumnIndex[currentDay];
+        const cell = row.querySelector(`td:nth-child(${dayColumnIndex})`);
+
+        if (cell) {
+          cell.classList.add("on-air"); // Apply 'on-air' styling to the previous hour's show
+        }
+      }
+    });
+  }
 }
 
 // Call the function immediately to update on page load
@@ -812,15 +835,6 @@ function parseTimeTo24Hour(time) {
   return hours; // Only hours are used for comparison
 }
 
-  // Function to convert 12-hour time (e.g., "09:00 AM") to 24-hour time (e.g., 9)
-  function parseTimeTo24Hour(timeStr) {
-    const [time, modifier] = timeStr.split(" ");
-    let [hours, minutes] = time.split(":").map(Number);
-    if (modifier === "PM" && hours !== 12) hours += 12;
-    if (modifier === "AM" && hours === 12) hours = 0;
-    return hours;
-  }
-  
   
   
    function updateTime() {
