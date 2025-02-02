@@ -200,7 +200,7 @@ document.querySelectorAll('.audio-button').forEach(button => {
   startAutoSlide(); // Start the automatic slideshow initially
 
 
-    const schedule = document.getElementById('Schedule');
+  
     const overlay = document.getElementById('show-overlay');
     const modal = document.getElementById('show-modal');
     const closeButton = document.getElementById('close-show');
