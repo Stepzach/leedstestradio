@@ -762,78 +762,79 @@ scheduleGrids.forEach(grid => {
 });
 
          
-function updateOnAirStatus() {
-  const now = new Date();
-  const currentHour = now.getUTCHours(); // GMT hour
-  const currentDay = now.getUTCDay();   // GMT day (0 = Sunday, 1 = Monday, ...)
 
-  // Map days of the week to table columns (Monday = 1, ..., Sunday = 7)
-  const dayToColumnIndex = [8, 2, 3, 4, 5, 6, 7]; // Correctly maps Monday to 1, Sunday to 7
+  // Get current time and day in GMT
+  function updateOnAirStatus() {
+    const now = new Date();
+    const currentHour = now.getUTCHours(); // GMT hour
+    const currentDay = now.getUTCDay(); // GMT day (0 = Sunday, 1 = Monday, ...)
 
-  // Get all table rows
-  const rows = document.querySelectorAll("tbody tr");
+    // Map days of the week to table columns (Monday = 1, ..., Sunday = 7)
+    const dayToColumnIndex = [8, 2, 3, 4, 5, 6, 7];
 
-  // Remove existing 'on-air' class from all cells
-  document.querySelectorAll(".on-air").forEach(cell => cell.classList.remove("on-air"));
+    // Get all table rows
+    const rows = document.querySelectorAll("tbody tr");
 
-  let foundShow = false;
+    // Remove existing 'on-air' class from all cells
+    document
+      .querySelectorAll(".on-air")
+      .forEach((cell) => cell.classList.remove("on-air"));
 
-  // Loop through the rows to find the matching time slot
-  rows.forEach(row => {
-    const timeCell = row.querySelector("td:first-child"); // First column has the time
-    const timeRange = timeCell.textContent.split(" - ");
-    const startTime = parseTimeTo24Hour(timeRange[0]);
-    const endTime = parseTimeTo24Hour(timeRange[1]);
-
-    if (currentHour >= startTime && currentHour < endTime) {
-      const dayColumnIndex = dayToColumnIndex[currentDay];
-      const cell = row.querySelector(`td:nth-child(${dayColumnIndex})`);
-      
-      if (cell) {
-        cell.classList.add("on-air"); // Add the 'on-air' styling
-        foundShow = true;
+    let skipNextRow = false; // Flag to skip next row if a rowspan cell was highlighted
+    // Loop through the rows to find the matching time slot
+    for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+        const row = rows[rowIndex];
+      if (skipNextRow) {
+        skipNextRow = false;
+        continue; // Skip this row
       }
-    }
-  });
-
-  // If no show is found and it's between 9 AM and midnight, check the previous hour
-  if (!foundShow && currentHour >= 9 && currentHour < 24) {
-    const previousHour = currentHour - 1;
-    
-    rows.forEach(row => {
-      const timeCell = row.querySelector("td:first-child");
+      const timeCell = row.querySelector("td:first-child"); // First column has the time
       const timeRange = timeCell.textContent.split(" - ");
       const startTime = parseTimeTo24Hour(timeRange[0]);
       const endTime = parseTimeTo24Hour(timeRange[1]);
 
-      if (previousHour >= startTime && previousHour < endTime) {
-        const dayColumnIndex = dayToColumnIndex[currentDay];
-        const cell = row.querySelector(`td:nth-child(${dayColumnIndex})`);
+      const dayColumnIndex = dayToColumnIndex[currentDay];
+      const cell = row.querySelector(`td:nth-child(${dayColumnIndex})`);
 
-        if (cell) {
-          cell.classList.add("on-air"); // Apply 'on-air' styling to the previous hour's show
+      if (cell) {
+         if (cell.hasAttribute('rowspan') && parseInt(cell.getAttribute('rowspan')) > 1) {
+           //handle rowspan cells
+          const nextRow = rows[rowIndex+1];
+          const nextTimeCell = nextRow.querySelector('td:first-child');
+           const nextTimeRange = nextTimeCell.textContent.split(" - ");
+           const nextEndTime = parseTimeTo24Hour(nextTimeRange[1]);
+
+           if (currentHour >= startTime && currentHour < nextEndTime) {
+             cell.classList.add("on-air");
+             skipNextRow = true;
+           }
+         } else {
+           // regular cells
+          if (currentHour >= startTime && currentHour < endTime) {
+            cell.classList.add("on-air");
+          }
         }
       }
-    });
+
+    }
   }
-}
 
-// Call the function immediately to update on page load
-updateOnAirStatus();
+  // Call the function immediately to update on page load
+  updateOnAirStatus();
 
-// Set up an interval to refresh the logic every 2 minutes (120000ms)
-setInterval(updateOnAirStatus, 120000);
+  // Set up an interval to refresh the logic every 2 minutes (120000ms)
+  setInterval(updateOnAirStatus, 120000);
 
-// Utility function: Parse time in "hh:mm AM/PM" format to 24-hour format
-function parseTimeTo24Hour(time) {
-  const [timePart, meridiem] = time.split(" ");
-  let [hours, minutes] = timePart.split(":").map(Number);
-  
-  if (meridiem === "PM" && hours !== 12) hours += 12;
-  if (meridiem === "AM" && hours === 12) hours = 0;
+  // Utility function: Parse time in "hh:mm AM/PM" format to 24-hour format
+  function parseTimeTo24Hour(time) {
+    const [timePart, meridiem] = time.split(" ");
+    let [hours, minutes] = timePart.split(":").map(Number);
 
-  return hours; // Only hours are used for comparison
-}
+    if (meridiem === "PM" && hours !== 12) hours += 12;
+    if (meridiem === "AM" && hours === 12) hours = 0;
+
+    return hours; // Only hours are used for comparison
+  }
 
   
   
