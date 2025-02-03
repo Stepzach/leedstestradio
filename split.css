@@ -1686,7 +1686,7 @@ margin-top: 10px;
     }
 
     .su-about-left {
-      flex: 0 0 30%; /* Fixed width: 30% */
+      flex: 0 0 40%; /* Fixed width: 30% */
       text-align: center;
         background-color: rgb(149, 13, 13);
 padding: 20px;
@@ -1710,7 +1710,7 @@ padding: 20px;
     }
 
     .su-about-right {
-      flex: 0 0 70%; /* Fixed width: 70% */
+      flex: 0 0 59.5%; 
         background-color: rgb(149, 13, 13);
 padding: 20px;
 
@@ -1722,7 +1722,7 @@ text-align: center;
 
     .su-about-right p {
       color: white;
-      line-height: 1.6;
+      
     }
 
     /* Grid Section Styles */
