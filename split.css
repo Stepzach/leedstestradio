@@ -4,6 +4,13 @@
     display: none !important;
   }
 }
+@media (max-width: 601px) { /* Changed to max-width */
+ .w3-hide-small2
+   {
+    display: none !important;
+  }
+}
+
 @media (min-width: 919px) { /* Changed to max-width */
  .w3-hide-large
    {
