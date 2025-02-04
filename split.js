@@ -211,33 +211,55 @@ document.querySelectorAll('.audio-button').forEach(button => {
     const instagramLink = document.getElementById('instagram-link');
     const instagramUsernameSpan = document.getElementById('instagram-username');
 
+    const column1 = document.getElementById('column-1');
+    const column2 = document.getElementById('column-2');
+    const showImage2 = document.getElementById('show-image-2');
+    const showTitle2 = document.getElementById('show-title-2');
+    const showDescription2 = document.getElementById('show-description-2');
+
 
     schedules.addEventListener('click', function(event) {
           const target = event.target.closest('td');
          if (target) {
-           
-        
+
+
+
              const showId = target.id;
 
 
-            
+
             const showInfo = target.querySelector('.show-info');
 
 
             if(showId && showInfo){
               const imageUrl = `./${showId}.jpg`;
-              const title = showInfo.querySelector('h2').textContent;
-              const description = showInfo.querySelector('p').textContent;
-            
+              const title = showInfo.querySelector('h2:nth-of-type(1)')?.textContent || ''; //Get the first h2
+              const description = showInfo.querySelector('p:nth-of-type(1)')?.textContent || ''; //Get the first p
+
             showImage.src = imageUrl;
               showTitle.textContent = title;
               showDescription.textContent = description;
 
 
-            
+
+          // Check for second set of content
+        const title2 = showInfo.querySelector('h2:nth-of-type(2)')?.textContent;
+        const description2 = showInfo.querySelector('p:nth-of-type(2)')?.textContent;
+
+        if (title2 && description2) {
+          // Display second column
+          column2.style.display = 'block';
+          showImage2.src = `./${showId}_2.jpg`; // Assuming second image has _2 suffix
+          showTitle2.textContent = title2;
+          showDescription2.textContent = description2;
+        } else {
+          // Hide second column if no second content
+          column2.style.display = 'none';
+        }
+
           let instagramLinkElement = target.querySelector('a[href*="instagram.com"]');
 
-        
+
              if(instagramLinkElement){
                    const instagramUrl = instagramLinkElement.href;
 
@@ -273,15 +295,17 @@ document.querySelectorAll('.audio-button').forEach(button => {
 
         }
 
-     
+
 });
     closeButton.addEventListener('click', function() {
         overlay.style.display = 'none';
+        column2.style.display = 'none'; // Also hide the second column on close
     });
 
     window.addEventListener('click', function(event){
         if(event.target == overlay){
             overlay.style.display = 'none';
+            column2.style.display = 'none'; // Also hide the second column on outside click
         }
     });
 
