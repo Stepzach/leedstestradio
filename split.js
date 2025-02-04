@@ -253,8 +253,8 @@ document.querySelectorAll('.audio-button').forEach(button => {
           showTitle2.textContent = title2;
           showDescription2.textContent = description2;
         } else {
-          // Hide second column if no second content
           column2.style.display = 'none';
+          column1.style.width = '90%';  // Set column1 to take up more space
         }
 
           let instagramLinkElement = target.querySelector('a[href*="instagram.com"]');
