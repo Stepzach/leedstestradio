@@ -17,6 +17,31 @@
     display: none !important;
   }
 }
+
+  /* Media Query for Small Screens (Tablet and Below) */
+  @media (max-width: 1200px) {
+    .day::after {
+      content: attr(data-short); /* Show abbreviated day names */
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the abbreviated text */
+      color: black; /* Ensure text is visible */
+      font-size: inherit; /* Matches the table font size */
+    }
+
+    .day {
+      color: transparent; /* Hides the original text */
+       
+    }
+  }
+
+    @media (max-width: 1219px) {
+  .grid-auto-md > a:nth-of-type(3) {
+    display: none !important;
+  }
+}
  @font-face {
       font-family: 'AdieuLightSS';
       src: url('https://stepzach.github.io//leedstestradio/Adieu-Light.75979a4f.woff2') format('woff2');
