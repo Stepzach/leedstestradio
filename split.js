@@ -217,6 +217,9 @@ const showImage2 = document.getElementById('show-image-2');
 const showTitle2 = document.getElementById('show-title-2');
 const showDescription2 = document.getElementById('show-description-2');
 
+const defaultModalWidth = '80%';  // Store the default width
+const singleColumnModalWidth = '40%'; // Store the single-column width
+
 
 schedules.addEventListener('click', function(event) {
     const target = event.target.closest('td');
@@ -228,9 +231,9 @@ schedules.addEventListener('click', function(event) {
 
         if (showId && showInfo) {
 
-            // **RESET COLUMN WIDTH HERE**
+            // **RESET COLUMN WIDTH AND MODAL WIDTH HERE**
             column1.style.width = '45%'; // Default width for two-column layout
-
+            modal.style.width = defaultModalWidth; // Reset modal width
 
             const imageUrl = `./${showId}.jpg`;
             const title = showInfo.querySelector('h2:nth-of-type(1)')?.textContent || ''; //Get the first h2
@@ -254,6 +257,7 @@ schedules.addEventListener('click', function(event) {
                 // Hide second column if no second content
                 column2.style.display = 'none';
                 column1.style.width = '90%';  // Set column1 to take up more space
+                modal.style.width = singleColumnModalWidth; // Set modal width for single column
             }
 
             let instagramLinkElement = target.querySelector('a[href*="instagram.com"]');
@@ -299,7 +303,7 @@ closeButton.addEventListener('click', function() {
     overlay.style.display = 'none';
     column2.style.display = 'none'; // Also hide the second column on close
     column1.style.width = '45%'; // Reset width on close, too
-
+    modal.style.width = defaultModalWidth; // Reset modal width on close
 });
 
 window.addEventListener('click', function(event) {
@@ -307,9 +311,9 @@ window.addEventListener('click', function(event) {
         overlay.style.display = 'none';
         column2.style.display = 'none'; // Also hide the second column on outside click
         column1.style.width = '45%'; // Reset width on outside click too
+        modal.style.width = defaultModalWidth; // Reset modal width on outside click
     }
 });
-
  const dayTabs = document.querySelectorAll('.day-tab');
 const scheduleGrids = document.querySelectorAll('.mobile-schedule-grid');
 
