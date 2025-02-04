@@ -471,7 +471,6 @@ scheduleGrids.forEach(grid => {
    
 
 
-
   // Function to handle toggle logic
   function setupToggle(container) {
     const toggleHeader = container.querySelector('.toggle-header-container');
@@ -480,22 +479,30 @@ scheduleGrids.forEach(grid => {
     const contentClass = content.classList.contains('music-content') ? 'music-content' : 'news-content';
     const instaLinks = container.querySelector(`.show-insta-links.${contentClass.replace('content', 'insta-links')}`);
     const arrow = container.querySelector('.toggle-arrow');
-    let expanded = false;
+    let expanded = false; // initial state is collapsed, so false
+
+    // IMPORTANT: Hide the content on initial load
+    content.style.display = 'none';
+    if (instaLinks) {
+      instaLinks.style.display = 'none';
+    }
+    arrow.classList.remove('up-arrow'); // Ensure down-arrow class is set initially.
+    arrow.classList.add('down-arrow');
 
     toggleHeader.addEventListener('click', function() {
       if (!expanded) {
         content.style.display = 'grid';
-         if (instaLinks) {
-            instaLinks.style.display = 'block';
-          }
+        if (instaLinks) {
+          instaLinks.style.display = 'block';
+        }
         arrow.classList.remove('down-arrow');
         arrow.classList.add('up-arrow');
         expanded = true;
       } else {
         content.style.display = 'none';
-         if (instaLinks) {
-            instaLinks.style.display = 'none';
-          }
+        if (instaLinks) {
+          instaLinks.style.display = 'none';
+        }
         arrow.classList.remove('up-arrow');
         arrow.classList.add('down-arrow');
         expanded = false;
@@ -507,7 +514,6 @@ scheduleGrids.forEach(grid => {
   document.querySelectorAll('.toggle-section').forEach(section => {
     setupToggle(section);
   });
-
 
  const containers = document.querySelectorAll('.expandable-container');
 
