@@ -378,11 +378,7 @@ border-radius: 10px;
         
     }
 
-    @media (max-width: 600px) {
-  table {
-    display: none;
-  }
-}
+ 
     th {
       border: 2px solid black;
       padding: 8px;
