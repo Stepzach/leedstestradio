@@ -201,114 +201,114 @@ document.querySelectorAll('.audio-button').forEach(button => {
 
 
    const schedules = document.getElementById('Schedule');
-    const overlay = document.getElementById('show-overlay');
-    const modal = document.getElementById('show-modal');
-    const closeButton = document.getElementById('close-show');
-    const showImage = document.getElementById('show-image');
-    const showTitle = document.getElementById('show-title');
-    const showDescription = document.getElementById('show-description');
-    const instagramContainer = document.getElementById('show-instagram');
-    const instagramLink = document.getElementById('instagram-link');
-    const instagramUsernameSpan = document.getElementById('instagram-username');
+const overlay = document.getElementById('show-overlay');
+const modal = document.getElementById('show-modal');
+const closeButton = document.getElementById('close-show');
+const showImage = document.getElementById('show-image');
+const showTitle = document.getElementById('show-title');
+const showDescription = document.getElementById('show-description');
+const instagramContainer = document.getElementById('show-instagram');
+const instagramLink = document.getElementById('instagram-link');
+const instagramUsernameSpan = document.getElementById('instagram-username');
 
-    const column1 = document.getElementById('column-1');
-    const column2 = document.getElementById('column-2');
-    const showImage2 = document.getElementById('show-image-2');
-    const showTitle2 = document.getElementById('show-title-2');
-    const showDescription2 = document.getElementById('show-description-2');
-
-
-    schedules.addEventListener('click', function(event) {
-          const target = event.target.closest('td');
-         if (target) {
+const column1 = document.getElementById('column-1');
+const column2 = document.getElementById('column-2');
+const showImage2 = document.getElementById('show-image-2');
+const showTitle2 = document.getElementById('show-title-2');
+const showDescription2 = document.getElementById('show-description-2');
 
 
+schedules.addEventListener('click', function(event) {
+    const target = event.target.closest('td');
+    if (target) {
 
-             const showId = target.id;
+        const showId = target.id;
+
+        const showInfo = target.querySelector('.show-info');
+
+        if (showId && showInfo) {
+
+            // **RESET COLUMN WIDTH HERE**
+            column1.style.width = '45%'; // Default width for two-column layout
 
 
-
-            const showInfo = target.querySelector('.show-info');
-
-
-            if(showId && showInfo){
-              const imageUrl = `./${showId}.jpg`;
-              const title = showInfo.querySelector('h2:nth-of-type(1)')?.textContent || ''; //Get the first h2
-              const description = showInfo.querySelector('p:nth-of-type(1)')?.textContent || ''; //Get the first p
+            const imageUrl = `./${showId}.jpg`;
+            const title = showInfo.querySelector('h2:nth-of-type(1)')?.textContent || ''; //Get the first h2
+            const description = showInfo.querySelector('p:nth-of-type(1)')?.textContent || ''; //Get the first p
 
             showImage.src = imageUrl;
-              showTitle.textContent = title;
-              showDescription.textContent = description;
+            showTitle.textContent = title;
+            showDescription.textContent = description;
+
+            // Check for second set of content
+            const title2 = showInfo.querySelector('h2:nth-of-type(2)')?.textContent;
+            const description2 = showInfo.querySelector('p:nth-of-type(2)')?.textContent;
+
+            if (title2 && description2) {
+                // Display second column
+                column2.style.display = 'block';
+                showImage2.src = `./${showId}_2.jpg`; // Assuming second image has _2 suffix
+                showTitle2.textContent = title2;
+                showDescription2.textContent = description2;
+            } else {
+                // Hide second column if no second content
+                column2.style.display = 'none';
+                column1.style.width = '90%';  // Set column1 to take up more space
+            }
+
+            let instagramLinkElement = target.querySelector('a[href*="instagram.com"]');
 
 
+            if (instagramLinkElement) {
+                const instagramUrl = instagramLinkElement.href;
 
-          // Check for second set of content
-        const title2 = showInfo.querySelector('h2:nth-of-type(2)')?.textContent;
-        const description2 = showInfo.querySelector('p:nth-of-type(2)')?.textContent;
-
-        if (title2 && description2) {
-          // Display second column
-          column2.style.display = 'block';
-          showImage2.src = `./${showId}_2.jpg`; // Assuming second image has _2 suffix
-          showTitle2.textContent = title2;
-          showDescription2.textContent = description2;
-        } else {
-          column2.style.display = 'none';
-          column1.style.width = '90%';  // Set column1 to take up more space
-        }
-
-          let instagramLinkElement = target.querySelector('a[href*="instagram.com"]');
+                try {
+                    const url = new URL(instagramUrl);
+                    const pathname = url.pathname;
+                    const parts = pathname.split('/').filter(Boolean);
 
 
-             if(instagramLinkElement){
-                   const instagramUrl = instagramLinkElement.href;
-
-                  try{
-                     const url = new URL(instagramUrl);
-                     const pathname = url.pathname;
-                     const parts = pathname.split('/').filter(Boolean);
-
-
-                        const username = parts[0];
-
+                    const username = parts[0];
 
 
                     if (username) {
-                       instagramUsernameSpan.textContent = username;
-                      instagramLink.href = instagramUrl;
-                       instagramContainer.style.display = "block";
-                      }else{
-                         instagramContainer.style.display = "none";
-                         }
-
-
-                   }catch(e){
-                    instagramContainer.style.display = "none";
-                     }
-                 }else{
-                  instagramContainer.style.display = "none";
+                        instagramUsernameSpan.textContent = username;
+                        instagramLink.href = instagramUrl;
+                        instagramContainer.style.display = "block";
+                    } else {
+                        instagramContainer.style.display = "none";
                     }
+
+
+                } catch (e) {
+                    instagramContainer.style.display = "none";
+                }
+            } else {
+                instagramContainer.style.display = "none";
+            }
 
             overlay.style.display = 'block';
         }
 
 
-        }
+    }
 
 
 });
-    closeButton.addEventListener('click', function() {
+closeButton.addEventListener('click', function() {
+    overlay.style.display = 'none';
+    column2.style.display = 'none'; // Also hide the second column on close
+    column1.style.width = '45%'; // Reset width on close, too
+
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target == overlay) {
         overlay.style.display = 'none';
-        column2.style.display = 'none'; // Also hide the second column on close
-    });
-
-    window.addEventListener('click', function(event){
-        if(event.target == overlay){
-            overlay.style.display = 'none';
-            column2.style.display = 'none'; // Also hide the second column on outside click
-        }
-    });
-
+        column2.style.display = 'none'; // Also hide the second column on outside click
+        column1.style.width = '45%'; // Reset width on outside click too
+    }
+});
 
  const dayTabs = document.querySelectorAll('.day-tab');
 const scheduleGrids = document.querySelectorAll('.mobile-schedule-grid');
