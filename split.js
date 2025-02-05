@@ -944,88 +944,294 @@ document.addEventListener('DOMContentLoaded', function () {
                 title2: null,
                 image1: 'image5.jpg',
                 text1: 'Sidilicious Selects Details: Sids top choices this week!',
-                image2: 'https://via.placeholder.com/150',
-                text2: 'More Sidilicious Selects details here!'
+               
             },
             'Monday-2:00pm': {
                 title1: 'SPORT',
                 title2: null,
                 image1: 'image6.jpg',
                 text1: 'SPORT Details: TalkSPORT on air.',
-                 image2: 'https://via.placeholder.com/150',
-                text2: 'More SPORT details here!'
+                
             },
             'Monday-3:00pm': {
                 title1: 'LGBTQ+ Show',
                 title2: null,
                 image1: 'image7.jpg',
                 text1: 'LGBTQ+ Show Details: TalkSPORT on air.',
-                image2: 'https://via.placeholder.com/150',
-                text2: 'More LGBTQ+ Show details here!'
+              
             },
             'Monday-4:00pm': {
                 title1: 'Bangers and Trash',
                 title2: null,
                 image1: 'image8.jpg',
-                text1: 'Bangers and Trash Details: TalkSPORT on air.',
-                image2: 'https://via.placeholder.com/150',
-                text2: 'More Bangers and Trash details here!'
+                text1: 'We aren’t popular, but our culture is! Each week we dissect our guilty pleasures, current faves (and least faves) and silly little stories. Get your ears into gear!',
+               
             },
             'Monday-5:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
                 image1: 'image9.jpg',
                 text1: 'HOMETIME Details: TalkSPORT on air.',
-                image2: 'https://via.placeholder.com/150',
-                text2: 'More HOMETIME details here!'
+               
             },
             'Monday-6:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
                 image1: 'image10.jpg',
                 text1: 'HOMETIME Details: TalkSPORT on air.',
-                image2: 'https://via.placeholder.com/150',
-                text2: 'More HOMETIME details here!'
+               
             },
             'Monday-7:00pm': {
                title1: 'Live and Local',
                title2: null,
                 image1: 'image11.jpg',
                 text1: 'Live and Local Details: TalkSPORT on air.',
-                image2: 'https://via.placeholder.com/150',
-                text2: 'More Live and Local details here!'
+               
             },
             'Monday-8:00pm': {
                 title1: 'Rock and Punk',
                 title2: null,
                 image1: 'image12.jpg',
                 text1: 'Rock and Punk Details: TalkSPORT on air.',
-                image2: 'https://via.placeholder.com/150',
-                text2: 'More Rock and Punk details here!'
+             
             },
             'Monday-9:00pm': {
                 title1: 'Campus Confessions',
                 title2: null,
                 image1: 'image13.jpg',
-                text1: 'Campus Confessions Details: TalkSPORT on air.',
-                 image2: 'https://via.placeholder.com/150',
-                text2: 'More Campus Confessions details here!'
+                text1: 'James and Katie are exposing the best of LeedsFess for an hour every week, saving only the juiciest ones for LSR. To get the latest scoop listen live!',
+               
             },
             'Monday-10:00pm': {
                 title1: 'Uni Music Library Finds',
                 title2: null,
                 image1: 'image14.jpg',
                 text1: 'Uni Music Library Finds Details: TalkSPORT on air.',
-                image2: 'https://via.placeholder.com/150',
-                text2: 'More Uni Music Library Finds details here!'
+             
             },
             'Monday-11:00pm': {
                 title1: 'Spiritual Guide',
                 title2: null,
                 image1: 'image15.jpg',
                 text1: 'Spiritual Guide Details: TalkSPORT on air.',
-                image2: 'https://via.placeholder.com/150',
-                text2: 'More Spiritual Guide details here!'
+               
+            },
+             'Tuesday-9:00am': {
+                title1: 'Breakfast',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Breakfast Details: Enjoy a hearty breakfast to start your Tuesday!',
+                
+                
+            },
+            'Tuesday-10:00am': {
+                title1: 'Breakfast',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Breakfast Details: Enjoy a hearty breakfast to start your Tuesday!',
+            },
+            'Tuesday-11:00am': {
+                title1: 'R-Kid Radio',
+                
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Two northern baddies take to the ariwaves to compare their music taste. Week by week they summarise their lives and soundtrack their weekly activities, so listen now to hear more!',
+               
+            },
+            'Tuesday-12:00pm': {
+               title1: 'Top Of The Pops',
+               title2: 'Continental Buffet',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Week 1 : Amy and Ruby present the biweekly chart on LSR! Top 10 tracks of the day and everything you need to know and love about the artists!',
+                 image2: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text2: 'Week 2 : A feast of delectable musical treats from across the globe, one country at a time. Jimmy is serving Conty B like no one else.'
+            },
+            'Tuesday-1:00pm': {
+                title1: 'The Tea Party',
+                title2: 'UML Presents: Archive to Airwaves',
+                image1: 'image5.jpg',
+                text1: 'Week 1 : Matty and Haley compare UK and US culture on air! A classic LSR show aimed to educate the masses on American and British culture with a soundtrack of the best artists from each country. @theteaparty_lsr on instagram.',
+                  image2: 'image5.jpg',
+                text2:  'Week 2 : Union Music Library has taken over! Join the team each week to highlight which findings from their archive are deemed worthy enough for LSR airplay. Tune in to hear hidden gems and the context surrounding classic records.',
+                    
+            },
+            'Tuesday-2:00pm': {
+                title1: 'Vanity Unfair’s Oscar Party',
+                title2: null,
+                image1: 'image6.jpg',
+                text1: '(Bi-Weekly) As we are very close to the Oscars, there are so many twists, turns, conflicts and dramas to talk about and we’d love to dive into this with listeners on LSR to share our passion for it. We’ll also get into the practical elements of filmmaking to ascertain if the nominees are deserving!',
+                
+            },
+            'Tuesday-3:00pm': {
+                title1: 'Womens Hour',
+                title2: null,
+                image1: 'image7.jpg',
+                text1: 'Womens hour Show Details',
+              
+            },
+            'Tuesday-4:00pm': {
+                title1: '',
+                title2: null,
+                image1: 'image8.jpg',
+                text1: '',
+               
+            },
+            'Tuesday-5:00pm': {
+                title1: 'HOMETIME',
+                title2: null,
+                image1: 'image9.jpg',
+                text1: 'HOMETIME Details.',
+               
+            },
+            'Tuesday-6:00pm': {
+                title1: 'HOMETIME',
+                title2: null,
+                image1: 'image10.jpg',
+                text1: 'HOMETIME Details.',
+               
+            },
+            'Tuesday-7:00pm': {
+               title1: 'JAZZ, FUNK AND SOUL',
+               title2: null,
+                image1: 'image11.jpg',
+                text1: 'Jazz Details.',
+               
+            },
+            'Tuesday-8:00pm': {
+                title1: 'Wisecrack',
+                title2: null,
+                image1: 'image12.jpg',
+                text1: 'We have local bands on to discuss their influences, upcoming shows and projects, and the local music scene as a whole, creating a sense of community for the artist and the listener.',
+             
+            },
+            'Tuesday-9:00pm': {
+                title1: 'Girlhood',
+                title2: null,
+                image1: 'image13.jpg',
+                text1: 'Girlhood is a talk-based specialised music show all about our experiences as young women and popular culture. Millie and Amelie are diversifying the sound of LSR by highlighting female artists and soundtracking what it’s like to be a girl.',
+               
+            },
+            'Tuesday-10:00pm': {
+                title1: 'Thank You For The Music',
+                title2: null,
+                image1: 'image14.jpg',
+                text1: 'Thank You For The Music Details',
+             
+            },
+            'Tuesday-11:00pm': {
+                title1: 'Jungle Gems with Mylania',
+                title2: null,
+                image1: 'image15.jpg',
+                text1: 'Jungle Gems with Mylania',
+               
+            },
+                'Wednesday-9:00am': {
+                title1: 'Breakfast',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Breakfast Details: Enjoy a hearty breakfast to start your Wednesday!',
+                
+                
+            },
+            'Wednesday-10:00am': {
+                title1: 'Breakfast',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Breakfast Details: Enjoy a hearty breakfast to start your Wednesday!',
+            },
+            'Wednesday-11:00am': {
+                title1: 'Chattergories',
+                 title2: 'Big Names On Campus',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+               text1: 'Week 1 : A positive news show featuring student-focussed stories and songs. Highlighting the individual and mass change towards good in the world with guests!',
+                image2: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text2: 'Week 2 : Championing student-led events across Leeds’ campuses, Ruby has friendly chats with different guests each week as they share their light on air.',
+              
+            },
+            'Wednesday-12:00pm': {
+               title1: 'Barbergeddon',
+              
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Sidney pays homage to Barber FM with the end of educating fellow LSR members in the post-internet-jazzification of the music scene.',
+                
+            },
+            'Wednesday-1:00pm': {
+                title1: 'Feeling Noughtie',
+                title2: 'Old, New, Borrowed, Blue',
+                image1: 'image5.jpg',
+                text1: 'Week 1 : The pressure of being a Gen Z adult is unfathomable. Rather than addressing it, Rhys, Kiera and Ella are traversing back to the 2000s when life was simpler for us.',
+                  image2: 'image5.jpg',
+                text2:  'Week 2 : Megan showcases songs from her past (old), that she recently discovered (new), that someone recommended (borrowed) and something mellow (blue), all centred around a unique theme per the show!',
+                    
+            },
+            'Wednesday-2:00pm': {
+                title1: 'Don’t Mug Me Off!',
+                title2: null,
+                image1: 'image6.jpg',
+                text1: 'As students, we know and love the petty drama that defines our lives. Will your flatmate ever clean up their dishes? Will the letting agents ever send a maintenance worker? Imogen and Charlotte make head and tail of all the drama in this Agony Aunt style show.',
+                
+            },
+            'Wednesday-3:00pm': {
+                title1: 'Politics Hour',
+                title2: null,
+                image1: 'image7.jpg',
+                text1: 'Politics hour Show Details',
+              
+            },
+            'Wednesday-4:00pm': {
+                title1: 'Pioneers of the Playlist',
+                title2: 'Politics of Punk',
+                image1: 'image8.jpg',
+                text1: 'Week 1 : This radio show will look into the stories of the most iconic artists and bands who have reshaped music history and influenced culture. Each episode will explore the groundbreaking contributions of musical legends by focusing on their discography, cultural relevance, and the far-reaching impact they’ve had across various aspects of society.',
+                  image2: 'image8.jpg',
+                 text2: 'Week 2 : Politics of Punk is a show that aims to educate and entertain people on the wild and entertaining world of punk music and all its sub genres.',
+               
+            },
+            'Wednesday-5:00pm': {
+                title1: 'HOMETIME',
+                title2: null,
+                image1: 'image9.jpg',
+                text1: 'HOMETIME Details.',
+               
+            },
+            'Wednesday-6:00pm': {
+                title1: 'HOMETIME',
+                title2: null,
+                image1: 'image10.jpg',
+                text1: 'HOMETIME Details.',
+               
+            },
+            'Wednesday-7:00pm': {
+               title1: 'Afrobeats',
+               title2: null,
+                image1: 'image11.jpg',
+                text1: 'Details.',
+               
+            },
+            'Wednesday-8:00pm': {
+                title1: 'International',
+                title2: null,
+                image1: 'image12.jpg',
+                text1: 'Details.',
+             
+            },
+            'Wednesday-9:00pm': {
+                title1: 'Antagonising Aunts',
+                title2: 'Lost In The Mix',
+                image1: 'image13.jpg',
+                text1: 'Send your anonymous queries to these two for some well-thought out advice! You might even be lucky enough to get a soundtrack to help you work through your dastardly dilemmas.',
+               image2: 'image13.jpg',
+                text2: 'Get ready for hidden gems from artists with under 100k monthly listeners on Spotify. Join our host as she introduces you to a plethora of secret sounds.',
+               
+            },
+            'Wednesday-10:00pm': {
+                title1: 'Low-Key with Rivah',
+                title2: null,
+                image1: 'image14.jpg',
+                text1: 'Low-Key with Rivah',
+             
+            },
+            'Wednesday-11:00pm': {
+                title1: 'Disco Hour',
+                title2: null,
+                image1: 'image15.jpg',
+                text1: 'Disco Hour',
+               
             },
         };
 
@@ -1044,7 +1250,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     
                     // Add the second title *after* the first image and text, if it exists.
                     if (data.title2) {
-                       contentHTML += `<h4 style="margin-bottom: 5px; font-size:18px;">${data.title2}</h4>`;
+                       contentHTML += `<h4 style="margin-bottom: 5px; margin-top: 10px; font-size:18px;">${data.title2}</h4>`;
                     }
 
                     // Add a second image and text if they exist.
