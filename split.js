@@ -1065,7 +1065,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Calculate the position of the schedule grid
                 const rect = scheduleGrid.getBoundingClientRect();
-                overlay.style.top = rect.top + 'px';
+                
                 overlay.style.left = rect.left + 'px';
                 overlay.style.width = rect.width + 'px';
                 overlay.style.height = rect.height + 'px';
