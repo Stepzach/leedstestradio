@@ -899,3 +899,186 @@ scheduleGrids.forEach(grid => {
     updateTime();
 
      });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+        const timeSlots = document.querySelectorAll('.mobile-time-slot');
+        const overlay = document.getElementById('MOBSHOWOverlay');
+        const overlayContent = document.getElementById('MOBSHOWOverlayContent');
+        const closeButton = document.querySelector('.MOBSHOWclose-button');
+        const overlayTitle = document.getElementById('MOBSHOWOverlayTitle');
+        const scheduleGrid = document.querySelector('.mobile-schedule-grid'); // Get the schedule grid
+
+        // Data for each time slot (image and text)
+        const timeSlotData = {
+            'Monday-9:00am': {
+                title1: 'Breakfast',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Breakfast Details: Enjoy a hearty breakfast to start your Monday!',
+                
+                
+            },
+            'Monday-10:00am': {
+                title1: 'Breakfast',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Breakfast Details: Enjoy a hearty breakfast to start your Monday!',
+            },
+            'Monday-11:00am': {
+                title1: 'Terminally Online',
+                
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Terminally Online Details: A show about the internet and all its glory.',
+               
+            },
+            'Monday-12:00pm': {
+               title1: 'Sound Salad',
+               title2: 'The more you Know',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Week 1 : Dive underground with [presenter name] to explore the Leeds music scene. Listen out for guest appearances and a wide coverage of genre.',
+                 image2: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text2: 'Week 2 : Ever wondered what really happened at Woodstock 99? Join Matt, Anna and Ella to learn more on some of pop culture’s most historical events.'
+            },
+            'Monday-1:00pm': {
+                title1: 'Sidilicious Selects',
+                title2: null,
+                image1: 'image5.jpg',
+                text1: 'Sidilicious Selects Details: Sids top choices this week!',
+                image2: 'https://via.placeholder.com/150',
+                text2: 'More Sidilicious Selects details here!'
+            },
+            'Monday-2:00pm': {
+                title1: 'SPORT',
+                title2: null,
+                image1: 'image6.jpg',
+                text1: 'SPORT Details: TalkSPORT on air.',
+                 image2: 'https://via.placeholder.com/150',
+                text2: 'More SPORT details here!'
+            },
+            'Monday-3:00pm': {
+                title1: 'LGBTQ+ Show',
+                title2: null,
+                image1: 'image7.jpg',
+                text1: 'LGBTQ+ Show Details: TalkSPORT on air.',
+                image2: 'https://via.placeholder.com/150',
+                text2: 'More LGBTQ+ Show details here!'
+            },
+            'Monday-4:00pm': {
+                title1: 'Bangers and Trash',
+                title2: null,
+                image1: 'image8.jpg',
+                text1: 'Bangers and Trash Details: TalkSPORT on air.',
+                image2: 'https://via.placeholder.com/150',
+                text2: 'More Bangers and Trash details here!'
+            },
+            'Monday-5:00pm': {
+                title1: 'HOMETIME',
+                title2: null,
+                image1: 'image9.jpg',
+                text1: 'HOMETIME Details: TalkSPORT on air.',
+                image2: 'https://via.placeholder.com/150',
+                text2: 'More HOMETIME details here!'
+            },
+            'Monday-6:00pm': {
+                title1: 'HOMETIME',
+                title2: null,
+                image1: 'image10.jpg',
+                text1: 'HOMETIME Details: TalkSPORT on air.',
+                image2: 'https://via.placeholder.com/150',
+                text2: 'More HOMETIME details here!'
+            },
+            'Monday-7:00pm': {
+               title1: 'Live and Local',
+               title2: null,
+                image1: 'image11.jpg',
+                text1: 'Live and Local Details: TalkSPORT on air.',
+                image2: 'https://via.placeholder.com/150',
+                text2: 'More Live and Local details here!'
+            },
+            'Monday-8:00pm': {
+                title1: 'Rock and Punk',
+                title2: null,
+                image1: 'image12.jpg',
+                text1: 'Rock and Punk Details: TalkSPORT on air.',
+                image2: 'https://via.placeholder.com/150',
+                text2: 'More Rock and Punk details here!'
+            },
+            'Monday-9:00pm': {
+                title1: 'Campus Confessions',
+                title2: null,
+                image1: 'image13.jpg',
+                text1: 'Campus Confessions Details: TalkSPORT on air.',
+                 image2: 'https://via.placeholder.com/150',
+                text2: 'More Campus Confessions details here!'
+            },
+            'Monday-10:00pm': {
+                title1: 'Uni Music Library Finds',
+                title2: null,
+                image1: 'image14.jpg',
+                text1: 'Uni Music Library Finds Details: TalkSPORT on air.',
+                image2: 'https://via.placeholder.com/150',
+                text2: 'More Uni Music Library Finds details here!'
+            },
+            'Monday-11:00pm': {
+                title1: 'Spiritual Guide',
+                title2: null,
+                image1: 'image15.jpg',
+                text1: 'Spiritual Guide Details: TalkSPORT on air.',
+                image2: 'https://via.placeholder.com/150',
+                text2: 'More Spiritual Guide details here!'
+            },
+        };
+
+        timeSlots.forEach(slot => {
+            slot.addEventListener('click', function () {
+                const day = this.dataset.day;
+                const time = this.dataset.time;
+                const key = `${day}-${time}`;
+                const data = timeSlotData[key];
+
+                if (data) {
+                    overlayTitle.textContent = data.title1;  // Set the main title
+
+                    let contentHTML = `<img src="${data.image1}" alt="Image 1" style="max-width:100%; max-height: 200px; margin-bottom: 10px;">
+                                       <p>${data.text1}</p>`;
+                    
+                    // Add the second title *after* the first image and text, if it exists.
+                    if (data.title2) {
+                       contentHTML += `<h4 style="margin-bottom: 5px; font-size:18px;">${data.title2}</h4>`;
+                    }
+
+                    // Add a second image and text if they exist.
+                    if (data.image2) {
+                        contentHTML += `<img src="${data.image2}" alt="Image 2" style="max-width:100%; max-height: 200px; margin-top: 10px; margin-bottom: 10px;">
+                                        <p>${data.text2}</p>`;
+                    }
+
+                    overlayContent.innerHTML = contentHTML;
+
+
+                } else {
+                    overlayTitle.textContent = "Details";
+                    overlayContent.innerHTML = `<p>No details available for ${day} at ${time}.</p>`;
+                }
+
+                overlay.style.display = 'block';
+
+                // Calculate the position of the schedule grid
+                const rect = scheduleGrid.getBoundingClientRect();
+                overlay.style.top = rect.top + 'px';
+                overlay.style.left = rect.left + 'px';
+                overlay.style.width = rect.width + 'px';
+                overlay.style.height = rect.height + 'px';
+            });
+        });
+
+        closeButton.addEventListener('click', function () {
+            overlay.style.display = 'none';
+        });
+
+       // Remove click outside to close.
+    });
+
+
+
+
