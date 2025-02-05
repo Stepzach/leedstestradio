@@ -1040,7 +1040,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     overlayTitle.textContent = data.title1;  // Set the main title
 
                     let contentHTML = `<img src="${data.image1}" alt="Image 1" style="max-width:100%; max-height: 200px; margin-bottom: 10px;">
-                                       <p>${data.text1}</p>`;
+                                       <p style="font-size:15px;">${data.text1}</p>`;
                     
                     // Add the second title *after* the first image and text, if it exists.
                     if (data.title2) {
@@ -1050,7 +1050,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Add a second image and text if they exist.
                     if (data.image2) {
                         contentHTML += `<img src="${data.image2}" alt="Image 2" style="max-width:100%; max-height: 200px; margin-top: 10px; margin-bottom: 10px;">
-                                        <p>${data.text2}</p>`;
+                                        <p style="font-size:15px;">${data.text2}</p>`;
                     }
 
                     overlayContent.innerHTML = contentHTML;
