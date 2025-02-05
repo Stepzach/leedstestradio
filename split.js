@@ -314,51 +314,117 @@ window.addEventListener('click', function(event) {
         modal.style.width = defaultModalWidth; // Reset modal width on outside click
     }
 });
- const dayTabs = document.querySelectorAll('.day-tab');
-const scheduleGrids = document.querySelectorAll('.mobile-schedule-grid');
+document.addEventListener('DOMContentLoaded', function () {
+    const dayTabs = document.querySelectorAll('.day-tab');
+    const scheduleGrids = document.querySelectorAll('.mobile-schedule-grid');
 
-// Get the current day name
-const now = new Date();
-const currentDay = now.toLocaleDateString('en-US', { weekday: 'long' });
+    // Function to activate a day
+    function activateDay(selectedDay) {
+        // Update active tab appearance
+        dayTabs.forEach(t => t.classList.remove('active'));
+        scheduleGrids.forEach(grid => grid.classList.remove('active'));
 
-  dayTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const selectedDay = tab.dataset.day;
-
-      // Update active tab appearance
-      dayTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      // Show/hide schedule grids
-      scheduleGrids.forEach(grid => {
-        grid.classList.remove('active');
-        if (grid.dataset.day === selectedDay) {
-          grid.classList.add('active');
+        const activeTab = Array.from(dayTabs).find(tab => tab.dataset.day === selectedDay);
+        if (activeTab) {
+            activeTab.classList.add('active');
         }
-      });
+        const activeGrid = Array.from(scheduleGrids).find(grid => grid.dataset.day === selectedDay);
+        if (activeGrid) {
+            activeGrid.classList.add('active');
+        }
+    }
+
+    // Add click listeners to day tabs
+    dayTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const selectedDay = tab.dataset.day;
+            activateDay(selectedDay);
+        });
     });
-  });
-  
-dayTabs.forEach(tab => {
-  if (tab.dataset.day === currentDay) {
-    tab.classList.add('active');
-  }
-});
-scheduleGrids.forEach(grid => {
-  if (grid.dataset.day === currentDay) {
-    grid.classList.add('active');
-  }
-});
-  
 
-      function highlightCurrentSlot() {
-            const now = new Date();
-            const currentDay = now.toLocaleDateString('en-US', { weekday: 'long' });
-            const slots = document.querySelectorAll(`.mobile-schedule-grid[data-day="${currentDay}"] .mobile-time-slot`); // Select only slots for current day
-            
-            // ... (Rest of highlightCurrentSlot logic - no changes needed)
+    // Get the current day name
+    const now = new Date();
+    const currentDay = now.toLocaleDateString('en-US', { weekday: 'long' });
+
+    // Activate the current day on load
+    activateDay(currentDay);
+
+    function highlightCurrentSlot() {
+        const now = new Date();
+        const currentDay = now.toLocaleDateString('en-US', { weekday: 'long' });
+        const currentHour = now.getHours();
+        const currentMinutes = now.getMinutes(); // Get current minutes
+
+        // Convert current time to a comparable format (e.g., 9:30am)
+        let currentTimeFormatted = "";
+        let period = "am";
+
+        let displayHour = currentHour;
+        if (currentHour >= 12) {
+            period = "pm";
+            if (currentHour > 12) {
+                displayHour = currentHour - 12;
+            }
         }
-        
+        if (displayHour === 0) {
+            displayHour = 12;  // Midnight
+        }
+
+        currentTimeFormatted = `${displayHour}:${String(currentMinutes).padStart(2, '0')}${period}`;
+
+        const slots = document.querySelectorAll(`.mobile-schedule-grid[data-day="${currentDay}"] .mobile-time-slot`); // Select only slots for current day
+
+        slots.forEach(slot => {
+            slot.classList.remove('current-time-slot'); // Remove previous highlights
+
+            // Extract the time from the time-slot's data-time attribute
+            const slotTime = slot.dataset.time;
+
+            if (slotTime) {
+                // Parse slot time and current time
+                const [slotHour, slotMinute] = parseTime(slotTime);
+                const [currentHourParsed, currentMinuteParsed] = parseTime(currentTimeFormatted);
+
+                // Check if the current time falls within the slot time range (one hour)
+                if (currentHourParsed >= slotHour && currentHourParsed < slotHour + 1) {
+                    slot.classList.add('current-time-slot');
+                }
+            }
+        });
+    }
+
+
+    function parseTime(timeStr) {
+        let hour = 0;
+        let minute = 0;
+
+        // Normalize time string to lowercase and remove colons
+        timeStr = timeStr.toLowerCase().replace(":", "");
+
+        if (timeStr.includes("am") || timeStr.includes("pm")) {
+            // Check if it includes "am" or "pm"
+            hour = parseInt(timeStr.substring(0, timeStr.length - 2));  // Extract the hour
+            minute = 0;  // Default if minutes are not specified
+
+            if (timeStr.includes("pm") && hour !== 12) {
+                hour += 12;  // Convert to 24-hour format for PM
+            }
+            if (timeStr.includes("am") && hour === 12) {
+                hour = 0;  // Midnight in 24-hour format
+            }
+        }
+
+        return [hour, minute];
+    }
+
+
+
+    // Initial call to highlightCurrentSlot
+    highlightCurrentSlot();
+
+    // Set interval to update the highlight every minute (adjust as needed)
+    setInterval(highlightCurrentSlot, 60000);
+});
      
   const spinningImages = document.querySelectorAll('.spinning-image');
 
@@ -903,13 +969,46 @@ scheduleGrids.forEach(grid => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+        const dayTabs = document.querySelectorAll('.day-tab');
+        const scheduleGrids = document.querySelectorAll('.mobile-schedule-grid');
         const timeSlots = document.querySelectorAll('.mobile-time-slot');
         const overlay = document.getElementById('MOBSHOWOverlay');
         const overlayContent = document.getElementById('MOBSHOWOverlayContent');
         const closeButton = document.querySelector('.MOBSHOWclose-button');
         const overlayTitle = document.getElementById('MOBSHOWOverlayTitle');
-        const scheduleGrid = document.querySelector('.mobile-schedule-grid'); // Get the schedule grid
 
+        // Function to hide all schedule grids
+        function hideAllGrids() {
+            scheduleGrids.forEach(grid => {
+                grid.classList.remove('active');
+            });
+        }
+
+        // Function to activate a day tab and show the corresponding schedule grid
+        function activateDay(day) {
+            hideAllGrids();
+            dayTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            const selectedTab = document.querySelector(`.day-tab[data-day="${day}"]`);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+
+            const selectedGrid = document.querySelector(`.mobile-schedule-grid[data-day="${day}"]`);
+            if (selectedGrid) {
+                selectedGrid.classList.add('active');
+            }
+        }
+
+        // Event listener for day tabs
+        dayTabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                const day = this.dataset.day;
+                activateDay(day);
+            });
+        });
         // Data for each time slot (image and text)
         const timeSlotData = {
             'Monday-9:00am': {
@@ -928,7 +1027,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 title1: 'Terminally Online',
                 
                 image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
-                text1: 'Terminally Online Details: A show about the internet and all its glory.',
+                text1: 'Join Emily and Fleur as they procrastinate another hour from doing uni work to reminisce on the best bits of internet culture. Expect a nostalgia overdose as the girls traverse the history of the world wide web.',
                
             },
             'Monday-12:00pm': {
