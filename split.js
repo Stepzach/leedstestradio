@@ -1480,6 +1480,210 @@ document.addEventListener('DOMContentLoaded', function () {
                 text1: 'Crank Wave',
                
             },
+
+
+            
+                'Saturday-9:00am': {
+                title1: 'No Show',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Nothing..',
+                
+                
+            },
+            'Saturday-10:00am': {
+                title1: 'Pixel Perfect',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Krish delves into a different video game each week, assessing the mechanics, the world in which the game exists, the soundtracks and more.',
+            },
+            'Saturday-11:00am': {
+                title1: 'Barricade Babe',
+              
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+               text1: 'Carys is the ultimate Barricade Babe, attending gigs regularly out of pure love for the music. She brings on guests to discuss the live music events that make or break them and highlights the joys of being a fan.',
+              
+            },
+            'Saturday-12:00pm': {
+                title1: 'No Show',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Nothing..',
+            },
+            'Saturday-1:00pm': {
+                title1: 'Fill In The Gaps',
+              
+                image1: 'image5.jpg',
+                text1: 'With a new genre each week, this show does what it says on the tin, adding historical and contextual cues to round off some of the most groundbreaking genres in history. Local musicians and DJs share their contributions and love for the music they create too.',
+               
+            },
+            'Saturday-2:00pm': {
+                title1: 'The Leeds Music Role Call',
+               title2: 'Uni Music Library Finds',
+                image1: 'image6.jpg',
+                 image2: 'image6.jpg',
+                text1: 'Week 1 : Open your eyes to the Leeds Music scene with several guests including bands and label owners who are making waves across the city.',
+              text2: 'Week 2 : With a new theme each week, two UML members present the best they can find in LUU’s Union Music Library.',
+            },
+            'Saturday-3:00pm': {
+                title1: '(Not So) Dumb Blondes',
+                title2: null,
+                image1: 'image7.jpg',
+                text1: 'LSR’s Best Show Winter 2024 returns for another season. Hannah and Rebecca decipher if life truly is more fun for blondes by dissecting their lives on air through fun themes!',
+              
+            },
+            'Saturday-4:00pm': {
+                 title1: 'No Show',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Nothing..',
+            },
+            'Saturday-5:00pm': {
+                 title1: 'No Show',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Nothing..',
+            },
+            'Saturday-6:00pm': {
+                title1: 'Tinfoil Tales',
+                title2: null,
+                image1: 'image10.jpg',
+                text1: 'Political conspiracies have been rife in pop culture for longer than we can remember, join the hosts to think critically about the impact of conspiracy theories and how they’ve evolved to be so mainstream today.',
+               
+            },
+            'Saturday-7:00pm': {
+               title1: 'SATURDAY NIGHT FEVER',
+               title2: null,
+                image1: 'image11.jpg',
+                text1: 'The ‘Saturday Night Fever’ (7-9pm) team curate the nighttime vibe with upbeat playlists and advertising new club nights.',
+               
+            },
+            'Saturday-8:00pm': {
+                title1: 'SATURDAY NIGHT FEVER',
+                title2: null,
+                image1: 'image12.jpg',
+                text1: 'The ‘Saturday Night Fever’ (7-9pm) team curate the nighttime vibe with upbeat playlists and advertising new club nights.',
+             
+            },
+            'Saturday-9:00pm': {
+                title1: 'Rags, Rebels, Records',
+                title2: null,
+                image1: 'image13.jpg',
+                text1: 'If there are two things that Leeds Uni students have amazing taste in, it’s style and music. Rags, Rebels, Records is the premium fashion radio show which combines these two things, exploring how fashion and music have intersected throughout pop culture to create some of the most prevalent subcultures and styles.',
+              
+            },
+            'Saturday-10:00pm': {
+                title1: 'Tjaro x LSR',
+                title2: null,
+                image1: 'image14.jpg',
+                text1: 'im not sure',
+             
+            },
+            'Saturday-11:00pm': {
+                title1: 'Prog Ho!',
+                title2: null,
+                image1: 'image15.jpg',
+                text1: 'idk',
+               
+            },
+
+            
+            
+                'Sunday-9:00am': {
+                title1: 'No Show',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Nothing..',
+                
+                
+            },
+            'Sunday-10:00am': {
+                title1: 'The Label Show',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Join Poppy and Ally as they explore different record labels every week, from every genre, highlighting independent labels as well as big names in the industry.',
+            },
+            'Sunday-11:00am': {
+                title1: 'Witching Hour',
+              
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+               text1: 'Rory’s back in the studio to talk all things witchcraft! From crystals to candles to card readings you’ll learn the history of the practice and look at the modern iterations of witch life.',
+              
+            },
+            'Sunday-12:00pm': {
+                title1: 'No Show',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: 'Nothing..',
+            },
+            'Sunday-1:00pm': {
+                title1: 'It Takes A Village',
+              
+                image1: 'image5.jpg',
+                text1: 'Flora examines the nature vs nurture argument in music, interviewing someone new each week to discover how and why they discovered the music which defines their lives.',
+               
+            },
+            'Sunday-2:00pm': {
+                title1: 'SRA CHART SHOW',
+             
+                image1: 'image6.jpg',
+                
+                text1: 'i think this is wrong',
+            
+            },
+            'Sunday-3:00pm': {
+                title1: 'SRA CHART SHOW',
+             
+                image1: 'image6.jpg',
+                
+                text1: 'i think this is wrong',
+            },
+            'Sunday-4:00pm': {
+                 title1: 'SUNDAY ROAST',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: '‘Sunday Roast’ (4-6pm) mocks the week and discusses student icks in a whole new light.',
+            },
+            'Sunday-5:00pm': {
+                 title1: 'SUNDAY ROAST',
+                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                text1: '‘Sunday Roast’ (4-6pm) mocks the week and discusses student icks in a whole new light.',
+            },
+            'Sunday-6:00pm': {
+                title1: 'Syke Up Your Life',
+                title2: 'The Vinyl Frontier',
+                image1: 'image10.jpg',
+                  image2: 'image10.jpg',
+                text1: 'idk',
+                 text2: 'idk',
+               
+            },
+            'Sunday-7:00pm': {
+               title1: 'ALBUM REVIEW',
+               title2: null,
+                image1: 'image11.jpg',
+                text1: '?',
+               
+            },
+            'Sunday-8:00pm': {
+                title1: 'Space Age Love Songs',
+                title2: null,
+                image1: 'image12.jpg',
+                text1: '?',
+             
+            },
+            'Sunday-9:00pm': {
+                title1: 'Sleepytime Songs',
+                title2: null,
+                image1: 'image13.jpg',
+                text1: '?',
+              
+            },
+            'Sunday-10:00pm': {
+                title1: 'The Label Show',
+                title2: null,
+                image1: 'image14.jpg',
+                text1: 'im not sure',
+             
+            },
+            'Sunday-11:00pm': {
+                title1: 'EKBeats',
+                title2: null,
+                image1: 'image15.jpg',
+                text1: 'idk',
+               
+            },
         };
 
         timeSlots.forEach(slot => {
