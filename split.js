@@ -899,106 +899,50 @@ scheduleGrids.forEach(grid => {
 
      });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const sliderContainer = document.querySelector('.slider-container');
-    const slidesWrapper = document.querySelector('.slides-wrapper');
-    const slides = document.querySelectorAll('.slide');
-    const paginationContainer = document.querySelector('.slider-pagination');
-    const overlayTitle = document.getElementById('MOBSHOWOverlayTitle');
-    const overlay = document.getElementById('MOBSHOWOverlay'); // Get the overlay element
-    const closeButton = document.querySelector('.MOBSHOWclose-button'); //get close button
 
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-    //Slider Functions
-        function getWeekNumber(d) {
-            d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-            d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
-            const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
-            const weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
-            return weekNo;
+
+document.addEventListener('DOMContentLoaded', function () {
+        const dayTabs = document.querySelectorAll('.day-tab');
+        const scheduleGrids = document.querySelectorAll('.mobile-schedule-grid');
+        const timeSlots = document.querySelectorAll('.mobile-time-slot');
+        const overlay = document.getElementById('MOBSHOWOverlay');
+        const overlayContent = document.getElementById('MOBSHOWOverlayContent');
+        const closeButton = document.querySelector('.MOBSHOWclose-button');
+        const overlayTitle = document.getElementById('MOBSHOWOverlayTitle');
+
+        // Function to hide all schedule grids
+        function hideAllGrids() {
+            scheduleGrids.forEach(grid => {
+                grid.classList.remove('active');
+            });
         }
 
-    function updateSlideContent() {
-        const current = slides[currentSlide];
-        overlayTitle.textContent = current.dataset.title;
-        const descriptionElement = current.querySelector('.slide-description');
-        descriptionElement.textContent = current.dataset.description;
-        const imageElement = current.querySelector('.slide-image');
-        imageElement.src = current.dataset.image;
-    }
+        // Function to activate a day tab and show the corresponding schedule grid
+        function activateDay(day) {
+            hideAllGrids();
+            dayTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
 
-    function updateSliderPosition() {
-        const slideWidth = slides[0].offsetWidth;
-        const newTransform = -currentSlide * slideWidth;
-        slidesWrapper.style.transform = `translateX(${newTransform}px)`;
-    }
+            const selectedTab = document.querySelector(`.day-tab[data-day="${day}"]`);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
 
-    function createPaginationDots() {
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('slider-pagination-dot');
-            dot.addEventListener('click', () => goToSlide(i));
-            paginationContainer.appendChild(dot);
+            const selectedGrid = document.querySelector(`.mobile-schedule-grid[data-day="${day}"]`);
+            if (selectedGrid) {
+                selectedGrid.classList.add('active');
+            }
         }
-    }
 
-    function updatePaginationDots() {
-        const dots = document.querySelectorAll('.slider-pagination-dot');
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
+        // Event listener for day tabs
+        dayTabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                const day = this.dataset.day;
+                activateDay(day);
+            });
         });
-    }
-
-      function goToSlide(index) {
-          currentSlide = index;
-            updateSliderPosition();  // Update the position of the slides
-            updateSlideContent();    // Update title, image, and description
-            updatePaginationDots();
-      }
-    // Touch Event Handlers (Simplified for clarity)
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-    function handleTouchStart(event) {
-        touchStartX = event.touches[0].clientX;
-    }
-
-    function handleTouchMove(event) {
-     touchEndX = event.touches[0].clientX;
-    }
-
-    function handleTouchEnd() {
-     const touchDiff = touchStartX - touchEndX;
-       if (touchDiff > 50) { // Swiped Left
-           goToSlide((currentSlide + 1) % totalSlides);
-         } else if (touchDiff < -50) { // Swiped Right
-              goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
-           }
-         touchStartX = 0;
-         touchEndX = 0;
-    }
-
-     // --- Initialization ---
-      createPaginationDots();
-      updatePaginationDots();
-      updateSlideContent();  // Initialize content (no need for goToSlide)
-
-     // --- Event Listeners ---
-     // Touch events for swiping
-     sliderContainer.addEventListener('touchstart', handleTouchStart, false);
-     sliderContainer.addEventListener('touchmove', handleTouchMove, false);
-     sliderContainer.addEventListener('touchend', handleTouchEnd, false);
-      //Resize event
-      window.addEventListener('resize', updateSliderPosition);
-
-    // --- Overlay and Schedule Grid Interaction ---
-
-    const timeSlots = document.querySelectorAll('.time-slot'); // Assuming you have elements with class 'time-slot'
-    const scheduleGrid = document.getElementById('scheduleGrid');   //  Assuming you have a schedule grid with id 'scheduleGrid'
-     const overlayContent = document.querySelector('.MOBSHOWoverlay-content');  // To inject content dynamically.
-
-       // Data for each time slot (image and text)
+        // Data for each time slot (image and text)
         const timeSlotData = {
             'Monday-9:00am': {
                 title1: 'Breakfast',
@@ -1323,81 +1267,52 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         };
 
-   // Add the slider logic inside the click handler
-    timeSlots.forEach(slot => {
-        slot.addEventListener('click', function() {
-            const day = this.dataset.day;
-            const time = this.dataset.time;
-            const key = `${day}-${time}`;
-            const data = timeSlotData[key];
+        timeSlots.forEach(slot => {
+            slot.addEventListener('click', function () {
+                const day = this.dataset.day;
+                const time = this.dataset.time;
+                const key = `${day}-${time}`;
+                const data = timeSlotData[key];
 
-            if (data) {
-              // --- Slider setup (modified) ---
-              // Find the relevant slides
-              const chattergoriesSlide = document.querySelector('.slide[data-title="Chattergories"]');
-              const bigNamesSlide = document.querySelector('.slide[data-title="Big Names on Campus"]');
+                if (data) {
+                    overlayTitle.textContent = data.title1;  // Set the main title
+
+                    let contentHTML = `<img src="${data.image1}" alt="Image 1" style="max-width:100%; max-height: 200px; margin-bottom: 10px;">
+                                       <p style="font-size:15px;">${data.text1}</p>`;
+                    
+                    // Add the second title *after* the first image and text, if it exists.
+                    if (data.title2) {
+                       contentHTML += `<h4 style="margin-bottom: 5px; margin-top: 10px; font-size:18px;">${data.title2}</h4>`;
+                    }
+
+                    // Add a second image and text if they exist.
+                    if (data.image2) {
+                        contentHTML += `<img src="${data.image2}" alt="Image 2" style="max-width:100%; max-height: 200px; margin-top: 10px; margin-bottom: 10px;">
+                                        <p style="font-size:15px;">${data.text2}</p>`;
+                    }
+
+                    overlayContent.innerHTML = contentHTML;
 
 
-              // Determine which week it is and adjust data based on `data`
-                const today = new Date();
-                const weekNumber = getWeekNumber(today);
-
-              if ((weekNumber % 2 === 0)) {
-                  //Even weeks - Chattergories
-                  chattergoriesSlide.dataset.title = data.title1 || "Chattergories";
-                  chattergoriesSlide.dataset.description = data.text1 || "Default Chattergories Description";
-                  chattergoriesSlide.dataset.image = data.image1 || "default_chattergories_image.jpg"; // Replace with a default
-                  bigNamesSlide.dataset.title = data.title2 || "Big Names on Campus";
-                  bigNamesSlide.dataset.description = data.text2 || "Default Big Names Description";
-                  bigNamesSlide.dataset.image = data.image2 || "default_big_names_image.jpg"; // Replace with a default
-
-                  currentSlide = 0
-
-              }
-               else { // Odd weeks
-
-                chattergoriesSlide.dataset.title = data.title1 || "Chattergories";
-                chattergoriesSlide.dataset.description = data.text1 || "Default Chattergories Description";
-                chattergoriesSlide.dataset.image = data.image1 || "default_chattergories_image.jpg"; // Replace with a default
-                bigNamesSlide.dataset.title = data.title2 || "Big Names on Campus";
-                bigNamesSlide.dataset.description = data.text2 || "Default Big Names Description";
-                bigNamesSlide.dataset.image = data.image2 || "default_big_names_image.jpg"; // Replace with a default
-
-                currentSlide = 1;
+                } else {
+                    overlayTitle.textContent = "Details";
+                    overlayContent.innerHTML = `<p>No details available for ${day} at ${time}.</p>`;
                 }
 
-                // Update the slider
-                goToSlide(currentSlide); //  Use goToSlide
-               // --- End Slider Setup ---
                 overlay.style.display = 'block';
 
-                //Position the overlay
+                // Calculate the position of the schedule grid
                 const rect = scheduleGrid.getBoundingClientRect();
+                
                 overlay.style.left = rect.left + 'px';
                 overlay.style.width = rect.width + 'px';
                 overlay.style.height = rect.height + 'px';
-
-
-            } else {
-                overlayTitle.textContent = "Details";
-                 overlayContent.innerHTML = `<p>No details available for ${day} at ${time}.</p>`; // Corrected line
-                 overlay.style.display = 'block'; //still needs displaying when details are not present.
-
-                //Position the overlay
-                const rect = scheduleGrid.getBoundingClientRect();
-                overlay.style.left = rect.left + 'px';
-                overlay.style.width = rect.width + 'px';
-                overlay.style.height = rect.height + 'px';
-             }
-
-
+            });
         });
+
+        closeButton.addEventListener('click', function () {
+            overlay.style.display = 'none';
+        });
+
+       // Remove click outside to close.
     });
-
-     closeButton.addEventListener('click', function() {
-         overlay.style.display = 'none';
-     });
-
-    // --- End Overlay and Schedule Grid Interaction ---
-});
-
