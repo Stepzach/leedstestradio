@@ -1288,14 +1288,7 @@ document.addEventListener('DOMContentLoaded', function () {
               
             },
             'Thursday-12:00pm': {
-               title1: 'Barbergeddon',
-              
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
-                text1: 'Sidney pays homage to Barber FM with the end of educating fellow LSR members in the post-internet-jazzification of the music scene.',
-                
-            },
-            'Thursday-1:00pm': {
-                title1: 'Im Just a Girl',
+               title1: 'Im Just a Girl',
                 title2: 'The Heart-Beat',
                 image1: 'image5.jpg',
                 text1: 'Week 1 : Tune in for all things girlypop! Join the girls to try and figure out female friendships, career plans, travel agendas and more.',
@@ -1303,14 +1296,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 text2:  'Week 2 : Ria writes a love letter to fan culture in this show. Diving into fandoms for books, films, TV Shows and musical artists and hearing why the fans love them so much live every other Thursday.',
                     
             },
-            'Thursday-2:00pm': {
-                title1: 'Black girls gone Alt',
+            'Thursday-1:00pm': {
+                 title1: 'Black girls gone Alt',
                 title2: 'Birth of the Beat',
                 image1: 'image6.jpg',
                   image2: 'image6.jpg',
                 text1: 'Week 1 : Malaika highlights her fave Black female artists, with a focus on how they’ve created alternative sounds in genres where they are otherwise under-represented.',
                 text2: 'Week 2 : Birth of the Beat is back! Join the hosts as they navigate the history and culture of various genres, eras, artists and movements, ranging from Ethiopian jazz to the role of the CIA in protest music, you’re sure to learn something new.'
+         
             },
+            'Thursday-2:00pm': {
+                title1: 'Sounds Like Team Spirit',
+               
+                image1: 'image6.jpg',
+                
+                text1: 'Incorporating sport and music as one, the boys explore historical and modern sporting events and play the tunes which accompany them. Tune in for chants and culture on air.',
+                     },
             'Thursday-3:00pm': {
                 title1: 'Safe Space',
                 title2: null,
