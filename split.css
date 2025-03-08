@@ -689,13 +689,14 @@ padding: 5px;
     color: #aaaaaa;
 }
 
-#carousel-1:checked ~ .control-1,
-#carousel-2:checked ~ .control-2,
-#carousel-3:checked ~ .control-3,
-#carousel-2:checked ~ .control-4,
-#carousel-2:checked ~ .control-5 {
-    display: block;
-}
+    /* Show controls based on checked input */
+        #carousel-1:checked ~ .control-1,
+        #carousel-2:checked ~ .control-2,
+        #carousel-3:checked ~ .control-3,
+        #carousel-4:checked ~ .control-4,
+        #carousel-5:checked ~ .control-5 {
+            display: block;
+        }
 
 .carousel-indicators {
     list-style: none;
@@ -749,14 +750,15 @@ border-radius: 10px;
     color: #aaaaaa;
 }
 
-#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet,
-#carousel-4:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet,
-#carousel-5:checked ~ .control-5 ~ .carousel-indicators li:nth-child(5) .carousel-bullet 
-{
-    color: #428bca;
-}
+   /* Highlight active indicator */
+        #carousel-1:checked ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+        #carousel-3:checked ~ .carousel-indicators li:nth-child(3) .carousel-bullet,
+        #carousel-4:checked ~ .carousel-indicators li:nth-child(4) .carousel-bullet,
+        #carousel-5:checked ~ .carousel-indicators li:nth-child(5) .carousel-bullet {
+            color: #428bca;
+        }
+
 
 #title {
     width: 100%;
