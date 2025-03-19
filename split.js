@@ -972,17 +972,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 text2: 'Week 2 : Ever wondered what really happened at Woodstock 99? Join Matt, Anna and Ella to learn more on some of pop culture’s most historical events.'
             },
             'Monday-1:00pm': {
-                title1: 'Sidilicious Selects',
+                title1: 'Politics Hour',
                 title2: null,
                 image1: 'image5.jpg',
-                text1: 'Sidilicious Selects Details: Sids top choices this week!',
+                text1: 'Politics Hour',
                
             },
             'Monday-2:00pm': {
                 title1: 'SPORT',
                 title2: null,
                 image1: 'image6.jpg',
-                text1: 'SPORT Details: TalkSPORT on air.',
+                text1: 'The sports team take to the airwaves, discussing weekly fixtures and sports news.',
                 
             },
             'Monday-3:00pm': {
@@ -1035,17 +1035,17 @@ document.addEventListener('DOMContentLoaded', function () {
                
             },
             'Monday-10:00pm': {
-                title1: 'Uni Music Library Finds',
+                title1: 'Radio with Rosie',
                 title2: null,
                 image1: 'image14.jpg',
-                text1: 'Uni Music Library Finds Details: TalkSPORT on air.',
+                text1: 'Live Dj set',
              
             },
             'Monday-11:00pm': {
-                title1: 'Spiritual Guide',
+                title1: '555',
                 title2: null,
                 image1: 'image15.jpg',
-                text1: 'Spiritual Guide Details: TalkSPORT on air.',
+                text1: 'Live Dj set.',
                
             },
              'Tuesday-9:00am': {
@@ -1099,7 +1099,7 @@ document.addEventListener('DOMContentLoaded', function () {
               
             },
             'Tuesday-4:00pm': {
-                title1: '',
+                title1: 'Whats Poppin',
                 title2: null,
                 image1: 'image8.jpg',
                 text1: '',
@@ -1141,17 +1141,17 @@ document.addEventListener('DOMContentLoaded', function () {
                
             },
             'Tuesday-10:00pm': {
-                title1: 'Thank You For The Music',
+                title1: 'Multi-genre Madness',
                 title2: null,
                 image1: 'image14.jpg',
-                text1: 'Thank You For The Music Details',
+                text1: 'Live Dj Set',
              
             },
             'Tuesday-11:00pm': {
-                title1: 'Jungle Gems with Mylania',
+                title1: 'Beatscape',
                 title2: null,
                 image1: 'image15.jpg',
-                text1: 'Jungle Gems with Mylania',
+                text1: 'Live Dj set',
                
             },
                 'Wednesday-9:00am': {
@@ -1199,10 +1199,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 
             },
             'Wednesday-3:00pm': {
-                title1: 'Politics Hour',
+                title1: 'LST.MP3/ Gryph on Air',
                 title2: null,
                 image1: 'image7.jpg',
-                text1: 'Politics hour Show Details',
+                text1: 'LST.MP3/Gryph-On Air',
               
             },
             'Wednesday-4:00pm': {
@@ -1252,17 +1252,17 @@ document.addEventListener('DOMContentLoaded', function () {
                
             },
             'Wednesday-10:00pm': {
-                title1: 'Low-Key with Rivah',
+                title1: 'Urban Breaks',
                 title2: null,
                 image1: 'image14.jpg',
-                text1: 'Low-Key with Rivah',
+                text1: 'Live Dj Set',
              
             },
             'Wednesday-11:00pm': {
-                title1: 'Disco Hour',
+                title1: 'Weekly Wheelup',
                 title2: null,
                 image1: 'image15.jpg',
-                text1: 'Disco Hour',
+                text1: 'Live Dj Set',
                
             },
             
@@ -1362,17 +1362,17 @@ document.addEventListener('DOMContentLoaded', function () {
               
             },
             'Thursday-10:00pm': {
-                title1: 'Garcias Weekly Round Up',
+                title1: 'Roots to Rave',
                 title2: null,
                 image1: 'image14.jpg',
-                text1: 'Garcias Weekly Round Up',
+                text1: 'Live Dj Set',
              
             },
             'Thursday-11:00pm': {
-                title1: 'Beatscape',
+                title1: 'Riddims w/ Riv da Jap',
                 title2: null,
                 image1: 'image15.jpg',
-                text1: 'Beatscape',
+                text1: 'Live Dj Set',
                
             },
             
@@ -1415,7 +1415,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 title1: 'Sport',
               
                 image1: 'image6.jpg',
-                text1: 'The sports team take to the airwaves, discussing weekly fixtures and sports news. Soccer Punch: The students answer to Soccer Saturday, a more laidback overview of Saturday game.',
+                text1: 'The sports team take to the airwaves, discussing weekly fixtures and sports news.',
              
             },
             'Friday-3:00pm': {
@@ -1461,24 +1461,24 @@ document.addEventListener('DOMContentLoaded', function () {
              
             },
             'Friday-9:00pm': {
-                title1: 'The Midwest Emo Hour',
+                title1: 'Sleepytime songs',
                 title2: null,
                 image1: 'image13.jpg',
-                text1: 'The Midwest Emo Hour',
+                text1: 'Sleepytime songs',
               
             },
             'Friday-10:00pm': {
-                title1: 'Behind the Beat',
+                title1: 'Optimistic soul',
                 title2: null,
                 image1: 'image14.jpg',
-                text1: '(biweekly)',
+                text1: 'Live Dj Set',
              
             },
             'Friday-11:00pm': {
-                title1: 'Cranck Wave',
+                title1: 'Funky Frequencies',
                 title2: null,
                 image1: 'image15.jpg',
-                text1: 'Crank Wave',
+                text1: 'Live Dj Set',
                
             },
 
@@ -1504,7 +1504,7 @@ document.addEventListener('DOMContentLoaded', function () {
               
             },
             'Saturday-12:00pm': {
-                title1: 'No Show',
+                title1: 'Out and About',
                 image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
                 text1: 'Nothing..',
             },
@@ -1524,21 +1524,21 @@ document.addEventListener('DOMContentLoaded', function () {
               text2: 'Week 2 : With a new theme each week, two UML members present the best they can find in LUU’s Union Music Library.',
             },
             'Saturday-3:00pm': {
-                title1: '(Not So) Dumb Blondes',
+                title1: 'Soccer Punch',
                 title2: null,
                 image1: 'image7.jpg',
-                text1: 'LSR’s Best Show Winter 2024 returns for another season. Hannah and Rebecca decipher if life truly is more fun for blondes by dissecting their lives on air through fun themes!',
+                text1: 'The students answer to Soccer Saturday, a more laidback overview of Saturday game.',
               
             },
             'Saturday-4:00pm': {
-                 title1: 'No Show',
+                 title1: 'Soccer Punch',
                 image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
-                text1: 'Nothing..',
+                text1: 'Soccer Punch: The students answer to Soccer Saturday, a more laidback overview of Saturday game.',
             },
             'Saturday-5:00pm': {
-                 title1: 'No Show',
+                 title1: 'The Emo Hour',
                 image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
-                text1: 'Nothing..',
+                text1: 'The Emo Hour',
             },
             'Saturday-6:00pm': {
                 title1: 'Tinfoil Tales',
@@ -1569,17 +1569,17 @@ document.addEventListener('DOMContentLoaded', function () {
               
             },
             'Saturday-10:00pm': {
-                title1: 'Tjaro x LSR',
+                title1: 'Rosie & Tom try to DJ',
                 title2: null,
                 image1: 'image14.jpg',
-                text1: 'im not sure',
+                text1: 'Live Dj Set',
              
             },
             'Saturday-11:00pm': {
-                title1: 'Prog Ho!',
+                title1: 'No Show',
                 title2: null,
                 image1: 'image15.jpg',
-                text1: 'idk',
+                text1: 'Nothing..',
                
             },
 
@@ -1605,9 +1605,9 @@ document.addEventListener('DOMContentLoaded', function () {
               
             },
             'Sunday-12:00pm': {
-                title1: 'No Show',
+                title1: 'Box Office',
                 image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
-                text1: 'Nothing..',
+                text1: 'Box Office',
             },
             'Sunday-1:00pm': {
                 title1: 'It Takes A Village',
@@ -1621,7 +1621,7 @@ document.addEventListener('DOMContentLoaded', function () {
              
                 image1: 'image6.jpg',
                 
-                text1: 'i think this is wrong',
+                text1: 'The SRA Chart Show',
             
             },
             'Sunday-3:00pm': {
@@ -1629,7 +1629,7 @@ document.addEventListener('DOMContentLoaded', function () {
              
                 image1: 'image6.jpg',
                 
-                text1: 'i think this is wrong',
+                text1: 'The SRA Chart Show',
             },
             'Sunday-4:00pm': {
                  title1: 'SUNDAY ROAST',
@@ -1642,47 +1642,47 @@ document.addEventListener('DOMContentLoaded', function () {
                 text1: '‘Sunday Roast’ (4-6pm) mocks the week and discusses student icks in a whole new light.',
             },
             'Sunday-6:00pm': {
-                title1: 'Syke Up Your Life',
-                title2: 'The Vinyl Frontier',
+                title1: '(Not So) Dumb Blondes',
+             
                 image1: 'image10.jpg',
-                  image2: 'image10.jpg',
-                text1: 'idk',
-                 text2: 'idk',
+              
+                text1: 'LSR’s Best Show Winter 2024 returns for another season. Hannah and Rebecca decipher if life truly is more fun for blondes by dissecting their lives on air through fun themes!',
+            
                
             },
             'Sunday-7:00pm': {
                title1: 'ALBUM REVIEW',
                title2: null,
                 image1: 'image11.jpg',
-                text1: '?',
+                text1: 'Album Review',
                
             },
             'Sunday-8:00pm': {
-                title1: 'Space Age Love Songs',
+                title1: 'Box! Box! Box!',
                 title2: null,
                 image1: 'image12.jpg',
-                text1: '?',
+                text1: 'Box! Box! Box!',
              
             },
             'Sunday-9:00pm': {
-                title1: 'Sleepytime Songs',
+                title1: 'Alien Invasion',
                 title2: null,
                 image1: 'image13.jpg',
-                text1: '?',
+                text1: 'Alien Invasion',
               
             },
             'Sunday-10:00pm': {
-                title1: 'The Label Show',
+                title1: 'Jems Jamborees',
                 title2: null,
                 image1: 'image14.jpg',
-                text1: 'im not sure',
+                text1: 'Live Dj Set',
              
             },
             'Sunday-11:00pm': {
-                title1: 'EKBeats',
+                title1: 'Tjaro x LSR',
                 title2: null,
                 image1: 'image15.jpg',
-                text1: 'idk',
+                text1: 'Live Dj Set',
                
             },
         };
