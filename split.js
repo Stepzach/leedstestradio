@@ -235,7 +235,8 @@ schedules.addEventListener('click', function(event) {
             column1.style.width = '45%'; // Default width for two-column layout
             modal.style.width = defaultModalWidth; // Reset modal width
 
-            const imageUrl = `./${showId}.jpg`;
+            const imageUrl = `${showId}`;
+            const imageUrl2 = target.getAttribute('data-id2');
             const title = showInfo.querySelector('h2:nth-of-type(1)')?.textContent || ''; //Get the first h2
             const description = showInfo.querySelector('p:nth-of-type(1)')?.textContent || ''; //Get the first p
 
@@ -250,7 +251,7 @@ schedules.addEventListener('click', function(event) {
             if (title2 && description2) {
                 // Display second column
                 column2.style.display = 'block';
-                showImage2.src = `./${showId}_2.jpg`; // Assuming second image has _2 suffix
+                showImage2.src = imageUrl2;
                 showTitle2.textContent = title2;
                 showDescription2.textContent = description2;
             } else {
@@ -538,7 +539,7 @@ scheduleGrids.forEach(grid => {
             ["10:00 AM", "11:00 AM", "Breakfast"],
             ["11:00 AM", "12:00 PM", "Terminally Online"],
             ["12:00 PM", "1:00 PM", "Sound Salad/The More You Know"],
-            ["1:00 PM", "2:00 PM", "Sidilicious Selects"],
+            ["1:00 PM", "2:00 PM", "Politics Hour"],
             ["2:00 PM", "3:00 PM", "SPORT"],
             ["3:00 PM", "4:00 PM", "LGBTQ+ SHOW"],
             ["4:00 PM", "5:00 PM", "Bangers and Trash"],
@@ -547,8 +548,8 @@ scheduleGrids.forEach(grid => {
             ["7:00 PM", "8:00 PM", "LIVE AND LOCAL"],
             ["8:00 PM", "9:00 PM", "ROCK AND PUNK"],
             ["9:00 PM", "10:00 PM", "Campus Confessions"],
-            ["10:00 PM", "11:00 PM", "Uni Music Library Finds"],
-            ["11:00 PM", "11:59 PM", "Spiritual Guide"],
+            ["10:00 PM", "11:00 PM", "Radio with Rosie"],
+            ["11:00 PM", "11:59 PM", "555"],
         ],
         
          Tuesday: [
@@ -557,16 +558,16 @@ scheduleGrids.forEach(grid => {
         ["11:00 AM", "12:00 PM", "R-Kid Radio"],
         ["12:00 PM", "1:00 PM", "Top Of the Pops/ Continental Buffet"],
         ["1:00 PM", "2:00 PM", "The Tea Party/Archive to Airwaves"],
-        ["2:00 PM", "3:00 PM", "Vanity Unfair's Oscar Party"],
-        ["3:00 PM", "4:00 PM", "WOMEN'S HOUR"],
-        ["4:00 PM", "5:00 PM", ""],
+        ["2:00 PM", "3:00 PM", "Vanity Unfair's Oscar Party/Your Leedslist"],
+        ["3:00 PM", "4:00 PM", "SAFE SPACE"],
+        ["4:00 PM", "5:00 PM", "What's Poppin"],
         ["5:00 PM", "6:00 PM", "HOMETIME"],
         ["6:00 PM", "7:00 PM", "HOMETIME"],
         ["7:00 PM", "8:00 PM", "JAZZ, FUNK AND SOUL"],
         ["8:00 PM", "9:00 PM", "Wisecrack"],
         ["9:00 PM", "10:00 PM", "Girlhood"],
-        ["10:00 PM", "11:00 PM", "Thank You For The Music"],
-        ["11:00 PM", "11:59 PM", "Jungle Gems with Mylania"],
+        ["10:00 PM", "11:00 PM", "Multi-genre Madness"],
+        ["11:00 PM", "11:59 PM", "Beatscape"],
     ],
     Wednesday: [
         ["9:00 AM", "10:00 AM", "Breakfast"],
@@ -575,15 +576,15 @@ scheduleGrids.forEach(grid => {
         ["12:00 PM", "1:00 PM", "Barbergeddon"],
         ["1:00 PM", "2:00 PM", "Feeling Noughtie/Old, New, Borrowed, Blue"],
         ["2:00 PM", "3:00 PM", "Don't Mug Me Off!"],
-        ["3:00 PM", "4:00 PM", "POLITICS HOUR"],
+        ["3:00 PM", "4:00 PM", "LSTV.MP3 / Gryph On-Air"],
         ["4:00 PM", "5:00 PM", "Pionners of the Playlist/Politics of Punk"],
         ["5:00 PM", "6:00 PM", "HOMETIME"],
         ["6:00 PM", "7:00 PM", "HOMETIME"],
         ["7:00 PM", "8:00 PM", "AFROBEATS"],
         ["8:00 PM", "9:00 PM", "INTERNATIONAL"],
         ["9:00 PM", "10:00 PM", "Antagonising Aunts/Lost in the Mix"],
-        ["10:00 PM", "11:00 PM", "Low-Key with Rivah"],
-        ["11:00 PM", "11:59 PM", "Disco Hour"],
+        ["10:00 PM", "11:00 PM", "Urban Breaks"],
+        ["11:00 PM", "11:59 PM", "Weekly Wheelup"],
     ],
     Thursday: [
         ["9:00 AM", "10:00 AM", "Breakfast"],
@@ -592,64 +593,64 @@ scheduleGrids.forEach(grid => {
         ["12:00 PM", "1:00 PM", "I'm just a Girl/The Heart-beat"],
         ["1:00 PM", "2:00 PM", "Black Girls Gone Alt/Birth of the Beat"],
         ["2:00 PM", "3:00 PM", "Sounds Like Team Spirit"],
-        ["3:00 PM", "4:00 PM", "SAFE SPACE"],
+        ["3:00 PM", "4:00 PM", "'BUT WHERE ARE YOU REALLY FROM?'"],
         ["4:00 PM", "5:00 PM", "Last Days of Disco"],
         ["5:00 PM", "6:00 PM", "HOMETIME"],
         ["6:00 PM", "7:00 PM", "HOMETIME"],
         ["7:00 PM", "8:00 PM", "FOLK AND COUNTRY"],
         ["8:00 PM", "9:00 PM", "INDIE AND ALT"],
         ["9:00 PM", "10:00 PM", "From Latin America with Love"],
-        ["10:00 PM", "11:00 PM", "Garcia's Weekly Round Up"],
-        ["11:00 PM", "11:59 PM", "Beatscape"],
+        ["10:00 PM", "11:00 PM", "Roots to Rave"],
+        ["11:00 PM", "11:59 PM", "Riddims w/ Riv da Jap"],
     ],
     Friday: [
         ["9:00 AM", "10:00 AM", "Breakfast"],
         ["10:00 AM", "11:00 AM", "Breakfast"],
         ["11:00 AM", "12:00 PM", "Hit Me With Your Best Pop"],
-        ["12:00 PM", "1:00 PM", "Golden Hour/Space  Station"],
+        ["12:00 PM", "1:00 PM", "Golden Hour/Space Station"],
         ["1:00 PM", "2:00 PM", "NEWS OF THE WEEK"],
         ["2:00 PM", "3:00 PM", "SPORT"],
-        ["3:00 PM", "4:00 PM", "'BUT WHERE ARE YOU REALLY FROM?'"],
+        ["3:00 PM", "4:00 PM", "Women's Hour"],
         ["4:00 PM", "5:00 PM", "M&P Megamix"],
         ["5:00 PM", "6:00 PM", "HOMETIME"],
         ["6:00 PM", "7:00 PM", "HOMETIME"],
         ["7:00 PM", "8:00 PM", "HIP HOP, RAP & RnB"],
         ["8:00 PM", "9:00 PM", "ELECTRONIC"],
-        ["9:00 PM", "10:00 PM", "The Midwest Emo Hour"],
-        ["10:00 PM", "11:00 PM", "Behind The Beat (biweekly)"],
-        ["11:00 PM", "11:59 PM", "Crank Wave"],
+        ["9:00 PM", "10:00 PM", "Sleepytime Songs"],
+        ["10:00 PM", "11:00 PM", "Optimistic Soul"],
+        ["11:00 PM", "11:59 PM", "Funky Frequencies"],
     ],
     Saturday: [
         ["10:00 AM", "11:00 AM", "Pixel Perfect"],
         ["11:00 AM", "12:00 PM", "Barricade Babe"],
-        ["12:00 PM", "1:00 PM", ""],
+        ["12:00 PM", "1:00 PM", "Out and About"],
         ["1:00 PM", "2:00 PM", "Fill in The Gaps"],
         ["2:00 PM", "3:00 PM", "The Leeds Music Role Call/Uni Music Library Finds"],
-        ["3:00 PM", "4:00 PM", "(Not So) Dumb Blondes"],
-        ["4:00 PM", "5:00 PM", ""],
-        ["5:00 PM", "6:00 PM", ""],
+        ["3:00 PM", "4:00 PM", "Soccer Punch"],
+        ["4:00 PM", "5:00 PM", "Soccer Punch"],
+        ["5:00 PM", "6:00 PM", "The Emo Tales"],
         ["6:00 PM", "7:00 PM", "Tinfoil Tales"],
         ["7:00 PM", "8:00 PM", "SATURDAY NIGHT FEVER"],
         ["8:00 PM", "9:00 PM", "SATURDAY NIGHT FEVER"],
         ["9:00 PM", "10:00 PM", "Rags, Rebels, Records"],
-        ["10:00 PM", "11:00 PM", "Tjaro x LSR"],
-        ["11:00 PM", "11:59 PM", "Prog Ho!"],
+        ["10:00 PM", "11:00 PM", "Rosie & Tom try to DJ"],
+        ["11:00 PM", "11:59 PM", "BPM Radio"],
     ],
     Sunday: [
         ["10:00 AM", "11:00 AM", "The Label Show"],
         ["11:00 AM", "12:00 PM", "Witching Hour"],
-        ["12:00 PM", "1:00 PM", ""],
+        ["12:00 PM", "1:00 PM", "Box Office"],
         ["1:00 PM", "2:00 PM", "It Takes A Village"],
         ["2:00 PM", "3:00 PM", "SRA CHART SHOW"],
         ["3:00 PM", "4:00 PM", "SRA CHART SHOW"],
         ["4:00 PM", "5:00 PM", "SUNDAY ROAST"],
         ["5:00 PM", "6:00 PM", "SUNDAY ROAST"],
-        ["6:00 PM", "7:00 PM", "Syke Up Your Life / The Vinyl Frontier"],
+        ["6:00 PM", "7:00 PM", "(Not So) Dumb Blondes"],
         ["7:00 PM", "8:00 PM", "ALBUM REVIEW"],
-        ["8:00 PM", "9:00 PM", "Space Age Love Songs"],
-        ["9:00 PM", "10:00 PM", "Sleepytime Songs"],
-        ["10:00 PM", "11:00 PM", "The Label Show"],
-        ["11:00 PM", "11:59 PM", "EKBeats"],
+        ["8:00 PM", "9:00 PM", "Box! Box! Box!"],
+        ["9:00 PM", "10:00 PM", "Alien Invasion"],
+        ["10:00 PM", "11:00 PM", "Jem's Jamborees"],
+        ["11:00 PM", "11:59 PM", "Tjaro x LSR"],
         
     ]
 
@@ -752,10 +753,10 @@ scheduleGrids.forEach(grid => {
               artist: 'Leeds Student Radio', // Optional
        
         artwork: [
-            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '96x96', type: 'image/jpeg' },
-            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '128x128', type: 'image/jpeg' },
-            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '256x256', type: 'image/jpeg' },
-            { src: 'ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '512x512', type: 'image/jpeg' }
+            { src: 'https://stepzach.github.io/leedstestradio/ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '96x96', type: 'image/jpeg' },
+            { src: 'https://stepzach.github.io/leedstestradio/ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '128x128', type: 'image/jpeg' },
+            { src: 'https://stepzach.github.io/leedstestradio/ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '256x256', type: 'image/jpeg' },
+            { src: 'https://stepzach.github.io/leedstestradio/ab6765630000ba8a51445deb0fe8b8c4b173e6a1.jpeg', sizes: '512x512', type: 'image/jpeg' }
         ]
         
             });
@@ -946,361 +947,369 @@ document.addEventListener('DOMContentLoaded', function () {
         const timeSlotData = {
             'Monday-9:00am': {
                 title1: 'Breakfast',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1TAuZYdHRBvmMWc_bjh0c-KP_mouGEzrE=w2940-h1680-iv1',
                 text1: 'Every week day 9-11am, four presenters wake up the students of Leeds with pop music, culture round-ups and blind rankings of the things that really matter first thing in the morning!',
                 
                 
             },
             'Monday-10:00am': {
                 title1: 'Breakfast',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1TAuZYdHRBvmMWc_bjh0c-KP_mouGEzrE=w2940-h1680-iv1',
                 text1: 'Every week day 9-11am, four presenters wake up the students of Leeds with pop music, culture round-ups and blind rankings of the things that really matter first thing in the morning!',
             },
             'Monday-11:00am': {
                 title1: 'Terminally Online',
                 
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1yMG2EPJ5c28K-SY8SZAB7BQ548DsMNgW=w2940-h1680-iv1',
                 text1: 'Join Emily and Fleur as they procrastinate another hour from doing uni work to reminisce on the best bits of internet culture. Expect a nostalgia overdose as the girls traverse the history of the world wide web.',
                
             },
             'Monday-12:00pm': {
                title1: 'Sound Salad',
                title2: 'The more you Know',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
-                text1: 'Week 1 : Dive underground with [presenter name] to explore the Leeds music scene. Listen out for guest appearances and a wide coverage of genre.',
-                 image2: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1vu792GSFeI8KbzxAfcc2viTEoUlDqMt5=w2940-h1680-iv1',
+                text1: 'Week 1 : Dive underground to explore the Leeds music scene. Listen out for guest appearances and a wide coverage of genre.',
+                 image2: 'https://lh3.googleusercontent.com/u/0/d/1uZD4HXPZhATfDOeu7hewVh2h2lPpn7AB=w2940-h1680-iv1',
                 text2: 'Week 2 : Ever wondered what really happened at Woodstock 99? Join Matt, Anna and Ella to learn more on some of pop culture’s most historical events.'
             },
             'Monday-1:00pm': {
                 title1: 'Politics Hour',
                 title2: null,
-                image1: 'image5.jpg',
-                text1: 'Politics Hour',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/10TRTNzsdvEOZV70GER3_8PN4vgTaj4Kl=w2940-h1680-iv2',
+                text1: 'Students have a voice too, join these four as they navigate the lastest political arguments that shape university life.',
                
             },
             'Monday-2:00pm': {
                 title1: 'SPORT',
                 title2: null,
-                image1: 'image6.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1fFrZWocMVROqqab_evU8w5EESOuUL4oi=w2940-h1680-iv1',
                 text1: 'The sports team take to the airwaves, discussing weekly fixtures and sports news.',
                 
             },
             'Monday-3:00pm': {
                 title1: 'LGBTQ+ Show',
                 title2: null,
-                image1: 'image7.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1m3qQuP2su8VPD9Hcrz_2UTbxaP7211Gb=w2940-h1680-iv2',
                 text1: 'Championing queer icons in Leeds and beyond, and celebrating the culture of being part of the LGBTQIA+ community.',
               
             },
             'Monday-4:00pm': {
                 title1: 'Bangers and Trash',
                 title2: null,
-                image1: 'image8.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1mK9eXnFZ3xUw6E5Hr7iTSA0EPm7hR4St=w2940-h1680-iv1',
                 text1: 'We aren’t popular, but our culture is! Each week we dissect our guilty pleasures, current faves (and least faves) and silly little stories. Get your ears into gear!',
                
             },
             'Monday-5:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
-                image1: 'image9.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/17nlJo75YJZH1sWxXbd61Yg2lj05623Es=w2940-h1680-iv1',
                 text1: 'Every week day 5-7pm, four presenters soundtrack students’ commutes home, sharing stories, doing challenges and prepping you for the nightlife landscape of Leeds day by day.',
                
             },
             'Monday-6:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
-                image1: 'image10.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/17nlJo75YJZH1sWxXbd61Yg2lj05623Es=w2940-h1680-iv1',
                 text1: 'Every week day 5-7pm, four presenters soundtrack students’ commutes home, sharing stories, doing challenges and prepping you for the nightlife landscape of Leeds day by day.',
                
             },
             'Monday-7:00pm': {
                title1: 'Live and Local',
                title2: null,
-                image1: 'image11.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1S2l0e8DdpkAHIywbzrs6gfD9JJaFjcZ_=w2940-h1680-iv1',
                 text1: 'LSR’s core music team dedicate this hour to the latest and greatest in Live & Local music. Tune in to broaden your horizons with the independent and student artists making their marks on the scene.',
                
             },
             'Monday-8:00pm': {
                 title1: 'Rock and Punk',
                 title2: null,
-                image1: 'image12.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1SLsNmfHGLR4UyiXCGlCx23eHD8UV0Vam=w2940-h1680-iv1',
                 text1: 'LSR’s core music team dedicate this hour to the latest and greatest in Rock and Punk music. Tune in to broaden your horizons with the independent and student artists making their marks on the scene.',
              
             },
             'Monday-9:00pm': {
                 title1: 'Campus Confessions',
                 title2: null,
-                image1: 'image13.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'James and Katie are exposing the best of LeedsFess for an hour every week, saving only the juiciest ones for LSR. To get the latest scoop listen live!',
                
             },
             'Monday-10:00pm': {
                 title1: 'Radio with Rosie',
                 title2: null,
-                image1: 'image14.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1JGKLlWar05obNk34AYTAMvlfo02N7mRK=w2940-h1680-iv1',
                 text1: 'Live Dj set',
              
             },
             'Monday-11:00pm': {
                 title1: '555',
                 title2: null,
-                image1: 'image15.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/16Skw4yF_eQEQeb19czoox4s4vf5M7Bbn=w2940-h1680-iv1',
                 text1: 'Live Dj set.',
                
             },
              'Tuesday-9:00am': {
                 title1: 'Breakfast',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1QatdvsYmjHxw7ak5oHMMNNjx-SrSqTdy=w2940-h1680-iv1',
                 text1: 'Every week day 9-11am, four presenters wake up the students of Leeds with pop music, culture round-ups and blind rankings of the things that really matter first thing in the morning!',
                 
                 
             },
             'Tuesday-10:00am': {
                 title1: 'Breakfast',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1QatdvsYmjHxw7ak5oHMMNNjx-SrSqTdy=w2940-h1680-iv1',
                 text1: 'Every week day 9-11am, four presenters wake up the students of Leeds with pop music, culture round-ups and blind rankings of the things that really matter first thing in the morning!',
             },
             'Tuesday-11:00am': {
                 title1: 'R-Kid Radio',
                 
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1tIlic5PMeY5MwRWP7ts_Aq5tayz6TpWi=w2940-h1680-iv1',
                 text1: 'Two northern baddies take to the ariwaves to compare their music taste. Week by week they summarise their lives and soundtrack their weekly activities, so listen now to hear more!',
                
             },
             'Tuesday-12:00pm': {
                title1: 'Top Of The Pops',
                title2: 'Continental Buffet',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1k0lu70mfMkfw8Llv0Sl9-odgJUlEIMsm=w2940-h1680-iv1',
                 text1: 'Week 1 : Amy and Ruby present the biweekly chart on LSR! Top 10 tracks of the day and everything you need to know and love about the artists!',
-                 image2: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                 image2: 'https://lh3.googleusercontent.com/u/0/d/1IkQ3057bRXhCYgB6SUr7MB7kNM85CNgW=w2940-h1680-iv1',
                 text2: 'Week 2 : A feast of delectable musical treats from across the globe, one country at a time. Jimmy is serving Conty B like no one else.'
             },
             'Tuesday-1:00pm': {
                 title1: 'The Tea Party',
                 title2: 'UML Presents: Archive to Airwaves',
-                image1: 'image5.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'Week 1 : Matty and Haley compare UK and US culture on air! A classic LSR show aimed to educate the masses on American and British culture with a soundtrack of the best artists from each country. @theteaparty_lsr on instagram.',
-                  image2: 'image5.jpg',
+                  image2: 'https://leeds.ams3.digitaloceanspaces.com/media/yIlXVf9yhlwsONEFuMA0NEn6Xi3pFD9GNP5vLAXG.jpg',
                 text2:  'Week 2 : Union Music Library has taken over! Join the team each week to highlight which findings from their archive are deemed worthy enough for LSR airplay. Tune in to hear hidden gems and the context surrounding classic records.',
                     
             },
             'Tuesday-2:00pm': {
                 title1: 'Vanity Unfair’s Oscar Party',
-                title2: null,
-                image1: 'image6.jpg',
-                text1: '(Bi-Weekly) As we are very close to the Oscars, there are so many twists, turns, conflicts and dramas to talk about and we’d love to dive into this with listeners on LSR to share our passion for it. We’ll also get into the practical elements of filmmaking to ascertain if the nominees are deserving!',
+                title2: 'Your Leedslist',
+                image2: 'https://lh3.googleusercontent.com/u/0/d/1bG31bW3AK2qIraF428n33EsU6eUh1F_P=w2940-h1680-iv1',
+                text2: 'Your Leedslist is a play on everyones favourite spotify feature, the daylist!',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
+                text1: '(Bi-Weekly) As we are very close to the Oscars, there are so many twists, turns, conflicts and dramas to talk about and wed love to dive into this with listeners on LSR to share our passion for it. Well also get into the practical elements of filmmaking to ascertain if the nominees are deserving!',
                 
             },
+            
+
             'Tuesday-3:00pm': {
-                title1: 'Womens Hour',
+                title1: 'Safe Space',
                 title2: null,
-                image1: 'image7.jpg',
-                text1: 'Highlighting the work of women in Leeds and beyond. AN empowering discussion each week centred on women’s issues and celebrating women’s achievements.',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1lZ5C6ASy_WkEBRrNTTlI93-9g-XF0-0V=w2940-h1680-iv1',
+                text1: 'Exactly that! These presenters discuss the importance of mindfulness and taking care of your mental health at university as well as discussing how neurodiversity impacts student life.',
               
             },
+            
             'Tuesday-4:00pm': {
                 title1: 'Whats Poppin',
                 title2: null,
-                image1: 'image8.jpg',
-                text1: '',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1R70ylM2DmNl3IWRdcXWF6W9KVlTG-e9-=w2940-h1680-iv1',
+                text1: 'What is popping? Join Ruby and Zara to find out the latest in pop culture.',
                
             },
             'Tuesday-5:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
-                image1: 'image9.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1aXq8unBzVghLue8DoI_kc5BnJAZvK9t0=w2940-h1680-iv1',
                 text1: 'Every week day 5-7pm, four presenters soundtrack students’ commutes home, sharing stories, doing challenges and prepping you for the nightlife landscape of Leeds day by day.',
                
             },
             'Tuesday-6:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
-                image1: 'image10.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1aXq8unBzVghLue8DoI_kc5BnJAZvK9t0=w2940-h1680-iv1',
                 text1: 'Every week day 5-7pm, four presenters soundtrack students’ commutes home, sharing stories, doing challenges and prepping you for the nightlife landscape of Leeds day by day.',
                
             },
             'Tuesday-7:00pm': {
                title1: 'JAZZ, FUNK AND SOUL',
                title2: null,
-                image1: 'image11.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1x4Sbn9MakIUMQFOtfIl4FE8KvUkBDwfp=w2940-h1680-iv1',
                 text1: 'LSR’s core music team dedicate this hour to the latest and greatest in Jazz, Funk and Sould music. Tune in to broaden your horizons with the independent and student artists making their marks on the scene.',
                
             },
             'Tuesday-8:00pm': {
                 title1: 'Wisecrack',
                 title2: null,
-                image1: 'image12.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'We have local bands on to discuss their influences, upcoming shows and projects, and the local music scene as a whole, creating a sense of community for the artist and the listener.',
              
             },
             'Tuesday-9:00pm': {
                 title1: 'Girlhood',
                 title2: null,
-                image1: 'image13.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'Girlhood is a talk-based specialised music show all about our experiences as young women and popular culture. Millie and Amelie are diversifying the sound of LSR by highlighting female artists and soundtracking what it’s like to be a girl.',
                
             },
             'Tuesday-10:00pm': {
                 title1: 'Multi-genre Madness',
                 title2: null,
-                image1: 'image14.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'Live Dj Set',
              
             },
             'Tuesday-11:00pm': {
                 title1: 'Beatscape',
                 title2: null,
-                image1: 'image15.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'Live Dj set',
                
             },
                 'Wednesday-9:00am': {
                 title1: 'Breakfast',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1OfLVtIsaaGFcSz3NdCOTmee1RyTVrx_U=w2940-h1680-iv1',
                 text1: 'Every week day 9-11am, four presenters wake up the students of Leeds with pop music, culture round-ups and blind rankings of the things that really matter first thing in the morning!',
                 
                 
             },
             'Wednesday-10:00am': {
                 title1: 'Breakfast',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1OfLVtIsaaGFcSz3NdCOTmee1RyTVrx_U=w2940-h1680-iv1',
                 text1: 'Every week day 9-11am, four presenters wake up the students of Leeds with pop music, culture round-ups and blind rankings of the things that really matter first thing in the morning!',
             },
             'Wednesday-11:00am': {
                 title1: 'Chattergories',
                  title2: 'Big Names On Campus',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1dh4gpcFdSYmg9xBXuY5BO9QPfIsX9_0G=w2940-h1680-iv1',
                text1: 'Week 1 : A positive news show featuring student-focussed stories and songs. Highlighting the individual and mass change towards good in the world with guests!',
-                image2: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
-                text2: 'Week 2 : Championing student-led events across Leeds’ campuses, Ruby has friendly chats with different guests each week as they share their light on air.',
+                image2: 'https://lh3.googleusercontent.com/u/0/d/1o37sYdSHo7-gl5S5ntLwbKkXbIEs_c-4=w2940-h1680-iv1',
+                text2: 'Week 2 : Championing student-led events across Leeds campuses, Ruby has friendly chats with different guests each week as they share their light on air.',
               
             },
             'Wednesday-12:00pm': {
                title1: 'Barbergeddon',
               
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'Sidney pays homage to Barber FM with the end of educating fellow LSR members in the post-internet-jazzification of the music scene.',
                 
             },
             'Wednesday-1:00pm': {
                 title1: 'Feeling Noughtie',
                 title2: 'Old, New, Borrowed, Blue',
-                image1: 'image5.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1M3ImkQb71ldofpmKyi6F0ik4RPc2I5hH=w2940-h1680-iv1',
                 text1: 'Week 1 : The pressure of being a Gen Z adult is unfathomable. Rather than addressing it, Rhys, Kiera and Ella are traversing back to the 2000s when life was simpler for us.',
-                  image2: 'image5.jpg',
+                  image2: 'https://lh3.googleusercontent.com/u/0/d/1sm4ouF0Uz3_JO9oGTGO2daK9gGagYoBD=w2940-h1680-iv1',
                 text2:  'Week 2 : Megan showcases songs from her past (old), that she recently discovered (new), that someone recommended (borrowed) and something mellow (blue), all centred around a unique theme per the show!',
                     
             },
             'Wednesday-2:00pm': {
                 title1: 'Don’t Mug Me Off!',
                 title2: null,
-                image1: 'image6.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1cKrvRuEOS2Nj3ZhHUB4gf8P3Gjc9JOAL=w2940-h1680-iv1',
                 text1: 'As students, we know and love the petty drama that defines our lives. Will your flatmate ever clean up their dishes? Will the letting agents ever send a maintenance worker? Imogen and Charlotte make head and tail of all the drama in this Agony Aunt style show.',
                 
             },
             'Wednesday-3:00pm': {
-                title1: 'LST.MP3/ Gryph on Air',
-                title2: null,
-                image1: 'image7.jpg',
-                text1: 'LST.MP3/Gryph-On Air',
+                title1: 'LSTV.MP3',
+                 title2: 'Gryph on Air',
+               
+                image1: 'https://leeds.ams3.digitaloceanspaces.com/media/u9jj8X7eVxFC0rYoOcEAus65HIcxfSeeWgJXHRjN.png',
+                text1: 'Week 1:LSTV takeover time, join our four hosts as we crossover betweeen radio and digital.',
+                 image2: 'https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/348250827_624121686273460_6603057765271020679_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=g091n3P7kC8Q7kNvgEpveQv&_nc_oc=AdktbKlupu8TuRFS4tfcpm4tRTsGgfeE8b1GP9KK_NcnMxmzy1CeWNZADWhSc_abQcw&_nc_zt=23&_nc_ht=scontent-lhr6-1.xx&_nc_gid=J_5gz7lVdNsc5plmWylX3w&oh=00_AYFGjnoEkpAjWal8bJZzpM1MJIVSl6Zb6_JObMkqzwzoGQ&oe=67E37ACA',
+                text2: 'Week 2 : Gryphon takeover time, join our four hosts as we crossover between radio and paper.',
               
             },
             'Wednesday-4:00pm': {
                 title1: 'Pioneers of the Playlist',
                 title2: 'Politics of Punk',
-                image1: 'image8.jpg',
-                text1: 'Week 1 : This radio show will look into the stories of the most iconic artists and bands who have reshaped music history and influenced culture. Each episode will explore the groundbreaking contributions of musical legends by focusing on their discography, cultural relevance, and the far-reaching impact they’ve had across various aspects of society.',
-                  image2: 'image8.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1Qv1I1wfHrBzI0NSNBsXl85cGrvsTb_ft=w2940-h1680-iv1',
+                text1: 'Week 1 : This radio show will look into the stories of the most iconic artists and bands who have reshaped music history and influenced culture. Each episode will explore the groundbreaking contributions of musical legends by focusing on their discography, cultural relevance, and the far-reaching impact theyve had across various aspects of society.',
+                  image2: 'https://lh3.googleusercontent.com/u/0/d/1Iq3ovxY0ZbxaYyB4kGEewFOVBRa4QGrg=w2940-h1680-iv1',
                  text2: 'Week 2 : Politics of Punk is a show that aims to educate and entertain people on the wild and entertaining world of punk music and all its sub genres.',
                
             },
             'Wednesday-5:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
-                image1: 'image9.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1QfIhvkJVJ_91JVoCq2LZxbgkIShI--5E=w2940-h1680-iv1',
                 text1: 'Every week day 5-7pm, four presenters soundtrack students’ commutes home, sharing stories, doing challenges and prepping you for the nightlife landscape of Leeds day by day.',
                
             },
             'Wednesday-6:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
-                image1: 'image10.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1QfIhvkJVJ_91JVoCq2LZxbgkIShI--5E=w2940-h1680-iv1',
                 text1: 'Every week day 5-7pm, four presenters soundtrack students’ commutes home, sharing stories, doing challenges and prepping you for the nightlife landscape of Leeds day by day.',
                
             },
             'Wednesday-7:00pm': {
                title1: 'Afrobeats',
                title2: null,
-                image1: 'image11.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1RpbnGb664ngOET2HjfHF5r7niAPl2X5H=w2940-h1680-iv1',
                 text1: 'LSR’s core music team dedicate this hour to the latest and greatest in Afrobeats. Tune in to broaden your horizons with the independent and student artists making their marks on the scene.',
                
             },
             'Wednesday-8:00pm': {
                 title1: 'International',
                 title2: null,
-                image1: 'image12.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1V7zE4g6s61ajxmR6cThVYo-WaRtIps5Q=w2940-h1680-iv1',
                 text1: 'LSR’s core music team dedicate this hour to the latest and greatest in international music. Tune in to broaden your horizons with the independent and student artists making their marks on the scene.',
              
             },
             'Wednesday-9:00pm': {
                 title1: 'Antagonising Aunts',
                 title2: 'Lost In The Mix',
-                image1: 'image13.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'Send your anonymous queries to these two for some well-thought out advice! You might even be lucky enough to get a soundtrack to help you work through your dastardly dilemmas.',
-               image2: 'image13.jpg',
+               image2: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text2: 'Get ready for hidden gems from artists with under 100k monthly listeners on Spotify. Join our host as she introduces you to a plethora of secret sounds.',
                
             },
             'Wednesday-10:00pm': {
                 title1: 'Urban Breaks',
                 title2: null,
-                image1: 'image14.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'Live Dj Set',
              
             },
             'Wednesday-11:00pm': {
                 title1: 'Weekly Wheelup',
                 title2: null,
-                image1: 'image15.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/12jh4vOW3urYwKWkZM4JejkTSNUfrGrbB=w2940-h1680-iv1',
                 text1: 'Live Dj Set',
                
             },
             
                 'Thursday-9:00am': {
                 title1: 'Breakfast',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1QatdvsYmjHxw7ak5oHMMNNjx-SrSqTdy=w2940-h1680-iv1',
                 text1: 'Every week day 9-11am, four presenters wake up the students of Leeds with pop music, culture round-ups and blind rankings of the things that really matter first thing in the morning!',
                 
                 
             },
             'Thursday-10:00am': {
                 title1: 'Breakfast',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1QatdvsYmjHxw7ak5oHMMNNjx-SrSqTdy=w2940-h1680-iv1',
                 text1: 'Every week day 9-11am, four presenters wake up the students of Leeds with pop music, culture round-ups and blind rankings of the things that really matter first thing in the morning!',
             },
             'Thursday-11:00am': {
                 title1: 'The Feel Good Files',
                  title2: 'Jamie goes to Hollywood',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/16gwlmU2ObXD_Uu95d84m4pWgG-6tORhU=w2940-h1680-iv1',
                text1: 'Week 1 : Once a fortnight Lili shares a space for you to take a break from the hustle and bustle. Join her live for quizzes, grooviness and a low-down of the latest positive events in Leeds.',
-                image2: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image2: 'https://lh3.googleusercontent.com/u/0/d/10cr5U95lZHr6wMGKkMMz3ZFUGq3rs6je=w2940-h1680-iv1',
                 text2: 'Week 2 : Jamie explores the latest and greatest of cinema once a fortnight. He’ll analyse the soundtracks, directorial choices or acting careers we know and love to tell you more about his faves.',
               
             },
             'Thursday-12:00pm': {
                title1: 'Im Just a Girl',
                 title2: 'The Heart-Beat',
-                image1: 'image5.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1we3RLM_LC3mD-ppTvXbfzZcBfzhiHxUA=w2940-h1680-iv1',
                 text1: 'Week 1 : Tune in for all things girlypop! Join the girls to try and figure out female friendships, career plans, travel agendas and more.',
-                  image2: 'image5.jpg',
+                  image2: 'https://lh3.googleusercontent.com/u/0/d/1SEn8iGmp4JrICA80fAIfTCTBrQ-vF8f4=w2940-h1680-iv1',
                 text2:  'Week 2 : Ria writes a love letter to fan culture in this show. Diving into fandoms for books, films, TV Shows and musical artists and hearing why the fans love them so much live every other Thursday.',
                     
             },
             'Thursday-1:00pm': {
                  title1: 'Black girls gone Alt',
                 title2: 'Birth of the Beat',
-                image1: 'image6.jpg',
-                  image2: 'image6.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
+                  image2: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'Week 1 : Malaika highlights her fave Black female artists, with a focus on how they’ve created alternative sounds in genres where they are otherwise under-represented.',
                 text2: 'Week 2 : Birth of the Beat is back! Join the hosts as they navigate the history and culture of various genres, eras, artists and movements, ranging from Ethiopian jazz to the role of the CIA in protest music, you’re sure to learn something new.'
          
@@ -1308,176 +1317,180 @@ document.addEventListener('DOMContentLoaded', function () {
             'Thursday-2:00pm': {
                 title1: 'Sounds Like Team Spirit',
                
-                image1: 'image6.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 
                 text1: 'Incorporating sport and music as one, the boys explore historical and modern sporting events and play the tunes which accompany them. Tune in for chants and culture on air.',
                      },
+            
             'Thursday-3:00pm': {
-                title1: 'Safe Space',
+                title1: 'But where are you really from?',
                 title2: null,
-                image1: 'image7.jpg',
-                text1: 'Exactly that! These presenters discuss the importance of mindfulness and taking care of your mental health at university as well as discussing how neurodiversity impacts student life.',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/11hwERjFTufaKMpU-79bo4q_oz7dDXFWb=w2940-h1680-iv1',
+                text1: 'Discussing race relations on campus and the manifestation of identity for students of ethnic minority backgrounds and international students more broadly.',
               
             },
+
             'Thursday-4:00pm': {
                 title1: 'Last Days of Disco',
                 title2: null,
-                image1: 'image8.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1Xeo6bn74JObZylqkFV54g2vSsMSuF-Gq=w2940-h1680-iv1',
                 text1: 'Ruth identifies the greatest disco and disco-adjacent tracks in history. Tracing the origins of the genre back to before the dancefloors of 1970s New York, tune in to hear a love for disco.',
                  
             },
             'Thursday-5:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
-                image1: 'image9.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1f1Cfr7819ygY6jULXwvd_f6P7CDgbaJc=w2940-h1680-iv1',
                 text1: 'Every week day 5-7pm, four presenters soundtrack students’ commutes home, sharing stories, doing challenges and prepping you for the nightlife landscape of Leeds day by day.',
                
             },
             'Thursday-6:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
-                image1: 'image10.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1f1Cfr7819ygY6jULXwvd_f6P7CDgbaJc=w2940-h1680-iv1',
                 text1: 'Every week day 5-7pm, four presenters soundtrack students’ commutes home, sharing stories, doing challenges and prepping you for the nightlife landscape of Leeds day by day.',
                
             },
             'Thursday-7:00pm': {
                title1: 'Folk and Country',
                title2: null,
-                image1: 'image11.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1EGlLkz8UhVCNF8JLjq2gXngALtP3eSXM=w2940-h1680-iv1',
                 text1: 'LSR’s core music team dedicate this hour to the latest and greatest in Folk and Country music. Tune in to broaden your horizons with the independent and student artists making their marks on the scene.',
                
             },
             'Thursday-8:00pm': {
                 title1: 'Indie and Alt',
                 title2: null,
-                image1: 'image12.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1DuxS95td1NATK5FKvz4MISU8UKQecQIn=w2940-h1680-iv1',
                 text1: 'LSR’s core music team dedicate this hour to the latest and greatest in Indie and Alt music. Tune in to broaden your horizons with the independent and student artists making their marks on the scene.',
              
             },
             'Thursday-9:00pm': {
                 title1: 'From Latin America with Love',
                 title2: null,
-                image1: 'image13.jpg',
-                text1: 'Centred around his experience as a child in Miami, the gateway to Latin America, [presenter name] explores Latin-Caribbean and South American discographies country by country.',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
+                text1: 'Centred around his experience as a child in Miami, the gateway to Latin America, Frankie explores Latin-Caribbean and South American discographies country by country.',
               
             },
             'Thursday-10:00pm': {
                 title1: 'Roots to Rave',
                 title2: null,
-                image1: 'image14.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1e9ZQc1IlsMMsnWt3V1bnOq_ubgjY5Csm=w2940-h1680-iv1',
                 text1: 'Live Dj Set',
              
             },
             'Thursday-11:00pm': {
                 title1: 'Riddims w/ Riv da Jap',
                 title2: null,
-                image1: 'image15.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv1',
                 text1: 'Live Dj Set',
                
             },
             
-                'Friday-9:00am': {
+            'Friday-9:00am': {
                 title1: 'Breakfast',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1Td5FYnJ0GIFE__FyFONecegEFzowGoYM=w2940-h1680-iv1',
                 text1: 'Every week day 9-11am, four presenters wake up the students of Leeds with pop music, culture round-ups and blind rankings of the things that really matter first thing in the morning!',
                 
                 
             },
             'Friday-10:00am': {
                 title1: 'Breakfast',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1Td5FYnJ0GIFE__FyFONecegEFzowGoYM=w2940-h1680-iv1',
                 text1: 'Every week day 9-11am, four presenters wake up the students of Leeds with pop music, culture round-ups and blind rankings of the things that really matter first thing in the morning!',
             },
             'Friday-11:00am': {
                 title1: 'Hit me with your Best Pop',
               
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1HMSLqbPw7RKBagrEH09oveNNOESottVb=w2940-h1680-iv1',
                text1: 'Anna unapologetically celebrates all things pop and guilty pleasures! From 00s anthems, to todays trending girlypop dnb tunes, this show champions all of the songs that we secretly love to blast in the kitchen through our headphones!',
               
             },
             'Friday-12:00pm': {
                 title1: 'Golden Hour',
                 title2: 'Space Station',
-                image1: 'image5.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1WL_LzZVLD39qiF32Gm9c-kP2moUxskw5=w2940-h1680-iv1',
                 text1: 'Week 1 : Sophie’s show is about showcasing music that inspires you to be creative in various forms, and music that channels "golden hour energy" - picture lying with your face in the sun in the summer and being the main character.',
-                  image2: 'image5.jpg',
+                  image2: 'https://lh3.googleusercontent.com/u/0/d/1z8sfhsUSEimYBkArIUxFPIyd0HnGjFur=w2940-h1680-iv1',
                 text2:  'Week 2 : Rory presents a show to space out to, centred around ethereal dreamy music with an emphasis on healing. Stay tuned for guided meditation at the end of each show!',
                     
             },
             'Friday-1:00pm': {
                 title1: 'News of the Week',
               
-                image1: 'image5.jpg',
-                text1: 'News of the week',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1jOYltooDjAzQ39zfbT4VZNogLlRYK1_w=w2940-h1680-iv1',
+                text1: 'Weekly rundown of the worlds biggest stories, expect a balanced discussion on global , national, local and student news.',
                
             },
             'Friday-2:00pm': {
                 title1: 'Sport',
               
-                image1: 'image6.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1fFrZWocMVROqqab_evU8w5EESOuUL4oi=w2940-h1680-iv1',
                 text1: 'The sports team take to the airwaves, discussing weekly fixtures and sports news.',
              
             },
-            'Friday-3:00pm': {
-                title1: 'But where are you really from?',
+            
+           'Friday-3:00pm': {
+                title1: 'Womens Hour',
                 title2: null,
-                image1: 'image7.jpg',
-                text1: 'Discussing race relations on campus and the manifestation of identity for students of ethnic minority backgrounds and international students more broadly.',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/17Psc3lr03AhwhXw_ZtyvfQ-sbN_PXZ9f=w2940-h1680-iv1',
+                text1: 'Highlighting the work of women in Leeds and beyond. AN empowering discussion each week centred on women’s issues and celebrating women’s achievements.',
               
             },
+            
             'Friday-4:00pm': {
                 title1: 'M&P Megamix',
                 title2: null,
-                image1: 'image8.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/12stuuMN3VxhKbjPvMa7S8AEvD-m9k6bZ=w2940-h1680-iv1',
                 text1: 'LUU’s Music and Performance rep Kate highlights the best of those societies. With a different group each week you can get to know them and the projects they have under their belts this semester.',
                  
             },
             'Friday-5:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
-                image1: 'image9.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xzjPo0ZcbrG9uezDQB7xxFI19MallFir=w2940-h1680-iv1',
                 text1: 'Every week day 5-7pm, four presenters soundtrack students’ commutes home, sharing stories, doing challenges and prepping you for the nightlife landscape of Leeds day by day.',
                
             },
             'Friday-6:00pm': {
                 title1: 'HOMETIME',
                 title2: null,
-                image1: 'image10.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xzjPo0ZcbrG9uezDQB7xxFI19MallFir=w2940-h1680-iv1',
                 text1: 'Every week day 5-7pm, four presenters soundtrack students’ commutes home, sharing stories, doing challenges and prepping you for the nightlife landscape of Leeds day by day.',
                
             },
             'Friday-7:00pm': {
                title1: 'Hip-Hop, Rap & RnB',
                title2: null,
-                image1: 'image11.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1LIThm5ylQ6DOe6a_VXayS5bQCVCVH8Jn=w2940-h1680-iv1',
                 text1: 'LSR’s core music team dedicate this hour to the latest and greatest in Hip-Hop, Rap & RnB music. Tune in to broaden your horizons with the independent and student artists making their marks on the scene.',
                
             },
             'Friday-8:00pm': {
                 title1: 'Electronic',
                 title2: null,
-                image1: 'image12.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1Y1SoyjIr9WnfOBbem4qvtCZiXge_6nIy=w2940-h1680-iv1',
                 text1: 'LSR’s core music team dedicate this hour to the latest and greatest in Electronic music. Tune in to broaden your horizons with the independent and student artists making their marks on the scene.',
              
             },
             'Friday-9:00pm': {
                 title1: 'Sleepytime songs',
                 title2: null,
-                image1: 'image13.jpg',
-                text1: 'Sleepytime songs',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
+                text1: 'Tune in for relaxing songs to end the night with!',
               
             },
             'Friday-10:00pm': {
                 title1: 'Optimistic soul',
                 title2: null,
-                image1: 'image14.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1npF5tvtpTjqi9-mLzwDENmUDszh4qjOJ=w2940-h1680-iv1',
                 text1: 'Live Dj Set',
              
             },
             'Friday-11:00pm': {
                 title1: 'Funky Frequencies',
                 title2: null,
-                image1: 'image15.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/13Gu7mp8zkDYgThVv_bSGTBHD3FgKu7U3=w2940-h1680-iv1',
                 text1: 'Live Dj Set',
                
             },
@@ -1488,98 +1501,99 @@ document.addEventListener('DOMContentLoaded', function () {
                 title1: 'No Show',
                 image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
                 text1: 'Nothing..',
+                    image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
                 
                 
             },
             'Saturday-10:00am': {
                 title1: 'Pixel Perfect',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
                 text1: 'Krish delves into a different video game each week, assessing the mechanics, the world in which the game exists, the soundtracks and more.',
             },
             'Saturday-11:00am': {
                 title1: 'Barricade Babe',
               
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1E-66tDEoE2NrF4RyhDGj2SpEBHxa1A-2=w2940-h1680-iv1',
                text1: 'Carys is the ultimate Barricade Babe, attending gigs regularly out of pure love for the music. She brings on guests to discuss the live music events that make or break them and highlights the joys of being a fan.',
               
             },
             'Saturday-12:00pm': {
                 title1: 'Out and About',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
-                text1: 'Nothing..',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
+                text1: 'A chance to showcase alternative coverage on LSR, expect something different every week and coverage of off beat events around the city.',
             },
             'Saturday-1:00pm': {
                 title1: 'Fill In The Gaps',
               
-                image1: 'image5.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
                 text1: 'With a new genre each week, this show does what it says on the tin, adding historical and contextual cues to round off some of the most groundbreaking genres in history. Local musicians and DJs share their contributions and love for the music they create too.',
                
             },
             'Saturday-2:00pm': {
                 title1: 'The Leeds Music Role Call',
                title2: 'Uni Music Library Finds',
-                image1: 'image6.jpg',
-                 image2: 'image6.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
+                 image2: 'https://lh3.googleusercontent.com/u/0/d/13BoktLuvOAbM9MB-c77OjoHoJ4ZoTcJr=w2940-h1680-iv1',
                 text1: 'Week 1 : Open your eyes to the Leeds Music scene with several guests including bands and label owners who are making waves across the city.',
               text2: 'Week 2 : With a new theme each week, two UML members present the best they can find in LUU’s Union Music Library.',
             },
             'Saturday-3:00pm': {
                 title1: 'Soccer Punch',
                 title2: null,
-                image1: 'image7.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1Vye6bcruDTIz8XJp-AErJgezBRE4Tkth=w2940-h1680-iv1',
                 text1: 'The students answer to Soccer Saturday, a more laidback overview of Saturday game.',
               
             },
             'Saturday-4:00pm': {
                  title1: 'Soccer Punch',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1Vye6bcruDTIz8XJp-AErJgezBRE4Tkth=w2940-h1680-iv1',
                 text1: 'Soccer Punch: The students answer to Soccer Saturday, a more laidback overview of Saturday game.',
             },
             'Saturday-5:00pm': {
                  title1: 'The Emo Hour',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
-                text1: 'The Emo Hour',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
+                text1: 'Tune in for all things Emo',
             },
             'Saturday-6:00pm': {
                 title1: 'Tinfoil Tales',
                 title2: null,
-                image1: 'image10.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/11cA2pasQNk0N8oSRx1U0vwAYA0dolo_F=w2940-h1680-iv1',
                 text1: 'Political conspiracies have been rife in pop culture for longer than we can remember, join the hosts to think critically about the impact of conspiracy theories and how they’ve evolved to be so mainstream today.',
                
             },
             'Saturday-7:00pm': {
                title1: 'SATURDAY NIGHT FEVER',
                title2: null,
-                image1: 'image11.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1lCPY_7y0Gft2JG68vhZdqunyZeo6Vghd=w2940-h1680-iv2',
                 text1: 'The ‘Saturday Night Fever’ (7-9pm) team curate the nighttime vibe with upbeat playlists and advertising new club nights.',
                
             },
             'Saturday-8:00pm': {
                 title1: 'SATURDAY NIGHT FEVER',
                 title2: null,
-                image1: 'image12.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1lCPY_7y0Gft2JG68vhZdqunyZeo6Vghd=w2940-h1680-iv2',
                 text1: 'The ‘Saturday Night Fever’ (7-9pm) team curate the nighttime vibe with upbeat playlists and advertising new club nights.',
              
             },
             'Saturday-9:00pm': {
                 title1: 'Rags, Rebels, Records',
                 title2: null,
-                image1: 'image13.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
                 text1: 'If there are two things that Leeds Uni students have amazing taste in, it’s style and music. Rags, Rebels, Records is the premium fashion radio show which combines these two things, exploring how fashion and music have intersected throughout pop culture to create some of the most prevalent subcultures and styles.',
               
             },
             'Saturday-10:00pm': {
                 title1: 'Rosie & Tom try to DJ',
                 title2: null,
-                image1: 'image14.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1u_CPFlRcet2dnb3lnxZWGJVPxekZ-tdo=w2940-h1680-iv1',
                 text1: 'Live Dj Set',
              
             },
             'Saturday-11:00pm': {
-                title1: 'No Show',
+                title1: 'BPM Radio',
                 title2: null,
-                image1: 'image15.jpg',
-                text1: 'Nothing..',
+                image1: 'https://leeds.ams3.digitaloceanspaces.com/media/dVSupksKuOaUaaXVbFCvNECs3rfs0YPiLpNpUhYg.jpg',
+                text1: 'Live Dj Set',
                
             },
 
@@ -1594,32 +1608,32 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             'Sunday-10:00am': {
                 title1: 'The Label Show',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
                 text1: 'Join Poppy and Ally as they explore different record labels every week, from every genre, highlighting independent labels as well as big names in the industry.',
             },
             'Sunday-11:00am': {
                 title1: 'Witching Hour',
               
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1z8sfhsUSEimYBkArIUxFPIyd0HnGjFur=w2940-h1680-iv1',
                text1: 'Rory’s back in the studio to talk all things witchcraft! From crystals to candles to card readings you’ll learn the history of the practice and look at the modern iterations of witch life.',
               
             },
             'Sunday-12:00pm': {
                 title1: 'Box Office',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1P6blYgwAzUgb5DogSu4vwkc52mzpgY-O=w2940-h1680-iv1',
                 text1: 'Box Office',
             },
             'Sunday-1:00pm': {
                 title1: 'It Takes A Village',
               
-                image1: 'image5.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
                 text1: 'Flora examines the nature vs nurture argument in music, interviewing someone new each week to discover how and why they discovered the music which defines their lives.',
                
             },
             'Sunday-2:00pm': {
                 title1: 'SRA CHART SHOW',
              
-                image1: 'image6.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
                 
                 text1: 'The SRA Chart Show',
             
@@ -1627,24 +1641,24 @@ document.addEventListener('DOMContentLoaded', function () {
             'Sunday-3:00pm': {
                 title1: 'SRA CHART SHOW',
              
-                image1: 'image6.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
                 
                 text1: 'The SRA Chart Show',
             },
             'Sunday-4:00pm': {
                  title1: 'SUNDAY ROAST',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1BlWo4E0TxsHK_Yue3kjTB-x5iOkOY2ZK=w2940-h1680-iv1',
                 text1: '‘Sunday Roast’ (4-6pm) mocks the week and discusses student icks in a whole new light.',
             },
             'Sunday-5:00pm': {
                  title1: 'SUNDAY ROAST',
-                image1: 'https://static.wixstatic.com/media/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg/v1/fill/w_1880,h_1070,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/316c00_2b35f04ff0b04d9b830fc11dbc4eea99~mv2.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1BlWo4E0TxsHK_Yue3kjTB-x5iOkOY2ZK=w2940-h1680-iv1',
                 text1: '‘Sunday Roast’ (4-6pm) mocks the week and discusses student icks in a whole new light.',
             },
             'Sunday-6:00pm': {
                 title1: '(Not So) Dumb Blondes',
              
-                image1: 'image10.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
               
                 text1: 'LSR’s Best Show Winter 2024 returns for another season. Hannah and Rebecca decipher if life truly is more fun for blondes by dissecting their lives on air through fun themes!',
             
@@ -1653,35 +1667,35 @@ document.addEventListener('DOMContentLoaded', function () {
             'Sunday-7:00pm': {
                title1: 'ALBUM REVIEW',
                title2: null,
-                image1: 'image11.jpg',
-                text1: 'Album Review',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
+                text1: 'On this show we listen to an entire album from artist and review , discuss and critique.',
                
             },
             'Sunday-8:00pm': {
                 title1: 'Box! Box! Box!',
                 title2: null,
-                image1: 'image12.jpg',
-                text1: 'Box! Box! Box!',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
+                text1: 'All things Formula one.',
              
             },
             'Sunday-9:00pm': {
                 title1: 'Alien Invasion',
                 title2: null,
-                image1: 'image13.jpg',
-                text1: 'Alien Invasion',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1MriMZ1Z78UzWtgnHkWOjMopP9HXLQTN9=w2940-h1680-iv1',
+                text1: 'All things alien and electronic.',
               
             },
             'Sunday-10:00pm': {
                 title1: 'Jems Jamborees',
                 title2: null,
-                image1: 'image14.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/16t3Raz0-vsSub7JEKXOsWgdP6qpKB4f4=w2940-h1680-iv1',
                 text1: 'Live Dj Set',
              
             },
             'Sunday-11:00pm': {
                 title1: 'Tjaro x LSR',
                 title2: null,
-                image1: 'image15.jpg',
+                image1: 'https://lh3.googleusercontent.com/u/0/d/1xsBh4dZQwrBh09eFKZtmvNoJGcw6XlpZ=w2940-h1680-iv2',
                 text1: 'Live Dj Set',
                
             },
@@ -1697,7 +1711,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (data) {
                     overlayTitle.textContent = data.title1;  // Set the main title
 
-                    let contentHTML = `<img src="${data.image1}" alt="Image 1" style="max-width:100%; max-height: 200px; margin-bottom: 10px;">
+                    let contentHTML = `<img src="${data.image1}" alt="Image 1" style="max-width:99%; max-height: auto; margin-bottom: 10px;">
                                        <p style="font-size:15px;">${data.text1}</p>`;
                     
                     // Add the second title *after* the first image and text, if it exists.
@@ -1707,7 +1721,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Add a second image and text if they exist.
                     if (data.image2) {
-                        contentHTML += `<img src="${data.image2}" alt="Image 2" style="max-width:100%; max-height: 200px; margin-top: 10px; margin-bottom: 10px;">
+                        contentHTML += `<img src="${data.image2}" alt="Image 2" style="max-width:99%; max-height: auto; margin-top: 10px; margin-bottom: 10px;">
                                         <p style="font-size:15px;">${data.text2}</p>`;
                     }
 
