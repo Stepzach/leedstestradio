@@ -267,7 +267,7 @@ z-index: 1000;
 
    #dropdown-menu {
     background-color: rgb(205, 50, 50);
-    position: absolute;
+   
     top: 46px;
     left: 0;
     right: 0;
@@ -282,6 +282,9 @@ z-index: 1000;
     overflow: hidden; /* Hide content when height is 0 */
     transition: height 0.3s ease; /* Add a smooth transition */
     display: block; /*  Important to allow height transition to work */
+ position: absolute;
+width: 100%;
+top: 46px;
 }
 
 #dropdown-menufull.open {
