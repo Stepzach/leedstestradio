@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Background Player</title>
+    <style>
+        /* Base styles for the entire page */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars, ensuring full-screen effect */
+        }
+
+        /* Full-screen GIF Background */
+        .background-gif {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* !!! REPLACE 'YOUR_GIF_URL.gif' with your actual GIF URL !!! */
+            background: url('https://github.com/stepzach/leedstestradio/blob/main/IMG_4173.gif?raw=true') no-repeat center center fixed; 
+            background-size: cover; /* Ensures the GIF covers the entire viewport */
+            z-index: -1; /* Puts the GIF behind all other content */
+        }
+
+        /* Overlay container for the button and text */
+        .overlay {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+padding-top:15px;
+            background-color: rgba(0, 0, 0, 0.3); /* Optional: Dark overlay for better text/button contrast */
+        }
+
+        /* Play/Pause Button Styles */
+        #play-pause-button {
+            padding: 10px 20px;
+            font-size: 16px;
+           
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        #play-pause-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        /* Now Playing Text Styles */
+        #now-playing {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="background-gif"></div>
+
+    <audio id="radio-stream" preload="none" loop>
+        <source src="https://streamer.radio.co/s986435880/listen" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="overlay">
+        
+        <button id="play-pause-button">Play</button>
+
+        <p id="now-playing">Now Playing: Example</p>
+    </div>
+
+    <script>
+        const audio = document.getElementById('radio-stream');
+        const button = document.getElementById('play-pause-button');
+
+        // Function to toggle play/pause and update the button text
+        function togglePlayPause() {
+            if (audio.paused) {
+                // Check if audio has loaded enough data to play
+                if (audio.readyState >= 2) { 
+                    audio.play().catch(error => {
+                        console.error("Autoplay failed:", error);
+                        alert("The browser requires a user interaction to start playback.");
+                    });
+                    button.textContent = 'Pause';
+                } else {
+                    alert("Loading stream, please try again in a moment.");
+                    // Attempt to load the stream if not ready
+                    audio.load(); 
+                }
+            } else {
+                audio.pause();
+                button.textContent = 'Play';
+            }
+        }
+
+        // Add the click listener to the button
+        button.addEventListener('click', togglePlayPause);
+        
+        // Optional: Update button text automatically if the audio state changes (e.g., buffering)
+        audio.onplaying = () => {
+            button.textContent = 'Pause';
+        };
+
+        audio.onpause = () => {
+            button.textContent = 'Play';
+        };
+
+        // Note: For some browsers, especially mobile, autoplay (even with `play()`)
+        // might only work after the user has performed an interaction (like clicking the button).
+        
+    </script>
+
+</body>
+</html>
